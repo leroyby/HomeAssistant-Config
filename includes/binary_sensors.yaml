@@ -1,3 +1,8 @@
+######################################################################################################
+# @USER1by
+# Original Repo : https://github.com/USER1by/Homeassistant-Config
+# binary sensors
+######################################################################################################
 - platform: template
   sensors:
     motion_detected:

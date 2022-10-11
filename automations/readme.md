@@ -4,35 +4,34 @@
 # Automations
 The Automations are sorted to a few subfolders
 - [Lights](https://github.com/leroyby/Homeassistant/tree/main/automations/Lights), everything with lights
+- [Media_Player](https://github.com/leroyby/Homeassistant/tree/main/automations/media_player), everything with Mediaplayers
 - [Modes](https://github.com/leroyby/Homeassistant/tree/main/automations/Modes), everything with modes
 - [Presence](https://github.com/leroyby/Homeassistant/tree/main/automations/presence), everything that has to do with presence
-- [Media_Player](https://github.com/leroyby/Homeassistant/tree/main/automations/media_player), everything with Mediaplayers
+
 
 
 # <a name="menu">Menu</a>
 | [Home](https://github.com/leroyby/Homeassistant) | [Lights](#Lights) | [Mediaplayer](#Mediaplayer) |
 
-## <a name="Lights">[Lights](https://github.com/leroyby/Homeassistant-config/blob/main/sensor/temperatur.yaml)</a>
+## <a name="Lights">[Lights](https://github.com/leroyby/HomeAssistant-Config/tree/main/automations/Lights)</a>
 | [Go to Menu](#menu) |
 | Room |YAML-File|
 | --- | --- |
 | Bathroom | [bathroom.yaml](https://github.com/leroyby/Homeassistant-Config/blob/main/automations/Lights/bathroom.yaml)|
 | Bedroom | [Bedroom.yaml](https://github.com/leroyby/Homeassistant-Config/blob/main/automations/Lights/bedroom.yaml) |
 | Kitchen | [bathroom.yaml](https://github.com/leroyby/Homeassistant-Config/blob/main/automations/Lights/kitchen.yaml) |
-|Livingroom| [livingroom.yaml](https://github.com/leroyby/Homeassistant-Config/blob/main/automations/Lights/livingroom.yaml) |
+| Livingroom | [livingroom.yaml](https://github.com/leroyby/Homeassistant-Config/blob/main/automations/Lights/livingroom.yaml) |
 | Office | [office.yaml](https://github.com/leroyby/Homeassistant-Config/blob/main/automations/Lights/office.yaml) |
 | Toilet | [toilet.yaml](https://github.com/leroyby/Homeassistant-Config/blob/main/automations/Lights/toilet.yaml) |
 
-## <a name="Mediaplayer">[Mediaplayer](https://github.com/leroyby/Homeassistant-Config/blob/main/sensor/temperatur.yaml)</a>
+## <a name="Mediaplayer">[Mediaplayer](https://github.com/leroyby/Homeassistant-Config/blob/main/sensor/media_player)</a>
 | [Go to Menu](#menu) |
 | Room |YAML-File|
 | --- | --- |
-| Bathroom | [bathroom.yaml](https://github.com/leroyby/Homeassistant/blob/main/automations/Lights/bathroom.yaml)|
-| Bedroom | [Bedroom.yaml](https://github.com/leroyby/Homeassistant/blob/main/automations/Lights/bedroom.yaml) |
-| Kitchen | [bathroom.yaml](https://github.com/leroyby/Homeassistant/blob/main/automations/Lights/kitchen.yaml) |
-|Livingroom| [livingroom.yaml](https://github.com/leroyby/Homeassistant/blob/main/automations/Lights/livingroom.yaml) |
-| Office | [office.yaml](https://github.com/leroyby/Homeassistant/blob/main/automations/Lights/office.yaml) |
-| Toilet | [toilet.yaml](https://github.com/leroyby/Homeassistant/blob/main/automations/Lights/toilet.yaml) |
+| Bedroom | [Bedroom.yaml](https://github.com/leroyby/Homeassistant/blob/main/automations/media_player/bedroom.yaml) |
+| Kitchen | [bathroom.yaml](https://github.com/leroyby/Homeassistant/blob/main/automations/media_player//kitchen.yaml) |
+| Livingroom | [livingroom.yaml](https://github.com/leroyby/Homeassistant/blob/main/automations/media_player//livingroom.yaml) |
+| Office | [office.yaml](https://github.com/leroyby/Homeassistant/blob/main/automations/media_player//office.yaml) |
 ---
 | [Go to Menu](#menu) | [Home](https://github.com/leroyby/HomeAssistant-Config) |
 

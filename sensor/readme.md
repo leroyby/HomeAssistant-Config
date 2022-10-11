@@ -1,4 +1,4 @@
-[![GitHub last commit](https://img.shields.io/github/last-commit/leroyby/Homeassistant?style=for-the-badge)](https://github.com/leroyby/Homeassistant/commits/main)
+[![GitHub last commit](https://img.shields.io/github/last-commit/leroyby/Homeassistant-Config?style=for-the-badge)](https://github.com/leroyby/Homeassistant-Config/commits/main)
 [![HA Version](https://img.shields.io/badge/Running%20Home%20Assistant-2022.10.2%20-darkblue)](https://github.com/home-assistant/home-assistant/releases/latest)
 
 # Sensors

@@ -1,3 +1,8 @@
+######################################################################################################
+# @USER1by
+# Original Repo : https://github.com/USER1by/Homeassistant-Config
+# Input Date and Times
+######################################################################################################
 alarm_clock:
   name: Alarm clock
   has_date: false

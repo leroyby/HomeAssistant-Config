@@ -1,8 +1,5 @@
 ######################################################################################################
 # @USER1by
 # Original Repo : https://github.com/USER1by/Homeassistant-Config
-# Input Texts
+# Automations Mediaplayer Kitchen
 ######################################################################################################
-  text1:
-    name: Text 1
-    initial: Some Text
