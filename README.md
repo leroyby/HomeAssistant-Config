@@ -1,6 +1,6 @@
 [![GitHub last commit](https://img.shields.io/github/last-commit/leroyby/Homeassistant-Config?style=for-the-badge)](https://github.com/leroyby/HomeAssistant-Config/commits/main)
 
-[![HA Version](https://img.shields.io/badge/Running%20Home%20Assistant-2022.10.2%20-darkblue)](https://github.com/home-assistant/home-assistant/releases/latest)
+[![HA Version](https://img.shields.io/badge/Running%20Home%20Assistant-2022.10.3%20-darkblue)](https://github.com/home-assistant/home-assistant/releases/latest)
 
 # Homeassistant Config Overview
 This is my personal Documentation for my Home Assistant setup. 
@@ -94,15 +94,16 @@ At this point also a big thanks to the whole home assistant community and especa
 | ------------- | :---: | :---: | ------------- | ------------- | ------------- | ------------- |
 | iRobot Roomba 976 | [Roomba](https://amzn.to/3xKQVBZ) | 1 | Wi-Fi |[iRobot](https://www.home-assistant.io/integrations/roomba/) | - |integrated|
 
-## <a name="statistics">Statistics</a>
+## <a name="statistics">Statistics (as in October 2022)</a>
 | [Go to Menu](#menu) |
 | Component  | Count | Component  | Count |
 | ------------- | :---: | ------------- | :---: |
-| Automations | 18 | Zones | 1 |
-| Scripts | 9 | Switches | 20 |
-| Sensors | 134 | Binary Inputs | 15 |
-| Input Booleans | 8 | Input Numbers | 0 |
-| Input Text | 0 | Input Datetime | 1 |
+| Automations | 25 | Scripts | 11 |
+| Zones | 1 | Device Trackers | 19 |
+| Switches | 27 | | Sensors | 140 | 
+| Binary Sensors | 30 |Input Booleans | 8 |
+| Input Numbers | 0 | Input Text | 1 |
+| Input Selects | 4 | Input Datetime | 1 |
 
 ## <a name="various">Various</a>
 | [Go to Menu](#menu) |

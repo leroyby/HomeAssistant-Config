@@ -11,7 +11,7 @@ The Automations are sorted to a few subfolders
 
 
 # <a name="menu">Menu</a>
-| [Home](https://github.com/leroyby/Homeassistant) | [Lights](#Lights) | [Mediaplayer](#Mediaplayer) |
+| [Home](https://github.com/leroyby/Homeassistant) | [Lights](#Lights) | [Mediaplayer](#Mediaplayer) | [Modes](#Modes) |
 
 ## <a name="Lights">[Lights](https://github.com/leroyby/HomeAssistant-Config/tree/main/automations/Lights)</a>
 | [Go to Menu](#menu) |
@@ -32,6 +32,17 @@ The Automations are sorted to a few subfolders
 | Kitchen | [bathroom.yaml](https://github.com/leroyby/Homeassistant/blob/main/automations/media_player//kitchen.yaml) |
 | Livingroom | [livingroom.yaml](https://github.com/leroyby/Homeassistant/blob/main/automations/media_player//livingroom.yaml) |
 | Office | [office.yaml](https://github.com/leroyby/Homeassistant/blob/main/automations/media_player//office.yaml) |
+
+## <a name="Modes">[Modes](https://github.com/leroyby/Homeassistant-Config/blob/main/sensor/modes)</a>
+| [Go to Menu](#menu) |
+| Room |YAML-File|
+| --- | --- |
+| Away | - |
+| Gaming - |
+| Night | - |
+| Normal | - |
+| Work | - |
+---
 ---
 | [Go to Menu](#menu) | [Home](https://github.com/leroyby/HomeAssistant-Config) |
 
