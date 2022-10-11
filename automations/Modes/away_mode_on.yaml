@@ -1,0 +1,33 @@
+######################################################################################################
+# @USER1by
+# Original Repo : https://github.com/USER1by/Homeassistant-Config
+# Automation away mode on
+######################################################################################################
+- alias: Away mode on
+  id: 9521d521-00dc-4116-b467-5150735fcff9
+  trigger:
+    - platform: state
+      entity_id: 
+      - input_boolean.away_mode
+      to: 'on'
+
+  condition: []
+
+  action:
+  - service: input_boolean.turn_off
+    target:
+      entity_id: 
+      - input_boolean.work_mode
+      - input_boolean.normal_mode
+      - input_boolean.gaming_mode
+      - input_boolean.night_mode
+  - service: light.turn_off
+    target:
+      entity_id: 
+      - light.all_lights
+  - service: switch.turn_off
+    target:
+      entity_id: 
+      - switch.all_electric_switches
+    metadata: {}
+  mode: single

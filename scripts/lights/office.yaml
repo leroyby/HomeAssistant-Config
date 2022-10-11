@@ -1,0 +1,28 @@
+######################################################################################################
+# @USER1by
+# Original Repo : https://github.com/USER1by/Homeassistant
+# Script Lights Office
+######################################################################################################
+normal_lights_office:
+  alias: Set normal lights in the office
+  mode: parallel
+  sequence:
+    - service: input_select.select_option
+      entity_id: input_select.last_script_office
+      data:
+        option: script.normal_lights_living_room
+
+work_lights_office:
+  alias: Set normal lights in the living room
+  mode: parallel
+  sequence:
+    - data:
+        entity_id: light.office_lights
+        brightness_pct: 100
+        color_temp: 300
+      service: light.turn_on
+    - service: input_select.select_option
+      entity_id: input_select.last_script_bedroom
+      data:
+        option: script_work_lights_office
+

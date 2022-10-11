@@ -1,0 +1,17 @@
+######################################################################################################
+# @USER1by
+# Original Repo : https://github.com/USER1by/Homeassistant
+# System Monitor HA Sensors 
+######################################################################################################
+  - platform: systemmonitor
+    resources:
+      - type: memory_free
+      - type: disk_use_percent
+        arg: "/"
+      - type: memory_use_percent
+      - type: network_in
+        arg: eth0
+      - type: network_out
+        arg: eth0
+      - type: processor_use
+      - type: last_boot

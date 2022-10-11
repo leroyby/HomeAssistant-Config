@@ -1,0 +1,19 @@
+######################################################################################################
+# @USER1by
+# Original Repo : https://github.com/USER1by/Homeassistant
+# Script Vacuum
+######################################################################################################
+
+vacuum_start:
+  sequence:
+    - service: logbook.log
+      data_template:
+        name: EVENT
+        message: "Starting Vacuum."
+    - service: vacuum.start
+      data:
+        entity_id: vacuum.rombacus
+    - service: logbook.log
+      data_template:
+        name: EVENT
+        message: "Vacuum started"

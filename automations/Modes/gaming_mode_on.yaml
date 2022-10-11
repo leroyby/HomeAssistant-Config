@@ -1,0 +1,25 @@
+######################################################################################################
+# @USER1by
+# Original Repo : https://github.com/USER1by/Homeassistant-Config
+# Automation gaming mode on
+######################################################################################################
+- id: '1663445365487'
+  alias: Gaming mode on
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - input_boolean.gaming_mode
+    to: 'on'
+    from: 'off'
+  condition: []
+  action:
+  - service: input_boolean.turn_off
+    target:
+      entity_id: 
+      - input_boolean.work_mode
+      - input_boolean.normal_mode
+      - input_boolean.away_mode
+      - input_boolean.night_mode
+    metadata: {}
+  mode: single

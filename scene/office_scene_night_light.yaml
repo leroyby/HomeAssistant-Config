@@ -1,0 +1,11 @@
+######################################################################################################
+# @USER1by
+# Original Repo : https://github.com/USER1by/Homeassistant
+# Scene Office Light (Night)
+######################################################################################################
+- name: night light office
+  entities:
+       light.wiz_office_1:
+           state: on
+           brightness: 200
+           color_temp: 450

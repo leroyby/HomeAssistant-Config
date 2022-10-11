@@ -1,0 +1,25 @@
+######################################################################################################
+# @USER1by
+# Original Repo : https://github.com/USER1by/Homeassistant
+# Input Selects
+######################################################################################################
+sleep_mode:
+  options:
+    - total # everyone is sleeping
+    - half # one person is awake and one person is sleeping
+    - "off" # everyone is awake
+
+last_script_living_room:
+  options:
+    - script.cozy_lights_living_room
+    - script.normal_lights_living_room
+
+last_script_bedroom:
+  options:
+    - script.cozy_lights_bedroom
+    - script.normal_lights_bedroom
+
+last_script_office:
+  options:
+    - script.work_lights_office
+    - script.normal_lights_office

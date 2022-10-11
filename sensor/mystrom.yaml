@@ -1,0 +1,44 @@
+######################################################################################################
+# @USER1by
+# Original Repo : https://github.com/USER1by/Homeassistant
+# Definition of myStrom via REST to get Power consumtion and reported temperature
+######################################################################################################
+  - platform: rest
+    name: "TV Schlafzimmer power"
+    resource: http://192.168.178.21/report
+    method: GET
+    unit_of_measurement: W
+    device_class: power
+    state_class: measurement
+    value_template: "{{ value_json.power }}"
+    scan_interval: 10
+
+  - platform: rest
+    name: "Office 1 (PC) power"
+    resource: http://192.168.178.22/report
+    method: GET
+    unit_of_measurement: W
+    device_class: power
+    state_class: measurement
+    value_template: "{{ value_json.power }}"
+    scan_interval: 10
+
+  - platform: rest
+    name: "Office 2 (Xbox) power"
+    resource: http://192.168.178.23/report
+    method: GET
+    unit_of_measurement: W
+    device_class: power
+    state_class: measurement
+    value_template: "{{ value_json.power }}"
+    scan_interval: 10
+
+  - platform: rest
+    name: "reserve power"
+    resource: http://192.168.178.24/report
+    method: GET
+    unit_of_measurement: W
+    device_class: power
+    state_class: measurement
+    value_template: "{{ value_json.power }}"
+    scan_interval: 10

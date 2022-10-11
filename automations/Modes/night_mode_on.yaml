@@ -1,0 +1,33 @@
+######################################################################################################
+# @USER1by
+# Original Repo : https://github.com/USER1by/Homeassistant-Config
+# Automation night
+######################################################################################################
+- id: '1663422926689'
+  alias: Night mode on
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - input_boolean.night_mode
+    to: 'on'
+    from: 'off'
+  condition: []
+  action:
+  - service: input_boolean.turn_off
+    target:
+      entity_id: 
+      - input_boolean.normal_mode
+      - input_boolean.gaming_mode
+      - input_boolean.away_mode
+      - input_boolean.work_mode
+  - service: light.turn_off
+    target:
+      entity_id: 
+      - light.all_lights
+  - service: switch.turn_off
+    target:
+      entity_id: 
+      - switch.night
+    metadata: {}
+  mode: single

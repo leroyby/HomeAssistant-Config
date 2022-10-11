@@ -1,0 +1,41 @@
+######################################################################################################
+# @USER1by
+# Original Repo : https://github.com/USER1by/Homeassistant
+# Input Boolenas used for modes and presence
+######################################################################################################
+  work_mode:
+    name: Work Mode
+    icon: mdi:desk
+    initial: off
+
+  normal_mode:
+    name: Normal Mode
+    icon: mdi:home
+    initial: off
+
+  gaming_mode:
+    name: Gaming Mode
+    icon: mdi:controller
+    initial: off
+
+  away_mode:
+    name: Away Mode
+    icon: mdi:home-off
+    initial: off
+
+  night_mode:
+    name: Night Mode
+    icon: mdi:bed-clock
+    initial: off
+
+  USER2_home:
+    name: USER2 Home
+    icon: mdi:Account
+
+  vacuum_ran:
+    name: Vacuum Ran
+    icon: mdi:vacuum
+
+  alarm_clock:
+    name: Alarm clock is on
+    icon: mdi:alarm

@@ -1,0 +1,63 @@
+######################################################################################################
+# @USER1by
+# Original Repo : https://github.com/USER1by/Homeassistant
+# Temperature-Sensors incl. average sensors (via addon)
+######################################################################################################
+  - platform: average
+    name: 'Temperature Home '
+    entities:
+      - sensor.temperature_office_average
+      - sensor.temperature_livingroom_average
+      - sensor.temperature_bedroom
+
+  - platform: average
+    name: 'Temperature Office Average'
+    entities:
+      - sensor.temperature_office_pc
+      - sensor.temperature_office_xbox
+
+  - platform: average
+    name: 'Temperature Livingroom'
+    entities:
+      - sensor.temperature_livingroom_tv
+      - sensor.temperature_kitchen
+
+  - platform: rest
+    name: "Temperature Bedroom"
+    resource: http://192.168.178.21/report
+    method: GET
+    unit_of_measurement: °C
+    device_class: temperature
+    state_class: measurement
+    value_template: "{{ value_json.temperature }}"
+    scan_interval: 10
+
+  - platform: rest
+    name: "Temperature Office PC"
+    resource: http://192.168.178.22/report
+    method: GET
+    unit_of_measurement: °C
+    device_class: temperature
+    state_class: measurement
+    value_template: "{{ value_json.temperature }}"
+    scan_interval: 10
+
+  - platform: rest
+    name: "Temperature Office Xbox"
+    resource: http://192.168.178.23/report
+    method: GET
+    unit_of_measurement: °C
+    device_class: temperature
+    state_class: measurement
+    value_template: "{{ value_json.temperature }}"
+    scan_interval: 10
+
+  - platform: rest
+    name: "Temperature Kitchen"
+    resource: http://192.168.178.24/report
+    method: GET
+    unit_of_measurement: °C
+    device_class: temperature
+    state_class: measurement
+    value_template: "{{ value_json.temperature }}"
+    scan_interval: 10

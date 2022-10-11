@@ -1,0 +1,38 @@
+######################################################################################################
+# @USER1by
+# Original Repo : https://github.com/USER1by/Homeassistant-Config
+# configuration.yaml
+######################################################################################################
+
+# Loads default set of integrations. Do not remove.
+default_config:
+frontend:
+  themes: !include_dir_merge_named themes
+# Text to speech
+tts:
+  - platform: google_translate
+
+my:
+# Inputs
+input_datetime: !include input/input_datetimes.yaml
+binary_sensor: !include includes/binary_sensors.yaml
+#input_number: !include input/input_numbers.yaml
+input_select: !include input/input_selects.yaml
+input_boolean: !include input/input_booleans.yaml
+input_text: !include input/input_text.yaml
+adaptive_lighting: !include_dir_merge_list adaptive_lighting
+switch: !include_dir_merge_list switch
+sensor: !include_dir_merge_list sensor
+scene: !include_dir_merge_list scene
+utility_meter: !include_dir_merge_list utilities
+automation: !include automations.yaml
+automation split: !include_dir_merge_list automations
+homeassistant:
+  packages: !include_dir_named packages
+light: !include light_groups.yaml
+script: !include_dir_merge_named scripts
+#device_tracker: !include_dir_merge_named 
+wake_on_lan:
+  
+#PowerCal
+powercalc:

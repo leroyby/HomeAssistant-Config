@@ -1,0 +1,33 @@
+######################################################################################################
+# @USER1by
+# Original Repo : https://github.com/USER1by/Homeassistant
+# Script Office off
+######################################################################################################
+arriving:
+  alias: Coming home
+  mode: parallel
+  sequence:
+  - service: input_boolean.turn_off
+    target:
+      entity_id: 
+      - input_boolean.night_mode
+  - service: input_select.select_option
+    target:
+      entity_id:
+      - input_select.sleep_mode
+      data:
+        option: "total"
+leaving:
+  alias: Leaving Home
+  mode: parallel
+  sequence:
+  - service: input_boolean.turn_off
+    target:
+      entity_id: 
+      - input_boolean.night_mode
+  - service: input_select.select_option
+    target:
+      entity_id:
+      - input_select.sleep_mode
+      data:
+        option: "total"

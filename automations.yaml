@@ -1,0 +1,15 @@
+- id: '1665332809214'
+  alias: Controller - IKEA E1812 TRÅDFRI Shortcut button
+  description: ''
+  use_blueprint:
+    path: EPMatt/ikea_e1812.yaml
+    input:
+      integration: Zigbee2MQTT
+      controller_entity: sensor.button_bedroom_action
+      helper_last_controller_event: input_text.text1
+      action_button_long:
+      - service: light.turn_on
+        data:
+          brightness_step_pct: 10
+        target:
+          area_id: schlafzimmer

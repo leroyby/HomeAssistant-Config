@@ -1,0 +1,21 @@
+######################################################################################################
+# @USER1by
+# Original Repo : https://github.com/USER1by/Homeassistant
+# Script Going to Sleep
+######################################################################################################
+going_to_sleep:
+  sequence:
+    - service: logbook.log
+      data_template:
+        name: EVENT
+        message: "Going to Sleep started"
+    ##
+    - service: input_select.select_option
+      target:
+        entity_id: input_select.sleep_mode
+      data:
+        option: "total"
+    - service: switch.turn_off
+      taget: switch.night
+      
+       

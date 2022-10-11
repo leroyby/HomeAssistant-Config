@@ -1,0 +1,28 @@
+######################################################################################################
+# @USER1by
+# Original Repo : https://github.com/USER1by/Homeassistant-Config
+# Automation work_mode_on
+######################################################################################################
+- id: '1663425526689'
+  alias: Work mode on
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - input_boolean.work_mode
+    to: 'on'
+    from: 'off'
+  condition: []
+  action:
+  - service: scene.turn_on
+    target:
+      entity_id: scene.work_mode_on
+  - service: input_boolean.turn_off
+    target:
+      entity_id: 
+      - input_boolean.normal_mode
+      - input_boolean.gaming_mode
+      - input_boolean.away_mode
+      - input_boolean.night_mode
+    metadata: {}
+  mode: single

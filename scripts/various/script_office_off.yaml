@@ -1,0 +1,25 @@
+######################################################################################################
+# @USER1by
+# Original Repo : https://github.com/USER1by/Homeassistant
+# Script Office off
+######################################################################################################
+
+office_off:
+  sequence:
+    - service: logbook.log
+      data_template:
+        name: EVENT
+        message: "Turning office off."
+
+    ## Turn off lights and switches
+    - service: switch.turn_off
+      data:
+        entity_id: switch.office_switches
+    - service: light.turn_off
+      data:
+        entity_id: light.office_wiz_lights_ceiling
+
+    - service: logbook.log
+      data_template:
+        name: EVENT
+        message: "Everything in the office is now off."

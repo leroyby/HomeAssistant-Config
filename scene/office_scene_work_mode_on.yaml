@@ -1,0 +1,11 @@
+######################################################################################################
+# @USER1by
+# Original Repo : https://github.com/USER1by/Homeassistant
+# Scene Office Work mode
+######################################################################################################
+- name: work mode on
+  entities:
+       light.office_wiz_lights_ceiling:
+           state: on
+           brightness: 255
+           color_temp: 300

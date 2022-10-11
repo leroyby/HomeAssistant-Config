@@ -1,0 +1,37 @@
+######################################################################################################
+# @USER1by
+# Original Repo : https://github.com/USER1by/Homeassistant
+# switch group yaml file
+######################################################################################################
+- platform: group
+  name: All electric switches 
+  entities:
+    - switch.tv
+    - switch.bedroom_tv
+    - switch.office_pc
+    - switch.office_xbox
+    - switch.kitchen
+ ##  OFFICE
+- platform: group
+  name: Office Switches
+  entities:
+    - switch.office_pc
+    - switch.office_xbox
+  ##  LIVING ROOM   
+- platform: group
+  name: Livingroom Switches
+  entities:
+    - switch.livingroom_tv
+    - switch.kitchen
+## Bedroom
+- platform: group
+  name: night
+  entities:
+    - switch.bedroom_Tv
+  
+- platform: group
+  name: night
+  entities:
+    - switch.office_pc
+    - switch.office_xbox
+    - switch.livingroom_tv

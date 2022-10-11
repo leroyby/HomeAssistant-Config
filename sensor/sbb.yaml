@@ -1,0 +1,10 @@
+######################################################################################################
+# @USER1by
+# Original Repo : https://github.com/USER1by/Homeassistant
+# TEST SENSOR SSB Information
+######################################################################################################
+sensor:
+  - platform: swiss_public_transport
+    name: test SBB
+    from: 000000022
+    to: 000000025
