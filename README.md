@@ -5,8 +5,10 @@
    * [Home Assistant configuration](#home-assistant-configuration-overview)
       * [Hardware](#hardware)
    * [Useful links](#useful-links)
+   * [My naming convention](https://github.com/leroyby/Homeassistant/blob/main/naming_convention.md)
+   * [Statistics](#Statistics)
    
-# Home Assistant configuration overview
+## Home Assistant configuration overview
 This is my personal Documentation for my Home Assistant setup. The setup is running on a raspberry pi with a ConBee II stick (Zigbee). More details under[Hardware](#hardware). Each directory has a short readme explaining what's in there, and the purpose of each file or group of files.
 
 Feel free to get inspired or copy some code from me!
@@ -18,25 +20,25 @@ Please consider the following points:
 
 At this point also a big thanks to the whole home assistant community and especally to [CCOSTAN](https://github.com/CCOSTAN/), [Frenck](https://github.com/frenck/), [geekofweek](https://github.com/geekofweek/) and [basnijholt](https://github.com/basnijholt) for some of the ideas (including how to document on github). Make sure to check them out!
 
-# <a name="menu">Menu</a>
-| [Components](#components)| [Hubs](#hubs) | [Lighting](#Lights) | [Outlets & Switches](#outlets)| [Locks](#locks) | [Media](#media) | [Sensors](#sensors) | [Vacuum](#vacuum) | [Statistics](#statistics) | [Various](#various) | [Integrations](#integrations) | [Naming Convention](https://github.com/leroyby/Homeassistant/blob/main/naming_convention.md) | [Issues](https://github.com/leroyby/Homeassistant/issues) |
+## <a name="menu">Menu Hardware</a>
+| [Components](#components)| [Hubs](#hubs) | [Lighting](#Lights) | [Outlets & Switches](#outlets)| [Locks](#locks) | [Media](#media) | [Sensors](#sensors) | [Vacuum](#vacuum) | [Statistics](#statistics) | [Various](#various) | [Integrations](#integrations) |
 
-# Hardware
-## <a name="Components">Components</a>
+## Hardware
+### <a name="Components">Components</a>
 | [Go to Menu](#menu) |
 | Device  | Amazon Link | Quantity | Connection | Home Assistant | Notes | Status |
 | ------------- | :---: | :---: | ------------- | ------------- | ------------- | ------------- |
 | [Raspberry Pi 3 Model B](https://www.raspberrypi.com/products/raspberry-pi-3-model-b/) | [Amazon](https://amzn.to/3BL2gD1) | 1 | Ethernet | - | Runs Home Assistant, is the heart of the whole home | integrated |
 | [Phosscon ConBee II](https://phoscon.de/de/conbee2) | [Amazon](https://amzn.to/3rseX15) | 1 | USB | - | Zigbee Adapter for Home Assistant | integrated |
 
-## <a name="hubs">Hubs</a>
+### <a name="hubs">Hubs</a>
 | Device  | Amazon Link | Quantity | Connection | Home Assistant | Notes | Status |
 | ------------- | :---: | :---: | ------------- | ------------- | ------------- | ------------- |
 | [TRÅDFRI Gateway V1](https://www.ikea.com/ch/de/p/tradfri-gateway-weiss-40337806)| - | 1 | Ethernet|[IKEA TRÅDFRI](https://www.home-assistant.io/integrations/tradfri) | V1, because V2 is comming soon (late 2022) / userd for integration of TRÅDFRI lights and remotes|integrated|
 | [Hue Bridge v2](https://www.philips-hue.com/de-de/p/hue-hue-bridge/8719514342620)| [Amazon](https://amzn.to/3xPfduH) | 1 | Ethernet |[Philips Hue](https://www.home-assistant.io/integrations/hue/)|-|integrated|
 | [Aqara Hub M2](https://www.aqara.com/us/smart_hub_m2.html) | [Amazon](https://amzn.to/3SeSlgc) | 1 | Ethernet | [HomeKit-Controller](https://www.home-assistant.io/integrations/homekit_controller/)|-|retired|
 
-## <a name="Lights">Lightning</a>
+### <a name="Lights">Lightning</a>
 | [Go to Menu](#menu) |
 | Device  | Amazon Link | Quantity | Connection | Home Assistant | Notes | Status |
 | ------------- | :---: | :---: | ------------- | ------------- | ------------- | ------------- |
@@ -49,20 +51,20 @@ At this point also a big thanks to the whole home assistant community and especa
 | [WiZ Spot 4.9W PAR16 RGBW](https://www.wizconnected.com/de-ch/p/led-lampe-spot-4-9-w--entspr-50-w--par16-gu10-x2/8719514551312)| [Single-Pack](https://amzn.to/3dM5mPf) [Double-Pack](https://amzn.to/3DRK3qq) | 1 | Wi-Fi | [WIZ](https://www.home-assistant.io/integrations/wiz/) | - | integrated |
 
 | Lights are grouped in [light_groups.yaml](https://github.com/leroyby/Homeassistant/blob/main/light_groups.yaml) |
-## <a name="Outlets">Outlets & Switches</a>
+### <a name="Outlets">Outlets & Switches</a>
 | [Go to Menu](#menu) |
 | Device  | Amazon Link | Quantity | Connection | Home Assistant | Notes | Status |
 | ------------- | :---: | :---: | ------------- | ------------- | ------------- | ------------- |
 | [myStrom WiFi Switch](https://mystrom.ch/de/wifi-switch/) | - | 4 | WLAN |[myStrom](https://www.home-assistant.io/integrations/mystrom) | REST API used for other features |integrated|
 | [TRÅDFRI Switch](https://www.ikea.com/ch/en/p/tradfri-wireless-control-outlet-smart-00473650/) | | 1 | Ikea Hub (Zigbee)|[IKEA TRÅDFRI](https://www.home-assistant.io/integrations/tradfri) | - |integrated|
 
-## <a name="Locks">Locks</a>
+### <a name="Locks">Locks</a>
 | [Go to Menu](#menu) |
 | Device  | Amazon Link | Quantity | Connection | Home Assistant | Notes | Status |
 | ------------- | :---: | :---: | ------------- | ------------- | ------------- | ------------- |
 | [Nuki Smartlock with Bridge G2](https://nuki.io/en/) | [Lock G3](https://amzn.to/3r2nK9N) [Bundle G3](https://amzn.to/3RbEbv9) | 1 | Nuki Bridge (Bluetooth) |[Nuki](https://www.home-assistant.io/integrations/nuki) | tested with [Nuki Card v11](https://community.home-assistant.io/t/nuki-card-with-callback-support-supports-both-lock-opener-it-replaces-the-official-integration/311932) but currently using the build in option |integrated|
 
-## <a name="Sensors">Sensors</a>
+### <a name="Sensors">Sensors</a>
 | [Go to Menu](#menu) |
 | Device  | Amazon Link | Quantity | Connection | Home Assistant | Notes | Status |
 | ------------- | :---: | :---: | ------------- | ------------- | ------------- | ------------- |
@@ -70,7 +72,7 @@ At this point also a big thanks to the whole home assistant community and especa
 | [Aqara Temperature and Humidity Sensor](https://www.aqara.com/eu/temperature_humidity_sensor.html) | [Amazon](https://amzn.to/3dCzpsT) | 1 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)| - | integrated |
 | [Aqara Vibration Sensor](https://www.aqara.com/eu/vibration_sensor.html) | [Amazon](https://amzn.to/3dGX0sm) | 1  | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/) | - |integrated but unused |
 
-## <a name="Multimedia">Multimedia</a>
+### <a name="Multimedia">Multimedia</a>
 | [Go to Menu](#menu) |
 | Device  | Amazon Link | Quantity | Connection | Home Assistant | Notes | Status |
 | ------------- | :---: | :---: | ------------- | ------------- | ------------- | ------------- |
@@ -81,7 +83,7 @@ At this point also a big thanks to the whole home assistant community and especa
 | LG OLED TV 65"| [LG OLED TVs](https://amzn.to/3r0Y2m5) | 1 | Ethernet| [HomeKit-Controller](https://www.home-assistant.io/integrations/homekit_controller/) | - | Integrated |
 | Apple TV 2| - | 1 | - | - | - | unused |
 
-## <a name="Remotes">Remotes</a>
+### <a name="Remotes">Remotes</a>
 | [Go to Menu](#menu) |
 | Device  | Amazon Link | Quantity | Connection | Home Assistant | Notes | Status |
 | ------------- | :---: | :---: | ------------- | ------------- | ------------- | ------------- |
@@ -91,24 +93,15 @@ At this point also a big thanks to the whole home assistant community and especa
 |[TRÅDFRI Shortcut button](https://www.ikea.com/ch/en/p/tradfri-shortcut-button-white-smart-40356381/)| - | 1 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)|-| integrated |
 |[Aquara Wi-Fi Mini Switch](https://www.aqara.com/eu/Wi-Fi_mini_switch.html)| [Amazon](https://amzn.to/3SbrK3L) | 1 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)|-| integrated |
 
-## <a name="Vacuum">Vacuum</a>
+### <a name="Vacuum">Vacuum</a>
 | [Go to Menu](#menu) |
 | Device  | Amazon Link | Quantity | Connection | Home Assistant | Notes | Status |
 | ------------- | :---: | :---: | ------------- | ------------- | ------------- | ------------- |
 | iRobot Roomba 976 | [Roomba](https://amzn.to/3xKQVBZ) | 1 | Wi-Fi |[iRobot](https://www.home-assistant.io/integrations/roomba/) | - |integrated|
 
-## <a name="statistics">Statistics (as in October 2022)</a>
-| [Go to Menu](#menu) |
-| Component  | Count | Component  | Count |
-| ------------- | :---: | ------------- | :---: |
-| Automations | 25 | Scripts | 11 |
-| Zones | 1 | Device Trackers | 19 |
-| Switches | 27 | | Sensors | 140 | 
-| Binary Sensors | 30 |Input Booleans | 8 |
-| Input Numbers | 0 | Input Text | 1 |
-| Input Selects | 4 | Input Datetime | 1 |
 
-## <a name="various">Various</a>
+
+### <a name="various">Various</a>
 | [Go to Menu](#menu) |
 | Device  | Amazon Link | Quantity | Connection | Home Assistant | Notes | Status |
 | ------------- | :---: | :---: | ------------- | ------------- | ------------- | ------------- |
@@ -116,11 +109,12 @@ At this point also a big thanks to the whole home assistant community and especa
 | Ender 3 3D-Printer | [Ender 3](https://amzn.to/3xP8Wz3) | 1 | Wi-Fi (via OctoPrint) | [OctoPrint](https://www.home-assistant.io/integrations/octoprint/) | used for printing gadgets, mainly holder etc | integrated|
 | Visual Studio Code | - | 1 | - | - | used for editing .yaml or .md Files | - |
 
-## <a name="integrations">Integrations</a>
+### <a name="integrations">Integrations</a>
 | Integration  | Description |
 | ------------- |  ------------- |
 | [HACS](https://hacs.xyz/) |  Used for Varius themes and integrations (not default) |
 | [Zigbee2MQTT](https://www.zigbee2mqtt.io/) | - |
+
 ### Installed Integrations HACS
 | Integration  | Description |
 | ------------- |  ------------- |
@@ -140,5 +134,15 @@ At this point also a big thanks to the whole home assistant community and especa
 | Website | [HA-Integrations](https://www.home-assistant.io/integrations/)
 | Github-Repository | [Frenck's Config](https://github.com/frenck/home-assistant-config) |
 
+## <a name="statistics">Statistics (as in October 2022)</a>
+| [Go to Menu](#menu) |
+| Component  | Count | Component  | Count |
+| ------------- | :---: | ------------- | :---: |
+| Automations | 25 | Scripts | 11 |
+| Zones | 1 | Device Trackers | 19 |
+| Switches | 27 | | Sensors | 140 | 
+| Binary Sensors | 30 |Input Booleans | 8 |
+| Input Numbers | 0 | Input Text | 1 |
+| Input Selects | 4 | Input Datetime | 1 |
 ---
 | [Go to Menu](#menu) | [Affiliate Disclosure](https://github.com/leroyby/Homeassistant/blob/main/affiliate_disclosure.md) |

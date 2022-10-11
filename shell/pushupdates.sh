@@ -38,6 +38,7 @@ do
    cd /root/addons/GITHUB/
    echo "Copy Files for GitHub Publishing"
    echo " "
+   git config --global user.name "LeroyBy HA Automated"
 git add .
 git commit -m "automated update on `date +'%d-%m-%Y %H:%M:%S'`"
 git push -u origin main
@@ -52,7 +53,7 @@ git push -u origin main
      echo " "
    /root/addons/Tools/ha-github-scrub.sh
    cd /root/addons/GITHUB/
-   
+     git config --global user.name "LeroyBy"
 git add .
 echo -n "Enter the Description for the Change: " [Minor Update]
 read CHANGE_MSG
