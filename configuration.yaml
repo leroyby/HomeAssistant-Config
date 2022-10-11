@@ -27,13 +27,10 @@ automation: !include automations.yaml
 automation split: !include_dir_merge_list automations
 homeassistant:
   packages: !include_dir_named packages
-light: !include light_groups.yaml
+light: !include groups/light_groups.yaml
 script: !include_dir_merge_named scripts
 #device_tracker: !include_dir_merge_named 
 wake_on_lan:
 
 #PowerCal
 powercalc:
-
-shell_command: 
-  push_to_github: bash /config/shell/pushupdates.sh

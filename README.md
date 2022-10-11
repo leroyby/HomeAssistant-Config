@@ -1,12 +1,15 @@
 [![GitHub last commit](https://img.shields.io/github/last-commit/leroyby/Homeassistant-Config?style=for-the-badge)](https://github.com/leroyby/HomeAssistant-Config/commits/main)
-
 [![HA Version](https://img.shields.io/badge/Running%20Home%20Assistant-2022.10.3%20-darkblue)](https://github.com/home-assistant/home-assistant/releases/latest)
 
-# Homeassistant Config Overview
-This is my personal Documentation for my Home Assistant setup. 
-Feel free to get inspired or copy some code from me!
+# Table of Contents
+   * [Home Assistant configuration](#home-assistant-configuration-overview)
+      * [Hardware](#hardware)
+   * [Useful links](#useful-links)
+   
+# Home Assistant configuration overview
+This is my personal Documentation for my Home Assistant setup. The setup is running on a raspberry pi with a ConBee II stick (Zigbee). More details under[Hardware](#hardware). Each directory has a short readme explaining what's in there, and the purpose of each file or group of files.
 
-With the issues tab of github I try to manage Ideas (in General), new Automation ideas and ToDo.
+Feel free to get inspired or copy some code from me!
 
 Please consider the following points:
 - Some product links reffer to the swiss manufacturer website. BTW I try to include atleast the english version of it.
@@ -18,7 +21,7 @@ At this point also a big thanks to the whole home assistant community and especa
 # <a name="menu">Menu</a>
 | [Components](#components)| [Hubs](#hubs) | [Lighting](#Lights) | [Outlets & Switches](#outlets)| [Locks](#locks) | [Media](#media) | [Sensors](#sensors) | [Vacuum](#vacuum) | [Statistics](#statistics) | [Various](#various) | [Integrations](#integrations) | [Naming Convention](https://github.com/leroyby/Homeassistant/blob/main/naming_convention.md) | [Issues](https://github.com/leroyby/Homeassistant/issues) |
 
-
+# Hardware
 ## <a name="Components">Components</a>
 | [Go to Menu](#menu) |
 | Device  | Amazon Link | Quantity | Connection | Home Assistant | Notes | Status |
@@ -129,6 +132,13 @@ At this point also a big thanks to the whole home assistant community and especa
 | ------------- |  ------------- |
 | [Mushroom](https://github.com/piitaya/lovelace-mushroom)| - |
 | [Google Theme](https://github.com/JuanMTech/google-theme)| - |
+
+# <a name="Useful-links">Useful Links</a>
+| Type  | Link |
+| ------------- |  ------------- |
+| Website | [HA-Documentation](https://www.home-assistant.io/docs/)|
+| Website | [HA-Integrations](https://www.home-assistant.io/integrations/)
+| Github-Repository | [Frenck's Config](https://github.com/frenck/home-assistant-config) |
 
 ---
 | [Go to Menu](#menu) | [Affiliate Disclosure](https://github.com/leroyby/Homeassistant/blob/main/affiliate_disclosure.md) |

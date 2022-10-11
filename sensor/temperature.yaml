@@ -17,9 +17,9 @@
       - sensor.temperature_office_xbox
 
   - platform: average
-    name: 'Temperature Livingroom'
+    name: 'Temperature Livingroom Average'
     entities:
-      - sensor.temperature_livingroom_tv
+      - sensor.temperature_livingroom
       - sensor.temperature_kitchen
 
   - platform: rest
