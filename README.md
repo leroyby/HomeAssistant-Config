@@ -1,7 +1,7 @@
-[![GitHub last commit](https://img.shields.io/github/last-commit/leroyby/Homeassistant-Config?style=for-the-badge)](https://github.com/leroyby/HomeAssistant-Config/commits/main)
+[![GitHub last commit](https://img.shields.io/github/last-commit/leroyby/homeassistant-config?style=plastic)](https://github.com/leroyby/HomeAssistant-Config/commits/main)
 [![HA Version](https://img.shields.io/badge/Running%20Home%20Assistant-2022.10.3%20-darkblue)](https://github.com/home-assistant/home-assistant/releases/latest)
 
-# Table of Contents
+# <a name="table">Table of Contents </a>
    * [Home Assistant configuration](#home-assistant-configuration-overview)
       * [Hardware](#hardware)
    * [Useful links](#useful-links)
@@ -21,9 +21,10 @@ Please consider the following points:
 At this point also a big thanks to the whole home assistant community and especally to [CCOSTAN](https://github.com/CCOSTAN/), [Frenck](https://github.com/frenck/), [geekofweek](https://github.com/geekofweek/) and [basnijholt](https://github.com/basnijholt) for some of the ideas (including how to document on github). Make sure to check them out!
 
 ## <a name="menu">Menu Hardware</a>
-| [Components](#components)| [Hubs](#hubs) | [Lighting](#Lights) | [Outlets & Switches](#outlets)| [Locks](#locks) | [Media](#media) | [Sensors](#sensors) | [Vacuum](#vacuum) | [Statistics](#statistics) | [Various](#various) | [Integrations](#integrations) |
+| [Components](#components)| [Hubs](#hubs) | [Lighting](#Lights) | [Outlets & Switches](#outlets)| [Locks](#locks) | [Media](#media) | [Sensors](#sensors) | [Vacuum](#vacuum) | [Statistics](#statistics) | [Various](#various) | [Integrations](#integrations) | [Go to Table of Contents](#table) |
 
 ## Hardware
+[Go to Table of Contents](#table)
 ### <a name="Components">Components</a>
 | [Go to Menu](#menu) |
 | Device  | Amazon Link | Quantity | Connection | Home Assistant | Notes | Status |
@@ -135,7 +136,6 @@ At this point also a big thanks to the whole home assistant community and especa
 | Github-Repository | [Frenck's Config](https://github.com/frenck/home-assistant-config) |
 
 ## <a name="statistics">Statistics (as in October 2022)</a>
-| [Go to Menu](#menu) |
 | Component  | Count | Component  | Count |
 | ------------- | :---: | ------------- | :---: |
 | Automations | 25 | Scripts | 11 |
@@ -145,4 +145,4 @@ At this point also a big thanks to the whole home assistant community and especa
 | Input Numbers | 0 | Input Text | 1 |
 | Input Selects | 4 | Input Datetime | 1 |
 ---
-| [Go to Menu](#menu) | [Affiliate Disclosure](https://github.com/leroyby/Homeassistant/blob/main/affiliate_disclosure.md) |
+| [Go to Table of Contents](#table) | [Affiliate Disclosure](https://github.com/leroyby/Homeassistant/blob/main/affiliate_disclosure.md) |

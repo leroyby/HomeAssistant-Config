@@ -1,9 +1,5 @@
 #!/bin/bash
 
-##########################################################
-## Execute
-##########################################################
-
 answer=1
 while [ "$answer" = 1 ]
 do
@@ -18,6 +14,7 @@ do
  echo "3) Copy Configs with comment to GitHub"
  echo "x) Exit"
  echo " "
+     git config --global user.name "LeroyBy"
  read action
 
  if [ "$action" != "1" -a "$action" != "2" -a "$action" != "3" -a "$action" != "4" -a "$action" != "5" -a "$action" != "6" -a "$action" != "7" -a "$action" != "8" -a "$action" != "9" -a "$action" != "10" -a "$action" != "x" ];then
@@ -34,53 +31,53 @@ do
 
  if [ "$action" == "2" ];then
   clear
-   /root/addons/Tools/ha-github-scrub.sh
-   cd /root/addons/GITHUB/
-   echo "Copy Files for GitHub Publishing"
-   echo " "
-   git config --global user.name "LeroyBy HA Automated"
-git add .
-git commit -m "automated update on `date +'%d-%m-%Y %H:%M:%S'`"
-git push -u origin main
-   echo " "
-   echo "Files Copied to GitHub Directory"
-   echo " "
+        echo "Copy Files for GitHub Publishing"
+        echo " "
+    /root/addons/Tools/ha-github-scrub.sh
+    cd /root/addons/GITHUB/
+        echo "GIT PUSH"
+    git config --global user.name "LeroyBy HA Automated"
+    git add .
+    git commit -m "automated update on `date +'%d-%m-%Y %H:%M:%S'`"
+    git push -u origin main
+        echo " "
+        echo "Files pushed to GitHub"
+        echo " "
  fi
 
  if [ "$action" == "3" ];then
    clear
-   echo "Copy Files for GitHub Publishing"
-     echo " "
-   /root/addons/Tools/ha-github-scrub.sh
-   cd /root/addons/GITHUB/
+         echo "Copy Files for GitHub Publishing"
+         echo " "
+    /root/addons/Tools/ha-github-scrub.sh
+     cd /root/addons/GITHUB/
      git config --global user.name "LeroyBy"
-git add .
-echo -n "Enter the Description for the Change: " [Minor Update]
-read CHANGE_MSG
-
-git commit -m "${CHANGE_MSG}"
-git push -u origin main
-   echo " "
-   echo "Files Copied to GitHub"
-   echo " "
+    git add .
+        echo -n "Enter the Description for the Change: " [Minor Update]
+    read CHANGE_MSG
+    git commit -m "${CHANGE_MSG}"
+    git push -u origin main
+         echo " "
+        echo "Files Copied to GitHub"
+         echo " "
  fi
 
  if [ "$action" == "x" ];then
    clear
-   echo " "
-   echo ":-("
-   echo "Exiting"
-   echo " "
+        echo " "
+        echo ":-("
+        echo "Exiting"
+        echo " "
    exit
  fi
 
-echo " "
-echo "Do You Want to Perform Another Task?"
-echo " "
-echo "1) Yes"
-echo "2) No"
-echo " "
-read answer
+        echo " "
+        echo "Do You Want to Perform Another Task?"
+        echo " "
+        echo "1) Yes"
+        echo "2) No"
+        echo " "
+        read answer
 
 if [ "$answer" = 1 ]
 then "run script again"
@@ -89,7 +86,7 @@ fi
 done
 
 clear
-echo " "
-echo ":-("
-echo "Exiting"
-echo " "
+        echo " "
+        echo ":-("
+        echo "Exiting"
+        echo " "
