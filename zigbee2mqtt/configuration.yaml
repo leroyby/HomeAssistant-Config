@@ -26,6 +26,8 @@ devices:
     friendly_name: TV
   '0x00158d00086521c7':
     friendly_name: temperature_livingroom_tv
+  '0x000b57fffe3126b6':
+    friendly_name: remote_bedroom
 advanced:
   log_level: info
 shell_command:

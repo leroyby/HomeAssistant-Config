@@ -6,3 +6,6 @@
   text1:
     name: Text 1
     initial: Some Text
+  remote_bedroom_action_text:
+    name: Remote Bedroom action text
+    initial: Text

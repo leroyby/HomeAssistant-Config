@@ -15,6 +15,7 @@ do
  echo "x) Exit"
  echo " "
      git config --global user.name "LeroyBy"
+     git config --global user.name "leroy.byland@gmail.com"
  read action
 
  if [ "$action" != "1" -a "$action" != "2" -a "$action" != "3" -a "$action" != "4" -a "$action" != "5" -a "$action" != "6" -a "$action" != "7" -a "$action" != "8" -a "$action" != "9" -a "$action" != "10" -a "$action" != "x" ];then
@@ -38,7 +39,9 @@ do
         echo "GIT PUSH"
     git config --global user.name "LeroyBy HA Automated"
     git add .
+    git config --global user.name "LeroyBy HA Automated"
     git commit -m "automated update on `date +'%d-%m-%Y %H:%M:%S'`"
+    git config --global user.name "LeroyBy HA Automated"
     git push -u origin main
         echo " "
         echo "Files pushed to GitHub"
@@ -49,13 +52,18 @@ do
    clear
          echo "Copy Files for GitHub Publishing"
          echo " "
+             git config --global user.name "LeroyBy HA Automated"
     /root/addons/Tools/ha-github-scrub.sh
+        git config --global user.name "LeroyBy HA Automated"
      cd /root/addons/GITHUB/
+
      git config --global user.name "LeroyBy"
     git add .
+        git config --global user.name "LeroyBy HA Automated"
         echo -n "Enter the Description for the Change: " [Minor Update]
     read CHANGE_MSG
     git commit -m "${CHANGE_MSG}"
+        git config --global user.name "LeroyBy HA Automated"
     git push -u origin main
          echo " "
         echo "Files Copied to GitHub"

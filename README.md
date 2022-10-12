@@ -1,4 +1,4 @@
-[![GitHub last commit](https://img.shields.io/github/last-commit/leroyby/homeassistant-config?style=plastic)](https://github.com/leroyby/HomeAssistant-Config/commits/main)
+[![GitHub last commit](https://img.shields.io/github/last-commit/leroyby/homeassistant-config?style=flat)](https://github.com/leroyby/HomeAssistant-Config/commits/main)
 [![HA Version](https://img.shields.io/badge/Running%20Home%20Assistant-2022.10.3%20-darkblue)](https://github.com/home-assistant/home-assistant/releases/latest)
 
 # <a name="table">Table of Contents </a>
@@ -90,7 +90,7 @@ At this point also a big thanks to the whole home assistant community and especa
 | ------------- | :---: | :---: | ------------- | ------------- | ------------- | ------------- |
 | [TRÅDFRI Wireless dimmer](https://www.ikea.com/ch/en/p/tradfri-wireless-dimmer-white-70408595/)| - | 1 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)|-| integrated |
 |[TRÅDFRI STYRBAR Remote control](https://www.ikea.com/ch/en/p/styrbar-remote-control-white-30488363/)| - | 1 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)|-| integrated |
-|TRÅDFRI TRÅDFRI Wireless 5-Button Remote| - | 1 |TRÅDFRI Hub (ZigBee)|[IKEA TRÅDFRI](https://www.home-assistant.io/integrations/tradfri) | discontinued from IKEA |integrated|
+|TRÅDFRI TRÅDFRI Wireless 5-Button Remote| - | 1 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)|-| integrated |
 |[TRÅDFRI Shortcut button](https://www.ikea.com/ch/en/p/tradfri-shortcut-button-white-smart-40356381/)| - | 1 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)|-| integrated |
 |[Aquara Wi-Fi Mini Switch](https://www.aqara.com/eu/Wi-Fi_mini_switch.html)| [Amazon](https://amzn.to/3SbrK3L) | 1 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)|-| integrated |
 
