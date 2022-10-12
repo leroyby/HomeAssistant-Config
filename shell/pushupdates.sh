@@ -11,17 +11,17 @@ do
  echo " "
  echo "1) Copy & Redact Code"
  echo "2) Copy Configs AUTOMATED to GitHub"
- echo "3) Copy Configs with comment to GitHub"
+ echo "3) Copy Configs AUTOMATED to GitHub"
+ echo "4) Copy Configs with manual comment to GitHub"
  echo "x) Exit"
  echo " "
-     git config --global user.name "LeroyBy"
-     git config --global user.name "leroy.byland@gmail.com"
+   
  read action
 
  if [ "$action" != "1" -a "$action" != "2" -a "$action" != "3" -a "$action" != "4" -a "$action" != "5" -a "$action" != "6" -a "$action" != "7" -a "$action" != "8" -a "$action" != "9" -a "$action" != "10" -a "$action" != "x" ];then
- 		echo ":-("
+ 		echo ":("
  		echo "Error!"
- 		echo "Invalid Option Stupid"
+ 		echo "Invalid Option"
     exit
  fi
 
@@ -30,16 +30,14 @@ do
 /root/addons/Tools/ha-github-scrub.sh
  fi
 
- if [ "$action" == "2" ];then
+ if [ "$action" == "3" ];then
   clear
         echo "Copy Files for GitHub Publishing"
         echo " "
     /root/addons/Tools/ha-github-scrub.sh
     cd /root/addons/GITHUB/
         echo "GIT PUSH"
-    git config --global user.name "LeroyBy HA Automated"
     git add .
-    git config --global user.name "LeroyBy HA Automated"
     git commit -m "automated update on `date +'%d-%m-%Y %H:%M:%S'`"
     git config --global user.name "LeroyBy HA Automated"
     git push -u origin main
@@ -48,39 +46,33 @@ do
         echo " "
  fi
 
- if [ "$action" == "3" ];then
+ if [ "$action" == "4" ];then
    clear
          echo "Copy Files for GitHub Publishing"
-         echo " "
-             git config --global user.name "LeroyBy HA Automated"
+         echo " "    
     /root/addons/Tools/ha-github-scrub.sh
-        git config --global user.name "LeroyBy HA Automated"
      cd /root/addons/GITHUB/
-
-     git config --global user.name "LeroyBy"
     git add .
-        git config --global user.name "LeroyBy HA Automated"
         echo -n "Enter the Description for the Change: " [Minor Update]
     read CHANGE_MSG
     git commit -m "${CHANGE_MSG}"
-        git config --global user.name "LeroyBy HA Automated"
     git push -u origin main
-         echo " "
+        echo " "
         echo "Files Copied to GitHub"
-         echo " "
+        echo " "
  fi
 
  if [ "$action" == "x" ];then
    clear
         echo " "
-        echo ":-("
-        echo "Exiting"
+        echo ":("
+        echo "Goodbye"
         echo " "
    exit
  fi
 
         echo " "
-        echo "Do You Want to Perform Another Task?"
+        echo "Do You Want to perform another Task?"
         echo " "
         echo "1) Yes"
         echo "2) No"
@@ -95,6 +87,6 @@ done
 
 clear
         echo " "
-        echo ":-("
+        echo ":("
         echo "Exiting"
         echo " "
