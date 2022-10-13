@@ -29,7 +29,7 @@
     initial: off
 
   USER2_home:
-    name: Silvana Home
+    name: USER2 Home
     icon: mdi:Account
 
   vacuum_ran:
