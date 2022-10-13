@@ -10,9 +10,9 @@ do
  echo "What would you like to do?"
  echo " "
  echo "1) Copy & Redact Code"
- echo "2) Copy Configs AUTOMATED to GitHub"
- echo "3) Copy Configs AUTOMATED to GitHub"
- echo "4) Copy Configs with manual comment to GitHub"
+ echo "2) Copy Configs automated"
+ echo "3) Copy Configs AUTOMATED & push to GitHub"
+ echo "4) Copy Configs with manual comment & push to GitHub"
  echo "x) Exit"
  echo " "
    
@@ -29,7 +29,19 @@ do
      clear
 /root/addons/Tools/ha-github-scrub.sh
  fi
-
+ if [ "$action" == "2" ];then
+  clear
+        echo "Copy Files for GitHub Publishing"
+        echo " "
+    /root/addons/Tools/ha-github-scrub.sh
+    cd /root/addons/GITHUB/
+        echo "GIT add"
+    git add .
+    git commit -m "automated update on `date +'%d-%m-%Y %H:%M:%S'`"
+        echo " "
+        echo "Files pushed to GitHub"
+        echo " "
+ fi
  if [ "$action" == "3" ];then
   clear
         echo "Copy Files for GitHub Publishing"
@@ -39,7 +51,6 @@ do
         echo "GIT PUSH"
     git add .
     git commit -m "automated update on `date +'%d-%m-%Y %H:%M:%S'`"
-    git config --global user.name "LeroyBy HA Automated"
     git push -u origin main
         echo " "
         echo "Files pushed to GitHub"
@@ -75,7 +86,7 @@ do
         echo "Do You Want to perform another Task?"
         echo " "
         echo "1) Yes"
-        echo "2) No"
+        echo "x) No"
         echo " "
         read answer
 

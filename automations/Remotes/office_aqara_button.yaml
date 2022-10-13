@@ -1,0 +1,41 @@
+######################################################################################################
+# @USER1by
+# Original Repo : https://github.com/USER1by/Homeassistant
+# Automation Office Aqara Button 
+######################################################################################################
+- alias: Office Button Lights 
+  trigger:
+    platform: state
+    entity_id: sensor.aqara_button_office_action
+    to: 'single' 
+  condition: []
+  action:
+    service: script.office_light
+
+- alias: Office Button Switch PC 
+  trigger:
+    platform: state
+    entity_id: sensor.aqara_button_office_action
+    to: 'double' 
+  condition: []
+  action:
+    service: service.office_switch_pc
+
+- alias: Office Button Switch Xbox 
+  trigger:
+    platform: state
+    entity_id: sensor.aqara_button_office_action
+    to: 'triple' 
+  condition: []
+  action:
+    service: service.office_switch_xbox
+
+
+- alias: office total off remote
+  trigger:
+    platform: state
+    entity_id: sensor.aqara_button_office_action
+    to: 'hold' 
+  condition: []
+  action:
+    service: service.office_off

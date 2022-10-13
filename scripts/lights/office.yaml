@@ -4,7 +4,7 @@
 # Script Lights Office
 ######################################################################################################
 normal_lights_office:
-  alias: Set normal lights in the office
+  alias: "Set normal lights in the office"
   mode: parallel
   sequence:
     - service: input_select.select_option

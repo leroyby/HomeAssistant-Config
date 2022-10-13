@@ -4,7 +4,7 @@
 # Script Lights Livingroom
 ######################################################################################################
 cozy_lights_living_room:
-  alias: Set cozy lights in the living room
+  alias: "Set cozy lights in the living room"
   mode: parallel
   sequence:
     - data:

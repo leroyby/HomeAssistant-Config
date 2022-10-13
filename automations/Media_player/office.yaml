@@ -19,13 +19,3 @@
   - service: input_boolean.turn_on
     target:
       entity_id: input_boolean.gaming_mode
-
-- alias: Start Xbox
-  trigger:
-    platform: state
-    entity_id: sensor.aqara_button_office_action
-    to: 'double' 
-  condition:
-  action:
-  - service: switch.toggle
-    entity_id: switch.office_xbox
