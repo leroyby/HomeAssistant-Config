@@ -1,6 +1,6 @@
 ######################################################################################################
-# @USER1by
-# Original Repo : https://github.com/USER1by/Homeassistant-Config
+# @Leroyby
+# Original Repo : https://github.com/Leroyby/Homeassistant-Config
 # binary sensors
 ######################################################################################################
 - platform: template
@@ -70,7 +70,7 @@
     no_one_home:
       friendly_name: No one is home
       value_template: >
-        {{ not is_state("person.USER1", "home")
+        {{ not is_state("person.leroy", "home")
             and not is_state("person.USER2", "home") }}
 
 - platform: workday

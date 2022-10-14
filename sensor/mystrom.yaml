@@ -1,6 +1,6 @@
 ######################################################################################################
-# @USER1by
-# Original Repo : https://github.com/USER1by/Homeassistant-Config
+# @Leroyby
+# Original Repo : https://github.com/Leroyby/Homeassistant-Config
 # Definition of myStrom via REST to get Power consumtion and reported temperature-Config
 ######################################################################################################
   - platform: rest

@@ -1,6 +1,6 @@
 ######################################################################################################
-# @USER1by
-# Original Repo : https://github.com/USER1by/Homeassistant-Config
+# @Leroyby
+# Original Repo : https://github.com/Leroyby/Homeassistant-Config
 # Script Going to Sleep
 ######################################################################################################
 going_to_sleep:
@@ -15,7 +15,5 @@ going_to_sleep:
         entity_id: input_select.sleep_mode
       data:
         option: "total"
-    - service: switch.turn_off
-      taget: switch.night
       
        
