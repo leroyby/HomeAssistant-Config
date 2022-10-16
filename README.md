@@ -1,5 +1,5 @@
 [![GitHub last commit](https://img.shields.io/github/last-commit/leroyby/homeassistant-config?style=flat)](https://github.com/leroyby/HomeAssistant-Config/commits/main)
-[![HA Version](https://img.shields.io/badge/Running%20Home%20Assistant-2022.10.3%20-darkblue)](https://github.com/home-assistant/home-assistant/releases/latest)
+[![HA Version](https://img.shields.io/badge/Running%20Home%20Assistant-2022.10.4%20-darkblue)](https://github.com/home-assistant/home-assistant/releases/latest)
 
 # <a name="table">Table of Contents </a>
    * [Home Assistant configuration](#home-assistant-configuration-overview)
@@ -138,11 +138,11 @@ At this point also a big thanks to the whole home assistant community and especa
 ## <a name="statistics">Statistics (as in October 2022)</a>
 | Component  | Count | Component  | Count |
 | ------------- | :---: | ------------- | :---: |
-| Automations | 25 | Scripts | 11 |
-| Zones | 1 | Device Trackers | 19 |
-| Switches | 27 | | Sensors | 140 | 
-| Binary Sensors | 30 |Input Booleans | 8 |
-| Input Numbers | 0 | Input Text | 1 |
+| Automations | 27 | Scripts | 14 |
+| Zones | 1 | Device Trackers | 10 |
+| Switches | 25 | Sensors | 136 | 
+| Binary Sensors | 31 |Input Booleans | 8 |
+| Input Numbers | 0 | Input Text | 2 |
 | Input Selects | 4 | Input Datetime | 1 |
 ---
 | [Go to Table of Contents](#table) | [Affiliate Disclosure](https://github.com/leroyby/Homeassistant/blob/main/affiliate_disclosure.md) |

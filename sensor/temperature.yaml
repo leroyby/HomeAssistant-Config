@@ -19,7 +19,7 @@
   - platform: average
     name: 'Temperature Livingroom Average'
     entities:
-      - sensor.temperature_livingroom
+      - sensor.temperature_livingroom_temperature
       - sensor.temperature_kitchen
 
   - platform: rest
