@@ -1,7 +1,7 @@
 ######################################################################################################
 # @Leroyby
 # Original Repo : https://github.com/Leroyby/Homeassistant-Config
-# Script Office off
+# Script Home & Away Mode
 ######################################################################################################
 arriving:
   alias: Coming home
@@ -17,6 +17,7 @@ arriving:
       - input_select.sleep_mode
       data:
         option: "total"
+
 leaving:
   alias: Leaving Home
   mode: parallel
@@ -31,3 +32,4 @@ leaving:
       - input_select.sleep_mode
       data:
         option: "total"
+  - service: script.turn_off_everything

@@ -51,3 +51,19 @@ normal_lights_living_room:
       data:
         option: script_normal_lights_living_room
 
+tv_lights_living_room:
+  alias: "Set tv lights in the living room"
+  mode: parallel
+  sequence:
+    - data:
+        entity_id: light.livingroom_sofa
+        brightness_pct: 50
+        color_temp: 450 
+      service: light.turn_on
+    - data:
+        entity_id: light.livingroom_table
+        brightness_pct: 50
+        color_temp: 450 
+      service: light.turn_on
+    - service: light.turn_off
+      entity_id: light.livingroom_tv

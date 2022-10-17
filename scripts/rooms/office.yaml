@@ -3,7 +3,6 @@
 # Original Repo : https://github.com/Leroyby/Homeassistant-Config
 # Scripts Office
 ######################################################################################################
-
 office_light:
   alias: "Office Lights Toggle"
   mode: parallel
@@ -13,18 +12,12 @@ office_light:
       target:
         entity_id: light.office_lights
 
-office_switch_pc:
-  alias: "Office Switch PC Toggle"
-  mode: parallel
+office_off:
+  alias: "Turn office off"
   sequence:
-    service: switch.toggle
-    target:
-      entity_id: switch.office_pc
-
-office_switch_xbox:
-  alias: "Office Switch Xbox Toggle"
-  mode: parallel
-  sequence:
-    service: switch.toggle
-    target:
-      entity_id: switch.office_xbox
+    - service: switch.turn_off
+      data:
+        entity_id: switch.office_switches
+    - service: light.turn_off
+      data:
+        entity_id: light.office_lights

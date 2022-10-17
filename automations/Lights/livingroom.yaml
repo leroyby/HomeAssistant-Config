@@ -15,22 +15,6 @@
       entity_id: 
       - light.livingroom_tv
 
-- alias: Livingroom Light On Motion
-  trigger:
-    platform: state
-    entity_id: binary_sensor.activity_in_livingroom
-    to: 'on'
-  condition: not
-  conditions:
-    - condition: state
-      entity_id: media_player.lg_webos_smart_tv
-      state: "on"
-  action:
-  - service: light.turn_on
-    target:
-      entity_id: 
-      - light.living_room_lights
-
 - alias: Livingroom Light off after Motion
   trigger:
     platform: state
@@ -41,7 +25,7 @@
   - service: light.turn_off
     target:
       entity_id: 
-      - light.living_room_lights
+      - light.livingroom_motion_lights
 
 - alias: Livingroom Light on after Motion
   trigger:
@@ -53,4 +37,4 @@
   - service: light.turn_on
     target:
       entity_id: 
-      - light.living_room_lights
+      - light.livingroom_motion_lights

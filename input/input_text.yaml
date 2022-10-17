@@ -3,9 +3,9 @@
 # Original Repo : https://github.com/Leroyby/Homeassistant-Config
 # Input Texts
 ######################################################################################################
-  text1:
-    name: Text 1
-    initial: Some Text
+  bedroom_ikea_button:
+    name: bedroom_ikea_button
+    initial: bedroom_ikea_button
   remote_bedroom_action_text:
     name: Remote Bedroom action text
     initial: Text

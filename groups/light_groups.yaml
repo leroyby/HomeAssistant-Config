@@ -31,9 +31,16 @@
     - light.decke_l3
     
 - platform: group
-  name: Livingroom lights
+  name: Living_room_lights
   unique_id: 2210062344
   entities:
     - light.livingroom_sofa
     - light.livingroom_table
     - light.livingroom_tv
+
+- platform: group
+  name: Living_room_motion_lights
+  unique_id: 2210162058
+  entities:
+    - light.livingroom_sofa
+    - light.livingroom_table

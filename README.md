@@ -93,14 +93,13 @@ At this point also a big thanks to the whole home assistant community and especa
 | TRÅDFRI Wireless 5-Button Remote| - | 1 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)|-| integrated |
 |[TRÅDFRI Shortcut button](https://www.ikea.com/ch/en/p/tradfri-shortcut-button-white-smart-40356381/)| - | 1 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)|-| integrated |
 |[Aquara Wi-Fi Mini Switch](https://www.aqara.com/eu/Wi-Fi_mini_switch.html)| [Amazon](https://amzn.to/3SbrK3L) | 1 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)|-| integrated |
+|[Tuya 4-Gang Switch](https://solution.tuya.com/projects/CMa4ie3gzka6ns| [-]() | 1 | TBA |[TBA]()|-| ordered for testing |
 
 ### <a name="Vacuum">Vacuum</a>
 | [Go to Menu](#menu) |
 | Device  | Amazon Link | Quantity | Connection | Home Assistant | Notes | Status |
 | ------------- | :---: | :---: | ------------- | ------------- | ------------- | ------------- |
 | iRobot Roomba 976 | [Roomba](https://amzn.to/3xKQVBZ) | 1 | Wi-Fi |[iRobot](https://www.home-assistant.io/integrations/roomba/) | - |integrated|
-
-
 
 ### <a name="various">Various</a>
 | [Go to Menu](#menu) |

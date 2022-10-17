@@ -11,6 +11,7 @@
     - switch.office_pc
     - switch.office_xbox
     - switch.kitchen
+    
  ##  OFFICE
 - platform: group
   name: Office Switches
