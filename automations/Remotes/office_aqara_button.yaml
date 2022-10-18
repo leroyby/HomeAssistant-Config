@@ -25,7 +25,6 @@
 
 # not working as intendet
 # Zigbee2MQTT doenst get tripple click on button
-
 - alias: Office Button Switch Xbox 
   trigger:
     platform: state

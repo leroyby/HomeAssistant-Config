@@ -6,13 +6,12 @@
 
 - platform: group
   name: All Lights 
-  unique_id: 2210062341
+  unique_id: 2210171730
   entities:
+    - light.office_lights
     - light.bedroom_lights
-    - light.living_room_lights
-    - light.office_wiz_lights_ceiling
+    - light.Living_room_lights
     - light.bad_klein
-    - light.livingroom_deckenfluter_Tv
     
 - platform: group
   name: Office_Lights

@@ -22,8 +22,7 @@
     someone_in_the_house_in_last_hour:
       friendly_name: Someone in the house in the last hour
       value_template: >
-        {{ is_state("binary_sensor.motion_detected_in_last_hour", "on")
-            or is_state("group.persons", "home") }}
+        {{ is_state("binary_sensor.motion_detected_in_last_hour", "on") }}
 
     activity_in_livingroom:
       friendly_name: Activity in the living room
@@ -35,7 +34,7 @@
     activity_in_kitchen:
       friendly_name: Activity in the kitchen
       value_template: >
-        {{ is_state("binary_sensor.motion_sensor_kitchen", "on") }}
+        {{ is_state("binary_sensor.motion_livingroom_occupancy", "on") }}
       delay_off: "00:01:00"
 
     activity_in_office:

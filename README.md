@@ -9,7 +9,9 @@
    * [Statistics](#Statistics)
    
 ## Home Assistant configuration overview
-This is my personal Documentation for my Home Assistant setup. The setup is running on a raspberry pi with a ConBee II stick (Zigbee). More details under[Hardware](#hardware). Each directory has a short readme explaining what's in there, and the purpose of each file or group of files.
+This is my personal Documentation for my Home Assistant setup. The setup is running on a raspberry pi with a ConBee II stick (Zigbee). More details under[Hardware](#hardware). Each directory has a short readme explaining what's in there, and the purpose of each file or group of files. I try to kee [Home Assistant](https://github.com/home-assistant/core) on the [latest release](https://github.com/home-assistant/core/releases). 
+
+For beginners my tipps are to start with the GUI and get everything done there and if you reach the limits with GUI switch to the YAML-Files. Me on my side I try to do most things without the GUI.
 
 Feel free to get inspired or copy some code from me!
 

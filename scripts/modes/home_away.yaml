@@ -4,32 +4,20 @@
 # Script Home & Away Mode
 ######################################################################################################
 arriving:
-  alias: Coming home
+  alias: "Arriving Home"
   mode: parallel
   sequence:
-  - service: input_boolean.turn_off
-    target:
-      entity_id: 
-      - input_boolean.night_mode
-  - service: input_select.select_option
-    target:
-      entity_id:
-      - input_select.sleep_mode
-      data:
-        option: "total"
+    - alias: "Turn Off all Lights"
+      service: light.turn_off
+      target:
+        entity_id: light.all_lights
+
 
 leaving:
-  alias: Leaving Home
+  alias: "Leaving Home"
   mode: parallel
   sequence:
-  - service: input_boolean.turn_off
-    target:
-      entity_id: 
-      - input_boolean.night_mode
-  - service: input_select.select_option
-    target:
-      entity_id:
-      - input_select.sleep_mode
-      data:
-        option: "total"
-  - service: script.turn_off_everything
+    - alias: "Turn Off all Lights"
+      service: light.turn_off
+      target:
+        entity_id: light.all_lights
