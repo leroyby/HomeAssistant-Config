@@ -3,3 +3,27 @@
 # Original Repo : https://github.com/Leroyby/Homeassistant-Config
 # Automations Mediaplayer Livingroom
 ######################################################################################################
+
+- alias: start timer TV Livingroom
+  trigger:
+    platform: state
+    entity_id: media_player.lg_webos_tv_a4ab
+    to: 'off'
+  condition: 
+  action:
+  - service: timer.start
+    target:
+      entity_id: timer.livingroom_tv
+
+- alias: "Timerstop"
+  id: "Timerstop"
+  trigger:
+  - platform: event
+    event_type: timer.finished
+    event_data:
+      entity_id: timer.livingroom_tv
+  action:
+  - service: switch.turn_off
+    target:
+      entity_id: 
+      - switch.livingroom_tv

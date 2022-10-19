@@ -29,8 +29,10 @@ homeassistant:
   packages: !include_dir_named packages
 light: !include groups/light_groups.yaml
 script: !include_dir_merge_named scripts
+timer: !include_dir_merge_named timers
 #device_tracker: !include_dir_merge_named 
 wake_on_lan:
 
 #PowerCal
 powercalc:
+
