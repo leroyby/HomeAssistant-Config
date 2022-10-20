@@ -12,12 +12,11 @@
    * [Hardware](#hardware)
    * [Useful links](#useful-links)
    * [My naming convention](https://github.com/leroyby/Homeassistant/blob/main/naming_convention.md)
-   * [Statistics about my SmartHome](#Statistics)
    
 ## Home Assistant configuration overview
-This is my personal Documentation for my Home Assistant setup. The setup is running on a raspberry pi with a ConBee II stick (Zigbee). More details under[Hardware](#hardware). Each directory has a short readme explaining what's in there, and the purpose of each file or group of files. I try to kee [Home Assistant](https://github.com/home-assistant/core) on the [latest release](https://github.com/home-assistant/core/releases). 
+This is my personal Documentation for my Home Assistant setup. The setup is running on a raspberry pi with a ConBee II stick (Zigbee). More details under[Hardware](#hardware). Each directory has a short readme explaining what's in there, and the purpose of each file or group of files. I try to keep [Home Assistant](https://github.com/home-assistant/core) on the [latest release](https://github.com/home-assistant/core/releases). 
 
-For beginners my tipps are to start with the GUI and get everything done there and if you reach the limits with GUI switch to the YAML-Files. Me on my side I try to do most things without the GUI.
+If you start with HA, start with the GUI and get everything done there and if you reach the limits with GUI switch to the YAML-Files. Me on my side I try to do most things without the GUI.
 
 Feel free to get inspired or copy some code from me!
 
@@ -29,14 +28,10 @@ Please consider the following points:
 At this point also a big thanks to the whole home assistant community and especally to [CCOSTAN](https://github.com/CCOSTAN/), [Frenck](https://github.com/frenck/), [geekofweek](https://github.com/geekofweek/) and [basnijholt](https://github.com/basnijholt) for some of the ideas (including how to document on github). Make sure to check them out!
 
 ### <a name="statistics">Statistics (as in October 2022)</a>
-| Component  | Count | Component  | Count |
-| ------------- | :---: | ------------- | :---: |
-| Automations | 24 | Scripts | 17 |
-| Zones | 1 | Device Trackers | 10 |
-| Switches | 25 | Sensors | 146 | 
-| Binary Sensors | 32 |Input Booleans | 9 |
-| Input Numbers | 0 | Input Text | 3 |
-| Input Selects | 4 | Input Datetime | 1 |
+# Repository statistics
+| Sensors| Binary Sensors | Switches  | Automations | Scripts |
+| :--: | :--: | :--: | :--: | :--: |
+| 148 | 32 | 25 | 23 | 17 |
 
 ###  <a name="History">History</a>
 Started in 2014 with the [Tradfri Gateway](https://www.ikea.com/ch/en/search/products/?q=tradfri) (with 3 White spectrum bulbs) and with the [myStrom Switches](https://mystrom.ch/). Added a LED-Strip from China to the setup and started tinkering with HA. But not for very long. During this time I tested also Apple HomeKit, but I was never really statisfied. 2022 I got some time and started again with HA and now here we are... 
@@ -52,6 +47,7 @@ Thinking about adding Google Voice Assistant to my HA-Setup.
 
 ### <a name="screen">Screen control</a>
 Will be adding a wall tablet soon.
+[GUI-YAML-File](https://github.com/leroyby/HomeAssistant-Config/blob/main/ui-lovelace.yaml)
 
 ## <a name="menu">Menu Hardware</a>
 | [Components](#components)| [Hubs](#hubs) | [Lighting](#Lights) | [Outlets & Switches](#outlets)| [Locks](#locks) | [Media](#media) | [Remotes](#remotes) | [Sensors](#sensors) | [Vacuum](#vacuum) | [Statistics](#statistics) | [Various](#various) | [Go to Table of Contents](#table) |

@@ -33,6 +33,7 @@ script: !include_dir_merge_named scripts
 timer: !include_dir_merge_named timers
 #device_tracker: !include_dir_merge_named 
 readme:
+  convert_lovelace: true
 #PowerCal
 powercalc:
 
