@@ -7,17 +7,12 @@ arriving:
   alias: "Arriving Home"
   mode: parallel
   sequence:
-    - alias: "Turn Off all Lights"
-      service: light.turn_off
-      target:
-        entity_id: light.all_lights
-
 
 leaving:
   alias: "Leaving Home"
   mode: parallel
   sequence:
-    - alias: "Turn Off all Lights"
-      service: light.turn_off
+    - alias: "set away mode"
+      service: input_boolean.turn_on
       target:
-        entity_id: light.all_lights
+        entity_id: input_boolean.away_mode

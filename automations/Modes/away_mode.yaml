@@ -10,9 +10,7 @@
       entity_id: 
       - input_boolean.away_mode
       to: 'on'
-
   condition: []
-
   action:
   - service: input_boolean.turn_off
     target:

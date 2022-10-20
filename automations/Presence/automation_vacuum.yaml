@@ -26,7 +26,7 @@
 - alias: reset vacuum_ran
   trigger:
     - platform: time
-      at: "22:00:00"
+      at: "23:00:00"
   condition:
   action:
   - service: input_boolean.turn_off

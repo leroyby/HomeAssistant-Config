@@ -27,3 +27,14 @@
     target:
       entity_id: 
       - switch.livingroom_tv
+
+- alias: restart timer TV Livingroom
+  trigger:
+    platform: state
+    entity_id: media_player.lg_webos_tv_a4ab
+    to: 'on'
+  condition: 
+  action:
+  - service: timer.reload
+    target:
+      entity_id: timer.livingroom_tv

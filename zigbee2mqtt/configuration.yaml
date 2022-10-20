@@ -28,6 +28,8 @@ devices:
     friendly_name: temperature_livingroom_tv
   '0x000b57fffe3126b6':
     friendly_name: remote_bedroom
+  '0x00158d0007ec9426':
+    friendly_name: Vibration_1
 advanced:
   log_level: info
 shell_command:

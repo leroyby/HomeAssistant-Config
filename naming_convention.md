@@ -4,10 +4,10 @@
 
 # Overview
 Look up the naming I use for my whole system
-Version 0.1.1
+Version 0.1.2
 
 # <a name="menu">Menu</a>
-| [Home](https://github.com/leroyby/Homeassistant-Config) | [Issues](https://github.com/leroyby/Homeassistant/issues) |
+| [Home](https://github.com/leroyby/Homeassistant-Config) |
 
 ## Actors / Lights
 | Room | Location | Number | Example with domain|
@@ -25,6 +25,14 @@ Version 0.1.1
 |Temperature|Office|1| sensor.temperature_office_1|
 |Temperature|Office|2| sensor.temperature_office_2|
 |Power|Office|1| sensor.power_office_1|
+
+## Remotes
+| Type | Room | Number | Example with domain|
+| ------------- | ------------- | :---: |-------------|
+|Button|Bedroom || sensor.button_bedroom|
+|Switchbutton|Livingroom || sensor.switchbutton_livingroom|
+|Remote|Livingroom||sensor.remote_livingroom|
+
 ---
 | [Go to Menu](#menu) |
 
