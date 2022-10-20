@@ -43,3 +43,8 @@
   entities:
     - light.livingroom_sofa
     - light.livingroom_table
+
+- platform: group
+  name: toilet_Lights 
+  entities:
+    - light.bad_klein

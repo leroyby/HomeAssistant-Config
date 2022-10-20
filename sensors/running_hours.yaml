@@ -1,0 +1,15 @@
+    
+######################################################################################################
+# @Leroyby
+# Original Repo : https://github.com/Leroyby/Homeassistant-Config
+# Sensor running hours 
+######################################################################################################
+    lights_on_total_hours:
+      unit_of_measurement: h
+      value_template: >
+        {{ states('sensor.hours_bedroom_lights_have_been_on_last_7_days')|float * 7
+            + states('sensor.hours_living_room_lights_have_been_on_last_7_days')|float * 5
+            + states('sensor.hours_toilet_light_has_been_on_last_7_days')|float * 1
+            + states('sensor.hours_bathroom_light_has_been_on_last_7_days')|float * 1
+            + states('sensor.hours_kitchen_lights_have_been_on_last_7_days')|float * 2
+            + states('sensor.hours_bathroom_light_has_been_on_last_7_days')|float * 1 }}

@@ -3,7 +3,7 @@
 # Original Repo : https://github.com/Leroyby/Homeassistant-Config
 # Automation Lights Livingroom
 ######################################################################################################
-- alias: Livingroom Floor Light Off during TV
+- alias: Light Livingroom Floor Off during TV
   trigger:
     platform: state
     entity_id: media_player.lg_webos_smart_tv
@@ -15,7 +15,7 @@
       entity_id: 
       - light.livingroom_tv
 
-- alias: Livingroom Light off after Motion
+- alias: Light Livingroom off after Motion
   trigger:
     platform: state
     entity_id: binary_sensor.activity_in_livingroom
@@ -27,7 +27,7 @@
       entity_id: 
       - light.livingroom_motion_lights
 
-- alias: Livingroom Light on after Motion
+- alias: Light Livingroom on after Motion
   trigger:
     platform: state
     entity_id: binary_sensor.activity_in_livingroom

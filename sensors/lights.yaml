@@ -1,0 +1,41 @@
+######################################################################################################
+# @Leroyby
+# Original Repo : https://github.com/Leroyby/Homeassistant-Config
+# Sensors for Lights
+######################################################################################################
+  - platform: history_stats
+    name: "Hours bedroom lights have been on last 7 days"
+    entity_id: light.bedroom_lights
+    state: 'on'
+    type: time
+    end: "{{ now() }}"
+    duration:
+      days: 7
+
+
+  - platform: history_stats
+    name: Hours livingroom lights have been on last 7 days
+    entity_id: light.living_room_lights
+    state: "on"
+    type: time
+    duration:
+      days: 7
+    end: "{{ now() }}"
+
+  - platform: history_stats
+    name: Hours office lights have been on last 7 days
+    entity_id: light.office_lights
+    state: "on"
+    type: time
+    duration:
+      days: 7
+    end: "{{ now() }}"
+
+  - platform: history_stats
+    name: Hours toilet lights have been on last 7 days
+    entity_id: light.toilet_lights
+    state: "on"
+    type: time
+    duration:
+      days: 7
+    end: "{{ now() }}"

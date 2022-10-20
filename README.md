@@ -3,15 +3,18 @@
 
 # <a name="table">Table of Contents - Index </a>
    * [Home Assistant configuration](#home-assistant-configuration-overview)
+      * [Statistics](#statistics)
       * [History](#History)
-   * [How is the SmartHome controlled](#controll)
+   * [How is the SmartHome controlled](#control)
+      * [Physical](#physical-control)
+      * [Voice](#voice-control)
+      * [Screen](#screen-control)
    * [Hardware](#hardware)
    * [Useful links](#useful-links)
    * [My naming convention](https://github.com/leroyby/Homeassistant/blob/main/naming_convention.md)
    * [Statistics about my SmartHome](#Statistics)
    
 ## Home Assistant configuration overview
-| [Go to Table of Contents](#table) |
 This is my personal Documentation for my Home Assistant setup. The setup is running on a raspberry pi with a ConBee II stick (Zigbee). More details under[Hardware](#hardware). Each directory has a short readme explaining what's in there, and the purpose of each file or group of files. I try to kee [Home Assistant](https://github.com/home-assistant/core) on the [latest release](https://github.com/home-assistant/core/releases). 
 
 For beginners my tipps are to start with the GUI and get everything done there and if you reach the limits with GUI switch to the YAML-Files. Me on my side I try to do most things without the GUI.
@@ -25,15 +28,33 @@ Please consider the following points:
 
 At this point also a big thanks to the whole home assistant community and especally to [CCOSTAN](https://github.com/CCOSTAN/), [Frenck](https://github.com/frenck/), [geekofweek](https://github.com/geekofweek/) and [basnijholt](https://github.com/basnijholt) for some of the ideas (including how to document on github). Make sure to check them out!
 
-###  <a name="History">History</a>
+### <a name="statistics">Statistics (as in October 2022)</a>
+| Component  | Count | Component  | Count |
+| ------------- | :---: | ------------- | :---: |
+| Automations | 30 | Scripts | 17 |
+| Zones | 1 | Device Trackers | 10 |
+| Switches | 25 | Sensors | 144 | 
+| Binary Sensors | 32 |Input Booleans | 9 |
+| Input Numbers | 0 | Input Text | 3 |
+| Input Selects | 4 | Input Datetime | 1 |
 
+###  <a name="History">History</a>
 Started in 2014 with the [Tradfri Gateway](https://www.ikea.com/ch/en/search/products/?q=tradfri) (with 3 White spectrum bulbs) and with the [myStrom Switches](https://mystrom.ch/). Added a LED-Strip from China to the setup and started tinkering with HA. But not for very long. During this time I tested also Apple HomeKit, but I was never really statisfied. 2022 I got some time and started again with HA and now here we are... 
 
-## <a name="controll">SmartHome Controll</a>
-Many things are automated, you'll find them under the [Automations-Section][https://github.com/leroyby/HomeAssistant-Config/tree/main/automations]. Physical controlled is provided with remotes and buttons (with [automations](https://github.com/leroyby/HomeAssistant-Config/tree/main/automations) and [scripts]https://github.com/leroyby/HomeAssistant-Config/tree/main/script)). And the last variant is via [Webinterface](https://github.com/leroyby/HomeAssistant-Config/blob/main/lovalace-ui.yaml).
+## <a name="control">SmartHome control</a>
+Many things are automated, you'll find them under the [Automations-Section](https://github.com/leroyby/HomeAssistant-Config/tree/main/automations). Physical controlled is provided with remotes and buttons (with [automations](https://github.com/leroyby/HomeAssistant-Config/tree/main/automations) and [scripts](https://github.com/leroyby/HomeAssistant-Config/tree/main/script)). And the last variant is via [Webinterface](https://github.com/leroyby/HomeAssistant-Config/blob/main/lovalace-ui.yaml).
+
+### <a name="physical">Physical control</a>
+See list of [Remotes](#remotes).
+
+### <a name="voice">Voice control</a>
+Thinking about addind Google Voice Assistant to my HA-Setup.
+
+### <a name="screen">Screen control</a>
+Will be adding a wall tablet soon.
 
 ## <a name="menu">Menu Hardware</a>
-| [Components](#components)| [Hubs](#hubs) | [Lighting](#Lights) | [Outlets & Switches](#outlets)| [Locks](#locks) | [Media](#media) | [Sensors](#sensors) | [Vacuum](#vacuum) | [Statistics](#statistics) | [Various](#various) | [Go to Table of Contents](#table) |
+| [Components](#components)| [Hubs](#hubs) | [Lighting](#Lights) | [Outlets & Switches](#outlets)| [Locks](#locks) | [Media](#media) | [Remotes](#remotes) | [Sensors](#sensors) | [Vacuum](#vacuum) | [Statistics](#statistics) | [Various](#various) | [Go to Table of Contents](#table) |
 
 ## Hardware
 [Go to Table of Contents](#table)
@@ -45,6 +66,7 @@ Many things are automated, you'll find them under the [Automations-Section][http
 | [Phosscon ConBee II](https://phoscon.de/de/conbee2) | [Amazon](https://amzn.to/3rseX15) | 1 | USB | - | Zigbee Adapter for Home Assistant | integrated |
 
 ### <a name="hubs">Hubs</a>
+| [Go to Menu](#menu) |
 | Device  | Amazon Link | Quantity | Connection | Home Assistant | Notes | Status |
 | ------------- | :---: | :---: | ------------- | ------------- | ------------- | ------------- |
 | [TRÅDFRI Gateway V1](https://www.ikea.com/ch/de/p/tradfri-gateway-weiss-40337806)| - | 1 | Ethernet|[IKEA TRÅDFRI](https://www.home-assistant.io/integrations/tradfri) | V1, because V2 is comming soon (late 2022) / userd for integration of TRÅDFRI lights. Maybe will be renewd with the new [Dirigera Hub](https://about.ikea.com/en/newsroom/2022/05/25/ikea-launches-dirigera-the-matter-ready-hub-for-smart-products-and-a-new-ikea-home-smart-app) |integrated|
@@ -121,21 +143,12 @@ Many things are automated, you'll find them under the [Automations-Section][http
 | Ender 3 3D-Printer | [Ender 3](https://amzn.to/3xP8Wz3) | 1 | Wi-Fi (via OctoPrint) | [OctoPrint](https://www.home-assistant.io/integrations/octoprint/) | used for printing gadgets, mainly holder etc | integrated|
 | Visual Studio Code | - | 1 | - | - | used for editing .yaml or .md Files | - |
 
-# <a name="Useful-links">Useful Links</a>
+## <a name="Useful-links">Useful Links</a>
 | Type  | Link |
 | ------------- |  ------------- |
 | Website | [HA-Documentation](https://www.home-assistant.io/docs/)|
 | Website | [HA-Integrations](https://www.home-assistant.io/integrations/)
 | Github-Repository | [Frenck's Config](https://github.com/frenck/home-assistant-config) |
 
-## <a name="statistics">Statistics (as in October 2022)</a>
-| Component  | Count | Component  | Count |
-| ------------- | :---: | ------------- | :---: |
-| Automations | 30 | Scripts | 17 |
-| Zones | 1 | Device Trackers | 10 |
-| Switches | 25 | Sensors | 144 | 
-| Binary Sensors | 32 |Input Booleans | 9 |
-| Input Numbers | 0 | Input Text | 3 |
-| Input Selects | 4 | Input Datetime | 1 |
 ---
 | [Go to Table of Contents](#table) | [Affiliate Disclosure](https://github.com/leroyby/Homeassistant/blob/main/affiliate_disclosure.md) |

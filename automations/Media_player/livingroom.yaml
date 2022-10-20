@@ -4,7 +4,7 @@
 # Automations Mediaplayer Livingroom
 ######################################################################################################
 
-- alias: start timer TV Livingroom
+- alias: Media_Player start timer TV Livingroom
   trigger:
     platform: state
     entity_id: media_player.lg_webos_tv_a4ab
@@ -28,7 +28,7 @@
       entity_id: 
       - switch.livingroom_tv
 
-- alias: restart timer TV Livingroom
+- alias: Media_Player restart timer TV Livingroom
   trigger:
     platform: state
     entity_id: media_player.lg_webos_tv_a4ab

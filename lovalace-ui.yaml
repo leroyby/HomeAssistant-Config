@@ -541,8 +541,8 @@ views:
         title: Activity in the house
         type: entities
       - entities:
-          - entity: binary_sensor.vibration
-          - entity: sensor.vibration_battery_level
+          - entity: binary_sensor.0x00158d0007ec9426_vibration
+          - entity: sensor.vibration_1_battery
         title: Vibration sensors
         type: glance
       - columns: 3
@@ -633,11 +633,11 @@ views:
             name: Living room lights
             secondary: >-
               Been on {{
-              (states('sensor.hours_living_room_lights_have_been_on_last_7_days')|float
+              (states('sensor.hours_livingroom_lights_have_been_on_last_7_days')|float
               / (7*24) * 100) | round(2) }}% during last 7 days. 
             state: >-
               {{
-              states("sensor.hours_living_room_lights_have_been_on_last_7_days")
+              states("sensor.hours_livingroom_lights_have_been_on_last_7_days")
               }} h
             type: custom:template-entity-row
           - entity: sensor.hours_toilet_light_has_been_on_last_7_days
@@ -653,57 +653,11 @@ views:
             type: custom:template-entity-row
           - entity: sensor.hours_bathroom_light_has_been_on_last_7_days
             icon: mdi:clock
-            name: Bathroom
+            name: Office
             secondary: >-
               Been on {{
               (states('sensor.hours_bathroom_light_has_been_on_last_7_days')|float
               / (7*24) * 100) | round(2) }}% during last 7 days. 
-            state: >-
-              {{ states("sensor.hours_bathroom_light_has_been_on_last_7_days")
-              }} h
-            type: custom:template-entity-row
-          - entity: sensor.hours_kitchen_lights_have_been_on_last_7_days
-            icon: mdi:clock
-            name: Kitchen lights
-            secondary: >-
-              Been on {{
-              (states('sensor.hours_kitchen_lights_have_been_on_last_7_days')|float
-              / (7*24) * 100) | round(2) }}% during last 7 days. 
-            state: >-
-              {{ states("sensor.hours_kitchen_lights_have_been_on_last_7_days")
-              }} h
-            type: custom:template-entity-row
-          - entity: sensor.hours_hall_lights_have_been_on_last_7_days
-            icon: mdi:clock
-            name: Hall lights
-            secondary: >-
-              Been on {{
-              (states('sensor.hours_hall_lights_have_been_on_last_7_days')|float
-              / (7*24) * 100) | round(2) }}% during last 7 days. 
-            state: >-
-              {{ states("sensor.hours_hall_lights_have_been_on_last_7_days") }}
-              h
-            type: custom:template-entity-row
-          - entity: sensor.hours_bathroom_light_has_been_on_last_7_days
-            icon: mdi:clock
-            name: Hall lights
-            secondary: >-
-              Been on {{
-              (states('sensor.hours_bathroom_light_has_been_on_last_7_days')|float
-              / (7*24) * 100) | round(2) }}% during last 7 days. 
-            state: >-
-              {{ states("sensor.hours_bathroom_light_has_been_on_last_7_days")
-              }} h
-            type: custom:template-entity-row
-          - type: divider
-          - entity: sensor.hours_bathroom_light_has_been_on_last_7_days
-            icon: mdi:clock
-            name: Total cost estimate for last 7 days
-            secondary: >-
-              Total is {{ states('sensor.lights_on_total_hours') | round(1) }}
-              hours, {{ states('sensor.lights_on_total_kwh') | round(1) }} kWh,
-              €{{ (states('sensor.lights_on_total_kwh')|float * 0.21) | round(2)
-              }}. 
             state: >-
               {{ states("sensor.hours_bathroom_light_has_been_on_last_7_days")
               }} h
@@ -733,28 +687,11 @@ views:
         show_header_toggle: false
         title: Inputs (automatically switched)
         type: entities
-      - entities:
-          - entity: sensor.kef_ls50_volume
-          - entity: sensor.tv_volume
-          - type: divider
-          - entity: sensor.kef_lsx_volume
-          - entity: input_select.lsx_volume
-        show_header_toggle: false
-        title: Volume sync
-        type: entities
-      - entities:
-          - entity: input_datetime.dishwasher_on
-          - entity: input_datetime.dishwasher_off
-          - entity: input_datetime.washing_machine_on
-          - entity: input_datetime.washing_machine_off
+      - entities: []
         show_header_toggle: false
         title: Datetimes
         type: entities
       - entities:
-          - entity: sensor.times_dishwasher_has_been_on_last_7_days
-          - entity: sensor.hours_dishwasher_has_been_on_last_7_days
-          - entity: sensor.times_washing_machine_has_been_on_last_7_days
-          - entity: sensor.hours_washing_machine_has_been_on_last_7_days
           - entity: sensor.times_tv_has_been_on_last_7_days
           - entity: sensor.hours_tv_has_been_on_last_7_days
         title: Stats
@@ -912,7 +849,7 @@ views:
             upper_bound: ~5500
             upper_bound_secondary: 100
         type: custom:swipe-card
-      - entity: media_player.xboxone
+      - entity: media_player.lbxbox
         type: media-control
       - entities:
           - entity: sensor.temperature_living_room
@@ -1054,7 +991,7 @@ views:
         type: custom:decluttering-card
         variables:
           - name: Climate
-          - slug: climate
+          - slug: Climate
       - template: automation_template
         type: custom:decluttering-card
         variables:
@@ -1104,7 +1041,7 @@ views:
         type: custom:decluttering-card
         variables:
           - name: Media player
-          - slug: media_player_
+          - slug: media_player
       - template: automation_template
         type: custom:decluttering-card
         variables:
@@ -1120,11 +1057,6 @@ views:
         variables:
           - name: Plant
           - slug: plant
-      - template: automation_template
-        type: custom:decluttering-card
-        variables:
-          - name: Rhasspy
-          - slug: rhasspy_
       - template: automation_template
         type: custom:decluttering-card
         variables:

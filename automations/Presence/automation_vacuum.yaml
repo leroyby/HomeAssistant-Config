@@ -3,7 +3,7 @@
 # Original Repo : https://github.com/Leroyby/Homeassistant
 # Vacuum
 ######################################################################################################
-- alias: start cleaning
+- alias: Vacuum start cleaning
   trigger:
     - platform: time_pattern
       #This will match every 15 minutes
@@ -23,7 +23,7 @@
       entity_id: input_boolean.vacuum_ran
 
 # Reset Vacum ran every evening
-- alias: reset vacuum_ran
+- alias: Vacuum reset vacuum_ran sensor
   trigger:
     - platform: time
       at: "23:00:00"
