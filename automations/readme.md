@@ -39,20 +39,19 @@ The Automations are sorted to a few subfolders
 | Gaming | [Gaming_Mode.yaml](https://github.com/leroyby/HomeAssistant-Config/blob/main/automations/Modes/gaming_mode.yaml) | OK |
 | Night | [Night_Mode.yaml](https://github.com/leroyby/HomeAssistant-Config/blob/main/automations/Modes/night_mode.yaml) | OK |
 | Normal | [Normal_Mode.yaml](https://github.com/leroyby/HomeAssistant-Config/blob/main/automations/Modes/normal_mode.yaml) | OK |
-| Work | [Work_Mode.yaml](https://github.com/leroyby/HomeAssistant-Config/blob/main/automations/Modes/work_mode.yaml | OK | 
+| Work | [Work_Mode.yaml](https://github.com/leroyby/HomeAssistant-Config/blob/main/automations/Modes/work_mode.yaml) | OK | 
 
 ## <a name="Presence">[Presence](https://github.com/leroyby/Homeassistant-Config/blob/main/automations/modes)</a>
 | [Go to Menu](#menu) |
-| Room |YAML-File| Status |
-| --- | --- | --- |
 - currently not used
 
 ## <a name="Remotes">[Remotes](https://github.com/leroyby/Homeassistant-Config/blob/main/automations/modes)</a>
 | [Go to Menu](#menu) |
 | Room |YAML-File| Status |
 | --- | --- | --- |
-| Office | [office_aqara_button.yaml](https://github.com/leroyby/HomeAssistant-Config/blob/main/automations/remotes/office_aqara_button.yaml) | OK |
-
+| Office | [office_aqara_button.yaml](https://github.com/leroyby/HomeAssistant-Config/blob/main/automations/Remotes/office_aqara_button.yaml) | OK |
+| Bedroom | [bedroom_ikea_button.yaml](https://github.com/leroyby/HomeAssistant-Config/blob/main/automations/Remotes/bedroom_ikea_button.yaml) | OK |
+| Livingroom | [livingroom_ikea_switch_tv.yaml](https://github.com/leroyby/HomeAssistant-Config/blob/main/automations/Remotes/livingroom_ikea_switch_tv.yaml) | OK |
 | [Go to Menu](#menu) | [Home](https://github.com/leroyby/HomeAssistant-Config) |
 
 

@@ -1,4 +1,4 @@
-[![GitHub last commit](https://img.shields.io/github/last-commit/leroyby/homeassistant-config?style=flat)](https://github.com/leroyby/HomeAssistant-Config/commits/main)
+[![GitHub last commit](https://img.shields.io/github/last-commit/leroyby/homeassistant-config?style=plasticr)](https://github.com/leroyby/HomeAssistant-Config/commits/main)
 [![HA Version](https://img.shields.io/badge/Running%20Home%20Assistant-2022.10.4%20-darkblue)](https://github.com/home-assistant/home-assistant/releases/latest)
 
 # <a name="table">Table of Contents - Index </a>
@@ -31,9 +31,9 @@ At this point also a big thanks to the whole home assistant community and especa
 ### <a name="statistics">Statistics (as in October 2022)</a>
 | Component  | Count | Component  | Count |
 | ------------- | :---: | ------------- | :---: |
-| Automations | 30 | Scripts | 17 |
+| Automations | 24 | Scripts | 17 |
 | Zones | 1 | Device Trackers | 10 |
-| Switches | 25 | Sensors | 144 | 
+| Switches | 25 | Sensors | 146 | 
 | Binary Sensors | 32 |Input Booleans | 9 |
 | Input Numbers | 0 | Input Text | 3 |
 | Input Selects | 4 | Input Datetime | 1 |
@@ -48,7 +48,7 @@ Many things are automated, you'll find them under the [Automations-Section](http
 See list of [Remotes](#remotes).
 
 ### <a name="voice">Voice control</a>
-Thinking about addind Google Voice Assistant to my HA-Setup.
+Thinking about adding Google Voice Assistant to my HA-Setup.
 
 ### <a name="screen">Screen control</a>
 Will be adding a wall tablet soon.
