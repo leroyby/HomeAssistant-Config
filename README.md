@@ -1,14 +1,17 @@
 [![GitHub last commit](https://img.shields.io/github/last-commit/leroyby/homeassistant-config?style=flat)](https://github.com/leroyby/HomeAssistant-Config/commits/main)
 [![HA Version](https://img.shields.io/badge/Running%20Home%20Assistant-2022.10.4%20-darkblue)](https://github.com/home-assistant/home-assistant/releases/latest)
 
-# <a name="table">Table of Contents </a>
+# <a name="table">Table of Contents - Index </a>
    * [Home Assistant configuration](#home-assistant-configuration-overview)
-      * [Hardware](#hardware)
+      * [History](#History)
+   * [How is the SmartHome controlled](#controll)
+   * [Hardware](#hardware)
    * [Useful links](#useful-links)
    * [My naming convention](https://github.com/leroyby/Homeassistant/blob/main/naming_convention.md)
-   * [Statistics](#Statistics)
+   * [Statistics about my SmartHome](#Statistics)
    
 ## Home Assistant configuration overview
+| [Go to Table of Contents](#table) |
 This is my personal Documentation for my Home Assistant setup. The setup is running on a raspberry pi with a ConBee II stick (Zigbee). More details under[Hardware](#hardware). Each directory has a short readme explaining what's in there, and the purpose of each file or group of files. I try to kee [Home Assistant](https://github.com/home-assistant/core) on the [latest release](https://github.com/home-assistant/core/releases). 
 
 For beginners my tipps are to start with the GUI and get everything done there and if you reach the limits with GUI switch to the YAML-Files. Me on my side I try to do most things without the GUI.
@@ -22,8 +25,15 @@ Please consider the following points:
 
 At this point also a big thanks to the whole home assistant community and especally to [CCOSTAN](https://github.com/CCOSTAN/), [Frenck](https://github.com/frenck/), [geekofweek](https://github.com/geekofweek/) and [basnijholt](https://github.com/basnijholt) for some of the ideas (including how to document on github). Make sure to check them out!
 
+###  <a name="History">History</a>
+
+Started in 2014 with the [Tradfri Gateway](https://www.ikea.com/ch/en/search/products/?q=tradfri) (with 3 White spectrum bulbs) and with the [myStrom Switches](https://mystrom.ch/). Added a LED-Strip from China to the setup and started tinkering with HA. But not for very long. During this time I tested also Apple HomeKit, but I was never really statisfied. 2022 I got some time and started again with HA and now here we are... 
+
+## <a name="controll">SmartHome Controll</a>
+Many things are automated, you'll find them under the [Automations-Section][https://github.com/leroyby/HomeAssistant-Config/tree/main/automations]. Physical controlled is provided with remotes and buttons (with [automations](https://github.com/leroyby/HomeAssistant-Config/tree/main/automations) and [scripts]https://github.com/leroyby/HomeAssistant-Config/tree/main/script)). And the last variant is via [Webinterface](https://github.com/leroyby/HomeAssistant-Config/blob/main/lovalace-ui.yaml).
+
 ## <a name="menu">Menu Hardware</a>
-| [Components](#components)| [Hubs](#hubs) | [Lighting](#Lights) | [Outlets & Switches](#outlets)| [Locks](#locks) | [Media](#media) | [Sensors](#sensors) | [Vacuum](#vacuum) | [Statistics](#statistics) | [Various](#various) | [Integrations](#integrations) | [Go to Table of Contents](#table) |
+| [Components](#components)| [Hubs](#hubs) | [Lighting](#Lights) | [Outlets & Switches](#outlets)| [Locks](#locks) | [Media](#media) | [Sensors](#sensors) | [Vacuum](#vacuum) | [Statistics](#statistics) | [Various](#various) | [Go to Table of Contents](#table) |
 
 ## Hardware
 [Go to Table of Contents](#table)
@@ -37,9 +47,9 @@ At this point also a big thanks to the whole home assistant community and especa
 ### <a name="hubs">Hubs</a>
 | Device  | Amazon Link | Quantity | Connection | Home Assistant | Notes | Status |
 | ------------- | :---: | :---: | ------------- | ------------- | ------------- | ------------- |
-| [TRÅDFRI Gateway V1](https://www.ikea.com/ch/de/p/tradfri-gateway-weiss-40337806)| - | 1 | Ethernet|[IKEA TRÅDFRI](https://www.home-assistant.io/integrations/tradfri) | V1, because V2 is comming soon (late 2022) / userd for integration of TRÅDFRI lights and remotes|integrated|
+| [TRÅDFRI Gateway V1](https://www.ikea.com/ch/de/p/tradfri-gateway-weiss-40337806)| - | 1 | Ethernet|[IKEA TRÅDFRI](https://www.home-assistant.io/integrations/tradfri) | V1, because V2 is comming soon (late 2022) / userd for integration of TRÅDFRI lights. Maybe will be renewd with the new [Dirigera Hub](https://about.ikea.com/en/newsroom/2022/05/25/ikea-launches-dirigera-the-matter-ready-hub-for-smart-products-and-a-new-ikea-home-smart-app) |integrated|
 | [Hue Bridge v2](https://www.philips-hue.com/de-de/p/hue-hue-bridge/8719514342620)| [Amazon](https://amzn.to/3xPfduH) | 1 | Ethernet |[Philips Hue](https://www.home-assistant.io/integrations/hue/)|-|integrated|
-| [Aqara Hub M2](https://www.aqara.com/us/smart_hub_m2.html) | [Amazon](https://amzn.to/3SeSlgc) | 1 | Ethernet | [HomeKit-Controller](https://www.home-assistant.io/integrations/homekit_controller/)|-|retired|
+| [Aqara Hub M2](https://www.aqara.com/us/smart_hub_m2.html) | [Amazon](https://amzn.to/3SeSlgc) | 1 | Ethernet | [HomeKit-Controller](https://www.home-assistant.io/integrations/homekit_controller/)|-|sold|
 
 ### <a name="Lights">Lightning</a>
 | [Go to Menu](#menu) |
@@ -111,24 +121,6 @@ At this point also a big thanks to the whole home assistant community and especa
 | Ender 3 3D-Printer | [Ender 3](https://amzn.to/3xP8Wz3) | 1 | Wi-Fi (via OctoPrint) | [OctoPrint](https://www.home-assistant.io/integrations/octoprint/) | used for printing gadgets, mainly holder etc | integrated|
 | Visual Studio Code | - | 1 | - | - | used for editing .yaml or .md Files | - |
 
-### <a name="integrations">Integrations</a>
-| Integration  | Description |
-| ------------- |  ------------- |
-| [HACS](https://hacs.xyz/) |  Used for Varius themes and integrations (not default) |
-| [Zigbee2MQTT](https://www.zigbee2mqtt.io/) | - |
-
-### Installed Integrations HACS
-| Integration  | Description |
-| ------------- |  ------------- |
-[Average Sensor](https://github.com/Limych/ha-average) | - |
-[Powercalc](https://github.com/bramstroker/homeassistant-powercalc) | - |
-
-### Installed Integrations Frontends (Themes + Cards)
-| Integration  | Description |
-| ------------- |  ------------- |
-| [Mushroom](https://github.com/piitaya/lovelace-mushroom)| - |
-| [Google Theme](https://github.com/JuanMTech/google-theme)| - |
-
 # <a name="Useful-links">Useful Links</a>
 | Type  | Link |
 | ------------- |  ------------- |
@@ -139,11 +131,11 @@ At this point also a big thanks to the whole home assistant community and especa
 ## <a name="statistics">Statistics (as in October 2022)</a>
 | Component  | Count | Component  | Count |
 | ------------- | :---: | ------------- | :---: |
-| Automations | 27 | Scripts | 14 |
+| Automations | 30 | Scripts | 17 |
 | Zones | 1 | Device Trackers | 10 |
-| Switches | 25 | Sensors | 136 | 
-| Binary Sensors | 31 |Input Booleans | 8 |
-| Input Numbers | 0 | Input Text | 2 |
+| Switches | 25 | Sensors | 144 | 
+| Binary Sensors | 32 |Input Booleans | 9 |
+| Input Numbers | 0 | Input Text | 3 |
 | Input Selects | 4 | Input Datetime | 1 |
 ---
 | [Go to Table of Contents](#table) | [Affiliate Disclosure](https://github.com/leroyby/Homeassistant/blob/main/affiliate_disclosure.md) |

@@ -1,3 +1,13 @@
+######################################################################################################
+# @Leroyby
+# Original Repo : https://github.com/leroyby/Homeassistant-Config
+# 
+#
+# You can find the automations here: https://github.com/leroyby/HomeAssistant-Config/tree/main/automations
+#
+#
+######################################################################################################
+
 - id: '1665332809214'
   alias: Controller - IKEA E1812 TRÅDFRI Shortcut button
   description: ''
