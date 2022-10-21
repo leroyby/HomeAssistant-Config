@@ -35,6 +35,6 @@
     to: 'on'
   condition: 
   action:
-  - service: timer.reload
+  - service: timer.cancel
     target:
       entity_id: timer.livingroom_tv

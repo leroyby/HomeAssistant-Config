@@ -1,10 +1,10 @@
 ######################################################################################################
 # @Leroyby
 # Original Repo : https://github.com/Leroyby/Homeassistant-Config
-# Automation night
+# Automations night mode
 ######################################################################################################
 - id: '1663422926689'
-  alias: Night mode on
+  alias: Mode Night on
   description: ''
   trigger:
   - platform: state

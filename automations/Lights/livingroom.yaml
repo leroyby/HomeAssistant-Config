@@ -6,7 +6,7 @@
 - alias: Light Livingroom Floor Off during TV
   trigger:
     platform: state
-    entity_id: media_player.lg_webos_smart_tv
+    entity_id: media_player.lg_webos_tv_a4ab
     to: 'on'
   condition:
   action:
@@ -21,6 +21,9 @@
     entity_id: binary_sensor.activity_in_livingroom
     to: 'off'
   condition:
+  - condition: state
+    entity_id: media_player.lg_webos_tv_a4ab
+    state: 'off'
   action:
   - service: light.turn_off
     target:
@@ -33,6 +36,9 @@
     entity_id: binary_sensor.activity_in_livingroom
     to: 'on'
   condition:
+  - condition: state
+    entity_id: sun.sun
+    state: "below_horizon"
   action:
   - service: light.turn_on
     target:

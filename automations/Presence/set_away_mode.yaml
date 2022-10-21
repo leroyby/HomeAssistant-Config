@@ -7,7 +7,7 @@
   trigger:
     - platform: time_pattern
       #This will match every 15 minutes
-      minutes: "/5"
+      minutes: "/15"
   condition:
   - condition: time
     after: 06:00:00

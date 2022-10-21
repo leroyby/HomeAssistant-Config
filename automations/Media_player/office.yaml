@@ -3,7 +3,7 @@
 # Original Repo : https://github.com/Leroyby/Homeassistant-Config
 # Automations Mediaplayer Office
 ######################################################################################################
-- alias: xbox trigger gaming mode
+- alias: media_player xbox trigger gaming mode
   trigger:
     platform: state
     entity_id: media_player.wohnzimmer_xbox

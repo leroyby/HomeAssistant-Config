@@ -1,6 +1,12 @@
 ######################################################################################################
 # @Leroyby
 # Original Repo : https://github.com/Leroyby/Homeassistant-Config
-# Automations Lights Bedroom
+# Automations System
 ######################################################################################################
-
+- alias: System generate readme file
+  trigger:
+    - platform: time
+      at: "23:15:00"
+  condition:
+  action:
+  - service: readme.generate

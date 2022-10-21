@@ -1,10 +1,10 @@
 ######################################################################################################
 # @Leroyby
 # Original Repo : https://github.com/Leroyby/Homeassistant-Config
-# Automation normal_mode_on
+# Automations normal mode
 ######################################################################################################
 - id: '1663445389361'
-  alias: Normal mode on
+  alias: Mode normal on
   description: ''
   trigger:
   - platform: state

@@ -631,7 +631,7 @@ views:
 - badges: []
   cards:
   - entities:
-    - entity: media_player.lg_webos_smart_tv
+    - entity: sun.sun
     - entity: media_player.lg_webos_tv_a4ab
     - entity: timer.livingroom_tv
     - entity: switch.livingroom_tv

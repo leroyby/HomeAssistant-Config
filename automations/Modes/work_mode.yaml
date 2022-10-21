@@ -1,10 +1,10 @@
 ######################################################################################################
 # @Leroyby
 # Original Repo : https://github.com/Leroyby/Homeassistant-Config
-# Automation work_mode_on
+# Automations work mode
 ######################################################################################################
 - id: '1663425526689'
-  alias: Work mode on
+  alias: mode work on
   description: ''
   trigger:
   - platform: state
