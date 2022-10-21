@@ -3,30 +3,30 @@
 # Original Repo : https://github.com/Leroyby/Homeassistant
 # Vacuum
 ######################################################################################################
-- alias: Vacuum start cleaning
-  trigger:
-    - platform: time_pattern
-      #This will match every 15 minutes
-      minutes: "/15"
-  condition:
-  - condition: time
-    after: 08:00:00
-    before: '22:00:00'
-  - condition: state
-    entity_id: input_boolean.away_mode
-    state: 'on'
-  action:
-  - service: vacuum.turn_on
-    entity_id: vacuum.rombacus
-  - service: input_boolean.turn_on
-    target:
-      entity_id: input_boolean.vacuum_ran
+#- alias: Vacuum start cleaning
+#  trigger:
+#    platform: state
+#    entity_id: input_boolean.away_mode
+#    to: 'on'
+#  conditions: and
+#  - condition: time
+#    after: 08:00:00
+#    before: '22:00:00'
+#  - condition: state
+#    entity_id: input_boolean.vacuum_ran
+ #   state: "off"
+#  action:
+#  - service: vacuum.turn_on
+#    entity_id: vacuum.rombacus
+#  - service: input_boolean.turn_on
+#    target:
+#      entity_id: input_boolean.vacuum_ran
 
 # Reset Vacum ran every evening
 - alias: Vacuum reset vacuum_ran sensor
   trigger:
     - platform: time
-      at: "23:00:00"
+      at: "23:45:00"
   condition:
   action:
   - service: input_boolean.turn_off

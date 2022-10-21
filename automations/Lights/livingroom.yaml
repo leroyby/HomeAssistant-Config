@@ -20,10 +20,7 @@
     platform: state
     entity_id: binary_sensor.activity_in_livingroom
     to: 'off'
-  condition:
-  - condition: state
-    entity_id: media_player.lg_webos_tv_a4ab
-    state: 'off'
+  condition: []
   action:
   - service: light.turn_off
     target:

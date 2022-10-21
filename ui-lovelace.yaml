@@ -458,7 +458,7 @@ views:
       show_name: true
       show_state: true
       state_color: false
-      title: Component Count
+      title: Timers
       type: glance
     type: vertical-stack
   - entities:
@@ -984,8 +984,8 @@ views:
   - template: automation_template
     type: custom:decluttering-card
     variables:
-    - name: Night mode
-    - slug: night_mode_
+    - name: Mode
+    - slug: mode
   - template: automation_template
     type: custom:decluttering-card
     variables:
@@ -1004,18 +1004,8 @@ views:
   - template: automation_template
     type: custom:decluttering-card
     variables:
-    - name: Vacation mode
-    - slug: vacation_mode
-  - template: automation_template
-    type: custom:decluttering-card
-    variables:
     - name: Vacuum
     - slug: vacuum
-  - template: automation_template
-    type: custom:decluttering-card
-    variables:
-    - name: Work
-    - slug: work
   - template: automation_template
     type: custom:decluttering-card
     variables:

@@ -37,7 +37,7 @@ At this point also a big thanks to the whole home assistant community and especa
 Started in 2014 with the [Tradfri Gateway](https://www.ikea.com/ch/en/search/products/?q=tradfri) (with 3 White spectrum bulbs) and with the [myStrom Switches](https://mystrom.ch/). Added a LED-Strip from China to the setup and started tinkering with HA. But not for very long. During this time I tested also Apple HomeKit, but I was never really statisfied. 2022 I got some time and started again with HA and now here we are... 
 
 ## <a name="control">SmartHome control</a>
-Many things are automated, you'll find them in the [Automations-Section](https://github.com/leroyby/HomeAssistant-Config/tree/main/automations). Physical control is provided with remotes and buttons (with [automations](https://github.com/leroyby/HomeAssistant-Config/tree/main/automations) and [scripts](https://github.com/leroyby/HomeAssistant-Config/tree/main/script)). And the last variant is via [Webinterface](https://github.com/leroyby/HomeAssistant-Config/blob/main/lovalace-ui.yaml).
+Many things are automated, you'll find them in the [Automations-Section](https://github.com/leroyby/HomeAssistant-Config/tree/main/automations). Physical control is provided with remotes and buttons (with [automations](https://github.com/leroyby/HomeAssistant-Config/tree/main/automations) and [scripts](https://github.com/leroyby/HomeAssistant-Config/tree/main/script)). And the last variant is via [Webinterface](https://github.com/leroyby/HomeAssistant-Config/blob/main/ui-lovelace.yaml).
 
 ### <a name="physical">Physical control</a>
 See list of [Remotes](#remotes).

@@ -3,7 +3,7 @@
 # Original Repo : https://github.com/Leroyby/Homeassistant
 # Set away modes
 ######################################################################################################
-- alias: set away mode on presence
+- alias: presence set away mode
   trigger:
     - platform: time_pattern
       #This will match every 15 minutes
