@@ -41,7 +41,8 @@
       friendly_name: Activity in the office
       value_template: >
         {{ is_state("media_player.lbxbox", "on")
-            or is_state("switch.office_pc", "on") }}
+            or is_state("switch.office_pc", "on")
+            or is_state("binary_sensor.motion_office_occupancy", "on") }}
       delay_off: "00:01:00"
 
     activity_in_bedroom:

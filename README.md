@@ -31,7 +31,7 @@ At this point also a big thanks to the whole home assistant community and especa
 # Repository statistics
 | Sensors| Binary Sensors | Switches  | Automations | Scripts |
 | :--: | :--: | :--: | :--: | :--: |
-| 148 | 32 | 25 | 24 | 17 |
+| 149 | 35 | 25 | 23 | 18 |
 
 ###  <a name="History">History</a>
 Started in 2014 with the [Tradfri Gateway](https://www.ikea.com/ch/en/search/products/?q=tradfri) (with 3 White spectrum bulbs) and with the [myStrom Switches](https://mystrom.ch/). Added a LED-Strip from China to the setup and started tinkering with HA. But not for very long. During this time I tested also Apple HomeKit, but I was never really statisfied. 2022 I got some time and started again with HA and now here we are... 
@@ -101,6 +101,7 @@ And I will be adding a wall tablet soon (WIP).
 | Device  | Amazon Link | Quantity | Connection | Home Assistant | Notes | Status |
 | ------------- | :---: | :---: | ------------- | ------------- | ------------- | ------------- |
 | [Aqara Motion Sensor](https://www.aqara.com/eu/motion_sensor.html) | [Amazon](https://amzn.to/3UzKNGu) | 1 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)| - |integrated|
+| [Sonoff Motion Sensor](https://sonoff.tech/product/smart-home-security/snzb-03/) | [Amazon](https://amzn.to/3F94M9F) | 1  | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/) | - |integrated |
 | [Aqara Temperature and Humidity Sensor](https://www.aqara.com/eu/temperature_humidity_sensor.html) | [Amazon](https://amzn.to/3dCzpsT) | 1 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)| - | integrated |
 | [Aqara Vibration Sensor](https://www.aqara.com/eu/vibration_sensor.html) | [Amazon](https://amzn.to/3dGX0sm) | 1  | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/) | - |integrated but unused |
 

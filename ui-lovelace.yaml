@@ -462,6 +462,12 @@ views:
       type: glance
     type: vertical-stack
   - entities:
+    - entity: script.system_generate_readme
+      icon: mdi:typewriter
+      name: readme
+      tap_action:
+        action: call-service
+        service: readme.generate
     - entity: zone.home
       icon: mdi:restart
       name: Lovelace
@@ -525,9 +531,15 @@ views:
     - entity: binary_sensor.motion_livingroom_occupancy
       name: Living room
     - entity: sensor.motion_livingroom_illuminance_lux
-      name: ''
+      name: Lux
     - entity: sensor.motion_livingroom_battery
-      name: ''
+      name: Battery
+    - entity: binary_sensor.motion_office_occupancy
+      name: Office
+    - entity: binary_sensor.motion_office_tamper
+      name: Tamper
+    - entity: sensor.motion_office_battery
+      name: Battery
     show_icon: true
     show_name: true
     state_color: true

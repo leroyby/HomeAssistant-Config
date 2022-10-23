@@ -1,13 +1,11 @@
 ######################################################################################################
 # @Leroyby
 # Original Repo : https://github.com/Leroyby/Homeassistant-Config
-# Automations System
+# Scripts System generate readme
 ######################################################################################################
-- alias: System generate readme file
-  trigger:
-    - platform: time
-      at: "23:15:00"
-  condition:
-  action:
-  - service: script.system_generate_readme
-#  - service: readme.generate
+system_generate_readme:
+  alias: "Generate readme file"
+  mode: parallel
+  sequence:
+    - alias: "generate"
+      service: readme.generate

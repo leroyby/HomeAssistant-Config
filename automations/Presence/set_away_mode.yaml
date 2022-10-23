@@ -15,11 +15,8 @@
   - condition: and
     conditions:
       - condition: state
-        entity_id: person.leroy
-        state: "away"
-      - condition: state
-        entity_id: person.USER2
-        state: "away"
+        entity_id: binary_sensor.no_one_home
+        state: "on"
   action:
   - service: input_boolean.turn_on
     target:

@@ -30,6 +30,8 @@ devices:
     friendly_name: remote_bedroom
   '0x00158d0007ec9426':
     friendly_name: Vibration_1
+  '0x00124b002517876b':
+    friendly_name: motion_office
 advanced:
   log_level: info
 shell_command:
