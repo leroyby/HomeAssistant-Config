@@ -4,7 +4,7 @@
 
 # Overview
 Look up the naming I use for my whole system
-Version 0.1.2
+### Version 0.1.2
 
 # <a name="menu">Menu</a>
 | [Home](https://github.com/leroyby/Homeassistant-Config) |
