@@ -9,7 +9,7 @@ do
  echo ""
  echo "What would you like to do?"
  echo " "
- echo "1) Copy & Redact Code"
+ echo "1) Copy & Redact Code including commit"
  echo "2) Copy Configs automated"
  echo "3) Copy Configs AUTOMATED & push to GitHub"
  echo "4) Copy Configs with manual comment & push to GitHub"
@@ -28,6 +28,12 @@ do
  if [ "$action" == "1" ];then
      clear
 /root/addons/Tools/ha-github-scrub.sh
+    clear
+ cd /root/addons/GITHUB/
+    git add .
+        echo -n "Enter the Description for the Change: " [Minor Update]
+    read CHANGE_MSG
+    git commit -m "${CHANGE_MSG}"
  fi
  if [ "$action" == "2" ];then
   clear
