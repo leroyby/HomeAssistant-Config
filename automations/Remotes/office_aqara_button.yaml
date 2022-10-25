@@ -3,6 +3,17 @@
 # Original Repo : https://github.com/Leroyby/Homeassistant
 # Automation Office Aqara Button 
 ######################################################################################################
+- alias: lights office reset manual mode
+  trigger:
+    - platform: time_pattern
+      #This will match every 15 minutes
+      minutes: "30"
+  condition: []
+  action:
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.manual_lights_office
+
 - alias: Office Button Lights 
   trigger:
     platform: state
@@ -10,7 +21,11 @@
     to: 'single' 
   condition: []
   action:
-    service: script.office_light
+  - service: script.office_light
+  - service: input_boolean.turn_on
+    target:
+      entity_id: 
+      - input_boolean.manual_lights_office
 
 - alias: Office Button Switch PC 
   trigger:

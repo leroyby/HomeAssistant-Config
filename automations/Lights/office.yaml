@@ -21,7 +21,10 @@
     platform: state
     entity_id: binary_sensor.activity_in_office
     to: 'on'
-  condition:
+  condition: 
+  - condition: state
+    entity_id: binary_sensor.manual_lights_office
+    state: "off"
   - condition: state
     entity_id: sun.sun
     state: "below_horizon"

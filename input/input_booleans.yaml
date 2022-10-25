@@ -44,3 +44,7 @@
   alarm_clock:
     name: Alarm clock is on
     icon: mdi:alarm
+  
+  manual_lights_office:
+    name: Manual mode Lights Office is on
+    icon: mdi:lamp

@@ -13,6 +13,7 @@ do
  echo "2) Copy Configs automated"
  echo "3) Copy Configs AUTOMATED & push to GitHub"
  echo "4) Copy Configs with manual comment & push to GitHub"
+ echo "5) push to GitHub"
  echo "x) Exit"
  echo " "
    
@@ -78,7 +79,13 @@ do
         echo "Files Copied to GitHub"
         echo " "
  fi
-
+ if [ "$action" == "5" ];then
+  cd /root/addons/GITHUB/
+   git push -u origin main
+        echo " "
+        echo "Files pushed to GitHub"
+        echo " "
+ fi
  if [ "$action" == "x" ];then
    clear
         echo " "
