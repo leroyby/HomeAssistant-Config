@@ -1,3 +1,7 @@
+[![GitHub last commit](https://img.shields.io/github/last-commit/leroyby/homeassistant-config?style=plasticr)](https://github.com/leroyby/HomeAssistant-Config/commits/main)
+
+# Archived things
+## I don't want to delete (now)
 ### <a name="integrations">Integrations</a>
 | Integration  | Description |
 | ------------- |  ------------- |

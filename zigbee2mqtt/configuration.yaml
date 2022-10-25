@@ -19,7 +19,7 @@ devices:
   '0x94deb8fffe60c570':
     friendly_name: Livingroom_Deckenfluter_TV
   '0x9035eafffe2b5f86':
-    friendly_name: '0x9035eafffe2b5f86'
+    friendly_name: remote_livingroom
   '0x086bd7fffe3c5fde':
     friendly_name: tv_button_switch_livingroom
   '0x086bd7fffe51879e':

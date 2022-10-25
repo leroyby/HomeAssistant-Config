@@ -12,4 +12,4 @@ Thank you for supporting this content through the use of affiliate links. This e
 
 Thank you!
 ---
-| [Go to Menu](#menu) | [Home](https://github.com/leroyby/Homeassistant-Config-Config-Config) |
+| [Home](https://github.com/leroyby/Homeassistant-Config-Config-Config) |

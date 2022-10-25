@@ -3,3 +3,30 @@
 # Original Repo : https://github.com/Leroyby/Homeassistant-Config
 # Automations Office Lights
 ######################################################################################################
+
+- alias: Light Office off after Motion
+  trigger:
+    platform: state
+    entity_id: binary_sensor.activity_in_office
+    to: 'off'
+  condition: []
+  action:
+  - service: light.turn_off
+    target:
+      entity_id: 
+      - light.office_lights
+
+- alias: Light Office on after Motion
+  trigger:
+    platform: state
+    entity_id: binary_sensor.activity_in_office
+    to: 'on'
+  condition:
+  - condition: state
+    entity_id: sun.sun
+    state: "below_horizon"
+  action:
+  - service: light.turn_on
+    target:
+      entity_id: 
+      - light.office_lights

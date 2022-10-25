@@ -1,6 +1,4 @@
-[![GitHub last commit](https://img.shields.io/github/last-commit/leroyby/Homeassistant-Config?style=for-the-badge)](https://github.com/leroyby/HomeAssistant-Config/commits/main)
-
-[![HA Version](https://img.shields.io/badge/Running%20Home%20Assistant-2022.10.2%20-darkblue)](https://github.com/home-assistant/home-assistant/releases/latest)
+[![GitHub last commit](https://img.shields.io/github/last-commit/leroyby/homeassistant-config?style=plasticr)](https://github.com/leroyby/HomeAssistant-Config/commits/main)
 
 # Overview
 Look up the naming I use for my whole system

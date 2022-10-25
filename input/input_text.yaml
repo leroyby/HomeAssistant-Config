@@ -9,3 +9,7 @@
   remote_bedroom_action_text:
     name: Remote Bedroom action text
     initial: Text
+
+  remote_living_room_light_selection:
+    name: Remote Living Room Light selection
+    initial: All
