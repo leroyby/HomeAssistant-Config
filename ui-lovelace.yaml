@@ -643,13 +643,9 @@ views:
 - badges: []
   cards:
   - entities:
-    - entity: sun.sun
-    - entity: media_player.lg_webos_tv_a4ab
-    - entity: timer.livingroom_tv
-    - entity: switch.livingroom_tv
-    - type: divider
-    - type: divider
-    - type: divider
+    - entity: sensor.power_office_pc
+    - entity: binary_sensor.office_pc_on
+    - entity: input_boolean.manual_lights_office
     show_header_toggle: false
     title: Test apps
     type: entities
@@ -834,57 +830,11 @@ views:
     title: Temperature sensors
     type: entities
   - entities:
-    - active: '{{ is_state("binary_sensor.motion_sensor_kitchen", "on") }}'
-      entity: binary_sensor.motion_sensor_kitchen
-      name: Kitchen
-      secondary: 'Light level {{ states("sensor.motion_sensor_kitchen_light_level")
-        }} lx, battery {{ states("sensor.motion_sensor_kitchen_battery_level") }}% '
-      type: custom:template-entity-row
-    - active: '{{ is_state("binary_sensor.motion_sensor_toilet", "on") }}'
-      entity: binary_sensor.motion_sensor_toilet
-      name: Toilet
-      secondary: 'Light level {{ states("sensor.motion_sensor_toilet_light_level")
-        }} lx, battery {{ states("sensor.motion_sensor_toilet_battery_level") }}% '
-      type: custom:template-entity-row
-    - active: '{{ is_state("binary_sensor.motion_sensor_hall", "on") }}'
-      entity: binary_sensor.motion_sensor_hall
-      name: Hall
-      secondary: 'Light level {{ states("sensor.motion_sensor_hall_light_level") }}
-        lx, battery {{ states("sensor.motion_sensor_hall_battery_level") }}% '
-      type: custom:template-entity-row
-    - active: '{{ is_state("binary_sensor.motion_sensor_bathroom", "on") }}'
-      entity: binary_sensor.motion_sensor_bathroom
-      name: Bathroom
-      secondary: 'Light level {{ states("sensor.motion_sensor_bathroom_light_level")
-        }} lx, battery {{ states("sensor.motion_sensor_bathroom_battery_level") }}% '
-      type: custom:template-entity-row
-    - active: '{{ is_state("binary_sensor.motion_sensor_bedroom_door", "on") }}'
-      entity: binary_sensor.motion_sensor_bedroom_door
-      name: Bedroom door
-      secondary: 'Light level {{ states("sensor.motion_sensor_bedroom_door_light_level")
-        }} lx, battery {{ states("sensor.motion_sensor_bedroom_door_battery_level")
-        }}% '
-      type: custom:template-entity-row
-    - active: '{{ is_state("binary_sensor.motion_sensor_bedroom_kabinet", "on") }}'
-      entity: binary_sensor.motion_sensor_bedroom_kabinet
-      name: Bedroom kabinet
-      secondary: 'Light level {{ states("sensor.motion_sensor_bedroom_kabinet_light_level")
-        }} lx, battery {{ states("sensor.motion_sensor_bedroom_kabinet_battery_level")
-        }}% '
-      type: custom:template-entity-row
-    - active: '{{ is_state("binary_sensor.motion_sensor_bedroom_desk", "on") }}'
-      entity: binary_sensor.motion_sensor_bedroom_desk
-      name: Bedroom desk
-      secondary: 'Light level {{ states("sensor.motion_sensor_bedroom_desk_light_level")
-        }} lx, battery {{ states("sensor.motion_sensor_bedroom_desk_battery_level")
-        }}% '
-      type: custom:template-entity-row
     - active: '{{ is_state("binary_sensor.motion_sensor_living_room_klok", "on") }}'
-      entity: binary_sensor.motion_sensor_living_room_klok
-      name: Living room klok
-      secondary: 'Light level {{ states("sensor.motion_sensor_living_room_klok_light_level")
-        }} lx, battery {{ states("sensor.motion_sensor_living_room_klok_battery_level")
-        }}% '
+      entity: binary_sensor.motion_livingroom_occupancy
+      name: Living room
+      secondary: 'Light level {{ states("sensor.motion_livingroom_illuminance_lux")
+        }} lx, battery {{ states("sensor.motion_livingroom_battery") }}% '
       type: custom:template-entity-row
     title: Motion sensors
     type: entities
