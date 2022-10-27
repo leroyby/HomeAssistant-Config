@@ -9,7 +9,10 @@
     platform: state
     entity_id: binary_sensor.activity_in_office
     to: 'off'
-  condition: []
+  condition: 
+  - condition: state
+    entity_id: binary_sensor.manual_lights_office
+    state: "off"
   action:
   - service: light.turn_off
     target:

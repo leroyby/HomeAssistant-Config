@@ -646,6 +646,7 @@ views:
     - entity: sensor.power_office_pc
     - entity: binary_sensor.office_pc_on
     - entity: input_boolean.manual_lights_office
+    - entity: input_boolean.manual_lights_office
     show_header_toggle: false
     title: Test apps
     type: entities
