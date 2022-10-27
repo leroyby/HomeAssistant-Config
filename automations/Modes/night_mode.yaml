@@ -11,7 +11,6 @@
     entity_id:
     - input_boolean.night_mode
     to: 'on'
-    from: 'off'
   condition: []
   action:
   - service: input_boolean.turn_off
@@ -21,13 +20,6 @@
       - input_boolean.gaming_mode
       - input_boolean.away_mode
       - input_boolean.work_mode
-  - service: light.turn_off
-    target:
-      entity_id: 
-      - light.all_lights
-  - service: switch.turn_off
-    target:
-      entity_id: 
-      - switch.night
-    metadata: {}
+  - service: script.office_off
+  - service: script.living_room_off
   mode: single

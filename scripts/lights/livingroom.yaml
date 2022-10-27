@@ -67,3 +67,11 @@ tv_lights_living_room:
       service: light.turn_on
     - service: light.turn_off
       entity_id: light.livingroom_tv
+
+off_lights_livingroom:
+  alias: "shut off lights in the living room"
+  mode: parallel
+  sequence:
+    - data:
+        entity_id: light.living_room_lights
+      service: light.turn_off      

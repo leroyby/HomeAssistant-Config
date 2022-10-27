@@ -7,6 +7,11 @@ normal_lights_office:
   alias: "Set normal lights in the office"
   mode: parallel
   sequence:
+    - data:
+        entity_id: light.office_lights
+        brightness_pct: 85
+        color_temp: 350
+      service: light.turn_on  
     - service: input_select.select_option
       entity_id: input_select.last_script_office
       data:
@@ -25,4 +30,12 @@ work_lights_office:
       entity_id: input_select.last_script_bedroom
       data:
         option: script_work_lights_office
+
+off_lights_office:
+  alias: "shut off lights in the office"
+  mode: parallel
+  sequence:
+    - data:
+        entity_id: light.office_lights
+      service: light.turn_off
 

@@ -1,18 +1,18 @@
 ######################################################################################################
 # @Leroyby
 # Original Repo : https://github.com/Leroyby/Homeassistant
-# Set away modes
+# Automation set away modes
 ######################################################################################################
 - alias: presence set away mode
   trigger:
     - platform: time_pattern
-      #This will match every 15 minutes
+      #This will run every 15 minutes
       minutes: "15"
   condition:
   - condition: time
     after: 06:00:00
     before: '23:00:00'
-  - condition: and
+  - condition:
     conditions:
       - condition: state
         entity_id: binary_sensor.no_one_home

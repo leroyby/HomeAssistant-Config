@@ -1,12 +1,14 @@
 ######################################################################################################
 # @Leroyby
 # Original Repo : https://github.com/Leroyby/Homeassistant-Config
-# Automations System
+# Scripts Bedroom
 ######################################################################################################
-- alias: System generate readme file
-  trigger:
-    - platform: time
-      at: "23:15:00"
-  condition:
-  action:
-  - service: script.system_generate_readme
+bedroom_off:
+  alias: "Turn bedroom off"
+  sequence:
+    - service: switch.turn_off
+      data:
+        entity_id: switch.bedroom_switches
+    - service: light.turn_off
+      data:
+        entity_id: light.bedroom_lights

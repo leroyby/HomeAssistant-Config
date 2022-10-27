@@ -19,13 +19,7 @@
       - input_boolean.normal_mode
       - input_boolean.gaming_mode
       - input_boolean.night_mode
-  - service: light.turn_off
-    target:
-      entity_id: 
-      - light.all_lights
-  - service: switch.turn_off
-    target:
-      entity_id: 
-      - switch.all_electric_switches
-    metadata: {}
+  - service: script.bedroom_off
+  - service: script.office_off
+  - service: script.living_room_off
   mode: single
