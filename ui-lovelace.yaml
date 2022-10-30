@@ -205,6 +205,7 @@ views:
     - entity: input_boolean.away_mode
     - entity: input_boolean.gaming_mode
     - entity: input_boolean.work_mode
+    - entity: input_boolean.night_mode
     show_header_toggle: false
     type: entities
   - cards:
@@ -454,6 +455,7 @@ views:
       entities:
       - entity: timer.livingroom_tv
         name: TV Livingroom
+      - entity: timer.office_lights_manual
       show_icon: true
       show_name: true
       show_state: true
@@ -518,6 +520,8 @@ views:
     - entity: binary_sensor.motion_detected_in_last_hour
     - entity: binary_sensor.motion_detected
     - entity: binary_sensor.someone_in_the_house_in_last_hour
+    - type: divider
+    - entity: binary_sensor.no_one_home
     show_header_toggle: false
     title: Activity in the house
     type: entities
@@ -569,34 +573,10 @@ views:
       name: ''
     - entity: sensor.temperature_bedroom
       name: Bedroom
-    - entity: sensor.humidity_bedroom
-      name: ''
-    - entity: sensor.pressure_bedroom
-      name: ''
-    - entity: sensor.temperature_sensor_bedroom_battery_level
-      name: ''
-    - entity: sensor.humidity_hall
-      name: ''
-    - entity: sensor.pressure_hall
-      name: ''
-    - entity: sensor.temperature_sensor_hall_battery_level
-      name: ''
-    - entity: sensor.temperature_bathroom
-      name: Bathroom
-    - entity: sensor.humidity_bathroom
-      name: ''
-    - entity: sensor.pressure_bathroom
-      name: ''
-    - entity: sensor.temperature_sensor_bathroom_battery_level
-      name: ''
-    - entity: sensor.temperature_xbox
-      name: Xbox
-    - entity: sensor.humidity_xbox
-      name: ''
-    - entity: sensor.pressure_xbox
-      name: ''
-    - entity: sensor.temperature_sensor_xbox_battery_level
-      name: ''
+    - entity: sensor.temperature_office_average
+      name: Office
+    - entity: sensor.temperature_home
+      name: Home
     show_icon: true
     show_name: true
     show_state: true

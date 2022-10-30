@@ -36,3 +36,18 @@
     target:
       entity_id: 
       - light.office_lights
+
+
+- alias: "Timerstop office lights manual"
+  id: "Timerstop office lights manual"
+  trigger:
+  - platform: event
+    event_type: timer.finished
+    event_data:
+      entity_id: timer.office_lights_manual
+  action:
+  - service: input_boolean.turn_off
+    target:
+      entity_id: 
+      - input_boolean.manual_lights_office
+    

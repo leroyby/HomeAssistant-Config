@@ -15,7 +15,7 @@
     target:
       entity_id: timer.livingroom_tv
 
-- alias: "Timerstop"
+- alias: "Timerstop tv livingroom"
   id: "Timerstop"
   trigger:
   - platform: event

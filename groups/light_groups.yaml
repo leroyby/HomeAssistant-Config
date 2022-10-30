@@ -1,0 +1,50 @@
+######################################################################################################
+# @Leroyby
+# Original Repo : https://github.com/leroyby/Homeassistant-Config
+# Lights group yaml file
+######################################################################################################
+
+- platform: group
+  name: All Lights 
+  unique_id: 2210171730
+  entities:
+    - light.office_lights
+    - light.bedroom_lights
+    - light.Living_room_lights
+    - light.bad_klein
+    
+- platform: group
+  name: Office_Lights
+  unique_id: 2210062342
+  entities:
+    - light.wiz_office_1
+    - light.wiz_office_2
+    - light.wiz_office_3
+    
+- platform: group
+  name: bedroom_lights
+  unique_id: 2210062343
+  entities:
+    - light.decke_l1
+    - light.decke_l2
+    - light.decke_l3
+    
+- platform: group
+  name: Living_room_lights
+  unique_id: 2210062344
+  entities:
+    - light.livingroom_sofa
+    - light.livingroom_table
+    - light.livingroom_tv
+
+- platform: group
+  name: Living_room_motion_lights
+  unique_id: 2210162058
+  entities:
+    - light.livingroom_sofa
+    - light.livingroom_table
+
+- platform: group
+  name: toilet_Lights 
+  entities:
+    - light.bad_klein

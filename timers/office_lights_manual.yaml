@@ -1,0 +1,10 @@
+######################################################################################################
+# @Leroyby
+# Original Repo : https://github.com/leroyby/Homeassistant-Config
+# Timer Office Lights Manual Control 
+######################################################################################################
+
+  office_lights_manual:
+    name: Office Lights Manual control
+    duration: '00:30:00'
+    icon: mdi:timer-outline

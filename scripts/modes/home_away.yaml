@@ -7,6 +7,10 @@ arriving:
   alias: "Arriving Home"
   mode: parallel
   sequence:
+    - alias: "set normal mode"
+      service: input_boolean.turn_on
+      target:
+        entity_id: input_boolean.normal_mode
 
 leaving:
   alias: "Leaving Home"
