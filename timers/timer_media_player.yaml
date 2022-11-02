@@ -1,0 +1,15 @@
+######################################################################################################
+# @Leroyby
+# Original Repo : https://github.com/leroyby/Homeassistant-Config
+# Timer Media Player
+######################################################################################################
+
+  livingroom_tv:
+    name: Livingroom TV
+    duration: '00:05:00'
+    icon: mdi:timer-outline
+
+  office_xbox:
+    name: Timer Office Xbox
+    duration: '00:05:00'
+    icon: mdi:timer-outline

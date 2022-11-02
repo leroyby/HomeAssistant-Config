@@ -19,3 +19,30 @@
   - service: input_boolean.turn_on
     target:
       entity_id: input_boolean.gaming_mode
+
+- alias: media_player xbox off
+  trigger:
+    platform: state
+    entity_id: media_player.wohnzimmer_xbox
+    to: 'off'
+  condition:
+  action:
+  - service: input_boolean.turn_on
+    target:
+      entity_id: input_boolean.normal_mode
+  - service: timer.start
+    target:
+      entity_id: timer.office_xbox
+
+- alias: "Timerstop office xbox"
+  id: "Timerstop office xbox"
+  trigger:
+  - platform: event
+    event_type: timer.finished
+    event_data:
+      entity_id: timer.office_xbox
+  action:
+  - service: switch.turn_off
+    target:
+      entity_id: 
+      - switch.office_xbox

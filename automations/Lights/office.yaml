@@ -18,6 +18,10 @@
     target:
       entity_id: 
       - light.office_lights
+  - service: switch.turn_off
+    target:
+      entity_id: 
+      - switch.office_switches
 
 - alias: Light Office on after Motion
   trigger:

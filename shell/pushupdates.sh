@@ -9,7 +9,7 @@ do
  echo ""
  echo "What would you like to do?"
  echo " "
- echo "1) Copy & Redact Code including commit"
+ echo "1) Copy Configs with manual comment"
  echo "2) Copy Configs automated"
  echo "3) Copy Configs AUTOMATED & push to GitHub"
  echo "4) Copy Configs with manual comment & push to GitHub"
