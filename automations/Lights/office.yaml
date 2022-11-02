@@ -11,7 +11,7 @@
     to: 'off'
   condition: 
   - condition: state
-    entity_id: binary_sensor.manual_lights_office
+    entity_id: input_boolean.manual_lights_office
     state: "off"
   action:
   - service: light.turn_off
@@ -26,11 +26,8 @@
     to: 'on'
   condition: 
   - condition: state
-    entity_id: binary_sensor.manual_lights_office
+    entity_id: input_boolean.manual_lights_office
     state: "off"
-  - condition: state
-    entity_id: sun.sun
-    state: "below_horizon"
   action:
   - service: light.turn_on
     target:

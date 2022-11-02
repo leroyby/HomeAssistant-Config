@@ -506,11 +506,18 @@ views:
 - badges: []
   cards:
   - columns: 5
-    entities:
-    - entity: sensor.tv_button_switch_livingroom_battery
+    entities: []
     show_icon: true
     show_name: false
     title: Buttons
+    type: glance
+  - columns: 5
+    entities:
+    - entity: sun.sun
+    show_icon: true
+    show_name: false
+    show_state: true
+    title: Sun
     type: glance
   - entities:
     - entity: binary_sensor.activity_in_kitchen
@@ -646,167 +653,15 @@ views:
     - entity: sensor.hours_tv_has_been_on_last_7_days
     title: Stats
     type: entities
-  - cards:
-    - cards:
-      - color_thresholds_transition: smooth
-        entities:
-        - entity: sensor.adaptive_lighting_brightness
-          name: Brightness
-        font_size: 100
-        group: false
-        hour24: true
-        line_width: 6
-        points_per_hour: 1
-        show:
-          extrema: false
-          fill: fade
-          labels: false
-          name: true
-          state: true
-        type: custom:mini-graph-card
-      - color_thresholds_transition: smooth
-        entities:
-        - entity: sensor.adaptive_lighting_sun_position
-          name: Sun position
-        font_size: 100
-        group: false
-        hour24: true
-        line_width: 6
-        points_per_hour: 1
-        show:
-          extrema: false
-          fill: fade
-          labels: false
-          name: true
-          state: true
-        type: custom:mini-graph-card
-      type: horizontal-stack
-    - cards:
-      - color_thresholds_transition: smooth
-        entities:
-        - entity: sensor.adaptive_lighting_color_temp_mired
-          name: Color temperature (mired)
-        font_size: 100
-        group: false
-        hour24: true
-        line_width: 6
-        points_per_hour: 1
-        show:
-          extrema: false
-          fill: fade
-          labels: false
-          name: true
-          state: true
-        type: custom:mini-graph-card
-      - color_thresholds_transition: smooth
-        entities:
-        - entity: sensor.adaptive_lighting_color_temp_kelvin
-          name: Color temperature (Kelvin)
-        font_size: 100
-        group: false
-        hour24: true
-        line_width: 6
-        points_per_hour: 1
-        show:
-          extrema: false
-          fill: fade
-          labels: false
-          name: true
-          state: true
-        type: custom:mini-graph-card
-      type: horizontal-stack
-    type: vertical-stack
-  - cards:
-    - color_thresholds_transition: smooth
-      entities:
-      - entity: sensor.adaptive_lighting_brightness
-        name: Brightness
-        show_state: true
-      - entity: sensor.adaptive_lighting_color_temp_kelvin
-        name: Color temp (Kelvin)
-        show_state: true
-        y_axis: secondary
-      font_size: 80
-      group: false
-      hour24: true
-      hours_to_show: 72
-      line_width: 2
-      lower_bound: 60
-      lower_bound_secondary: 0
-      name: Brightness vs color temp
-      points_per_hour: 2
-      show:
-        extrema: false
-        fill: fade
-        labels: false
-        name: true
-        state: true
-      type: custom:mini-graph-card
-      upper_bound: 105
-      upper_bound_secondary: ~5500
-    - color_thresholds_transition: smooth
-      entities:
-      - entity: sensor.adaptive_lighting_brightness
-        name: Brightness
-        show_state: true
-      - entity: sensor.adaptive_lighting_sun_position
-        name: Sun position
-        show_state: true
-        y_axis: secondary
-      font_size: 80
-      group: false
-      hour24: true
-      hours_to_show: 72
-      line_width: 2
-      lower_bound: 40
-      lower_bound_secondary: -100
-      name: Brightness vs sun position
-      points_per_hour: 2
-      show:
-        extrema: false
-        fill: fade
-        labels: false
-        name: true
-        state: true
-      type: custom:mini-graph-card
-      upper_bound: 100
-      upper_bound_secondary: 100
-    - color_thresholds_transition: smooth
-      entities:
-      - entity: sensor.adaptive_lighting_color_temp_kelvin
-        name: Color temp
-        show_state: true
-      - entity: sensor.adaptive_lighting_sun_position
-        name: Sun position
-        show_state: true
-        y_axis: secondary
-      font_size: 80
-      group: false
-      hour24: true
-      hours_to_show: 72
-      line_width: 2
-      lower_bound: 0
-      lower_bound_secondary: -100
-      name: Color temp vs sun position
-      points_per_hour: 2
-      show:
-        extrema: false
-        fill: fade
-        labels: false
-        name: true
-        state: true
-      type: custom:mini-graph-card
-      upper_bound: ~5500
-      upper_bound_secondary: 100
-    type: custom:swipe-card
   - entity: media_player.lbxbox
     type: media-control
   - entities:
     - entity: sensor.temperature_living_room
       name: Living room
-      secondary: '💦 {{ states(''sensor.humidity_living_room'') }}%, ⚖️ {{ states(''sensor.pressure_living_room'')
-        }} hPa, 🔋 {{ states(''sensor.temperature_living_room_battery_level'') }}% '
-      state: '{{ states("sensor.temperature_living_room") }} °C'
+      secondary: '💦 {{ states(''sensor.temperature_livingroom_tv_humidity'') }}%,
+        ⚖️ {{ states(''sensor.temperature_livingroom_tv_pressure'') }} hPa, 🔋 {{ states(''sensor.temperature_livingroom_tv_battery'')
+        }}% '
+      state: '{{ states("sensor.temperature_livingroom_temperature") }} °C'
       type: custom:template-entity-row
     title: Temperature sensors
     type: entities
@@ -873,7 +728,7 @@ views:
     type: custom:decluttering-card
     variables:
     - name: Mode
-    - slug: mode
+    - slug: Mode
   - template: automation_template
     type: custom:decluttering-card
     variables:

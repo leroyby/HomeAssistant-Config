@@ -4,7 +4,7 @@
 # Automations night mode
 ######################################################################################################
 - id: '1663422926689'
-  alias: Mode Night on
+  alias: Mode_Night_on
   description: ''
   trigger:
   - platform: state

@@ -1,0 +1,15 @@
+######################################################################################################
+# @Leroyby
+# Original Repo : https://github.com/leroyby/Homeassistant-Config
+# Timer Living room Lights Timer
+######################################################################################################
+
+  livingroom_lights_manual:
+    name: Livingroom Lights Manual control
+    duration: '00:30:00'
+    icon: mdi:timer-outline
+
+  livingroom_lights_morning:
+    name: Livingroom Lights Manual control
+    duration: '00:15:00'
+    icon: mdi:timer-outline

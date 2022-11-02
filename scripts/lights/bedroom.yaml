@@ -39,3 +39,13 @@ off_lights_bedroom:
         entity_id: light.bedroom_lights
       service: light.turn_off
 
+tv_lights_bedroom:
+  alias: "Set cozy lights in the bedroom"
+  mode: parallel
+  sequence:
+    - data:
+        entity_id: light.decke_l1
+        brightness_pct: 3
+        color_temp: 450 
+      service: light.turn_on
+

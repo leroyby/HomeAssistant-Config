@@ -3,7 +3,7 @@
 # Original Repo : https://github.com/Leroyby/Homeassistant-Config
 # Automation away mode 
 ######################################################################################################
-- alias: Mode Away on
+- alias: Mode_Away_on
   id: 9521d521-00dc-4116-b467-5150735fcff9
   trigger:
     - platform: state

@@ -5,18 +5,13 @@
 ######################################################################################################
 - alias: presence set away mode
   trigger:
-    - platform: time_pattern
-      #This will run every 15 minutes
-      minutes: "15"
+    platform: state
+    entity_id: binary_sensor.no_one_home
+    to: 'on'
   condition:
   - condition: time
     after: 06:00:00
     before: '23:00:00'
-  - condition:
-    conditions:
-      - condition: state
-        entity_id: binary_sensor.no_one_home
-        state: "on"
   action:
   - service: input_boolean.turn_on
     target:

@@ -48,3 +48,11 @@
   manual_lights_office:
     name: Manual mode Lights Office is on
     icon: mdi:lamp
+
+  manual_lights_livingroom:
+    name: Manual mode Lights Livingroom is on
+    icon: mdi:lamp
+
+  morning_lights_livingroom:
+    name: Morning mode Lights Livingroom is on
+    icon: mdi:lamp

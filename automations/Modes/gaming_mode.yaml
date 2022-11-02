@@ -4,7 +4,7 @@
 # Automation gaming mode on
 ######################################################################################################
 - id: '1663445365487'
-  alias: Mode Gaming on
+  alias: Mode_Gaming_on
   description: ''
   trigger:
   - platform: state

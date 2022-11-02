@@ -20,7 +20,10 @@
     platform: state
     entity_id: binary_sensor.activity_in_livingroom
     to: 'off'
-  condition: []
+  condition: 
+  - condition: state
+    entity_id: input_boolean.morning_lights_livingroom
+    state: "off"
   action:
   - service: light.turn_off
     target:
@@ -38,6 +41,55 @@
     state: "below_horizon"
   action:
   - service: light.turn_on
+    target:
+      entity_id: 
+      - light.livingroom_motion_lights
+
+- alias: Light Livingroom on after Motion morning
+  trigger:
+    platform: state
+    entity_id: binary_sensor.activity_in_livingroom
+    to: 'on'
+  condition:
+    condition: and
+    conditions:
+      - condition: time
+        after: "06:00:00"
+        before: "08:15:00"
+      - condition: or
+        conditions:
+          - condition: state
+            entity_id: sensor.season
+            state: "Autumn"
+          - condition: state
+            entity_id: sensor.season
+            state: "Winter"  
+  action:
+  - service: light.turn_on
+    target:
+      entity_id: 
+      - light.livingroom_motion_lights   
+  - service: input_boolean.turn_on
+    target:
+      entity_id: 
+      - input_boolean.morning_lights_livingroom
+  - service: timer.start
+    target:
+      entity_id: timer.livingroom_lights_morning
+
+- alias: "Timerstop livingroom morning lights"
+  id: "Timerstop livingroom lights morning"
+  trigger:
+  - platform: event
+    event_type: timer.finished
+    event_data:
+      entity_id: timer.livingroom_lights_morning
+  action:
+  - service: input_boolean.turn_off
+    target:
+      entity_id: 
+      - input_boolean.morning_lights_livingroom
+  - service: light.turn_off
     target:
       entity_id: 
       - light.livingroom_motion_lights
