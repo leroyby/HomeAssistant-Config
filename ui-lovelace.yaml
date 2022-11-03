@@ -455,7 +455,9 @@ views:
       entities:
       - entity: timer.livingroom_tv
         name: TV Livingroom
+      - entity: timer.livingroom_lights_morning
       - entity: timer.office_lights_manual
+      - entity: timer.office_xbox
       show_icon: true
       show_name: true
       show_state: true
@@ -630,10 +632,10 @@ views:
 - badges: []
   cards:
   - entities:
-    - entity: sensor.power_office_pc
+    - entity: sensor.season
+    - entity: media_player.wohnzimmer_2
     - entity: binary_sensor.office_pc_on
-    - entity: input_boolean.manual_lights_office
-    - entity: input_boolean.manual_lights_office
+    - entity: sensor.power_office_pc
     show_header_toggle: false
     title: Test apps
     type: entities
@@ -753,7 +755,7 @@ views:
     type: custom:decluttering-card
     variables:
     - name: Timer
-    - slug: Timer_
+    - slug: timer
   - template: automation_template
     type: custom:decluttering-card
     variables:
@@ -777,8 +779,8 @@ views:
   - template: automation_template
     type: custom:decluttering-card
     variables:
-    - name: Music
-    - slug: music
+    - name: Room Office
+    - slug: office*
   - template: automation_template
     type: custom:decluttering-card
     variables:
