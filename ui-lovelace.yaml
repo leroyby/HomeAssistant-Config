@@ -635,7 +635,6 @@ views:
     - entity: sensor.season
     - entity: media_player.wohnzimmer_2
     - entity: binary_sensor.office_pc_on
-    - entity: sensor.power_office_pc
     show_header_toggle: false
     title: Test apps
     type: entities
