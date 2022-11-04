@@ -29,7 +29,7 @@ devices:
   '0x000b57fffe3126b6':
     friendly_name: remote_bedroom
   '0x00158d0007ec9426':
-    friendly_name: Vibration_1
+    friendly_name: Vibration_office_1
   '0x00124b002517876b':
     friendly_name: motion_office
   '0xb4e3f9fffe14e4a3':
