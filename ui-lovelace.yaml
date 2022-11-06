@@ -135,12 +135,6 @@ views:
       \ red;\n  --mini-media-player-background-opacity: 100;\n  --mini-media-player-overlay-color:\
       \ red;\n}\n"
     type: vertical-stack
-  - entities:
-    - entity: input_boolean.alarm_clock
-    - entity: input_datetime.alarm_clock
-    - entity: input_select.sleep_mode
-    show_header_toggle: false
-    type: entities
   - cards:
     - entities:
       - entity: vacuum.rombacus
@@ -535,8 +529,8 @@ views:
     title: Activity in the house
     type: entities
   - entities:
-    - entity: sensor.vibration_1_action
-    - entity: sensor.vibration_1_battery
+    - entity: sensor.vibration_office_1_action
+    - entity: sensor.vibration_office_1_battery
     title: Vibration sensors
     type: glance
   - columns: 3
@@ -635,6 +629,7 @@ views:
     - entity: sensor.season
     - entity: media_player.wohnzimmer_2
     - entity: binary_sensor.office_pc_on
+    - entity: sensor.power_office_pc
     show_header_toggle: false
     title: Test apps
     type: entities

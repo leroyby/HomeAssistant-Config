@@ -1,13 +1,13 @@
 ######################################################################################################
 # @Leroyby
 # Original Repo : https://github.com/Leroyby/Homeassistant
-# Automation Office Aqara Button 
+# Automation Office Aqara Button 4-Button switch
 ######################################################################################################
 
-- alias: Office Button Lights 
+- alias: Tuya 1 single
   trigger:
     platform: state
-    entity_id: sensor.aqara_button_office_action
+    entity_id: sensor.
     to: 'single' 
   condition: []
   action:
@@ -20,36 +20,5 @@
     target:
       entity_id: timer.office_lights_manual  
 
-- alias: Office Button Switch PC 
-  trigger:
-    platform: state
-    entity_id: sensor.aqara_button_office_action
-    to: 'double' 
-  condition: []
-  action:
-    service: switch.toggle
-    target:
-      entity_id: switch.office_pc
-
-# not working as intendet
-# Zigbee2MQTT doenst get tripple click on button
-- alias: Office Button Switch Xbox 
-  trigger:
-    platform: state
-    entity_id: sensor.aqara_button_office_action
-    to: 'triple' 
-  condition: []
-  action:
-    service: switch.toggle
-    target:
-      entity_id: switch.office_xbox
 
 
-- alias: office total off remote
-  trigger:
-    platform: state
-    entity_id: sensor.aqara_button_office_action
-    to: 'hold' 
-  condition: []
-  action:
-    service: service.office_off

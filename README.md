@@ -27,11 +27,11 @@ Please consider the following points:
 
 At this point also a big thanks to the whole home assistant community and especally to [CCOSTAN](https://github.com/CCOSTAN/), [Frenck](https://github.com/frenck/), [geekofweek](https://github.com/geekofweek/) and [basnijholt](https://github.com/basnijholt) for some of the ideas (including how to document on github). Make sure to check them out!
 
-### <a name="statistics">Statistics (as in October 2022)</a>
+### <a name="statistics">Statistics (as in November 2022)</a>
 # Repository statistics
 | Sensors| Binary Sensors | Switches  | Automations | Scripts |
 | :--: | :--: | :--: | :--: | :--: |
-| 148 | 37 | 29 | 32 | 24 |
+| 155 | 36 | 20 | 32 | 24 |
 
 ###  <a name="History">History</a>
 Started in 2014 with the [Tradfri Gateway](https://www.ikea.com/ch/en/search/products/?q=tradfri) (with 3 White spectrum bulbs) and with the [myStrom Switches](https://mystrom.ch/). Added a LED-Strip from China to the setup and started tinkering with HA. But not for very long. During this time I tested also Apple HomeKit, but I was never really statisfied. 2022 I got some time and started again with HA and now here we are... 
@@ -68,7 +68,6 @@ And I will be adding a wall tablet soon (WIP).
 | ------------- | :---: | :---: | ------------- | ------------- | ------------- | ------------- |
 | [TRÅDFRI Gateway V1](https://www.ikea.com/ch/de/p/tradfri-gateway-weiss-40337806)| - | 1 | Ethernet|[IKEA TRÅDFRI](https://www.home-assistant.io/integrations/tradfri) | V1, because V2 is comming soon (late 2022) / userd for integration of TRÅDFRI lights. Maybe will be renewd with the new [Dirigera Hub](https://about.ikea.com/en/newsroom/2022/05/25/ikea-launches-dirigera-the-matter-ready-hub-for-smart-products-and-a-new-ikea-home-smart-app) |integrated|
 | [Hue Bridge v2](https://www.philips-hue.com/de-de/p/hue-hue-bridge/8719514342620)| [Amazon](https://amzn.to/3xPfduH) | 1 | Ethernet |[Philips Hue](https://www.home-assistant.io/integrations/hue/)|-|integrated|
-| [Aqara Hub M2](https://www.aqara.com/us/smart_hub_m2.html) | [Amazon](https://amzn.to/3SeSlgc) | 1 | Ethernet | [HomeKit-Controller](https://www.home-assistant.io/integrations/homekit_controller/)|-|sold|
 
 ### <a name="Lights">Lightning</a>
 | [Go to Menu](#menu) |
@@ -103,7 +102,7 @@ And I will be adding a wall tablet soon (WIP).
 | [Aqara Motion Sensor](https://www.aqara.com/eu/motion_sensor.html) | [Amazon](https://amzn.to/3UzKNGu) | 1 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)| - |integrated|
 | [Sonoff Motion Sensor](https://sonoff.tech/product/smart-home-security/snzb-03/) | [Amazon](https://amzn.to/3F94M9F) | 1  | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/) | - |integrated |
 | [Aqara Temperature and Humidity Sensor](https://www.aqara.com/eu/temperature_humidity_sensor.html) | [Amazon](https://amzn.to/3dCzpsT) | 1 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)| - | integrated |
-| [Aqara Vibration Sensor](https://www.aqara.com/eu/vibration_sensor.html) | [Amazon](https://amzn.to/3dGX0sm) | 1  | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/) | - |integrated but unused |
+| [Aqara Vibration Sensor](https://www.aqara.com/eu/vibration_sensor.html) | [Amazon](https://amzn.to/3dGX0sm) | 1  | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/) | - |integrated |
 
 ### <a name="Multimedia">Multimedia</a>
 | [Go to Menu](#menu) |
@@ -114,7 +113,6 @@ And I will be adding a wall tablet soon (WIP).
 | [Xbox Series X](https://www.xbox.com/en-US/consoles/xbox-series-x?xr=shellnav) |[Xbox](https://amzn.to/3fhObWk) | 1 | Wi-Fi | [Xbox](https://www.home-assistant.io/integrations/xbox/) & [Xbox Live](https://www.home-assistant.io/integrations/xbox_live/)|-|integrated|
 | Samsung Smart TV 55"| - | 1 | Wi-Fi| - | - | not integrated |
 | LG OLED TV 65"| [LG OLED TVs](https://amzn.to/3r0Y2m5) | 1 | Ethernet| [HomeKit-Controller](https://www.home-assistant.io/integrations/homekit_controller/) | - | Integrated |
-| Apple TV 2| - | 1 | - | - | - | unused |
 
 ### <a name="Remotes">Remotes</a>
 | [Go to Menu](#menu) |
@@ -125,7 +123,7 @@ And I will be adding a wall tablet soon (WIP).
 | TRÅDFRI Wireless 5-Button Remote| - | 1 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)|-| integrated |
 |[TRÅDFRI Shortcut button](https://www.ikea.com/ch/en/p/tradfri-shortcut-button-white-smart-40356381/)| - | 1 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)|-| integrated |
 |[Aquara Wi-Fi Mini Switch](https://www.aqara.com/eu/Wi-Fi_mini_switch.html)| [Amazon](https://amzn.to/3SbrK3L) | 1 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)|-| integrated |
-|[Tuya 4-Gang Switch](https://solution.tuya.com/projects/CMa4ie3gzka6ns) | [-]() | 1 | TBA |[TBA]()|-| ordered for testing |
+|[Tuya 4-Gang Switch](https://solution.tuya.com/projects/CMa4ie3gzka6ns) | [-]() | 1 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)|-|integrated |
 
 ### <a name="Vacuum">Vacuum</a>
 | [Go to Menu](#menu) |
