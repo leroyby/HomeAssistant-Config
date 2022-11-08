@@ -7,7 +7,7 @@
 - alias: Tuya 1 single
   trigger:
     platform: state
-    entity_id: sensor.
+    entity_id: sensor.aqara_button_office_action
     to: 'single' 
   condition: []
   action:

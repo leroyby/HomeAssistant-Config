@@ -38,3 +38,4 @@ advanced:
   log_level: info
 shell_command:
   pushupdates_github: /bin/bash /root/addons/Tools/pushupdates.sh
+permit_join: false

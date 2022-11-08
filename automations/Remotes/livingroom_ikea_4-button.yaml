@@ -1,13 +1,13 @@
 ######################################################################################################
 # @Leroyby
 # Original Repo : https://github.com/Leroyby/Homeassistant
-# Automation livingroom IKEA 4-Button remote
+# Automation bedroom IKEA 4-Button remote
 ######################################################################################################
 
 - alias: change light with remote
   trigger:
     platform: state
-    entity_id: sensor.remote_livingroom_action
+    entity_id: sensor.remote_bedroom_action
     to: 'arrow_left_hold'
   condition:
   action:

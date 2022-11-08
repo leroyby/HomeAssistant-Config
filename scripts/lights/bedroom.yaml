@@ -9,7 +9,7 @@ cozy_lights_bedroom:
   sequence:
     - data:
         entity_id: light.bedroom_lights
-        brightness_pct: 5
+        brightness_pct: 3
         color_temp: 450 
       service: light.turn_on
 #    - service: input_select.select_option
@@ -48,4 +48,7 @@ tv_lights_bedroom:
         brightness_pct: 3
         color_temp: 450 
       service: light.turn_on
-
+    - service: light.turn_off
+      entity_id: light.decke_l2
+    - service: light.turn_off
+      entity_id: light.decke_l3

@@ -1,0 +1,90 @@
+######################################################################################################
+# @Leroyby
+# Original Repo : https://github.com/Leroyby/Homeassistant
+# Automation Notification Temperature
+######################################################################################################
+
+## Bedroom
+- alias: Temperature Bedroom low Notification
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.temperature_bedroom
+      below: '19'
+      for: '00:02:00'
+  condition: []
+  action:
+    - service: notify.mobile_app_iphone_von_leroy
+      data:
+        title: "Temperatur Bedroom low"
+        message: "Die Temperatur im Schlafzimmer ist unter 19 Grad" 
+  mode: single
+
+- alias: Temperature Bedroom high Notification
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.temperature_bedroom
+      above: '21.0'
+      for: '00:02:00'
+  condition: []
+  action:
+    - service: notify.mobile_app_iphone_von_leroy
+      data:
+        title: "Temperatur Bedroom high"
+        message: "Die Temperatur im Schlafzimmer über 21 Grad" 
+  mode: single  
+
+ ## Living Room
+- alias: Temperature Living area low Notification
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.temperature_livingroom_average
+      below: '20'
+      for: '00:05:00'
+  condition: []
+  action:
+    - service: notify.mobile_app_iphone_von_leroy
+      data:
+        title: "Temperatur living area low"
+        message: "Die Temperatur im Wohnzimmer ist unter 20 Grad" 
+  mode: single
+
+- alias: Temperature living area high Notification
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.temperature_livingroom_average
+      above: '22.5'
+      for: '00:02:00'
+  condition: []
+  action:
+    - service: notify.mobile_app_iphone_von_leroy
+      data:
+        title: "Temperatur living area high"
+        message: "Die Temperatur im Wohnzimmer über 22.5 Grad" 
+  mode: single  
+
+ ## Office 
+- alias: Temperature office low Notification
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.temperature_office_average
+      below: '20'
+      for: '00:02:00'
+  condition: []
+  action:
+    - service: notify.mobile_app_iphone_von_leroy
+      data:
+        title: "Temperatur office low"
+        message: "Die Temperatur im Büro unter 20 Grad" 
+
+- alias: Temperature office high Notification
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.temperature_office_average
+      above: '23'
+      for: '00:02:00'
+  condition: []
+  action:
+    - service: notify.mobile_app_iphone_von_leroy
+      data:
+        title: "Temperatur office high"
+        message: "Die Temperatur im Büro über 23 Grad" 

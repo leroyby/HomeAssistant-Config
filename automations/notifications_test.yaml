@@ -1,0 +1,12 @@
+- alias: Test Notification
+  trigger:
+    - platform: time
+      at: "23:45:00"
+  condition: []
+  action:
+    - service: notify.mobile_app_iphone_von_leroy
+      data:
+        title: "TITLE"
+        message: "Notification Test Google"    
+        data:
+         url: "https://google.com"  

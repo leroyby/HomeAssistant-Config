@@ -24,7 +24,7 @@ work_lights_office:
     - data:
         entity_id: light.office_lights
         brightness_pct: 100
-        color_temp: 300
+        color_temp: 100
       service: light.turn_on
     - service: input_select.select_option
       entity_id: input_select.last_script_bedroom

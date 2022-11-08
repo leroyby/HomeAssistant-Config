@@ -31,7 +31,7 @@ homeassistant:
 light: !include groups/light_groups.yaml
 script: !include_dir_merge_named scripts
 timer: !include_dir_merge_named timers
-#device_tracker: !include_dir_merge_named 
+device_tracker: !include includes/device_trackers.yaml
 readme:
   convert_lovelace: true
 #PowerCal

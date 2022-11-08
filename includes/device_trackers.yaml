@@ -1,11 +1,9 @@
 ######################################################################################################
 # @Leroyby
 # Original Repo : https://github.com/Leroyby/Homeassistant-Config
-# Scene Office Light (Night)
+# Device trackers
 ######################################################################################################
-- name: night light office
-  entities:
-       light.wiz_office_1:
-           state: on
-           brightness: 200
-           color_temp: 450
+  - platform: ping
+    hosts:
+      a72_von_USER2_ping: 192.168.178.210
+      iphone_von_leroy_ping: 192.168.178.211
