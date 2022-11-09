@@ -1,0 +1,18 @@
+- type: 'custom:mushroom-light-card'
+  use_light_color: true
+  show_brightness_control: true
+  show_color_temp_control: true
+  show_color_control: true
+  entity: light.workspace_desk_spot_light_left
+
+- type: 'custom:mushroom-light-card'
+  entity: light.workspace_desk_spot_light_right
+  show_brightness_control: true
+  use_light_color: true
+  show_color_temp_control: true
+  show_color_control: true
+
+- type: 'custom:layout-card'
+  layout_type: 'custom:grid-layout'
+  layout: !include ../snippets/layout-live-tile-mini.yaml
+  entities:

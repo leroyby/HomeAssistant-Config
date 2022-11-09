@@ -3,7 +3,7 @@
 # Original Repo : https://github.com/Leroyby/Homeassistant-Config
 # Script Lights Livingroom
 ######################################################################################################
-cozy_lights_living_room:
+living_room_cozy_lights:
   alias: "Set cozy lights in the living room"
   mode: parallel
   sequence:
@@ -27,7 +27,7 @@ cozy_lights_living_room:
       data:
         option: script.cozy_lights_living_room
 
-normal_lights_living_room:
+living_room_normal_lights:
   alias: Set normal lights in the living room
   mode: parallel
   sequence:
@@ -51,7 +51,7 @@ normal_lights_living_room:
       data:
         option: script_normal_lights_living_room
 
-tv_lights_living_room:
+living_room_tv_lights:
   alias: "Set tv lights in the living room"
   mode: parallel
   sequence:
@@ -68,7 +68,7 @@ tv_lights_living_room:
     - service: light.turn_off
       entity_id: light.livingroom_tv
 
-off_lights_livingroom:
+living_room_off_lights:
   alias: "shut off lights in the living room"
   mode: parallel
   sequence:

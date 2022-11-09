@@ -1,0 +1,863 @@
+background: var(--background-image)
+decluttering_templates:
+  automation_template:
+    card:
+      card:
+        show_header_toggle: false
+        title: '[[name]] automations'
+        type: entities
+      filter:
+        include:
+          - entity_id: automation.[[slug]]*
+      sort: entity_id
+      type: custom:auto-entities
+title: Home
+views:
+  - theme: Backend-selected
+    icon: mdi:home
+    path: default_view
+    title: Home
+    badges:
+      - entity: person.leroy
+      - entity: person.USER2
+    cards:
+      - show_header_toggle: false
+        title: Lights
+        type: entities
+        entities:
+          - entities:
+              - light.livingroom_tv
+              - light.livingroom_sofa
+              - light.livingroom_table
+              - light.tradfri_bulb_4
+              - entity: script.cozy_lights_living_room
+                icon_height: 20px
+                name: Cozy lights
+                show_icon: false
+                show_name: true
+                tap_action:
+                  action: call-service
+                  service: script.cozy_lights_living_room
+              - entity: script.tv_lights_living_room
+                icon_height: 20px
+                name: TV lights
+                show_icon: false
+                show_name: true
+                tap_action:
+                  action: call-service
+                  service: script.tv_lights_living_room
+              - entity: script.normal_lights_living_room
+                icon_height: 20px
+                name: White lights
+                show_icon: false
+                show_name: true
+                tap_action:
+                  action: call-service
+                  service: script.normal_lights_living_room
+            head:
+              color_picker: true
+              entity: light.living_room_lights
+              hide_when_off: false
+              name: Living
+              type: custom:slider-entity-row
+            type: custom:fold-entity-row
+          - entities:
+              - light.bedroom_lights
+              - entity: script.cozy_lights_bedroom
+                icon_height: 20px
+                name: Cozy lights
+                show_icon: false
+                show_name: true
+                tap_action:
+                  action: call-service
+                  service: script.cozy_lights_bedroom
+              - entity: script.normal_lights_bedroom
+                icon_height: 20px
+                name: normal light
+                show_icon: false
+                show_name: true
+                tap_action:
+                  action: call-service
+                  service: script.normal_lights_bedroom
+              - entity: script.tv_lights_bedroom
+                icon_height: 20px
+                name: TV light
+                show_icon: false
+                show_name: true
+                tap_action:
+                  action: call-service
+                  service: script.tv_lights_bedroom
+            head:
+              entity: light.bedroom_lights
+              hide_when_off: false
+              name: Bedroom
+              type: custom:slider-entity-row
+            name: Bed
+            type: custom:fold-entity-row
+          - entities:
+              - light.office_lights
+              - entity: script.work_lights_office
+                icon_height: 20px
+                name: Work lights
+                show_icon: false
+                show_name: true
+                tap_action:
+                  action: call-service
+                  service: script.work_lights_office
+              - entity: script.normal_lights_office
+                icon_height: 20px
+                name: Normal lights
+                show_icon: false
+                show_name: true
+                tap_action:
+                  action: call-service
+                  service: script.normal_lights_office
+            head:
+              color_picker: true
+              entity: light.office_lights
+              hide_when_off: false
+              name: Office
+              type: custom:slider-entity-row
+            type: custom:fold-entity-row
+      - entity: weather.forecast_home
+        name: Weather
+        type: custom:simple-weather-card
+      - cards:
+          - artwork: cover
+            background: /local/tv.jpg
+            entity: media_player.wohnzimmer_2
+            hide:
+              controls: false
+              mute: false
+              play_stop: false
+              volume: false
+            icon: mdi:television
+            type: custom:mini-media-player
+          - cards:
+              - icon: mdi:sofa
+                name: Play music in living room
+                styles:
+                  card:
+                    - font-size: 12px
+                    - font-weight: bold
+                    - height: 70px
+                tap_action:
+                  action: call-service
+                  service: script.start_spotify_livingroom
+                type: custom:button-card
+            type: horizontal-stack
+        style: |
+          ha-card {
+            --mini-media-player-base-color: red;
+            --mini-media-player-icon-color: red;
+            --mini-media-player-background-opacity: 100;
+            --mini-media-player-overlay-color: red;
+          }
+        type: vertical-stack
+      - cards:
+          - entities:
+              - entity: vacuum.rombacus
+                name: Vacuum cleaner
+                primary:
+                  entity: binary_sensor.vacuum_day
+                  name: Vacuum day
+                secondary:
+                  attribute: battery_level
+                  name: Battery
+                  unit: '%'
+                type: custom:multiple-entity-row
+              - entity: input_boolean.vacuum_ran
+              - entity: script.vacuum_start
+            show_header_toggle: false
+            type: entities
+        type: vertical-stack
+      - show_header_toggle: false
+        title: Switches
+        type: entities
+        entities:
+          - entity: switch.livingroom_switches
+            type: custom:multiple-entity-row
+            name: Living
+            state_header: Main
+            toggle: true
+            state_color: false
+            entities:
+              - entity: switch.livingroom_tv
+                name: TV
+                toggle: true
+              - entity: switch.kitchen
+                name: Kitchen
+                toggle: true
+          - type: section
+          - entity: switch.bedroom_tv
+            type: custom:multiple-entity-row
+            name: Bedroom
+            state_header: Main
+            toggle: true
+            state_color: true
+            entities:
+              - entity: switch.bedroom_tv
+                name: TV
+                toggle: true
+          - type: section
+          - entity: switch.office_switches
+            type: custom:multiple-entity-row
+            name: Office
+            state_header: Main
+            toggle: true
+            state_color: true
+            entities:
+              - entity: switch.office_pc
+                name: PC
+                toggle: true
+              - entity: switch.office_xbox
+                name: Xbox
+                toggle: true
+      - entities:
+          - entity: input_boolean.normal_mode
+          - entity: input_boolean.away_mode
+          - entity: input_boolean.gaming_mode
+          - entity: input_boolean.work_mode
+          - entity: input_boolean.night_mode
+        show_header_toggle: false
+        type: entities
+      - cards:
+          - cards:
+              - cards:
+                  - color_thresholds_transition: smooth
+                    entities:
+                      - entity: sensor.temperature_home
+                        name: Home
+                    font_size: 100
+                    group: false
+                    hour24: true
+                    line_width: 6
+                    points_per_hour: 1
+                    show:
+                      extrema: false
+                      fill: fade
+                      labels: false
+                      name: true
+                      state: true
+                    type: custom:mini-graph-card
+                  - color_thresholds_transition: smooth
+                    entities:
+                      - entity: sensor.temperature_livingroom_average
+                        name: Living Room
+                    font_size: 100
+                    group: false
+                    hour24: true
+                    line_width: 6
+                    points_per_hour: 1
+                    show:
+                      extrema: false
+                      fill: fade
+                      labels: false
+                      name: true
+                      state: true
+                    type: custom:mini-graph-card
+                type: horizontal-stack
+              - cards:
+                  - color_thresholds_transition: smooth
+                    entities:
+                      - entity: sensor.temperature_office_average
+                        name: Office
+                    font_size: 100
+                    group: false
+                    hour24: true
+                    line_width: 6
+                    points_per_hour: 1
+                    show:
+                      extrema: false
+                      fill: fade
+                      labels: false
+                      name: true
+                      state: true
+                    type: custom:mini-graph-card
+                  - color_thresholds_transition: smooth
+                    entities:
+                      - entity: sensor.temperature_bedroom
+                        name: Bedroom
+                    font_size: 100
+                    group: false
+                    hour24: true
+                    line_width: 6
+                    points_per_hour: 1
+                    show:
+                      extrema: false
+                      fill: fade
+                      labels: false
+                      name: true
+                      state: true
+                    type: custom:mini-graph-card
+                type: horizontal-stack
+            type: vertical-stack
+        type: custom:swipe-card
+      - cards:
+          - cards:
+              - color: auto
+                icon: mdi:weather-sunset-up
+                name: Wake up
+                styles:
+                  card:
+                    - font-size: 12px
+                    - font-weight: bold
+                    - height: 70px
+                tap_action:
+                  action: call-service
+                  haptic: success
+                  service: input_select.select_option
+                  service_data:
+                    entity_id: input_select.sleep_mode
+                    option: 'off'
+                type: custom:button-card
+              - color: auto
+                entity: input_select.sleep_mode
+                icon: mdi:weather-night
+                name: >-
+                  [[[ if (entity.state != "off") return "Sleep mode on"; else
+                  return  "Go to sleep" ]]]
+                styles:
+                  card:
+                    - font-size: 12px
+                    - font-weight: bold
+                    - height: 70px
+                tap_action:
+                  action: call-service
+                  haptic: success
+                  service: script.going_to_sleep
+                type: custom:button-card
+            type: horizontal-stack
+          - cards:
+              - color: auto
+                icon: mdi:home-map-marker
+                name: Arrive Home
+                styles:
+                  card:
+                    - font-size: 12px
+                    - font-weight: bold
+                    - height: 70px
+                tap_action:
+                  action: call-service
+                  haptic: success
+                  service: script.arriving
+                type: custom:button-card
+              - color: auto
+                icon: mdi:home-export-outline
+                name: Leave Home
+                styles:
+                  card:
+                    - font-size: 12px
+                    - font-weight: bold
+                    - height: 70px
+                tap_action:
+                  action: call-service
+                  haptic: success
+                  service: script.leaving
+                type: custom:button-card
+            type: horizontal-stack
+        type: vertical-stack
+  - cards:
+      - cards:
+          - entities:
+              - entity: sensor.current_version
+                icon: mdi:home-assistant
+                name: Hassio Installed Version
+              - entity: sensor.hacs
+                icon: mdi:update
+                name: Community Store
+              - type: divider
+              - entity: sensor.last_boot
+                icon: mdi:calendar
+              - entity: sensor.uptime
+                icon: mdi:home-assistant
+              - animation: 'off'
+                entity: sensor.processor_use
+                entity_row: true
+                height: 30px
+                indicator: 'off'
+                severity:
+                  - color: green
+                    from: 0
+                    to: 60
+                  - color: orange
+                    from: 60
+                    to: 85
+                  - color: red
+                    from: 85
+                    to: 100
+                style: |
+                  ha-card {
+                    box-shadow: none;
+                    --ha-card-background: 'rgba(0, 0, 0, 0)';
+                  }
+                type: custom:bar-card
+              - animation: 'off'
+                entity: sensor.memory_use_percent
+                entity_row: true
+                height: 30px
+                indicator: 'off'
+                severity:
+                  - color: green
+                    from: 0
+                    to: 60
+                  - color: orange
+                    from: 60
+                    to: 85
+                  - color: red
+                    from: 85
+                    to: 100
+                style: |
+                  ha-card {
+                    box-shadow: none;
+                    --ha-card-background: 'rgba(0, 0, 0, 0)';
+                  }
+                type: custom:bar-card
+              - animation: 'off'
+                entity: sensor.disk_use_percent
+                entity_row: true
+                height: 30px
+                indicator: 'off'
+                severity:
+                  - color: green
+                    from: 0
+                    to: 60
+                  - color: orange
+                    from: 60
+                    to: 85
+                  - color: red
+                    from: 85
+                    to: 100
+                style: |
+                  ha-card {
+                    box-shadow: none;
+                    --ha-card-background: 'rgba(0, 0, 0, 0)';
+                  }
+                type: custom:bar-card
+              - type: divider
+            show_header_toggle: false
+            title: System
+            type: entities
+        type: vertical-stack
+      - cards:
+          - columns: 4
+            entities:
+              - entity: sensor.count_automations
+                name: Automations
+              - entity: sensor.count_scripts
+                name: Scripts
+              - entity: sensor.count_zones
+                name: Zones
+              - entity: sensor.count_device_trackers
+                name: Device Trackers
+              - entity: sensor.count_switches
+                name: Switches
+              - entity: sensor.count_sensors
+                name: Sensors
+              - entity: sensor.count_binary_sensors
+                name: Binary Sensors
+              - entity: sensor.count_input_booleans
+                name: Input Booleans
+              - entity: sensor.count_input_numbers
+                name: Input Numbers
+              - entity: sensor.count_input_texts
+                name: Input Texts
+              - entity: sensor.count_input_selects
+                name: Input Select
+              - entity: sensor.count_input_datetimes
+                name: Input Date Times
+            title: Component Count
+            type: glance
+        type: vertical-stack
+      - cards:
+          - show_name: true
+            show_icon: true
+            show_state: true
+            columns: 4
+            entities:
+              - entity: timer.livingroom_tv
+                name: TV Livingroom
+              - entity: timer.livingroom_lights_morning
+              - entity: timer.office_lights_manual
+              - entity: timer.office_xbox
+            title: Timers
+            type: glance
+            state_color: false
+        type: vertical-stack
+      - entities:
+          - entity: script.system_generate_readme
+            icon: mdi:typewriter
+            name: readme
+            tap_action:
+              action: call-service
+              service: readme.generate
+          - entity: zone.home
+            icon: mdi:restart
+            name: Lovelace
+            tap_action:
+              action: call-service
+              service: frontend.reload_themes
+          - entity: zone.home
+            icon: mdi:restart
+            name: Home Assistant
+            tap_action:
+              action: call-service
+              service: homeassistant.restart
+          - entity: zone.home
+            icon: mdi:restart
+            name: Server
+            tap_action:
+              action: call-service
+              service: hassio.host_reboot
+        show_name: true
+        show_state: false
+        type: glance
+      - type: markdown
+        content: |2
+            <h2> <ha-icon icon='mdi:shield-half-full'></ha-icon> Watchman report</h2>
+            <h3>Missing Entities: {{ states.sensor.watchman_missing_entities.state }} </h3>
+            {%- for item in state_attr("sensor.watchman_missing_entities", "entities") %}
+            <hr> <table><tr> <td>
+            <ha-icon icon='mdi:
+            {%- if item.state=="missing"-%}cloud-alert'
+            {%- elif item.state=="unavail" -%}cloud-off-outline' {%- else-%}cloud-question'
+            {%- endif -%} ></ha-icon>
+            {{ item.id }} [{{item.state}}] <a title="{{item.occurrences}}">
+            {{item.occurrences.split('/')[-1].split(':')[0]}}</a>
+            </td></tr></table>
+            {%- endfor %}
+    icon: mdi:home-assistant
+    path: system
+    title: System Information
+  - badges: []
+    cards:
+      - columns: 5
+        entities: []
+        show_icon: true
+        show_name: false
+        title: Buttons
+        type: glance
+      - show_name: false
+        show_icon: true
+        show_state: true
+        columns: 5
+        entities:
+          - entity: sun.sun
+        title: Sun
+        type: glance
+      - entities:
+          - entity: binary_sensor.activity_in_kitchen
+          - entity: binary_sensor.activity_in_livingroom
+          - entity: binary_sensor.activity_in_office
+          - type: divider
+          - entity: binary_sensor.motion_detected_in_last_hour
+          - entity: binary_sensor.motion_detected
+          - entity: binary_sensor.someone_in_the_house_in_last_hour
+          - type: divider
+          - entity: binary_sensor.no_one_home
+        show_header_toggle: false
+        title: Activity in the house
+        type: entities
+      - entities:
+          - entity: sensor.vibration_office_1_action
+          - entity: sensor.vibration_office_1_battery
+        title: Vibration sensors
+        type: glance
+      - columns: 3
+        entities:
+          - entity: binary_sensor.motion_livingroom_occupancy
+            name: Living room
+          - entity: sensor.motion_livingroom_illuminance_lux
+            name: Lux
+          - entity: sensor.motion_livingroom_battery
+            name: Battery
+          - entity: binary_sensor.motion_office_occupancy
+            name: Office
+          - entity: binary_sensor.motion_office_tamper
+            name: Tamper
+          - entity: sensor.motion_office_battery
+            name: Battery
+        show_icon: true
+        show_name: true
+        state_color: true
+        title: Motion sensor
+        type: glance
+      - columns: 2
+        entities: []
+        show_icon: true
+        show_name: true
+        title: Open/close sensor
+        type: glance
+      - entities:
+          - entity: binary_sensor.anything_on
+          - entity: binary_sensor.any_light_on
+        show_header_toggle: false
+        title: Devices are on
+        type: entities
+      - columns: 4
+        entities:
+          - entity: sensor.temperature_livingroom_temperature
+            name: Living room
+          - entity: sensor.temperature_livingroom_tv_pressure
+            name: ''
+          - entity: sensor.temperature_livingroom_tv_humidity
+            name: ''
+          - entity: sensor.temperature_livingroom_tv_battery
+            name: ''
+          - entity: sensor.temperature_bedroom
+            name: Bedroom
+          - entity: sensor.temperature_office_average
+            name: Office
+          - entity: sensor.temperature_home
+            name: Home
+        show_icon: true
+        show_name: true
+        show_state: true
+        theme: Backend-selected
+        title: Temperature sensors
+        type: glance
+      - entities:
+          - entity: sensor.hours_bedroom_lights_have_been_on_last_7_days
+            icon: mdi:clock
+            name: Bedroom lights
+            secondary: >-
+              Been on {{
+              (states('sensor.hours_bedroom_lights_have_been_on_last_7_days')|float
+              / (7*24) * 100) | round(2) }}% during last 7 days. 
+            state: >-
+              {{ states("sensor.hours_bedroom_lights_have_been_on_last_7_days")
+              }} h
+            type: custom:template-entity-row
+          - entity: sensor.hours_living_room_lights_have_been_on_last_7_days
+            icon: mdi:clock
+            name: Living room lights
+            secondary: >-
+              Been on {{
+              (states('sensor.hours_livingroom_lights_have_been_on_last_7_days')|float
+              / (7*24) * 100) | round(2) }}% during last 7 days. 
+            state: >-
+              {{
+              states("sensor.hours_livingroom_lights_have_been_on_last_7_days")
+              }} h
+            type: custom:template-entity-row
+          - entity: sensor.hours_toilet_light_has_been_on_last_7_days
+            icon: mdi:clock
+            name: Toilet
+            secondary: >-
+              Been on {{
+              (states('sensor.hours_toilet_light_has_been_on_last_7_days')|float
+              / (7*24) * 100) | round(2) }}% during last 7 days. 
+            state: >-
+              {{ states("sensor.hours_toilet_light_has_been_on_last_7_days") }}
+              h
+            type: custom:template-entity-row
+          - entity: sensor.hours_bathroom_light_has_been_on_last_7_days
+            icon: mdi:clock
+            name: Office
+            secondary: >-
+              Been on {{
+              (states('sensor.hours_bathroom_light_has_been_on_last_7_days')|float
+              / (7*24) * 100) | round(2) }}% during last 7 days. 
+            state: >-
+              {{ states("sensor.hours_bathroom_light_has_been_on_last_7_days")
+              }} h
+            type: custom:template-entity-row
+        title: Lights on last 7 days
+        type: entities
+    icon: mdi:motion-sensor
+    path: sensors
+    title: Sensors
+  - badges: []
+    cards:
+      - entities:
+          - entity: sensor.season
+          - entity: media_player.wohnzimmer_2
+          - entity: binary_sensor.office_pc_on
+          - entity: sensor.power_office_pc
+        show_header_toggle: false
+        title: Test apps
+        type: entities
+      - entities:
+          - entity: input_select.last_script_office
+          - entity: input_select.last_script_bedroom
+          - entity: input_select.last_script_living_room
+        show_header_toggle: false
+        title: Inputs (automatically switched)
+        type: entities
+      - entities: []
+        show_header_toggle: false
+        title: Datetimes
+        type: entities
+      - entities:
+          - entity: sensor.times_tv_has_been_on_last_7_days
+          - entity: sensor.hours_tv_has_been_on_last_7_days
+        title: Stats
+        type: entities
+      - entity: media_player.lbxbox
+        type: media-control
+      - entities:
+          - entity: sensor.temperature_living_room
+            name: Living room
+            secondary: >-
+              💦 {{ states('sensor.temperature_livingroom_tv_humidity') }}%, ⚖️
+              {{ states('sensor.temperature_livingroom_tv_pressure') }} hPa, 🔋
+              {{ states('sensor.temperature_livingroom_tv_battery') }}% 
+            state: '{{ states("sensor.temperature_livingroom_temperature") }} °C'
+            type: custom:template-entity-row
+        title: Temperature sensors
+        type: entities
+      - entities:
+          - active: >-
+              {{ is_state("binary_sensor.motion_sensor_living_room_klok", "on")
+              }}
+            entity: binary_sensor.motion_livingroom_occupancy
+            name: Living room
+            secondary: >-
+              Light level {{ states("sensor.motion_livingroom_illuminance_lux")
+              }} lx, battery {{ states("sensor.motion_livingroom_battery") }}% 
+            type: custom:template-entity-row
+        title: Motion sensors
+        type: entities
+    icon: mdi:test-tube
+    path: tests
+    title: Tests
+  - badges: []
+    cards:
+      - card:
+          show_header_toggle: false
+          title: Uncategorized automations
+          type: entities
+        filter:
+          exclude:
+            - entity_id: automation.adaptive_lighting*
+            - entity_id: automation.alarm_clock_*
+            - entity_id: automation.apple_watch*
+            - entity_id: automation.arriving_*
+            - entity_id: automation.climate_*
+            - entity_id: automation.control_switches*
+            - entity_id: automation.cube_*
+            - entity_id: automation.doorbell_*
+            - entity_id: automation.frontend_*
+            - entity_id: automation.kef_dsp_*
+            - entity_id: automation.leaving_*
+            - entity_id: automation.light_*
+            - entity_id: automation.lovelace_*
+            - entity_id: automation.lsx_*
+            - entity_id: automation.media_player_*
+            - entity_id: automation.music_*
+            - entity_id: automation.night_mode_*
+            - entity_id: automation.plant_*
+            - entity_id: automation.rhasspy_*
+            - entity_id: automation.security_*
+            - entity_id: automation.system_*
+            - entity_id: automation.utilities_*
+            - entity_id: automation.vacation_mode_*
+            - entity_id: automation.vacuum_*
+            - entity_id: automation.work*
+          include:
+            - domain: automation
+        sort: entity_id
+        type: custom:auto-entities
+      - template: automation_template
+        type: custom:decluttering-card
+        variables:
+          - name: Alarm clock
+          - slug: alarm_clock
+      - template: automation_template
+        type: custom:decluttering-card
+        variables:
+          - name: Arriving
+          - slug: arriving_
+      - template: automation_template
+        type: custom:decluttering-card
+        variables:
+          - name: Mode
+          - slug: Mode
+      - template: automation_template
+        type: custom:decluttering-card
+        variables:
+          - name: Control switches
+          - slug: control_switches
+      - template: automation_template
+        type: custom:decluttering-card
+        variables:
+          - name: Cube
+          - slug: cube_
+      - template: automation_template
+        type: custom:decluttering-card
+        variables:
+          - name: Doorbell
+          - slug: doorbell_
+      - template: automation_template
+        type: custom:decluttering-card
+        variables:
+          - name: Frontend
+          - slug: frontend_
+      - template: automation_template
+        type: custom:decluttering-card
+        variables:
+          - name: Timer
+          - slug: timer
+      - template: automation_template
+        type: custom:decluttering-card
+        variables:
+          - name: Leaving
+          - slug: leaving
+      - template: automation_template
+        type: custom:decluttering-card
+        variables:
+          - name: Light
+          - slug: light
+      - template: automation_template
+        type: custom:decluttering-card
+        variables:
+          - name: Lovelace
+          - slug: lovelace
+      - template: automation_template
+        type: custom:decluttering-card
+        variables:
+          - name: Media player
+          - slug: media_player
+      - template: automation_template
+        type: custom:decluttering-card
+        variables:
+          - name: Room Office
+          - slug: office*
+      - template: automation_template
+        type: custom:decluttering-card
+        variables:
+          - name: Mode
+          - slug: mode
+      - template: automation_template
+        type: custom:decluttering-card
+        variables:
+          - name: Security
+          - slug: security
+      - template: automation_template
+        type: custom:decluttering-card
+        variables:
+          - name: System
+          - slug: system_
+      - template: automation_template
+        type: custom:decluttering-card
+        variables:
+          - name: Utilities
+          - slug: utilities_
+      - template: automation_template
+        type: custom:decluttering-card
+        variables:
+          - name: Vacuum
+          - slug: vacuum
+      - template: automation_template
+        type: custom:decluttering-card
+        variables:
+          - name: Apple Watch
+          - slug: apple_watch
+      - template: automation_template
+        type: custom:decluttering-card
+        variables:
+          - name: Adaptive Lighting
+          - slug: adaptive_lighting_
+    icon: mdi:robot
+    path: automations
+    title: Automations

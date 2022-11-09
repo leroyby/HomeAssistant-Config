@@ -69,6 +69,17 @@ views:
         name: normal light
         show_icon: false
         show_name: true
+        tap_action:
+          action: call-service
+          service: script.normal_lights_bedroom
+      - entity: script.tv_lights_bedroom
+        icon_height: 20px
+        name: TV light
+        show_icon: false
+        show_name: true
+        tap_action:
+          action: call-service
+          service: script.tv_lights_bedroom
       head:
         entity: light.bedroom_lights
         hide_when_off: false

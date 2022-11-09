@@ -1,0 +1,20 @@
+######################################################################################################
+# @Leroyby
+# Original Repo : https://github.com/Leroyby/Homeassistant-Config
+# Scenes Lights Livingroom
+######################################################################################################
+  - name: bedroom_cozy_lights
+    icon: "mdi:google-cloud"
+    entities:
+      light.livingroom_sofa:
+        state: "on"
+        brightness_pct: 50
+        color_temp: 450
+      light.livingroom_table:
+        state: "on"
+        brightness_pct: 50
+        color_temp: 450
+      light.livingroom_tv:
+        state: "on"
+        brightness_pct: 50
+        rgb_color: [255, 50, 50]

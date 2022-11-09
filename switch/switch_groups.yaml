@@ -18,6 +18,7 @@
   entities:
     - switch.office_pc
     - switch.office_xbox
+    
   ##  LIVING ROOM   
 - platform: group
   name: Livingroom Switches

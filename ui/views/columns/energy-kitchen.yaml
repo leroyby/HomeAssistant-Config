@@ -1,0 +1,12 @@
+######################################################################################################
+# @Leroyby
+# Original Repo : https://github.com/Leroyby/Homeassistant-Config
+# Energy Column Kitches
+# Inspired by MAXIMALIST DASHBOARD created by Madelena Mak (https://madelenamak.com/)
+######################################################################################################
+- type: sensor
+  entity: sensor.power_kitchen
+  graph: line
+  detail: 2
+  name: Kitchen 
+  hours_to_show: 48
