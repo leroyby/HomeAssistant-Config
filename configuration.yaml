@@ -13,13 +13,13 @@ tts:
 my:
 # Inputs
 input_datetime: !include input/input_datetimes.yaml
-binary_sensor: !include includes/binary_sensors.yaml
+binary_sensor: !include_dir_merge_list binary_sensors
 #input_number: !include input/input_numbers.yaml
 input_select: !include input/input_selects.yaml
 input_boolean: !include input/input_booleans.yaml
 input_text: !include input/input_text.yaml
 #config files
-adaptive_lighting: !include_dir_merge_list adaptive_lighting
+#adaptive_lighting: !include_dir_merge_list adaptive_lighting
 switch: !include_dir_merge_list switch
 sensor: !include_dir_merge_list sensors
 scene: !include_dir_merge_list scene

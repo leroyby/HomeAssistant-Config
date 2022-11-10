@@ -99,3 +99,21 @@
   country: CH
   workdays: [mon, tue, wed, thu, fri]
   excludes: [sat, sun]
+
+- platform: ping
+  host: 192.168.178.1
+  name: "ping modem"
+  count: 2
+  scan_interval: 30
+
+- platform: ping
+  host: 1.1.1.1
+  name: "ping cloudflare"
+  count: 2
+  scan_interval: 30
+
+- platform: ping
+  host: 8.8.8.8
+  name: "ping google"
+  count: 2
+  scan_interval: 30
