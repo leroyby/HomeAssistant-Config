@@ -23,13 +23,14 @@
       friendly_name: Someone in the house in the last hour
       value_template: >
         {{ is_state("binary_sensor.motion_detected_in_last_hour", "on") }}
+      delay_off: "01:00:00"
 
     activity_in_livingroom:
       friendly_name: Activity in the living room
       value_template: >
         {{ is_state("binary_sensor.motion_livingroom_occupancy", "on")
             or is_state("media_player.lg_webos_smart_tv", "on") }}
-      delay_off: "00:01:00"
+      delay_off: "00:03:00"
 
     activity_in_kitchen:
       friendly_name: Activity in the kitchen
@@ -100,20 +101,3 @@
   workdays: [mon, tue, wed, thu, fri]
   excludes: [sat, sun]
 
-- platform: ping
-  host: 192.168.178.1
-  name: "ping modem"
-  count: 2
-  scan_interval: 30
-
-- platform: ping
-  host: 1.1.1.1
-  name: "ping cloudflare"
-  count: 2
-  scan_interval: 30
-
-- platform: ping
-  host: 8.8.8.8
-  name: "ping google"
-  count: 2
-  scan_interval: 30

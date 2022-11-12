@@ -20,3 +20,51 @@
   name: "ping google"
   count: 2
   scan_interval: 30
+
+- platform: ping
+  host: ubnt.leroyby.ch
+  name: "ping my website"
+  count: 2
+  scan_interval: 30
+
+- platform: ping
+  host: 192.168.178.1
+  name: "ping modem"
+  count: 2
+  scan_interval: 30
+
+- platform: ping
+  host: 192.168.178.1
+  name: "ping router"
+  count: 2
+  scan_interval: 30
+
+- platform: ping
+  host: 192.168.178.15
+  name: "ping switch"
+  count: 2
+  scan_interval: 30
+
+- platform: ping
+  host: 192.168.178.16
+  name: "ping ap"
+  count: 2
+  scan_interval: 30
+################################
+- platform: ping
+  host: 192.168.178.100
+  name: "ping valhalla outlet"
+  count: 2
+  scan_interval: 30
+
+- platform: ping
+  host: 192.168.178.101
+  name: "ping bedroom mesh repeater"
+  count: 2
+  scan_interval: 30
+
+- platform: ping
+  host: 192.168.178.102
+  name: "ping dorothy illinoise"
+  count: 2
+  scan_interval: 30

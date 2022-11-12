@@ -637,12 +637,7 @@ views:
 - badges: []
   cards:
   - entities:
-    - entity: sensor.season
-    - entity: media_player.wohnzimmer_2
-    - entity: binary_sensor.office_pc_on
-    - entity: sensor.power_office_pc
-    - entity: sensor.co2_signal_co2_intensity
-    - entity: sensor.co2_signal_grid_fossil_fuel_percentage
+    - entity: binary_sensor.ping_modem
     show_header_toggle: false
     title: Test apps
     type: entities
