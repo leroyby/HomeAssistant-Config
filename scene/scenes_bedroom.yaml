@@ -1,7 +1,7 @@
 ######################################################################################################
 # @Leroyby
 # Original Repo : https://github.com/Leroyby/Homeassistant-Config
-# Scenes Lights Livingroom
+# Scenes Lights Bedroom
 ######################################################################################################
   - name: bedroom_cozy_lights
     icon: "mdi:google-cloud"

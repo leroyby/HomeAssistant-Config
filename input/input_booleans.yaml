@@ -56,3 +56,6 @@
   morning_lights_livingroom:
     name: Morning mode Lights Livingroom is on
     icon: mdi:lamp
+
+  living_room_light_level_under_7:
+    icon: mdi:lamp

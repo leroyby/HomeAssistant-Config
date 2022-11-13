@@ -1,4 +1,8 @@
-
+######################################################################################################
+# @Leroyby
+# Original Repo : https://github.com/Leroyby/Homeassistant-Config
+# Scenes Lights Livingroom
+######################################################################################################
   - name: living_room_cozy_lights
     icon: "mdi:google-cloud"
     entities:
@@ -14,3 +18,4 @@
         state: "on"
         brightness_pct: 50
         rgb_color: [255, 50, 50]
+

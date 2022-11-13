@@ -13,3 +13,13 @@
   remote_living_room_light_selection:
     name: Remote Living Room Light selection
     initial: All
+
+ ## CHORES
+ 
+# Plants
+  chore_water_plants:
+    name: Water Plants
+    icon: mdi:watering-can
+  chore_fertilize_plants:
+    name: Fertilize Plants
+    icon: mdi:flower
