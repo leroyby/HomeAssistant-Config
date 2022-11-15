@@ -1,0 +1,24 @@
+- id: '1668367304644'
+  alias: Bedroom Button
+  description: ''
+  use_blueprint:
+    path: EPMatt/ikea_e1812.yaml
+    input:
+      integration: Zigbee2MQTT
+      controller_device: dff73f19aab0d896445eb69e0b797d49
+      controller_entity: sensor.button_bedroom_action
+      helper_last_controller_event: input_text.bedroom_ikea_button
+      action_button_short:
+      - service: light.toggle
+        data: {}
+        target:
+          entity_id: light.bedroom_lights
+      action_button_double: []
+      action_button_long:
+      - service: switch.toggle
+        data: {}
+        target:
+          entity_id: switch.bedroom_tv
+      button_double_press: true
+      button_long_loop: false
+      helper_double_press_delay: 500

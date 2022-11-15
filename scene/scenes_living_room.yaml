@@ -19,3 +19,14 @@
         brightness_pct: 50
         rgb_color: [255, 50, 50]
 
+  - name: living_room_normal_lights
+    icon: "mdi:google-cloud"
+    entities:
+      light.livingroom_sofa:
+        state: "on"
+        brightness_pct: 100
+        color_temp: 300
+      light.livingroom_table:
+        state: "on"
+        brightness_pct: 100
+        color_temp: 300

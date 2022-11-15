@@ -638,6 +638,7 @@ views:
   cards:
   - entities:
     - entity: binary_sensor.ping_modem
+    - entity: scene.living_room_cozy_lights
     show_header_toggle: false
     title: Test apps
     type: entities
@@ -678,6 +679,27 @@ views:
       type: custom:template-entity-row
     title: Motion sensors
     type: entities
+  - card:
+      title: Scenes Living Room
+      type: entities
+    filter:
+      template: "{% for state in states.scene -%}\n  {%- if state.entity_id | regex_match('scene.bedroom_',ignorecase=False)\
+        \ -%}\n    {%- set NAME = state_attr(state.entity_id,\"friendly_name\") |\
+        \ regex_replace(find='Bedroom ', replace='') -%}\n    {{\n      { 'entity':\
+        \ state.entity_id,\n        'variables': {\n          'name': NAME\n     \
+        \   },\n      }\n    }},\n  {%- endif -%} \n{%- endfor %}\n"
+    type: custom:auto-entities
+  - card:
+      title: Scenes Living Room
+      type: entities
+    filter:
+      template: "{% for state in states.scene -%}\n  {%- if state.entity_id | regex_match('scene.bedroom_',ignorecase=False)\
+        \ -%}\n    {%- set NAME = state_attr(state.entity_id,\"friendly_name\") |\
+        \ regex_replace(find='Bedroom ', replace='') -%}\n    {{\n      { 'entity':\
+        \ state.entity_id,\n        #'type': 'custom:button-card',\n        #'template':\
+        \ 'hue_scene_card',\n        'variables': {\n          'name': NAME\n    \
+        \    },\n      }\n    }},\n  {%- endif -%} \n{%- endfor %}\n"
+    type: custom:auto-entities
   icon: mdi:test-tube
   path: tests
   title: Tests

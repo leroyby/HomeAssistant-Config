@@ -4,31 +4,24 @@
 # Automation Bedroom IKEA Button 
 ######################################################################################################
 
-- alias: Bedroom Button Lights turn on
+- alias: Bedroom Button Lights toggle
   trigger:
     platform: state
     entity_id: sensor.button_bedroom_action
     to: 'on' 
-  condition:
-    condition: state
-    entity_id: light.bedroom_lights
-    state: 'off'
   action:
-    service: light.turn_on
+    service: light.toggle
     data:
       entity_id: light.bedroom_lights
       brightness_pct: 25
 
-- alias: Bedroom Button Lights turn off
+- alias: Bedroom TV Switch toggle
   trigger:
     platform: state
     entity_id: sensor.button_bedroom_action
     to: 'on' 
-  condition:
-    condition: state
-    entity_id: light.bedroom_lights
-    state: 'on'
   action:
-    service: light.turn_off
+    service: light.toggle
     data:
       entity_id: light.bedroom_lights
+      brightness_pct: 25

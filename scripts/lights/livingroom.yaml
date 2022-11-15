@@ -7,49 +7,18 @@ living_room_cozy_lights:
   alias: "Set cozy lights in the living room"
   mode: parallel
   sequence:
-    - data:
-        entity_id: light.livingroom_sofa
-        brightness_pct: 50
-        color_temp: 450 
-      service: light.turn_on
-    - data:
-        entity_id: light.livingroom_table
-        brightness_pct: 50
-        color_temp: 450 
-      service: light.turn_on
-    - data:
-        entity_id: light.livingroom_tv
-        brightness_pct: 50
-        rgb_color: [255, 50, 50]
-      service: light.turn_on
-    - service: input_select.select_option
-      entity_id: input_select.last_script_living_room
-      data:
-        option: script.cozy_lights_living_room
+    service: scene.turn_on
+    target:
+      entity_id: scene.living_room_cozy_lights
+
 
 living_room_normal_lights:
   alias: Set normal lights in the living room
   mode: parallel
   sequence:
-    - data:
-        entity_id: light.tradfri_tv
-        brightness_pct: 100
-        color_temp: 300
-      service: light.turn_on
-    - data:
-        entity_id: light.tradfri_table
-        brightness_pct: 100
-        color_temp: 300
-      service: light.turn_on
-    - data:
-        entity_id: light.livingroom_table
-        kelvin: 6500
-        effect: white_mode
-      service: light.turn_on
-    - service: input_select.select_option
-      entity_id: input_select.last_script_living_room
-      data:
-        option: script_normal_lights_living_room
+    service: scene.turn_on
+    target:
+      entity_id: scene.living_room_normal_lights
 
 living_room_tv_lights:
   alias: "Set tv lights in the living room"
@@ -67,11 +36,3 @@ living_room_tv_lights:
       service: light.turn_on
     - service: light.turn_off
       entity_id: light.livingroom_tv
-
-living_room_off_lights:
-  alias: "shut off lights in the living room"
-  mode: parallel
-  sequence:
-    - data:
-        entity_id: light.living_room_lights
-      service: light.turn_off      
