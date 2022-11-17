@@ -23,14 +23,14 @@ views:
       - light.livingroom_sofa
       - light.livingroom_table
       - light.tradfri_bulb_4
-      - entity: script.cozy_lights_living_room
+      - entity: script.living_room_cozy_lights
         icon_height: 20px
         name: Cozy lights
         show_icon: false
         show_name: true
         tap_action:
           action: call-service
-          service: script.cozy_lights_living_room
+          service: script.living_room_normal_lights
       - entity: script.tv_lights_living_room
         icon_height: 20px
         name: TV lights
@@ -39,14 +39,14 @@ views:
         tap_action:
           action: call-service
           service: script.tv_lights_living_room
-      - entity: script.normal_lights_living_room
+      - entity: script.living_room_normal_lights
         icon_height: 20px
         name: White lights
         show_icon: false
         show_name: true
         tap_action:
           action: call-service
-          service: script.normal_lights_living_room
+          service: script.living_room_normal_lights
       head:
         color_picker: true
         entity: light.living_room_lights

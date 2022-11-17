@@ -55,7 +55,7 @@
     conditions:
       - condition: time
         after: "06:00:00"
-        before: "08:15:00"
+        before: "08:30:00"
       - condition: or
         conditions:
           - condition: state
