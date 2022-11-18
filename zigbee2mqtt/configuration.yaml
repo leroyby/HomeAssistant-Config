@@ -31,13 +31,13 @@ devices:
   '0x00158d0007ec9426':
     friendly_name: Vibration_office_1
   '0x00124b002517876b':
-    friendly_name: motion_office
+    friendly_name: motion_livingroom_cabinet
   '0xb4e3f9fffe14e4a3':
     friendly_name: remote_tba
   '0x8cf681fffea9c5d2':
     friendly_name: Bedroom_thermostat
   '0x00158d0008cf22d0':
-    friendly_name: '0x00158d0008cf22d0'
+    friendly_name: motion_office
 advanced:
   log_level: info
 shell_command:

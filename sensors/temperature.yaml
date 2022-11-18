@@ -20,7 +20,7 @@
     name: 'Temperature Livingroom Average'
     entities:
       - sensor.temperature_livingroom_temperature
-      - sensor.temperature_kitchen
+      - sensor.temperature_livingroom_2
 
   - platform: rest
     name: "Temperature Bedroom"
@@ -53,7 +53,7 @@
     scan_interval: 10
 
   - platform: rest
-    name: "Temperature Kitchen"
+    name: "Temperature Livingroom 2"
     resource: http://192.168.178.24/report
     method: GET
     unit_of_measurement: °C
