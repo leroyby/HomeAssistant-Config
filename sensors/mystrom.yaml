@@ -34,7 +34,7 @@
     scan_interval: 10
 
   - platform: rest
-    name: "Power Kitchen"
+    name: "Power Livingroom Cabinet"
     resource: http://192.168.178.24/report
     method: GET
     unit_of_measurement: W

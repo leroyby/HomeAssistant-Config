@@ -9,7 +9,17 @@ The Automations are sorted to a few subfolders
 - [Remotes](https://github.com/leroyby/Homeassistant/tree/main/automations/remotes), everything that has to do with remotes (for controlling things)
 
 # <a name="menu">Menu</a>
-| [Home](https://github.com/leroyby/Homeassistant) | [Lights](#Lights) | [Mediaplayer](#Mediaplayer) | [Modes](#Modes) | [Presence](#Presence) | [Remotes](#Remotes) |
+| [Home](https://github.com/leroyby/Homeassistant) | [Climate](#Climate) | [HA](#HA) | [Lights](#Lights) | [Mediaplayer](#Mediaplayer) | [Modes](#Modes) | [Presence](#Presence) | [Remotes](#Remotes) |
+
+## <a name="Climate">[climate](https://github.com/leroyby/HomeAssistant-Config/tree/main/automations/climate)</a>
+| [Go to Menu](#menu) |
+| Room |YAML-File| Status |
+| --- | --- | --- |
+
+## <a name="HA">[HA](https://github.com/leroyby/HomeAssistant-Config/tree/main/automations/HA)</a>
+| [Go to Menu](#menu) |
+| Zone |YAML-File| Status |
+| --- | --- | --- |
 
 ## <a name="Lights">[Lights](https://github.com/leroyby/HomeAssistant-Config/tree/main/automations/Lights)</a>
 | [Go to Menu](#menu) |

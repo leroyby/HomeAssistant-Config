@@ -1,7 +1,7 @@
 ######################################################################################################
 # @Leroyby
-# Original Repo : https://github.com/Leroyby/Homeassistant
-# Vacuum
+# Original Repo : https://github.com/Leroyby/Homeassistant-Config
+# Automation Vacuum
 ######################################################################################################
 - alias: Vacuum start away
   trigger:

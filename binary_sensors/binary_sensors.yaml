@@ -75,6 +75,12 @@
       value_template: "{{ states('sensor.power_office_pc')|float > 50.0 }}"
       delay_off: "00:01:00"
 
+    livingroom_cabinet_on:
+      friendly_name: livingroom cabinet is on
+      value_template: "{{ states('sensor.power_livingroom_cabinet')|float > 10.0 }}"
+      delay_off: "00:01:00"
+
+
     any_media_player_on:
       friendly_name: Any media player is on
       value_template: >

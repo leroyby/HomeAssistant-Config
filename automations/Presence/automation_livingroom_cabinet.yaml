@@ -1,0 +1,27 @@
+######################################################################################################
+# @Leroyby
+# Original Repo : https://github.com/Leroyby/Homeassistant-Config
+# Automation Livingroom Cabinet
+######################################################################################################
+
+- alias: livingroom cabinet on
+  trigger:
+    platform: state
+    entity_id: binary_sensor.activity_in_livingroom_cabinet
+    to: 'on'
+  condition: []
+  action:
+  - service: switch.turn_on
+    target:
+      entity_id: switch.kitchen
+
+- alias: livingroom cabinet off
+  trigger:
+    platform: state
+    entity_id: binary_sensor.activity_in_livingroom_cabinet
+    to: 'on'
+  condition: []
+  action:
+  - service: switch.turn_off
+    target:
+      entity_id: switch.kitchen      

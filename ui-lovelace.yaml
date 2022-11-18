@@ -169,7 +169,7 @@ views:
         name: TV
         toggle: true
       - entity: switch.kitchen
-        name: Kitchen
+        name: Schrank
         toggle: true
       entity: switch.livingroom_switches
       name: Living
@@ -529,6 +529,7 @@ views:
   - entities:
     - entity: binary_sensor.activity_in_kitchen
     - entity: binary_sensor.activity_in_livingroom
+    - entity: binary_sensor.activity_in_livingroom_cabinet
     - entity: binary_sensor.activity_in_office
     - type: divider
     - entity: binary_sensor.motion_detected_in_last_hour
@@ -554,10 +555,12 @@ views:
       name: Battery
     - entity: binary_sensor.motion_office_occupancy
       name: Office
-    - entity: binary_sensor.motion_office_tamper
-      name: Tamper
+    - entity: sensor.motion_office_illuminance_lux
     - entity: sensor.motion_office_battery
       name: Battery
+    - entity: binary_sensor.motion_livingroom_cabinet_occupancy
+    - entity: binary_sensor.motion_livingroom_cabinet_tamper
+    - entity: sensor.motion_livingroom_cabinet_battery
     show_icon: true
     show_name: true
     state_color: true

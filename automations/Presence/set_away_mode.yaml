@@ -1,6 +1,6 @@
 ######################################################################################################
 # @Leroyby
-# Original Repo : https://github.com/Leroyby/Homeassistant
+# Original Repo : https://github.com/Leroyby/Homeassistant-Config
 # Automation set modes
 ######################################################################################################
 - alias: presence set away mode
