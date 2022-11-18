@@ -119,34 +119,6 @@ views:
     name: Weather
     type: custom:simple-weather-card
   - cards:
-    - artwork: cover
-      background: /local/tv.jpg
-      entity: media_player.wohnzimmer_2
-      hide:
-        controls: false
-        mute: false
-        play_stop: false
-        volume: false
-      icon: mdi:television
-      type: custom:mini-media-player
-    - cards:
-      - icon: mdi:sofa
-        name: Play music in living room
-        styles:
-          card:
-          - font-size: 12px
-          - font-weight: bold
-          - height: 70px
-        tap_action:
-          action: call-service
-          service: script.start_spotify_livingroom
-        type: custom:button-card
-      type: horizontal-stack
-    style: "ha-card {\n  --mini-media-player-base-color: red;\n  --mini-media-player-icon-color:\
-      \ red;\n  --mini-media-player-background-opacity: 100;\n  --mini-media-player-overlay-color:\
-      \ red;\n}\n"
-    type: vertical-stack
-  - cards:
     - entities:
       - entity: vacuum.rombacus
         name: Vacuum cleaner
