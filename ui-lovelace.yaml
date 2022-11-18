@@ -638,7 +638,7 @@ views:
   cards:
   - entities:
     - entity: binary_sensor.ping_modem
-    - entity: scene.living_room_cozy_lights
+    - entity: sensor.code_line_count
     show_header_toggle: false
     title: Test apps
     type: entities
@@ -700,6 +700,11 @@ views:
         \ 'hue_scene_card',\n        'variables': {\n          'name': NAME\n    \
         \    },\n      }\n    }},\n  {%- endif -%} \n{%- endfor %}\n"
     type: custom:auto-entities
+  - entity: climate.bedroom_thermostat
+    layout:
+      mode:
+        headings: false
+    type: custom:simple-thermostat
   icon: mdi:test-tube
   path: tests
   title: Tests

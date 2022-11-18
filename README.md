@@ -1,5 +1,5 @@
 [![GitHub last commit](https://img.shields.io/github/last-commit/leroyby/homeassistant-config?style=plasticr)](https://github.com/leroyby/HomeAssistant-Config/commits/main)
-[![HA Version](https://img.shields.io/badge/Running%20Home%20Assistant-2022.11.2%20-darkblue)](https://github.com/home-assistant/home-assistant/releases/latest)
+[![HA Version](https://img.shields.io/badge/Running%20Home%20Assistant-2022.11.3%20-darkblue)](https://github.com/home-assistant/home-assistant/releases/latest)
 
 # <a name="table">Table of Contents - Index </a>
    * [Home Assistant configuration](#home-assistant-configuration-overview)
@@ -29,9 +29,9 @@ At this point also a big thanks to the whole home assistant community and especa
 
 ### <a name="statistics">Statistics (as in November 2022)</a>
 # Repository statistics
-| Sensors| Binary Sensors | Switches  | Automations | Scripts | Scenes |
-| :--: | :--: | :--: | :--: | :--: | :--: |
-| 166 | 48 | 20 | 40 | 32 | 2 |
+| Lines of code| Sensors| Binary Sensors | Switches  | Automations | Scripts | Scenes |
+| :--: | :--: | :--: | :--: | :--: | :--: | :--: |
+| | **31,206** | 172 | 52 | 24 | 39 | 32 | 3 |
 
 ###  <a name="History">History</a>
 Started in 2014 with the [Tradfri Gateway](https://www.ikea.com/ch/en/search/products/?q=tradfri) (with 3 White spectrum bulbs) and with the [myStrom Switches](https://mystrom.ch/). Added a LED-Strip from China to the setup and started tinkering with HA. But not for very long. During this time I tested also Apple HomeKit, but I was never really statisfied. 2022 I got some time and started again with HA and now here we are... 
@@ -51,7 +51,7 @@ And I will be adding a wall tablet soon (WIP).
 
 
 ## <a name="menu">Menu Hardware</a>
-| [Components](#components)| [Hubs](#hubs) | [Lighting](#Lights) | [Outlets & Switches](#outlets)| [Locks](#locks) | [Media](#media) | [Remotes](#remotes) | [Sensors](#sensors) | [Vacuum](#vacuum) | [Statistics](#statistics) | [Various](#various) | [Go to Table of Contents](#table) |
+| [Components](#components)| [Hubs](#hubs) | [Lighting](#Lights) | [Outlets & Switches](#outlets)| [Locks](#locks) | [Media](#media) | [Remotes](#remotes) | [Sensors](#sensors) | [Climate](#Climate) [Vacuum](#vacuum) | [Statistics](#statistics) | [Various](#various) | [Go to Table of Contents](#table) |
 
 ## Hardware
 [Go to Table of Contents](#table)
@@ -124,6 +124,12 @@ And I will be adding a wall tablet soon (WIP).
 |[TRÅDFRI Shortcut button](https://www.ikea.com/ch/en/p/tradfri-shortcut-button-white-smart-40356381/)| - | 1 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)|-| integrated |
 |[Aquara Wi-Fi Mini Switch](https://www.aqara.com/eu/Wi-Fi_mini_switch.html)| [Amazon](https://amzn.to/3SbrK3L) | 1 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)|-| integrated |
 |[Tuya 4-Gang Switch](https://solution.tuya.com/projects/CMa4ie3gzka6ns) | [-]() | 1 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)|-|integrated |
+
+# <a name="Climate">Climate</a>
+| [Go to Menu](#menu) |
+| Device  | Amazon Link | Quantity | Connection | Home Assistant | Notes | Status |
+| ------------- | :---: | :---: | ------------- | ------------- | ------------- | ------------- |
+| Tuya TS0601 Thermostat | [THermostat](https://amzn.to/3g9q6C0) | 1 | ConBee II (ZigBee) | [MQTT](https://www.home-assistant.io/integrations/mqtt/)|-|integrated 
 
 ### <a name="Vacuum">Vacuum</a>
 | [Go to Menu](#menu) |

@@ -19,6 +19,6 @@
         data: {}
         target:
           entity_id: switch.bedroom_tv
-      button_double_press: true
+      button_double_press: false
       button_long_loop: false
       helper_double_press_delay: 500

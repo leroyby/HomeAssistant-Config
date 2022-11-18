@@ -1,7 +1,7 @@
 ######################################################################################################
 # @Leroyby
 # Original Repo : https://github.com/leroyby/Homeassistant-Config
-# Sensor group yaml file
+# Energy Sensor group yaml file
 ######################################################################################################
   - platform: group
     name: energy office
