@@ -21,6 +21,7 @@ input_text: !include input/input_text.yaml
 #config files
 #adaptive_lighting: !include_dir_merge_list adaptive_lighting
 switch: !include_dir_merge_list switch
+schedule: !include_dir_merge_list schedule
 sensor: !include_dir_merge_list sensors
 scene: !include_dir_merge_list scene
 utility_meter: !include_dir_merge_list utilities
@@ -44,4 +45,6 @@ lovelace:
       icon: mdi:script
       show_in_sidebar: true
       filename: ui/ui-lovelace.yaml
+powercalc:
+  create_utility_meters: true      
 

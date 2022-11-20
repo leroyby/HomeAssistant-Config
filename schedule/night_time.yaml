@@ -1,0 +1,29 @@
+######################################################################################################
+# @Leroyby
+# Original Repo : https://github.com/Leroyby/Homeassistant-Config
+# Schedule night time
+######################################################################################################
+
+  night_time:
+    name: "Night time schedule"
+    monday:
+      - from: "20:00:00"
+        to: "06:00:00"
+    tuesday:
+      - from: "20:00:00"
+        to: "06:00:00"
+    wednesday:
+      - from: "20:00:00"
+        to: "06:00:00"
+    thursday:
+      - from: "20:00:00"
+        to: "06:00:00"
+    friday:
+      - from: "22:00:00"
+        to: "06:00:00"
+    saturday:
+      - from: "22:00:00"
+        to: "08:00:00"
+    sunday:
+      - from: "22:00:00"
+        to: "08:00:00"

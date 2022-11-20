@@ -646,11 +646,17 @@ views:
     title: Temperature sensors
     type: entities
   - entities:
-    - active: '{{ is_state("binary_sensor.motion_sensor_living_room_klok", "on") }}'
+    - active: '{{ is_state("binary_sensor.motion_livingroom_occupancy", "on") }}'
       entity: binary_sensor.motion_livingroom_occupancy
       name: Living room
       secondary: 'Light level {{ states("sensor.motion_livingroom_illuminance_lux")
         }} lx, battery {{ states("sensor.motion_livingroom_battery") }}% '
+      type: custom:template-entity-row
+    - active: '{{ is_state("binary_sensor.motion_sensor_living_room_klok", "on") }}'
+      entity: binary_sensor.motion_livingroom_occupancy
+      name: Living room
+      secondary: 'Light level {{ states("sensor.motion_livingroom_cabinet_illuminance_lux")
+        }} lx, battery {{ states("sensor.motion_livingroom_cabinet_battery") }}% '
       type: custom:template-entity-row
     title: Motion sensors
     type: entities
@@ -676,10 +682,12 @@ views:
         \    },\n      }\n    }},\n  {%- endif -%} \n{%- endfor %}\n"
     type: custom:auto-entities
   - entity: climate.bedroom_thermostat
-    layout:
-      mode:
-        headings: false
-    type: custom:simple-thermostat
+    type: thermostat
+  - entity: sensor.bedroom_thermostat_position
+    max: 100
+    min: 35
+    needle: true
+    type: gauge
   icon: mdi:test-tube
   path: tests
   title: Tests

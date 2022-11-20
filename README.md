@@ -31,7 +31,7 @@ At this point also a big thanks to the whole home assistant community and especa
 # Repository statistics
 | Lines of code| Sensors| Binary Sensors | Switches  | Automations | Scripts | Scenes |
 | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
-| 31,260 | 172 | 53 | 24 | 41 | 32 | 3 |
+| 31,386 | 179 | 54 | 24 | 43 | 32 | 3 |
 
 ###  <a name="History">History</a>
 Started in 2014 with the [Tradfri Gateway](https://www.ikea.com/ch/en/search/products/?q=tradfri) (with 3 White spectrum bulbs) and with the [myStrom Switches](https://mystrom.ch/). Added a LED-Strip from China to the setup and started tinkering with HA. But not for very long. During this time I tested also Apple HomeKit, but I was never really statisfied. 2022 I got some time and started again with HA and now here we are... 
@@ -51,7 +51,7 @@ And I will be adding a wall tablet soon (WIP).
 
 
 ## <a name="menu">Menu Hardware</a>
-| [Components](#components)| [Hubs](#hubs) | [Lighting](#Lights) | [Outlets & Switches](#outlets)| [Locks](#locks) | [Media](#media) | [Remotes](#remotes) | [Sensors](#sensors) | [Climate](#Climate) [Vacuum](#vacuum) | [Statistics](#statistics) | [Various](#various) | [Go to Table of Contents](#table) |
+| [Components](#components)| [Hubs](#hubs) | [Lighting](#Lights) | [Outlets & Switches](#outlets)| [Locks](#locks) | [Media](#media) | [Remotes](#remotes) | [Sensors](#sensors) | [Climate](#Climate) | [Vacuum](#vacuum) | [Statistics](#statistics) | [Various](#various) | [Go to Table of Contents](#table) |
 
 ## Hardware
 [Go to Table of Contents](#table)
@@ -99,7 +99,7 @@ And I will be adding a wall tablet soon (WIP).
 | [Go to Menu](#menu) |
 | Device  | Amazon Link | Quantity | Connection | Home Assistant | Notes | Status |
 | ------------- | :---: | :---: | ------------- | ------------- | ------------- | ------------- |
-| [Aqara Motion Sensor](https://www.aqara.com/eu/motion_sensor.html) | [Amazon](https://amzn.to/3UzKNGu) | 1 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)| - |integrated|
+| [Aqara Motion Sensor](https://www.aqara.com/eu/motion_sensor.html) | [Amazon](https://amzn.to/3UzKNGu) | 3 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)| - |integrated|
 | [Sonoff Motion Sensor](https://sonoff.tech/product/smart-home-security/snzb-03/) | [Amazon](https://amzn.to/3F94M9F) | 1  | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/) | - |integrated |
 | [Aqara Temperature and Humidity Sensor](https://www.aqara.com/eu/temperature_humidity_sensor.html) | [Amazon](https://amzn.to/3dCzpsT) | 1 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)| - | integrated |
 | [Aqara Vibration Sensor](https://www.aqara.com/eu/vibration_sensor.html) | [Amazon](https://amzn.to/3dGX0sm) | 1  | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/) | - |integrated |
@@ -129,7 +129,7 @@ And I will be adding a wall tablet soon (WIP).
 | [Go to Menu](#menu) |
 | Device  | Amazon Link | Quantity | Connection | Home Assistant | Notes | Status |
 | ------------- | :---: | :---: | ------------- | ------------- | ------------- | ------------- |
-| Tuya TS0601 Thermostat | [THermostat](https://amzn.to/3g9q6C0) | 1 | ConBee II (ZigBee) | [MQTT](https://www.home-assistant.io/integrations/mqtt/)|-|integrated 
+| Tuya TS0601 Thermostat | [Thermostat](https://amzn.to/3g9q6C0) | 1 | ConBee II (ZigBee) | [MQTT](https://www.home-assistant.io/integrations/mqtt/)|-|integrated 
 
 ### <a name="Vacuum">Vacuum</a>
 | [Go to Menu](#menu) |
