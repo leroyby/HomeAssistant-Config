@@ -1,0 +1,12 @@
+energy_total_daily_energy:
+  source: sensor.total_energy_spend
+  cycle: daily
+  name: Total Daily Energy
+energy_total_monthly_energy:
+  source: sensor.total_energy_spend
+  cycle: monthly
+  name: Total Monthly Energy 
+energy_total_yearly_energy:
+  source: sensor.total_energy_spend
+  cycle: yearly
+  name: Total Yearly Energy 

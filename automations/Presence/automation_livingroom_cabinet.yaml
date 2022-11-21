@@ -19,7 +19,7 @@
   trigger:
     platform: state
     entity_id: binary_sensor.activity_in_livingroom_cabinet
-    to: 'on'
+    to: 'off'
   condition: []
   action:
   - service: switch.turn_off

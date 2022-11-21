@@ -18,8 +18,7 @@ binary_sensor: !include_dir_merge_list binary_sensors
 input_select: !include input/input_selects.yaml
 input_boolean: !include input/input_booleans.yaml
 input_text: !include input/input_text.yaml
-#config files
-#adaptive_lighting: !include_dir_merge_list adaptive_lighting
+
 switch: !include_dir_merge_list switch
 schedule: !include_dir_merge_list schedule
 sensor: !include_dir_merge_list sensors
@@ -46,5 +45,6 @@ lovelace:
       show_in_sidebar: true
       filename: ui/ui-lovelace.yaml
 powercalc:
-  create_utility_meters: true      
+  create_utility_meters: true  
+
 

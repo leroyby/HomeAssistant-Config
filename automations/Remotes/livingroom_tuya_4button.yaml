@@ -1,0 +1,16 @@
+######################################################################################################
+# @Leroyby
+# Original Repo : https://github.com/Leroyby/Homeassistant-Config
+# Automations Livingroom Tuya Switch (4-Gang) (Entity: remote_livingroom_2)
+######################################################################################################
+
+- alias: livingroom button 1 toggle
+  trigger:
+    platform: state
+    entity_id: sensor.livingroom_remote_2
+    to: '1_single' 
+  condition: []
+  action:
+  - service: light.toggle
+    target:
+        entity_id: light.living_room_lights

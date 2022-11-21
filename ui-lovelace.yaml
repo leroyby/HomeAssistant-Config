@@ -115,26 +115,6 @@ views:
     show_header_toggle: false
     title: Lights
     type: entities
-  - entity: weather.forecast_home
-    name: Weather
-    type: custom:simple-weather-card
-  - cards:
-    - entities:
-      - entity: vacuum.rombacus
-        name: Vacuum cleaner
-        primary:
-          entity: binary_sensor.vacuum_day
-          name: Vacuum day
-        secondary:
-          attribute: battery_level
-          name: Battery
-          unit: '%'
-        type: custom:multiple-entity-row
-      - entity: input_boolean.vacuum_ran
-      - entity: script.vacuum_start
-      show_header_toggle: false
-      type: entities
-    type: vertical-stack
   - entities:
     - entities:
       - entity: switch.livingroom_tv
@@ -177,6 +157,26 @@ views:
     show_header_toggle: false
     title: Switches
     type: entities
+  - entity: weather.forecast_home
+    name: Weather
+    type: custom:simple-weather-card
+  - cards:
+    - entities:
+      - entity: vacuum.rombacus
+        name: Vacuum cleaner
+        primary:
+          entity: binary_sensor.vacuum_day
+          name: Vacuum day
+        secondary:
+          attribute: battery_level
+          name: Battery
+          unit: '%'
+        type: custom:multiple-entity-row
+      - entity: input_boolean.vacuum_ran
+      - entity: script.vacuum_start
+      show_header_toggle: false
+      type: entities
+    type: vertical-stack
   - entities:
     - entity: input_boolean.normal_mode
     - entity: input_boolean.away_mode
@@ -257,69 +257,6 @@ views:
         type: horizontal-stack
       type: vertical-stack
     type: custom:swipe-card
-  - cards:
-    - cards:
-      - color: auto
-        icon: mdi:weather-sunset-up
-        name: Wake up
-        styles:
-          card:
-          - font-size: 12px
-          - font-weight: bold
-          - height: 70px
-        tap_action:
-          action: call-service
-          haptic: success
-          service: input_select.select_option
-          service_data:
-            entity_id: input_select.sleep_mode
-            option: 'off'
-        type: custom:button-card
-      - color: auto
-        entity: input_select.sleep_mode
-        icon: mdi:weather-night
-        name: '[[[ if (entity.state != "off") return "Sleep mode on"; else return  "Go
-          to sleep" ]]]'
-        styles:
-          card:
-          - font-size: 12px
-          - font-weight: bold
-          - height: 70px
-        tap_action:
-          action: call-service
-          haptic: success
-          service: script.going_to_sleep
-        type: custom:button-card
-      type: horizontal-stack
-    - cards:
-      - color: auto
-        icon: mdi:home-map-marker
-        name: Arrive Home
-        styles:
-          card:
-          - font-size: 12px
-          - font-weight: bold
-          - height: 70px
-        tap_action:
-          action: call-service
-          haptic: success
-          service: script.arriving
-        type: custom:button-card
-      - color: auto
-        icon: mdi:home-export-outline
-        name: Leave Home
-        styles:
-          card:
-          - font-size: 12px
-          - font-weight: bold
-          - height: 70px
-        tap_action:
-          action: call-service
-          haptic: success
-          service: script.leaving
-        type: custom:button-card
-      type: horizontal-stack
-    type: vertical-stack
   icon: mdi:home
   path: default_view
   theme: Backend-selected
@@ -531,7 +468,7 @@ views:
     - entity: sensor.motion_office_battery
       name: Battery
     - entity: binary_sensor.motion_livingroom_cabinet_occupancy
-    - entity: binary_sensor.motion_livingroom_cabinet_tamper
+    - entity: sensor.motion_livingroom_cabinet_illuminance_lux
     - entity: sensor.motion_livingroom_cabinet_battery
     show_icon: true
     show_name: true
@@ -614,6 +551,7 @@ views:
   - entities:
     - entity: binary_sensor.ping_modem
     - entity: sensor.code_line_count
+    - entity: sensor.energy_total
     show_header_toggle: false
     title: Test apps
     type: entities
