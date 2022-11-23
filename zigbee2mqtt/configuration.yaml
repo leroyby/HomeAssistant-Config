@@ -44,6 +44,8 @@ devices:
     friendly_name: temperature_bedroom_2
   '0x00158d0008cec36e':
     friendly_name: temperature_office
+  '0x00158d0008c99136':
+    friendly_name: temperature_outdoor
 advanced:
   log_level: info
 shell_command:

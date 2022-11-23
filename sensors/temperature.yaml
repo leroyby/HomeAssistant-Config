@@ -70,3 +70,11 @@
     state_class: measurement
     value_template: "{{ value_json.temperature }}"
     scan_interval: 10
+
+  - platform: template
+    sensors:
+      indoor_outdoor_temperature_difference:
+        friendly_name: "Temperature Difference"
+        unit_of_measurement: '°C'
+        value_template: >
+          {{ states('sensor.temperature_home')|float - states('sensor.temperature_outdoor_temperature')|float }}

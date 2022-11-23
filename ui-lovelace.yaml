@@ -206,8 +206,8 @@ views:
           type: custom:mini-graph-card
         - color_thresholds_transition: smooth
           entities:
-          - entity: sensor.temperature_livingroom_average
-            name: Living Room
+          - entity: sensor.temperature_outdoor_temperature
+            name: Outdoor
           font_size: 100
           group: false
           hour24: true
@@ -242,6 +242,22 @@ views:
           entities:
           - entity: sensor.temperature_bedroom_average
             name: Bedroom
+          font_size: 100
+          group: false
+          hour24: true
+          line_width: 6
+          points_per_hour: 1
+          show:
+            extrema: false
+            fill: fade
+            labels: false
+            name: true
+            state: true
+          type: custom:mini-graph-card
+        - color_thresholds_transition: smooth
+          entities:
+          - entity: sensor.temperature_livingroom_average
+            name: Living room
           font_size: 100
           group: false
           hour24: true
