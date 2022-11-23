@@ -9,7 +9,7 @@
 - alias: shutdown heating
   trigger:
     - platform: numeric_state
-      entity_id: sensor.hq_by_zofingen_realfeel_temperature
+      entity_id: REDACTED
       above: '20'
       for: '24:00:00'
   condition: []
@@ -23,7 +23,7 @@
 - alias: start heating
   trigger:
     - platform: numeric_state
-      entity_id: sensor.hq_by_zofingen_realfeel_temperature
+      entity_id: REDACTED
       below: '20'
       for: '24:00:00'
   condition: []
