@@ -1,5 +1,5 @@
 [![GitHub last commit](https://img.shields.io/github/last-commit/leroyby/homeassistant-config?style=plasticr)](https://github.com/leroyby/HomeAssistant-Config/commits/main)
-[![HA Version](https://img.shields.io/badge/Running%20Home%20Assistant-2022.11.3%20-darkblue)](https://github.com/home-assistant/home-assistant/releases/latest)
+[![HA Version](https://img.shields.io/badge/Running%20Home%20Assistant-2022.11.4%20-darkblue)](https://github.com/home-assistant/home-assistant/releases/latest)
 
 # <a name="table">Table of Contents - Index </a>
    * [Home Assistant configuration](#home-assistant-configuration-overview)
@@ -9,7 +9,7 @@
       * [Physical](#physical-control)
       * [Voice](#voice-control)
       * [Screen](#screen-control)
-   * [Hardware](#hardware)
+   * [Hardware](#menu-hardware)
    * [Useful links](#useful-links)
    * [My naming convention](https://github.com/leroyby/Homeassistant/blob/main/naming_convention.md)
    
@@ -31,7 +31,7 @@ At this point also a big thanks to the whole home assistant community and especa
 # Repository statistics
 | Lines of code| Sensors| Binary Sensors | Switches  | Automations | Scripts | Scenes |
 | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
-| 31,466 | 218 | 52 | 24 | 43 | 32 | 3 |
+| 31,643 | 230 | 53 | 24 | 56 | 32 | 3 |
 
 ###  <a name="History">History</a>
 Started in 2014 with the [Tradfri Gateway](https://www.ikea.com/ch/en/search/products/?q=tradfri) (with 3 White spectrum bulbs) and with the [myStrom Switches](https://mystrom.ch/). Added a LED-Strip from China to the setup and started tinkering with HA. But not for very long. During this time I tested also Apple HomeKit, but I was never really statisfied. 2022 I got some time and started again with HA and now here we are... 
@@ -40,7 +40,7 @@ Started in 2014 with the [Tradfri Gateway](https://www.ikea.com/ch/en/search/pro
 Many things are automated, you'll find them in the [Automations-Section](https://github.com/leroyby/HomeAssistant-Config/tree/main/automations). Physical control is provided with remotes and buttons (with [automations](https://github.com/leroyby/HomeAssistant-Config/tree/main/automations) and [scripts](https://github.com/leroyby/HomeAssistant-Config/tree/main/script)). And the last variant is via [Webinterface](https://github.com/leroyby/HomeAssistant-Config/blob/main/ui-lovelace.yaml).
 
 ### <a name="physical">Physical control</a>
-See list of [Remotes](#remotes).
+See list of [Remotes](#remotes) and [the configuration](https://github.com/leroyby/HomeAssistant-Config/tree/main/automations/Remotes).
 
 ### <a name="voice">Voice control</a>
 Thinking about adding Google Voice Assistant to my HA-Setup.
@@ -101,7 +101,8 @@ And I will be adding a wall tablet soon (WIP).
 | ------------- | :---: | :---: | ------------- | ------------- | ------------- | ------------- |
 | [Aqara Motion Sensor](https://www.aqara.com/eu/motion_sensor.html) | [Amazon](https://amzn.to/3UzKNGu) | 3 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)| - |integrated|
 | [Sonoff Motion Sensor](https://sonoff.tech/product/smart-home-security/snzb-03/) | [Amazon](https://amzn.to/3F94M9F) | 1  | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/) | - |integrated |
-| [Aqara Temperature and Humidity Sensor](https://www.aqara.com/eu/temperature_humidity_sensor.html) | [Amazon](https://amzn.to/3dCzpsT) | 1 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)| - | integrated |
+| [Aqara Temperature and Humidity Sensor](https://www.aqara.com/eu/temperature_humidity_sensor.html) | [Amazon](https://amzn.to/3dCzpsT) | 7 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)| - | integrated |
+| [Aqara door & window contact sensor](https://www.aqara.com/eu/door_and_window_sensor.html) | [Amazon](https://amzn.to/3U4cENs) | 2  | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/) | - |integrated |
 | [Aqara Vibration Sensor](https://www.aqara.com/eu/vibration_sensor.html) | [Amazon](https://amzn.to/3dGX0sm) | 1  | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/) | - |integrated |
 
 ### <a name="Multimedia">Multimedia</a>
@@ -122,7 +123,7 @@ And I will be adding a wall tablet soon (WIP).
 |[TRÅDFRI STYRBAR Remote control](https://www.ikea.com/ch/en/p/styrbar-remote-control-white-30488363/)| - | 1 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)|-| integrated |
 | TRÅDFRI Wireless 5-Button Remote| - | 1 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)|-| integrated |
 |[TRÅDFRI Shortcut button](https://www.ikea.com/ch/en/p/tradfri-shortcut-button-white-smart-40356381/)| - | 1 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)|-| integrated |
-|[Aquara Wi-Fi Mini Switch](https://www.aqara.com/eu/Wi-Fi_mini_switch.html)| [Amazon](https://amzn.to/3SbrK3L) | 1 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)|-| integrated |
+|[Aquara Wireless Mini Switch](https://www.aqara.com/eu/wireless_mini_switch.html)| [Amazon](https://amzn.to/3SbrK3L) | 1 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)|-| integrated |
 |[Tuya 4-Gang Switch](https://solution.tuya.com/projects/CMa4ie3gzka6ns) | [-]() | 1 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)|-|integrated |
 
 # <a name="Climate">Climate</a>

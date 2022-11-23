@@ -61,7 +61,7 @@ async def control_trv(self, heater_entity_id=None):
     async with self._temp_lock:
         self.real_trvs[heater_entity_id]["ignore_trv_states"] = True
         _trv = self.hass.states.get(heater_entity_id)
-        _current_TRV_mode = self.real_trvs[heater_entity_id]["hvac_mode"]
+        _current_TRV_mode = _trv.state
         _current_set_temperature = convert_to_float(
             str(_trv.attributes.get("temperature", None)), self.name, "controlling()"
         )
@@ -168,11 +168,7 @@ async def control_trv(self, heater_entity_id=None):
                     self.real_trvs[heater_entity_id]["system_mode_received"] = False
                     asyncio.create_task(check_system_mode(self, heater_entity_id))
 
-        if (
-            _temperature is not None
-            and self.bt_hvac_mode != HVACMode.OFF
-            and self.window_open is False
-        ):
+        if _temperature is not None and self.window_open is False:
             if _temperature != _current_set_temperature:
                 old = self.real_trvs[heater_entity_id].get("last_temperature", "?")
                 _LOGGER.debug(

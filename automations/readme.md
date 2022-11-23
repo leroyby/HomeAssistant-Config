@@ -55,14 +55,9 @@ The Automations are sorted to a few subfolders
 | [Go to Menu](#menu) |
 - currently not used
 
-## <a name="Remotes">[Remotes](https://github.com/leroyby/Homeassistant-Config/blob/main/automations/modes)</a>
+## <a name="Remotes">[Remotes](https://github.com/leroyby/HomeAssistant-Config/tree/main/automations/Remotes)</a>
 | [Go to Menu](#menu) |
-| Room |YAML-File| Status |
-| --- | --- | --- |
-| Office | [office_aqara_button.yaml](https://github.com/leroyby/HomeAssistant-Config/blob/main/automations/Remotes/office_aqara_button.yaml) | OK |
-| Bedroom | [bedroom_ikea_button.yaml](https://github.com/leroyby/HomeAssistant-Config/blob/main/automations/Remotes/bedroom_ikea_button.yaml) | OK |
-| Livingroom | [livingroom_ikea_switch_tv.yaml](https://github.com/leroyby/HomeAssistant-Config/blob/main/automations/Remotes/livingroom_ikea_switch_tv.yaml) | OK |
-| [Go to Menu](#menu) | [Home](https://github.com/leroyby/HomeAssistant-Config) |
+
 
 
 

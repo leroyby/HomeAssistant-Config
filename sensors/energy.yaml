@@ -15,7 +15,7 @@
   state_characteristic: value_max
   max_age:
     hours: 1
-  sampling_size: 360
+  sampling_size: 20
 
 - platform: statistics
   name: "Total Energy Use (daily Max)"
@@ -31,13 +31,15 @@
   entity_id: sensor.total_energy_use
   max_age:
     hours: 1
+  sampling_size: 360
 
 - platform: statistics
-  name: "Total Energy Use last day"
-  state_characteristic: mean
+  name: "Total Energy Use daily"
+  state_characteristic: total
   entity_id: sensor.total_energy_use
   max_age:
     days: 1   
+  sampling_size: 2500
 
 - platform: template
   sensors:

@@ -240,7 +240,7 @@ views:
           type: custom:mini-graph-card
         - color_thresholds_transition: smooth
           entities:
-          - entity: sensor.temperature_bedroom
+          - entity: sensor.temperature_bedroom_average
             name: Bedroom
           font_size: 100
           group: false
@@ -497,7 +497,7 @@ views:
       name: ''
     - entity: sensor.temperature_livingroom_tv_battery
       name: ''
-    - entity: sensor.temperature_bedroom
+    - entity: sensor.temperature_bedroom_average
       name: Bedroom
     - entity: sensor.temperature_office_average
       name: Office
@@ -549,9 +549,10 @@ views:
 - badges: []
   cards:
   - entities:
-    - entity: binary_sensor.ping_modem
     - entity: sensor.code_line_count
-    - entity: sensor.energy_total
+    - entity: switch.adaptive_lighting_livingroom
+    - entity: binary_sensor.contact_livingroom_cabinet_contact
+    - entity: switch.kitchen
     show_header_toggle: false
     title: Test apps
     type: entities
@@ -581,6 +582,19 @@ views:
         }}% '
       state: '{{ states("sensor.temperature_livingroom_temperature") }} °C'
       type: custom:template-entity-row
+    - entity: sensor.temperature_living_room
+      name: Bedroom
+      secondary: '💦 {{ states(''sensor.temperature_bedroom_2_humidity'') }}%, ⚖️ {{
+        states(''sensor.temperature_bedroom_2_pressure'') }} hPa, 🔋 {{ states(''sensor.temperature_bedroom_2_battery'')
+        }}% '
+      state: '{{ states("sensor.temperature_bedroom_2_temperature") }} °C'
+      type: custom:template-entity-row
+    - entity: sensor.temperature_living_room
+      name: Office
+      secondary: '💦 {{ states(''sensor.temperature_office_humidity'') }}%, ⚖️ {{ states(''sensor.temperature_office_pressure'')
+        }} hPa, 🔋 {{ states(''sensor.temperature_Office_battery'') }}% '
+      state: '{{ states("sensor.temperature_office_temperature") }} °C'
+      type: custom:template-entity-row
     title: Temperature sensors
     type: entities
   - entities:
@@ -592,7 +606,7 @@ views:
       type: custom:template-entity-row
     - active: '{{ is_state("binary_sensor.motion_sensor_living_room_klok", "on") }}'
       entity: binary_sensor.motion_livingroom_occupancy
-      name: Living room
+      name: reserve
       secondary: 'Light level {{ states("sensor.motion_livingroom_cabinet_illuminance_lux")
         }} lx, battery {{ states("sensor.motion_livingroom_cabinet_battery") }}% '
       type: custom:template-entity-row
@@ -607,17 +621,6 @@ views:
         \ regex_replace(find='Bedroom ', replace='') -%}\n    {{\n      { 'entity':\
         \ state.entity_id,\n        'variables': {\n          'name': NAME\n     \
         \   },\n      }\n    }},\n  {%- endif -%} \n{%- endfor %}\n"
-    type: custom:auto-entities
-  - card:
-      title: Scenes Living Room
-      type: entities
-    filter:
-      template: "{% for state in states.scene -%}\n  {%- if state.entity_id | regex_match('scene.bedroom_',ignorecase=False)\
-        \ -%}\n    {%- set NAME = state_attr(state.entity_id,\"friendly_name\") |\
-        \ regex_replace(find='Bedroom ', replace='') -%}\n    {{\n      { 'entity':\
-        \ state.entity_id,\n        #'type': 'custom:button-card',\n        #'template':\
-        \ 'hue_scene_card',\n        'variables': {\n          'name': NAME\n    \
-        \    },\n      }\n    }},\n  {%- endif -%} \n{%- endfor %}\n"
     type: custom:auto-entities
   - entity: climate.bedroom_thermostat
     type: thermostat

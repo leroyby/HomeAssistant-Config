@@ -38,6 +38,12 @@ devices:
     friendly_name: motion_office
   '0x00158d0008cf2323':
     friendly_name: motion_livingroom_cabinet
+  '0x00158d0008e1c947':
+    friendly_name: contact_livingroom_cabinet
+  '0x00158d0008cec364':
+    friendly_name: temperature_bedroom_2
+  '0x00158d0008cec36e':
+    friendly_name: temperature_office
 advanced:
   log_level: info
 shell_command:

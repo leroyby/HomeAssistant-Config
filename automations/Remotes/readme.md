@@ -4,7 +4,7 @@
 All remotes and buttons you can find in the hardware section [here](https://github.com/leroyby/HomeAssistant-Config/#remotes)
 
 ## Tuya 4-Gang Switch
-[YAML-File](https://github.com/leroyby/HomeAssistant-Config/blob/main/automations/Remotes/livingroom_tuya_4button.yaml
+[YAML-File](https://github.com/leroyby/HomeAssistant-Config/blob/main/automations/Remotes/livingroom_tuya_4button.yaml)
 ```
 Used for controlling the smart lights in the living room:
 1 click toggles

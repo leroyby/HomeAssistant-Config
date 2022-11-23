@@ -3,24 +3,33 @@
 # Original Repo : https://github.com/Leroyby/Homeassistant-Config
 # Temperature-Sensors incl. average sensors (via addon)
 ######################################################################################################
-  - platform: average
-    name: 'Temperature Home '
-    entities:
+  - platform: min_max
+    name: 'Temperature Home'
+    type: mean
+    entity_ids:
       - sensor.temperature_office_average
       - sensor.temperature_livingroom_average
-      - sensor.temperature_bedroom
+      - sensor.temperature_bedroom_average
 
   - platform: average
     name: 'Temperature Office Average'
     entities:
       - sensor.temperature_office_pc
       - sensor.temperature_office_xbox
+      - sensor.temperature_office
 
   - platform: average
     name: 'Temperature Livingroom Average'
     entities:
       - sensor.temperature_livingroom_temperature
       - sensor.temperature_livingroom_2
+
+  - platform: min_max
+    name: 'Temperature Bedroom Average'
+    type: 'mean'
+    entity_ids:
+      - sensor.temperature_bedroom
+      - sensor.temperature_bedroom_2
 
   - platform: rest
     name: "Temperature Bedroom"
