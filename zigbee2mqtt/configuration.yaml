@@ -46,6 +46,11 @@ devices:
     friendly_name: temperature_office
   '0x00158d0008c99136':
     friendly_name: temperature_outdoor
+    temperature_calibration: -3
+  '0x00158d0008cec350':
+    friendly_name: temperature_toilet
+  '0x00158d0008cef84c':
+    friendly_name: temperature_bathroom
 advanced:
   log_level: info
 shell_command:

@@ -4678,61 +4678,30 @@
        cy="50.159367"
        r="8.814095500000008" />
   </g>
-   <g
-     id="indicator-toilet">
-    <rect
-       style="fill:#fff000;fill-opacity:1;stroke:#fff000;stroke-width:4.41613;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect1616"
-       width="71"
-       height="27"
-       x="90.603813"
-       y="125.91327" />
-    <path
-       style="fill:#fff000;stroke:#fff000;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="M 90.011705,125.15754 21.266909,56.412511"
-       id="path1618" />
-    <text
-       xml:space="preserve"
-       style="font-size:24px;line-height:1.25;font-family:'Segoe UI', sans-serif;-inkscape-font-specification:'Segoe UI, sans-serif';text-align:end;text-anchor:end"
-       x="229.80211"
-       y="146.44521"
-       id="text1622"><tspan
-         sodipodi:role="line"
-         id="tspan1620"
-         x="153.80211"
-         y="146.44521"
-         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:24px;font-family:'Segoe UI', sans-serif;-inkscape-font-specification:'Segoe UI, sans-serif Semi-Bold';text-align:end;text-anchor:end;fill:#ffffff">Toilet</tspan></text>
-    <circle
-       style="fill:none;stroke:#fff000;stroke-width:4;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="circle1624"
-       cx="15.605579999999975"
-       cy="50.159367"
-       r="8.814095500000008" />
-  </g>
   <g
-     id="indicator-office">
+     id="indicator-workspace">
     <rect
        style="fill:#ffa500;fill-opacity:1;stroke:#ffa500;stroke-width:4.18623;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect5620"
-       width="77"
+       width="128"
        height="27"
        x="88.186333"
        y="94.158936" />
     <path
        style="fill:#ff0000;stroke:#ffa500;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="M 160.93642,94.09431 254.9821,56.048505"
+       d="M 216.93642,94.09431 254.9821,56.048505"
        id="path5622" />
     <text
        xml:space="preserve"
        style="font-size:24px;line-height:1.25;font-family:'Segoe UI', sans-serif;-inkscape-font-specification:'Segoe UI, sans-serif';text-align:start;text-anchor:start"
        x="92.962578"
-       y="94.69087"
+       y="114.69087"
        id="text5626"><tspan
          sodipodi:role="line"
          id="tspan5624"
          x="92.962578"
          y="114.69087"
-         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:24px;font-family:'Segoe UI', sans-serif;-inkscape-font-specification:'Segoe UI, sans-serif Semi-Bold';text-align:start;text-anchor:start;fill:#ffffff">Office</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:24px;font-family:'Segoe UI', sans-serif;-inkscape-font-specification:'Segoe UI, sans-serif Semi-Bold';text-align:start;text-anchor:start;fill:#ffffff">Workspace</tspan></text>
     <circle
        style="fill:none;stroke:#ffa500;stroke-width:4;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="circle5628"
@@ -9445,7 +9414,7 @@
          id="tspan5624"
          x="92.962578"
          y="114.69087"
-         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:24px;font-family:'Segoe UI', sans-serif;-inkscape-font-specification:'Segoe UI, sans-serif Semi-Bold';text-align:start;text-anchor:start;fill:#ffffff">Office</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:24px;font-family:'Segoe UI', sans-serif;-inkscape-font-specification:'Segoe UI, sans-serif Semi-Bold';text-align:start;text-anchor:start;fill:#ffffff">Workspace</tspan></text>
     <circle
        style="fill:none;stroke:#ffa500;stroke-width:4;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="circle5628"

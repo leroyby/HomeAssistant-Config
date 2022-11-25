@@ -1,10 +1,11 @@
 ######################################################################################################
 # @Leroyby
 # Original Repo : https://github.com/Leroyby/Homeassistant-Config
-# TEST SENSOR SSB Information
+# Various Sensors
 ######################################################################################################
-sensor:
-  - platform: swiss_public_transport
-    name: test SBB
-    from: 000000022
-    to: 000000025
+- platform: template
+  sensors:
+    sun_elevation:
+      friendly_name: "Sun Elevation"
+      unit_of_measurement: '°'
+      value_template: "{{ state_attr('sun.sun', 'elevation') }}"

@@ -270,6 +270,22 @@ views:
             name: true
             state: true
           type: custom:mini-graph-card
+        - color_thresholds_transition: smooth
+          entities:
+          - entity: sensor.temperature_toilet_temperature
+            name: Toilet
+          font_size: 100
+          group: false
+          hour24: true
+          line_width: 6
+          points_per_hour: 1
+          show:
+            extrema: false
+            fill: fade
+            labels: false
+            name: true
+            state: true
+          type: custom:mini-graph-card
         type: horizontal-stack
       type: vertical-stack
     type: custom:swipe-card
@@ -565,10 +581,8 @@ views:
 - badges: []
   cards:
   - entities:
-    - entity: sensor.code_line_count
-    - entity: switch.adaptive_lighting_livingroom
-    - entity: binary_sensor.contact_livingroom_cabinet_contact
-    - entity: switch.kitchen
+    - entity: sensor.temperature_outdoor_humidity
+    - entity: sensor.temperature_outdoor_temperature
     show_header_toggle: false
     title: Test apps
     type: entities

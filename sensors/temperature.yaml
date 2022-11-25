@@ -74,7 +74,7 @@
   - platform: template
     sensors:
       indoor_outdoor_temperature_difference:
-        friendly_name: "Temperature Difference"
+        friendly_name: "Difference"
         unit_of_measurement: '°C'
         value_template: >
-          {{ states('sensor.temperature_home')|float - states('sensor.temperature_outdoor_temperature')|float }}
+          {{ states('sensor.temperature_outdoor_temperature')|float - states('sensor.temperature_home')|float }}
