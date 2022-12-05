@@ -1,41 +1,41 @@
-######################################################################################################
-# @Leroyby
-# Original Repo : https://github.com/Leroyby/Homeassistant-Config
-# Script Lights Office
-######################################################################################################
-normal_lights_office:
-  alias: "Set normal lights in the office"
-  mode: parallel
-  sequence:
-    - data:
-        entity_id: light.office_lights
-        brightness_pct: 85
-        color_temp: 350
-      service: light.turn_on  
-    - service: input_select.select_option
-      entity_id: input_select.last_script_office
-      data:
-        option: script.normal_lights_living_room
-
-work_lights_office:
-  alias: Set normal lights in the living room
-  mode: parallel
-  sequence:
-    - data:
-        entity_id: light.office_lights
-        brightness_pct: 100
-        color_temp: 100
-      service: light.turn_on
-    - service: input_select.select_option
-      entity_id: input_select.last_script_bedroom
-      data:
-        option: script_work_lights_office
-
-off_lights_office:
-  alias: "shut off lights in the office"
-  mode: parallel
-  sequence:
-    - data:
-        entity_id: light.office_lights
-      service: light.turn_off
-
+######################################################################################################REDACTED
+# @LeroybyREDACTED
+# Original Repo : https://github.com/Leroyby/Homeassistant-ConfigREDACTED
+# Script Lights OfficeREDACTED
+######################################################################################################REDACTED
+normal_lights_office:REDACTED
+  alias: "Set normal lights in the office"REDACTED
+  mode: parallelREDACTED
+  sequence:REDACTED
+    - data:REDACTED
+        entity_id: light.office_lightsREDACTED
+        brightness_pct: 8REDACTED
+        color_temp: 350REDACTED
+      service: light.turn_on  REDACTED
+    - service: input_select.select_optionREDACTED
+      entity_id: input_select.last_script_officeREDACTED
+      data:REDACTED
+        option: script.normal_lights_living_roomREDACTED
+REDACTED
+work_lights_office:REDACTED
+  alias: Set normal lights in the living roomREDACTED
+  mode: parallelREDACTED
+  sequence:REDACTED
+    - data:REDACTED
+        entity_id: light.office_lightsREDACTED
+        brightness_pct: 100REDACTED
+        color_temp: 100REDACTED
+      service: light.turn_onREDACTED
+    - service: input_select.select_optionREDACTED
+      entity_id: input_select.last_script_bedroomREDACTED
+      data:REDACTED
+        option: script_work_lights_officeREDACTED
+REDACTED
+off_lights_office:REDACTED
+  alias: "shut off lights in the office"REDACTED
+  mode: parallelREDACTED
+  sequence:REDACTED
+    - data:REDACTED
+        entity_id: light.office_lightsREDACTED
+      service: light.turn_offREDACTED
+REDACTED

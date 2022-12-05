@@ -1,11 +1,11 @@
-######################################################################################################
-# @Leroyby
-# Original Repo : https://github.com/Leroyby/Homeassistant-Config
-# Scripts System generate readme
-######################################################################################################
-system_generate_readme:
-  alias: "Generate readme file"
-  mode: parallel
-  sequence:
-    - alias: "generate"
-      service: readme.generate
+######################################################################################################REDACTED
+# @LeroybyREDACTED
+# Original Repo : https://github.com/Leroyby/Homeassistant-ConfigREDACTED
+# Scripts System generate readmeREDACTED
+######################################################################################################REDACTED
+system_generate_readme:REDACTED
+  alias: "Generate readme file"REDACTED
+  mode: parallelREDACTED
+  sequence:REDACTED
+    - alias: "generate"REDACTED
+      service: readme.generateREDACTED

@@ -1,32 +1,32 @@
-######################################################################################################
-# @Leroyby
-# Original Repo : https://github.com/Leroyby/Homeassistant-Config
-# Scenes Lights Livingroom
-######################################################################################################
-  - name: living_room_cozy_lights
-    icon: "mdi:google-cloud"
-    entities:
-      light.livingroom_sofa:
-        state: "on"
-        brightness_pct: 50
-        color_temp: 450
-      light.livingroom_table:
-        state: "on"
-        brightness_pct: 50
-        color_temp: 450
-      light.livingroom_tv:
-        state: "on"
-        brightness_pct: 50
-        rgb_color: [255, 50, 50]
-
-  - name: living_room_normal_lights
-    icon: "mdi:google-cloud"
-    entities:
-      light.livingroom_sofa:
-        state: "on"
-        brightness_pct: 100
-        color_temp: 300
-      light.livingroom_table:
-        state: "on"
-        brightness_pct: 100
-        color_temp: 300
+######################################################################################################REDACTED
+# @LeroybyREDACTED
+# Original Repo : https://github.com/Leroyby/Homeassistant-ConfigREDACTED
+# Scenes Lights LivingroomREDACTED
+######################################################################################################REDACTED
+  - name: living_room_cozy_lightsREDACTED
+    icon: "mdi:google-cloud"REDACTED
+    entities:REDACTED
+      light.livingroom_sofa:REDACTED
+        state: "on"REDACTED
+        brightness_pct: 50REDACTED
+        color_temp: 450REDACTED
+      light.livingroom_table:REDACTED
+        state: "on"REDACTED
+        brightness_pct: 50REDACTED
+        color_temp: 450REDACTED
+      light.livingroom_tv:REDACTED
+        state: "on"REDACTED
+        brightness_pct: 50REDACTED
+        rgb_color: [255, 50, 50]REDACTED
+REDACTED
+  - name: living_room_normal_lightsREDACTED
+    icon: "mdi:google-cloud"REDACTED
+    entities:REDACTED
+      light.livingroom_sofa:REDACTED
+        state: "on"REDACTED
+        brightness_pct: 100REDACTED
+        color_temp: 300REDACTED
+      light.livingroom_table:REDACTED
+        state: "on"REDACTED
+        brightness_pct: 100REDACTED
+        color_temp: 300REDACTED

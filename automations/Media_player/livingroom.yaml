@@ -1,40 +1,40 @@
-######################################################################################################
-# @Leroyby
-# Original Repo : https://github.com/Leroyby/Homeassistant-Config
-# Automations Mediaplayer Livingroom
-######################################################################################################
-
-- alias: Media_Player start timer TV Livingroom
-  trigger:
-    platform: state
-    entity_id: media_player.lg_webos_tv_a4ab
-    to: 'off'
-  condition: 
-  action:
-  - service: timer.start
-    target:
-      entity_id: timer.livingroom_tv
-
-- alias: "Timerstop tv livingroom"
-  id: "Timerstop"
-  trigger:
-  - platform: event
-    event_type: timer.finished
-    event_data:
-      entity_id: timer.livingroom_tv
-  action:
-  - service: switch.turn_off
-    target:
-      entity_id: 
-      - switch.livingroom_tv
-
-- alias: Media_Player restart timer TV Livingroom
-  trigger:
-    platform: state
-    entity_id: media_player.lg_webos_tv_a4ab
-    to: 'on'
-  condition: 
-  action:
-  - service: timer.cancel
-    target:
+######################################################################################################REDACTED
+# @LeroybyREDACTED
+# Original Repo : https://github.com/Leroyby/Homeassistant-ConfigREDACTED
+# Automations Mediaplayer LivingroomREDACTED
+######################################################################################################REDACTED
+REDACTED
+- alias: Media_Player start timer TV LivingroomREDACTED
+  trigger:REDACTED
+    platform: stateREDACTED
+    entity_id: media_player.lg_webos_tv_a4abREDACTED
+    to: 'off'REDACTED
+  condition: REDACTED
+  action:REDACTED
+  - service: timer.startREDACTED
+    target:REDACTED
+      entity_id: timer.livingroom_tvREDACTED
+REDACTED
+- alias: "Timerstop tv livingroom"REDACTED
+  id: "Timerstop"REDACTED
+  trigger:REDACTED
+  - platform: eventREDACTED
+    event_type: timer.finishedREDACTED
+    event_data:REDACTED
+      entity_id: timer.livingroom_tvREDACTED
+  action:REDACTED
+  - service: switch.turn_offREDACTED
+    target:REDACTED
+      entity_id: REDACTED
+      - switch.livingroom_tvREDACTED
+REDACTED
+- alias: Media_Player restart timer TV LivingroomREDACTED
+  trigger:REDACTED
+    platform: stateREDACTED
+    entity_id: media_player.lg_webos_tv_a4abREDACTED
+    to: 'on'REDACTED
+  condition: REDACTED
+  action:REDACTED
+  - service: timer.cancelREDACTED
+    target:REDACTED
       entity_id: timer.livingroom_tv

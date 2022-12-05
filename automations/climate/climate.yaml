@@ -1,35 +1,35 @@
-######################################################################################################
-# @Leroyby
-# Original Repo : https://github.com/Leroyby/Homeassistant-Config
-# Automation Climate 
-# https://pelaxa.com/blog/2022/04/10/automating-your-home-climate-control-with-home-assistant/
-######################################################################################################
-
-## Bedroom
-- alias: shutdown heating
-  trigger:
-    - platform: numeric_state
+######################################################################################################REDACTED
+# @LeroybyREDACTED
+# Original Repo : https://github.com/Leroyby/Homeassistant-ConfigREDACTED
+# Automation Climate REDACTED
+# https://pelaxa.com/blog/2022/04/10/automating-your-home-climate-control-with-home-assistant/REDACTED
+######################################################################################################REDACTED
+REDACTED
+## BedroomREDACTED
+- alias: shutdown heatingREDACTED
+  trigger:REDACTED
+    - platform: numeric_stateREDACTED
       entity_id: REDACTED
-      above: '20'
-      for: '24:00:00'
-  condition: []
-  action:
-    - service: climate.set_hvac_mode
-      target:
-        entity_id: climate.bedroom_thermostat
-      data:
-        hvac_mode: "off" 
-
-- alias: start heating
-  trigger:
-    - platform: numeric_state
+      above: '20'REDACTED
+      for: '24:00:00'REDACTED
+  condition: []REDACTED
+  action:REDACTED
+    - service: climate.set_hvac_modeREDACTED
+      target:REDACTED
+        entity_id: climate.bedroom_thermostatREDACTED
+      data:REDACTED
+        hvac_mode: "off" REDACTED
+REDACTED
+- alias: start heatingREDACTED
+  trigger:REDACTED
+    - platform: numeric_stateREDACTED
       entity_id: REDACTED
-      below: '20'
-      for: '24:00:00'
-  condition: []
-  action:
-    - service: climate.set_hvac_mode
-      target:
-        entity_id: climate.bedroom_thermostat
-      data:
-        hvac_mode: auto
+      below: '20'REDACTED
+      for: '24:00:00'REDACTED
+  condition: []REDACTED
+  action:REDACTED
+    - service: climate.set_hvac_modeREDACTED
+      target:REDACTED
+        entity_id: climate.bedroom_thermostatREDACTED
+      data:REDACTED
+        hvac_mode: autoREDACTED

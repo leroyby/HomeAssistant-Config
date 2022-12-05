@@ -1,39 +1,39 @@
-######################################################################################################
-# @Leroyby
-# Original Repo : https://github.com/Leroyby/Homeassistant-Config
-# switch group yaml file
-######################################################################################################
-- platform: group
-  name: All electric switches 
-  entities:
-    - switch.tv
-    - switch.bedroom_tv
-    - switch.office_pc
-    - switch.office_xbox
-    - switch.kitchen
-    
- ##  OFFICE
-- platform: group
-  name: Office Switches
-  entities:
-    - switch.office_pc
-    - switch.office_xbox
-    
-  ##  LIVING ROOM   
-- platform: group
-  name: Livingroom Switches
-  entities:
-    - switch.livingroom_tv
-    - switch.kitchen
-## Bedroom
-- platform: group
-  name: bedroom switches
-  entities:
-    - switch.bedroom_Tv
-  
-- platform: group
-  name: night
-  entities:
-    - switch.office_pc
-    - switch.office_xbox
+######################################################################################################REDACTED
+# @LeroybyREDACTED
+# Original Repo : https://github.com/Leroyby/Homeassistant-ConfigREDACTED
+# switch group yaml fileREDACTED
+######################################################################################################REDACTED
+- platform: groupREDACTED
+  name: All electric switches REDACTED
+  entities:REDACTED
+    - switch.tvREDACTED
+    - switch.bedroom_tvREDACTED
+    - switch.office_pcREDACTED
+    - switch.office_xboxREDACTED
+    - switch.kitchenREDACTED
+    REDACTED
+ ##  OFFICEREDACTED
+- platform: groupREDACTED
+  name: Office SwitchesREDACTED
+  entities:REDACTED
+    - switch.office_pcREDACTED
+    - switch.office_xboxREDACTED
+    REDACTED
+  ##  LIVING ROOM   REDACTED
+- platform: groupREDACTED
+  name: Livingroom SwitchesREDACTED
+  entities:REDACTED
+    - switch.livingroom_tvREDACTED
+    - switch.kitchenREDACTED
+## BedroomREDACTED
+- platform: groupREDACTED
+  name: bedroom switchesREDACTED
+  entities:REDACTED
+    - switch.bedroom_TvREDACTED
+  REDACTED
+- platform: groupREDACTED
+  name: nightREDACTED
+  entities:REDACTED
+    - switch.office_pcREDACTED
+    - switch.office_xboxREDACTED
     - switch.livingroom_tv

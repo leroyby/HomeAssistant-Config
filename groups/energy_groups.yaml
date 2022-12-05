@@ -1,10 +1,10 @@
-######################################################################################################
-# @Leroyby
-# Original Repo : https://github.com/leroyby/Homeassistant-Config
-# Energy Sensor group yaml file
-######################################################################################################
-  - platform: group
-    name: energy office
-    entities:
-      - sensor.power_office_xbox
-      - sensor.power_office_pc
+######################################################################################################REDACTED
+# @LeroybyREDACTED
+# Original Repo : https://github.com/leroyby/Homeassistant-ConfigREDACTED
+# Energy Sensor group yaml fileREDACTED
+######################################################################################################REDACTED
+  - platform: groupREDACTED
+    name: energy officeREDACTED
+    entities:REDACTED
+      - sensor.power_office_xboxREDACTED
+      - sensor.power_office_pcREDACTED

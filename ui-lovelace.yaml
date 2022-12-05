@@ -272,6 +272,22 @@ views:
           type: custom:mini-graph-card
         - color_thresholds_transition: smooth
           entities:
+          - entity: sensor.temperature_bathroom_temperature
+            name: Bathroom
+          font_size: 100
+          group: false
+          hour24: true
+          line_width: 6
+          points_per_hour: 1
+          show:
+            extrema: false
+            fill: fade
+            labels: false
+            name: true
+            state: true
+          type: custom:mini-graph-card
+        - color_thresholds_transition: smooth
+          entities:
           - entity: sensor.temperature_toilet_temperature
             name: Toilet
           font_size: 100

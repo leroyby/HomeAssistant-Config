@@ -1,25 +1,25 @@
-######################################################################################################
-# @Leroyby
-# Original Repo : https://github.com/Leroyby/Homeassistant-Config
-# Automations night mode
-######################################################################################################
-- id: '1663422926689'
-  alias: Mode_Night_on
-  description: ''
-  trigger:
-  - platform: state
-    entity_id:
-    - input_boolean.night_mode
-    to: 'on'
-  condition: []
-  action:
-  - service: input_boolean.turn_off
-    target:
-      entity_id: 
-      - input_boolean.normal_mode
-      - input_boolean.gaming_mode
-      - input_boolean.away_mode
-      - input_boolean.work_mode
-  - service: script.office_off
-  - service: script.living_room_off
-  mode: single
+######################################################################################################REDACTED
+# @LeroybyREDACTED
+# Original Repo : https://github.com/Leroyby/Homeassistant-ConfigREDACTED
+# Automations night modeREDACTED
+######################################################################################################REDACTED
+- id: '1663422926689'REDACTED
+  alias: Mode_Night_onREDACTED
+  description: ''REDACTED
+  trigger:REDACTED
+  - platform: stateREDACTED
+    entity_id:REDACTED
+    - input_boolean.night_modeREDACTED
+    to: 'on'REDACTED
+  condition: []REDACTED
+  action:REDACTED
+  - service: input_boolean.turn_offREDACTED
+    target:REDACTED
+      entity_id: REDACTED
+      - input_boolean.normal_modeREDACTED
+      - input_boolean.gaming_modeREDACTED
+      - input_boolean.away_modeREDACTED
+      - input_boolean.work_modeREDACTED
+  - service: script.office_offREDACTED
+  - service: script.living_room_offREDACTED
+  mode: singleREDACTED

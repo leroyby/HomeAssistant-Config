@@ -1,61 +1,61 @@
-######################################################################################################
-# @Leroyby
-# Original Repo : https://github.com/Leroyby/Homeassistant-Config
-# Input Boolenas used for modes and presence
-######################################################################################################
-  work_mode:
-    name: Work Mode
-    icon: mdi:desk
-    initial: off
-
-  normal_mode:
-    name: Normal Mode
-    icon: mdi:home
-    initial: on
-
-  gaming_mode:
-    name: Gaming Mode
-    icon: mdi:controller
-    initial: off
-
-  away_mode:
-    name: Away Mode
-    icon: mdi:key-link
-    initial: off
-
-  night_mode:
-    name: Night Mode
-    icon: mdi:bed-clock
-    initial: off
-
-  guest_mode:
-    name: Guest Mode
-    icon: mdi:desk
-    initial: off
-
-  USER2_home:
-    name: USER2 Home
-    icon: mdi:Account
-
-  vacuum_ran:
-    name: Vacuum Ran
-    icon: mdi:vacuum
-
-  alarm_clock:
-    name: Alarm clock is on
-    icon: mdi:alarm
-  
-  manual_lights_office:
-    name: Manual mode Lights Office is on
-    icon: mdi:lamp
-
-  manual_lights_livingroom:
-    name: Manual mode Lights Livingroom is on
-    icon: mdi:lamp
-
-  morning_lights_livingroom:
-    name: Morning mode Lights Livingroom is on
-    icon: mdi:lamp
-
-  living_room_light_level_under_7:
+######################################################################################################REDACTED
+# @LeroybyREDACTED
+# Original Repo : https://github.com/Leroyby/Homeassistant-ConfigREDACTED
+# Input Boolenas used for modes and presenceREDACTED
+######################################################################################################REDACTED
+  work_mode:REDACTED
+    name: Work ModeREDACTED
+    icon: mdi:deskREDACTED
+    initial: offREDACTED
+REDACTED
+  normal_mode:REDACTED
+    name: Normal ModeREDACTED
+    icon: mdi:homeREDACTED
+    initial: onREDACTED
+REDACTED
+  gaming_mode:REDACTED
+    name: Gaming ModeREDACTED
+    icon: mdi:controllerREDACTED
+    initial: offREDACTED
+REDACTED
+  away_mode:REDACTED
+    name: Away ModeREDACTED
+    icon: mdi:key-linkREDACTED
+    initial: offREDACTED
+REDACTED
+  night_mode:REDACTED
+    name: Night ModeREDACTED
+    icon: mdi:bed-clockREDACTED
+    initial: offREDACTED
+REDACTED
+  guest_mode:REDACTED
+    name: Guest ModeREDACTED
+    icon: mdi:deskREDACTED
+    initial: offREDACTED
+REDACTED
+  USER2_home:REDACTED
+    name: USER2 HomeREDACTED
+    icon: mdi:AccountREDACTED
+REDACTED
+  vacuum_ran:REDACTED
+    name: Vacuum RanREDACTED
+    icon: mdi:vacuumREDACTED
+REDACTED
+  alarm_clock:REDACTED
+    name: Alarm clock is onREDACTED
+    icon: mdi:alarmREDACTED
+  REDACTED
+  manual_lights_office:REDACTED
+    name: Manual mode Lights Office is onREDACTED
+    icon: mdi:lampREDACTED
+REDACTED
+  manual_lights_livingroom:REDACTED
+    name: Manual mode Lights Livingroom is onREDACTED
+    icon: mdi:lampREDACTED
+REDACTED
+  morning_lights_livingroom:REDACTED
+    name: Morning mode Lights Livingroom is onREDACTED
+    icon: mdi:lampREDACTED
+REDACTED
+  living_room_light_level_under_7:REDACTED
     icon: mdi:lamp

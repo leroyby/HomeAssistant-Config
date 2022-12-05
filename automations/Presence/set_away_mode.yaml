@@ -1,32 +1,32 @@
-######################################################################################################
-# @Leroyby
-# Original Repo : https://github.com/Leroyby/Homeassistant-Config
-# Automation set modes
-######################################################################################################
-- alias: presence set away mode
-  trigger:
-    platform: state
-    entity_id: binary_sensor.no_one_home
-    to: 'on'
-  condition:
-  - condition: time
-    after: 06:00:00
-    before: '23:00:00'
-  action:
-  - service: input_boolean.turn_on
-    target:
-      entity_id: input_boolean.away_mode
-
-- alias: presence set home mode
-  trigger:
-    platform: state
-    entity_id: binary_sensor.no_one_home
-    to: 'off'
-  condition:
-  - condition: time
-    after: 06:00:00
-    before: '23:00:00'
-  action:
-  - service: input_boolean.turn_on
-    target:
+######################################################################################################REDACTED
+# @LeroybyREDACTED
+# Original Repo : https://github.com/Leroyby/Homeassistant-ConfigREDACTED
+# Automation set modesREDACTED
+######################################################################################################REDACTED
+- alias: presence set away modeREDACTED
+  trigger:REDACTED
+    platform: stateREDACTED
+    entity_id: binary_sensor.no_one_homeREDACTED
+    to: 'on'REDACTED
+  condition:REDACTED
+  - condition: timeREDACTED
+    after: 06:00:00REDACTED
+    before: '23:00:00'REDACTED
+  action:REDACTED
+  - service: input_boolean.turn_onREDACTED
+    target:REDACTED
+      entity_id: input_boolean.away_modeREDACTED
+REDACTED
+- alias: presence set home modeREDACTED
+  trigger:REDACTED
+    platform: stateREDACTED
+    entity_id: binary_sensor.no_one_homeREDACTED
+    to: 'off'REDACTED
+  condition:REDACTED
+  - condition: timeREDACTED
+    after: 06:00:00REDACTED
+    before: '23:00:00'REDACTED
+  action:REDACTED
+  - service: input_boolean.turn_onREDACTED
+    target:REDACTED
       entity_id: input_boolean.normal_mode

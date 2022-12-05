@@ -1,28 +1,28 @@
-######################################################################################################
-# @Leroyby
-# Original Repo : https://github.com/Leroyby/Homeassistant-Config
-# Automations Livingroom Ikea Switch
-######################################################################################################
-- alias: Start TV Living Room
-  trigger:
-    platform: state
-    entity_id: sensor.tv_button_switch_livingroom_click
-    to: 'on'
-  condition:
-  action:
-  - service: switch.turn_on
-    target:
-      entity_id: 
-      - switch.livingroom_tv
-
-- alias: Shutdown TV Living Room
-  trigger:
-    platform: state
-    entity_id: sensor.tv_button_switch_livingroom_click
-    to: 'off'
-  condition:
-  action:
-  - service: switch.turn_off
-    target:
-      entity_id: 
+######################################################################################################REDACTED
+# @LeroybyREDACTED
+# Original Repo : https://github.com/Leroyby/Homeassistant-ConfigREDACTED
+# Automations Livingroom Ikea SwitchREDACTED
+######################################################################################################REDACTED
+- alias: Start TV Living RoomREDACTED
+  trigger:REDACTED
+    platform: stateREDACTED
+    entity_id: sensor.tv_button_switch_livingroom_clickREDACTED
+    to: 'on'REDACTED
+  condition:REDACTED
+  action:REDACTED
+  - service: switch.turn_onREDACTED
+    target:REDACTED
+      entity_id: REDACTED
+      - switch.livingroom_tvREDACTED
+REDACTED
+- alias: Shutdown TV Living RoomREDACTED
+  trigger:REDACTED
+    platform: stateREDACTED
+    entity_id: sensor.tv_button_switch_livingroom_clickREDACTED
+    to: 'off'REDACTED
+  condition:REDACTED
+  action:REDACTED
+  - service: switch.turn_offREDACTED
+    target:REDACTED
+      entity_id: REDACTED
       - switch.livingroom_tv

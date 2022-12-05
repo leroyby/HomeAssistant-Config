@@ -1,70 +1,70 @@
-######################################################################################################
-# @Leroyby
-# Original Repo : https://github.com/Leroyby/Homeassistant-Config
-# binary sensors ping
-######################################################################################################
-- platform: ping
-  host: 192.168.178.1
-  name: "ping modem"
-  count: 2
-  scan_interval: 30
-
-- platform: ping
-  host: 1.1.1.1
-  name: "ping cloudflare"
-  count: 2
-  scan_interval: 30
-
-- platform: ping
-  host: 8.8.8.8
-  name: "ping google"
-  count: 2
-  scan_interval: 30
-
-- platform: ping
-  host: ubnt.leroyby.ch
-  name: "ping my website"
-  count: 2
-  scan_interval: 30
-
-- platform: ping
-  host: 192.168.178.1
-  name: "ping modem"
-  count: 2
-  scan_interval: 30
-
-- platform: ping
-  host: 192.168.178.1
-  name: "ping router"
-  count: 2
-  scan_interval: 30
-
-- platform: ping
-  host: 192.168.178.15
-  name: "ping switch"
-  count: 2
-  scan_interval: 30
-
-- platform: ping
-  host: 192.168.178.16
-  name: "ping ap"
-  count: 2
-  scan_interval: 30
-################################
-- platform: ping
-  host: 192.168.178.100
-  name: "ping valhalla outlet"
-  count: 2
-  scan_interval: 30
-
-- platform: ping
-  host: 192.168.178.101
-  name: "ping bedroom mesh repeater"
-  count: 2
-  scan_interval: 30
-
-- platform: ping
-  host: 192.168.178.102
-  name: "ping dorothy illinoise"
-  count: 2
-  scan_interval: 30
+######################################################################################################REDACTED
+# @LeroybyREDACTED
+# Original Repo : https://github.com/Leroyby/Homeassistant-ConfigREDACTED
+# binary sensors pingREDACTED
+######################################################################################################REDACTED
+- platform: pingREDACTED
+  host: 192.168.178.REDACTED
+  name: "ping modem"REDACTED
+  count: REDACTED
+  scan_interval: 30REDACTED
+REDACTED
+- platform: pingREDACTED
+  host: 1.1.1.REDACTED
+  name: "ping cloudflare"REDACTED
+  count: REDACTED
+  scan_interval: 30REDACTED
+REDACTED
+- platform: pingREDACTED
+  host: 8.8.8.REDACTED
+  name: "ping google"REDACTED
+  count: REDACTED
+  scan_interval: 30REDACTED
+REDACTED
+- platform: pingREDACTED
+  host: ubnt.leroyby.chREDACTED
+  name: "ping my website"REDACTED
+  count: REDACTED
+  scan_interval: 30REDACTED
+REDACTED
+- platform: pingREDACTED
+  host: 192.168.178.REDACTED
+  name: "ping modem"REDACTED
+  count: REDACTED
+  scan_interval: 30REDACTED
+REDACTED
+- platform: pingREDACTED
+  host: 192.168.178.REDACTED
+  name: "ping router"REDACTED
+  count: REDACTED
+  scan_interval: 30REDACTED
+REDACTED
+- platform: pingREDACTED
+  host: 192.168.178.1REDACTED
+  name: "ping switch"REDACTED
+  count: REDACTED
+  scan_interval: 30REDACTED
+REDACTED
+- platform: pingREDACTED
+  host: 192.168.178.1REDACTED
+  name: "ping ap"REDACTED
+  count: REDACTED
+  scan_interval: 30REDACTED
+################################REDACTED
+- platform: pingREDACTED
+  host: 192.168.178.100REDACTED
+  name: "ping valhalla outlet"REDACTED
+  count: REDACTED
+  scan_interval: 30REDACTED
+REDACTED
+- platform: pingREDACTED
+  host: 192.168.178.10REDACTED
+  name: "ping bedroom mesh repeater"REDACTED
+  count: REDACTED
+  scan_interval: 30REDACTED
+REDACTED
+- platform: pingREDACTED
+  host: 192.168.178.10REDACTED
+  name: "ping dorothy illinoise"REDACTED
+  count: REDACTED
+  scan_interval: 30REDACTED

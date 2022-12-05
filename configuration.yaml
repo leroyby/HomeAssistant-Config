@@ -45,6 +45,6 @@ lovelace:
       show_in_sidebar: true
       filename: ui/ui-lovelace.yaml
 powercalc:
-  create_utility_meters: true  
+  create_utility_meters: true
 
 

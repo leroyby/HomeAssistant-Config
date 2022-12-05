@@ -1,19 +1,19 @@
-######################################################################################################
-# @Leroyby
-# Original Repo : https://github.com/Leroyby/Homeassistant-Config
-# Script Vacuum
-######################################################################################################
-
-vacuum_start:
-  sequence:
-    - service: logbook.log
-      data_template:
-        name: EVENT
-        message: "Starting Vacuum."
-    - service: vacuum.start
-      data:
-        entity_id: vacuum.rombacus
-    - service: logbook.log
-      data_template:
-        name: EVENT
+######################################################################################################REDACTED
+# @LeroybyREDACTED
+# Original Repo : https://github.com/Leroyby/Homeassistant-ConfigREDACTED
+# Script VacuumREDACTED
+######################################################################################################REDACTED
+REDACTED
+vacuum_start:REDACTED
+  sequence:REDACTED
+    - service: logbook.logREDACTED
+      data_template:REDACTED
+        name: EVENTREDACTED
+        message: "Starting Vacuum."REDACTED
+    - service: vacuum.startREDACTED
+      data:REDACTED
+        entity_id: vacuum.rombacusREDACTED
+    - service: logbook.logREDACTED
+      data_template:REDACTED
+        name: EVENTREDACTED
         message: "Vacuum started"

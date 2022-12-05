@@ -1,25 +1,25 @@
-######################################################################################################
-# @Leroyby
-# Original Repo : https://github.com/Leroyby/Homeassistant-Config
-# Automation away mode 
-######################################################################################################
-- alias: Mode_Away_on
-  id: 9521d521-00dc-4116-b467-5150735fcff9
-  trigger:
-    - platform: state
-      entity_id: 
-      - input_boolean.away_mode
-      to: 'on'
-  condition: []
-  action:
-  - service: input_boolean.turn_off
-    target:
-      entity_id: 
-      - input_boolean.work_mode
-      - input_boolean.normal_mode
-      - input_boolean.gaming_mode
-      - input_boolean.night_mode
-  - service: script.bedroom_off
-  - service: script.office_off
-  - service: script.living_room_off
+######################################################################################################REDACTED
+# @LeroybyREDACTED
+# Original Repo : https://github.com/Leroyby/Homeassistant-ConfigREDACTED
+# Automation away mode REDACTED
+######################################################################################################REDACTED
+- alias: Mode_Away_onREDACTED
+  id: 9521d521-00dc-4116-b467-5150735fcffREDACTED
+  trigger:REDACTED
+    - platform: stateREDACTED
+      entity_id: REDACTED
+      - input_boolean.away_modeREDACTED
+      to: 'on'REDACTED
+  condition: []REDACTED
+  action:REDACTED
+  - service: input_boolean.turn_offREDACTED
+    target:REDACTED
+      entity_id: REDACTED
+      - input_boolean.work_modeREDACTED
+      - input_boolean.normal_modeREDACTED
+      - input_boolean.gaming_modeREDACTED
+      - input_boolean.night_modeREDACTED
+  - service: script.bedroom_offREDACTED
+  - service: script.office_offREDACTED
+  - service: script.living_room_offREDACTED
   mode: single

@@ -1,22 +1,22 @@
-######################################################################################################
-# @Leroyby
-# Original Repo : https://github.com/Leroyby/Homeassistant-Config
-# Automations Lights Bedroom
-######################################################################################################
-
-- alias: Light bedroom off night
-  trigger:
-    platform: state
-    entity_id: sensor.iphone_von_leroy_battery_state
-    to: 'Charging'
-  condition: 
-    condition: time
-    after: "21:30:00"
-    before: "04:00:00"
-  action:
-  - service: light.turn_off
-    target:
-      entity_id: 
-      - light.bedroom_lights
-    data:
-      transition: 7
+######################################################################################################REDACTED
+# @LeroybyREDACTED
+# Original Repo : https://github.com/Leroyby/Homeassistant-ConfigREDACTED
+# Automations Lights BedroomREDACTED
+######################################################################################################REDACTED
+REDACTED
+- alias: Light bedroom off nightREDACTED
+  trigger:REDACTED
+    platform: stateREDACTED
+    entity_id: sensor.iphone_von_leroy_battery_stateREDACTED
+    to: 'Charging'REDACTED
+  condition: REDACTED
+    condition: timeREDACTED
+    after: "21:30:00"REDACTED
+    before: "04:00:00"REDACTED
+  action:REDACTED
+  - service: light.turn_offREDACTED
+    target:REDACTED
+      entity_id: REDACTED
+      - light.bedroom_lightsREDACTED
+    data:REDACTED
+      transition: REDACTED

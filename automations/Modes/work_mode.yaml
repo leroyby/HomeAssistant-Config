@@ -1,28 +1,28 @@
-######################################################################################################
-# @Leroyby
-# Original Repo : https://github.com/Leroyby/Homeassistant-Config
-# Automations work mode
-######################################################################################################
-- id: '1663425526689'
-  alias: mode work on
-  description: ''
-  trigger:
-  - platform: state
-    entity_id:
-    - input_boolean.work_mode
-    to: 'on'
-    from: 'off'
-  condition: []
-  action:
-  - service: scene.turn_on
-    target:
-      entity_id: scene.work_mode_on
-  - service: input_boolean.turn_off
-    target:
-      entity_id: 
-      - input_boolean.normal_mode
-      - input_boolean.gaming_mode
-      - input_boolean.away_mode
-      - input_boolean.night_mode
-    metadata: {}
-  mode: single
+######################################################################################################REDACTED
+# @LeroybyREDACTED
+# Original Repo : https://github.com/Leroyby/Homeassistant-ConfigREDACTED
+# Automations work modeREDACTED
+######################################################################################################REDACTED
+- id: '1663425526689'REDACTED
+  alias: mode work onREDACTED
+  description: ''REDACTED
+  trigger:REDACTED
+  - platform: stateREDACTED
+    entity_id:REDACTED
+    - input_boolean.work_modeREDACTED
+    to: 'on'REDACTED
+    from: 'off'REDACTED
+  condition: []REDACTED
+  action:REDACTED
+  - service: scene.turn_onREDACTED
+    target:REDACTED
+      entity_id: scene.work_mode_onREDACTED
+  - service: input_boolean.turn_offREDACTED
+    target:REDACTED
+      entity_id: REDACTED
+      - input_boolean.normal_modeREDACTED
+      - input_boolean.gaming_modeREDACTED
+      - input_boolean.away_modeREDACTED
+      - input_boolean.night_modeREDACTED
+    metadata: {}REDACTED
+  mode: singleREDACTED

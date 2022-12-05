@@ -1,27 +1,27 @@
-######################################################################################################
-# @Leroyby
-# Original Repo : https://github.com/Leroyby/Homeassistant-Config
-# Automation Livingroom Cabinet
-######################################################################################################
-
-- alias: livingroom cabinet on
-  trigger:
-    platform: state
-    entity_id: binary_sensor.contact_livingroom_cabinet_contact
-    to: 'on'
-  condition: []
-  action:
-  - service: switch.turn_on
-    target:
-      entity_id: switch.kitchen
-
-- alias: livingroom cabinet off
-  trigger:
-    platform: state
-    entity_id: binary_sensor.contact_livingroom_cabinet_contact
-    to: 'off'
-  condition: []
-  action:
-  - service: switch.turn_off
-    target:
+######################################################################################################REDACTED
+# @LeroybyREDACTED
+# Original Repo : https://github.com/Leroyby/Homeassistant-ConfigREDACTED
+# Automation Livingroom CabinetREDACTED
+######################################################################################################REDACTED
+REDACTED
+- alias: livingroom cabinet onREDACTED
+  trigger:REDACTED
+    platform: stateREDACTED
+    entity_id: binary_sensor.contact_livingroom_cabinet_contactREDACTED
+    to: 'on'REDACTED
+  condition: []REDACTED
+  action:REDACTED
+  - service: switch.turn_onREDACTED
+    target:REDACTED
+      entity_id: switch.kitchenREDACTED
+REDACTED
+- alias: livingroom cabinet offREDACTED
+  trigger:REDACTED
+    platform: stateREDACTED
+    entity_id: binary_sensor.contact_livingroom_cabinet_contactREDACTED
+    to: 'off'REDACTED
+  condition: []REDACTED
+  action:REDACTED
+  - service: switch.turn_offREDACTED
+    target:REDACTED
       entity_id: switch.kitchen      

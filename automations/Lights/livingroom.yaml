@@ -1,95 +1,95 @@
-######################################################################################################
-# @Leroyby
-# Original Repo : https://github.com/Leroyby/Homeassistant-Config
-# Automation Lights Livingroom
-######################################################################################################
-- alias: Light Livingroom Floor Off during TV
-  trigger:
-    platform: state
-    entity_id: media_player.lg_webos_tv_a4ab
-    to: 'on'
-  condition:
-  action:
-  - service: light.turn_off
-    target:
-      entity_id: 
-      - light.livingroom_tv
-
-- alias: Light Livingroom off after Motion
-  trigger:
-    platform: state
-    entity_id: binary_sensor.activity_in_livingroom
-    to: 'off'
-  condition: 
-  - condition: state
-    entity_id: input_boolean.morning_lights_livingroom
-    state: "off"
-  action:
-  - service: light.turn_off
-    target:
-      entity_id: 
-      - light.livingroom_motion_lights
-
-- alias: Light Livingroom on after Motion
-  trigger:
-    platform: state
-    entity_id: binary_sensor.activity_in_livingroom
-    to: 'on'
-  condition:
-  - condition: state
-    entity_id: sun.sun
-    state: "below_horizon"
-  action:
-  - service: light.turn_on
-    target:
-      entity_id: 
-      - light.livingroom_motion_lights
-
-- alias: Light Livingroom on after Motion morning
-  trigger:
-    platform: state
-    entity_id: binary_sensor.activity_in_livingroom
-    to: 'on'
-  condition:
-    condition: and
-    conditions:
-      - condition: time
-        after: "06:00:00"
-        before: "08:30:00"
-      - condition: or
-        conditions:
-          - condition: state
-            entity_id: sensor.season
-            state: "Autumn"
-          - condition: state
-            entity_id: sensor.season
-            state: "Winter"  
-  action:
-  - service: light.turn_on
-    target:
-      entity_id: 
-      - light.livingroom_motion_lights   
-  - service: input_boolean.turn_on
-    target:
-      entity_id: 
-      - input_boolean.morning_lights_livingroom
-  - service: timer.start
-    target:
-      entity_id: timer.livingroom_lights_morning
-
-- alias: "Timerstop livingroom morning lights"
-  id: "Timerstop livingroom lights morning"
-  trigger:
-  - platform: event
-    event_type: timer.finished
-    event_data:
-      entity_id: timer.livingroom_lights_morning
-  action:
-  - service: input_boolean.turn_off
-    target:
-      entity_id: 
-      - input_boolean.morning_lights_livingroom
-  - service: light.turn_off
-    target:
-      entity_id: 
+######################################################################################################REDACTED
+# @LeroybyREDACTED
+# Original Repo : https://github.com/Leroyby/Homeassistant-ConfigREDACTED
+# Automation Lights LivingroomREDACTED
+######################################################################################################REDACTED
+- alias: Light Livingroom Floor Off during TVREDACTED
+  trigger:REDACTED
+    platform: stateREDACTED
+    entity_id: media_player.lg_webos_tv_a4abREDACTED
+    to: 'on'REDACTED
+  condition:REDACTED
+  action:REDACTED
+  - service: light.turn_offREDACTED
+    target:REDACTED
+      entity_id: REDACTED
+      - light.livingroom_tvREDACTED
+REDACTED
+- alias: Light Livingroom off after MotionREDACTED
+  trigger:REDACTED
+    platform: stateREDACTED
+    entity_id: binary_sensor.activity_in_livingroomREDACTED
+    to: 'off'REDACTED
+  condition: REDACTED
+  - condition: stateREDACTED
+    entity_id: input_boolean.morning_lights_livingroomREDACTED
+    state: "off"REDACTED
+  action:REDACTED
+  - service: light.turn_offREDACTED
+    target:REDACTED
+      entity_id: REDACTED
+      - light.livingroom_motion_lightsREDACTED
+REDACTED
+- alias: Light Livingroom on after MotionREDACTED
+  trigger:REDACTED
+    platform: stateREDACTED
+    entity_id: binary_sensor.activity_in_livingroomREDACTED
+    to: 'on'REDACTED
+  condition:REDACTED
+  - condition: stateREDACTED
+    entity_id: sun.sunREDACTED
+    state: "below_horizon"REDACTED
+  action:REDACTED
+  - service: light.turn_onREDACTED
+    target:REDACTED
+      entity_id: REDACTED
+      - light.livingroom_motion_lightsREDACTED
+REDACTED
+- alias: Light Livingroom on after Motion morningREDACTED
+  trigger:REDACTED
+    platform: stateREDACTED
+    entity_id: binary_sensor.activity_in_livingroomREDACTED
+    to: 'on'REDACTED
+  condition:REDACTED
+    condition: andREDACTED
+    conditions:REDACTED
+      - condition: timeREDACTED
+        after: "06:00:00"REDACTED
+        before: "08:30:00"REDACTED
+      - condition: orREDACTED
+        conditions:REDACTED
+          - condition: stateREDACTED
+            entity_id: sensor.seasonREDACTED
+            state: "Autumn"REDACTED
+          - condition: stateREDACTED
+            entity_id: sensor.seasonREDACTED
+            state: "Winter"  REDACTED
+  action:REDACTED
+  - service: light.turn_onREDACTED
+    target:REDACTED
+      entity_id: REDACTED
+      - light.livingroom_motion_lights   REDACTED
+  - service: input_boolean.turn_onREDACTED
+    target:REDACTED
+      entity_id: REDACTED
+      - input_boolean.morning_lights_livingroomREDACTED
+  - service: timer.startREDACTED
+    target:REDACTED
+      entity_id: timer.livingroom_lights_morningREDACTED
+REDACTED
+- alias: "Timerstop livingroom morning lights"REDACTED
+  id: "Timerstop livingroom lights morning"REDACTED
+  trigger:REDACTED
+  - platform: eventREDACTED
+    event_type: timer.finishedREDACTED
+    event_data:REDACTED
+      entity_id: timer.livingroom_lights_morningREDACTED
+  action:REDACTED
+  - service: input_boolean.turn_offREDACTED
+    target:REDACTED
+      entity_id: REDACTED
+      - input_boolean.morning_lights_livingroomREDACTED
+  - service: light.turn_offREDACTED
+    target:REDACTED
+      entity_id: REDACTED
       - light.livingroom_motion_lights

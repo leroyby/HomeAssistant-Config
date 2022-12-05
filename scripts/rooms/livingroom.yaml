@@ -1,14 +1,14 @@
-######################################################################################################
-# @Leroyby
-# Original Repo : https://github.com/Leroyby/Homeassistant-Config
-# Scripts Living room
-######################################################################################################
-living_room_off:
-  alias: "Turn living room off"
-  sequence:
-    - service: switch.turn_off
-      data:
-        entity_id: switch.livingroom_switches
-    - service: light.turn_off
-      data:
-        entity_id: light.living_room_lights
+######################################################################################################REDACTED
+# @LeroybyREDACTED
+# Original Repo : https://github.com/Leroyby/Homeassistant-ConfigREDACTED
+# Scripts Living roomREDACTED
+######################################################################################################REDACTED
+living_room_off:REDACTED
+  alias: "Turn living room off"REDACTED
+  sequence:REDACTED
+    - service: switch.turn_offREDACTED
+      data:REDACTED
+        entity_id: switch.livingroom_switchesREDACTED
+    - service: light.turn_offREDACTED
+      data:REDACTED
+        entity_id: light.living_room_lightsREDACTED

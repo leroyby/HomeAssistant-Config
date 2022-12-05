@@ -1,6 +1,6 @@
----
-# This handles the loading of my automations
-#
-# https://www.home-assistant.io/docs/automation/
-#
+---REDACTED
+# This handles the loading of my automationsREDACTED
+#REDACTED
+# https://www.home-assistant.io/docs/automation/REDACTED
+#REDACTED
 automation: !include ../automations.yaml

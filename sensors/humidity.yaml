@@ -1,12 +1,12 @@
-######################################################################################################
-# @Leroyby
-# Original Repo : https://github.com/Leroyby/Homeassistant-Config
-# Humidity-Sensors incl. average sensors (via addon)
-######################################################################################################
-  - platform: min_max
-    name: 'Humidity Home'
-    type: mean
-    entity_ids:
-      - sensor.temperature_bedroom_2_humidity
-      - sensor.temperature_livingroom_tv_humidity
+######################################################################################################REDACTED
+# @LeroybyREDACTED
+# Original Repo : https://github.com/Leroyby/Homeassistant-ConfigREDACTED
+# Humidity-Sensors incl. average sensors (via addon)REDACTED
+######################################################################################################REDACTED
+  - platform: min_maxREDACTED
+    name: 'Humidity Home'REDACTED
+    type: meanREDACTED
+    entity_ids:REDACTED
+      - sensor.temperature_bedroom_2_humidityREDACTED
+      - sensor.temperature_livingroom_tv_humidityREDACTED
       - sensor.temperature_office_humidity
