@@ -426,6 +426,7 @@ views:
       - entity: timer.livingroom_lights_morning
       - entity: timer.office_lights_manual
       - entity: timer.office_xbox
+      - entity: timer.bedroom_tv
       show_icon: true
       show_name: true
       show_state: true
@@ -610,6 +611,7 @@ views:
     - entity: sensor.temperature_outdoor_humidity
     - entity: sensor.temperature_outdoor_temperature
     - entity: binary_sensor.office_pc_on
+    - entity: binary_sensor.ping_bedroom_tv
     show_header_toggle: false
     title: Test apps
     type: entities
@@ -829,3 +831,13 @@ views:
   icon: mdi:robot
   path: automations
   title: Automations
+- badges: []
+  cards:
+  - entity: media_player.lg_webos_tv_a4ab
+    type: media-control
+  - entity: media_player.leroys_55_tv
+    type: media-control
+  icon: mdi:youtube-tv
+  path: mediaplayer
+  theme: Backend-selected
+  title: Mediaplayer
