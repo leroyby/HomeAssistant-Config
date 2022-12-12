@@ -32,4 +32,31 @@ REDACTED
       target:REDACTED
         entity_id: climate.bedroom_thermostatREDACTED
       data:REDACTED
-        hvac_mode: autoREDACTED
+        hvac_mode: REDACTED
+REDACTED
+- alias: shutdown heating window openREDACTED
+  trigger:REDACTED
+    - platform: stateREDACTED
+      entity_id: binary_sensor.contact_bedroom_window_contactREDACTED
+      to: "on"REDACTED
+  action:REDACTED
+    - service: climate.set_hvac_modeREDACTED
+      target:REDACTED
+        entity_id: climate.bedroom_thermostatREDACTED
+      data:REDACTED
+        hvac_mode: "off" REDACTED
+REDACTED
+- alias: reset heating window closedREDACTED
+  trigger:REDACTED
+    - platform: stateREDACTED
+      entity_id: binary_sensor.contact_bedroom_window_contactREDACTED
+      to: "off"REDACTED
+  condition: []REDACTED
+  action:REDACTED
+    - service: climate.set_hvac_modeREDACTED
+      target:REDACTED
+        entity_id: climate.bedroom_thermostatREDACTED
+      data:REDACTED
+        hvac_mode: "auto"        REDACTED
+REDACTED
+REDACTED

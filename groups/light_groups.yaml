@@ -43,6 +43,7 @@ REDACTED
   entities:REDACTED
     - light.livingroom_sofaREDACTED
     - light.livingroom_tableREDACTED
+    - light.livingroom_motion_lightsREDACTED
 REDACTED
 - platform: groupREDACTED
   name: toilet_Lights REDACTED

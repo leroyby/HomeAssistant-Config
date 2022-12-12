@@ -9,8 +9,3 @@
       friendly_name: "Sun Elevation"REDACTED
       unit_of_measurement: '°'REDACTED
       value_template: "{{ state_attr('sun.sun', 'elevation') }}"REDACTED
-REDACTED
-#- platform: waqiREDACTED
-#  token: !secret WAQI_TOKENREDACTED
-#  locations:REDACTED
-#    - Olten  REDACTED

@@ -309,6 +309,12 @@ views:
   path: default_view
   theme: Backend-selected
   title: Home
+- badges: []
+  cards: []
+  icon: mdi:home-thermometer
+  path: climate
+  theme: Backend-selected
+  title: Climate
 - cards:
   - cards:
     - entities:
@@ -524,7 +530,11 @@ views:
     title: Motion sensor
     type: glance
   - columns: 2
-    entities: []
+    entities:
+    - entity: binary_sensor.contact_bedroom_window_contact
+      name: Bedroom Window
+    - entity: binary_sensor.contact_livingroom_cabinet_contact
+      name: Livingroom Cabinet
     show_icon: true
     show_name: true
     title: Open/close sensor
@@ -599,6 +609,7 @@ views:
   - entities:
     - entity: sensor.temperature_outdoor_humidity
     - entity: sensor.temperature_outdoor_temperature
+    - entity: binary_sensor.office_pc_on
     show_header_toggle: false
     title: Test apps
     type: entities

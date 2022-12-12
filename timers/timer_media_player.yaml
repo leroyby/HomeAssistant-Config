@@ -12,4 +12,9 @@ REDACTED
   office_xbox:REDACTED
     name: Timer Office XboxREDACTED
     duration: '00:05:00'REDACTED
+    icon: mdi:timer-outlineREDACTED
+REDACTED
+  bedroom_tv:REDACTED
+    name: Bedroom TVREDACTED
+    duration: '00:05:00'REDACTED
     icon: mdi:timer-outline

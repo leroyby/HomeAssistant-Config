@@ -2,4 +2,39 @@
 # @LeroybyREDACTED
 # Original Repo : https://github.com/Leroyby/Homeassistant-ConfigREDACTED
 # Automations Mediaplayer BedroomREDACTED
-######################################################################################################
+######################################################################################################REDACTED
+REDACTED
+- alias: Media_Player start timer TV BedroomREDACTED
+  trigger:REDACTED
+    platform: stateREDACTED
+    entity_id: binary_sensor.ping_bedroom_tvREDACTED
+    to: 'off'REDACTED
+  condition: REDACTED
+  action:REDACTED
+  - service: timer.startREDACTED
+    target:REDACTED
+      entity_id: timer.bedroom_tvREDACTED
+REDACTED
+- alias: "Timerstop tv bedroom"REDACTED
+  id: "Timerstop"REDACTED
+  trigger:REDACTED
+  - platform: eventREDACTED
+    event_type: timer.finishedREDACTED
+    event_data:REDACTED
+      entity_id: timer.bedroom_tvREDACTED
+  action:REDACTED
+  - service: switch.turn_offREDACTED
+    target:REDACTED
+      entity_id: REDACTED
+      - switch.bedroom_tvREDACTED
+REDACTED
+- alias: Media_Player restart timer TV LivingroomREDACTED
+  trigger:REDACTED
+    platform: stateREDACTED
+    entity_id: media_player.leroys_55_tvREDACTED
+    to: 'on'REDACTED
+  condition: REDACTED
+  action:REDACTED
+  - service: timer.cancelREDACTED
+    target:REDACTED
+      entity_id: timer.bedroom_tv

@@ -20,3 +20,17 @@ REDACTED
       - light.bedroom_lightsREDACTED
     data:REDACTED
       transition: REDACTED
+REDACTED
+- alias: Light bedroom off tv timeREDACTED
+  trigger:REDACTED
+    platform: stateREDACTED
+    entity_id: binary_sensor.ping_bedroom_tvREDACTED
+    to: 'on'REDACTED
+  condition: REDACTED
+  action:REDACTED
+  - service: light.turn_offREDACTED
+    target:REDACTED
+      entity_id: REDACTED
+      - light.bedroom_lightsREDACTED
+    data:REDACTED
+      transition: 5  REDACTED

@@ -10,6 +10,7 @@
       entity_id: REDACTED
       - input_boolean.away_modeREDACTED
       to: 'on'REDACTED
+      for: '00:15:00'REDACTED
   condition: []REDACTED
   action:REDACTED
   - service: input_boolean.turn_offREDACTED

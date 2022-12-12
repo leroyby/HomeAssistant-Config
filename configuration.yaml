@@ -33,17 +33,17 @@ script: !include_dir_merge_named scripts
 timer: !include_dir_merge_named timers
 device_tracker: !include includes/device_trackers.yaml
 readme:
-#  convert_lovelace: true
-lovelace:
-  mode: storage
+  convert_lovelace: true
+#lovelace:
+#  mode: storage
   # Add yaml dashboards
-  dashboards:
-    lovelace-yaml:
-      mode: yaml
-      title: YAML
-      icon: mdi:script
-      show_in_sidebar: true
-      filename: ui/ui-lovelace.yaml
+#  dashboards:
+#    lovelace-yaml:
+#      mode: yaml
+#      title: YAML
+#      icon: mdi:script
+#      show_in_sidebar: true
+#      filename: ui/ui-lovelace.yaml
 powercalc:
   create_utility_meters: true
 

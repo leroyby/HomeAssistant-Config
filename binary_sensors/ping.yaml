@@ -50,21 +50,10 @@ REDACTED
   name: "ping ap"REDACTED
   count: REDACTED
   scan_interval: 30REDACTED
-################################REDACTED
-- platform: pingREDACTED
-  host: 192.168.178.100REDACTED
-  name: "ping valhalla outlet"REDACTED
-  count: REDACTED
-  scan_interval: 30REDACTED
 REDACTED
 - platform: pingREDACTED
   host: 192.168.178.10REDACTED
-  name: "ping bedroom mesh repeater"REDACTED
+  name: "ping bedroom tv"REDACTED
   count: REDACTED
-  scan_interval: 30REDACTED
+  scan_interval: 30  REDACTED
 REDACTED
-- platform: pingREDACTED
-  host: 192.168.178.10REDACTED
-  name: "ping dorothy illinoise"REDACTED
-  count: REDACTED
-  scan_interval: 30REDACTED

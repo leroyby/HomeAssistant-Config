@@ -16,6 +16,8 @@ devices:
     friendly_name: button_bedroom
   '0x00158d0007e2122f':
     friendly_name: motion_livingroom
+    illuminance_lux_calibration: ''
+    occupancy_timeout: 0
   '0x94deb8fffe60c570':
     friendly_name: Livingroom_Deckenfluter_TV
   '0x9035eafffe2b5f86':
@@ -46,11 +48,13 @@ devices:
     friendly_name: temperature_office
   '0x00158d0008c99136':
     friendly_name: temperature_outdoor
-    temperature_calibration: -3
+    temperature_calibration: -4
   '0x00158d0008cec350':
     friendly_name: temperature_toilet
   '0x00158d0008cef84c':
     friendly_name: temperature_bathroom
+  '0x00158d0008e1c503':
+    friendly_name: contact_bedroom_window
 advanced:
   log_level: info
 shell_command:
