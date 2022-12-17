@@ -221,88 +221,6 @@ views:
             state: true
           type: custom:mini-graph-card
         type: horizontal-stack
-      - cards:
-        - color_thresholds_transition: smooth
-          entities:
-          - entity: sensor.temperature_office_average
-            name: Office
-          font_size: 100
-          group: false
-          hour24: true
-          line_width: 6
-          points_per_hour: 1
-          show:
-            extrema: false
-            fill: fade
-            labels: false
-            name: true
-            state: true
-          type: custom:mini-graph-card
-        - color_thresholds_transition: smooth
-          entities:
-          - entity: sensor.temperature_bedroom_average
-            name: Bedroom
-          font_size: 100
-          group: false
-          hour24: true
-          line_width: 6
-          points_per_hour: 1
-          show:
-            extrema: false
-            fill: fade
-            labels: false
-            name: true
-            state: true
-          type: custom:mini-graph-card
-        - color_thresholds_transition: smooth
-          entities:
-          - entity: sensor.temperature_livingroom_average
-            name: Living room
-          font_size: 100
-          group: false
-          hour24: true
-          line_width: 6
-          points_per_hour: 1
-          show:
-            extrema: false
-            fill: fade
-            labels: false
-            name: true
-            state: true
-          type: custom:mini-graph-card
-        - color_thresholds_transition: smooth
-          entities:
-          - entity: sensor.temperature_bathroom_temperature
-            name: Bathroom
-          font_size: 100
-          group: false
-          hour24: true
-          line_width: 6
-          points_per_hour: 1
-          show:
-            extrema: false
-            fill: fade
-            labels: false
-            name: true
-            state: true
-          type: custom:mini-graph-card
-        - color_thresholds_transition: smooth
-          entities:
-          - entity: sensor.temperature_toilet_temperature
-            name: Toilet
-          font_size: 100
-          group: false
-          hour24: true
-          line_width: 6
-          points_per_hour: 1
-          show:
-            extrema: false
-            fill: fade
-            labels: false
-            name: true
-            state: true
-          type: custom:mini-graph-card
-        type: horizontal-stack
       type: vertical-stack
     type: custom:swipe-card
   icon: mdi:home
@@ -310,7 +228,66 @@ views:
   theme: Backend-selected
   title: Home
 - badges: []
-  cards: []
+  cards:
+  - content: "\n<table width=\"100%\">\n  <tr>\n    <th>Area</th>\n    <th>Temperature</th>\n\
+      \    <th>Humidity</th>\n  </tr>\n  <tr>\n    <td>Outdoor</td>\n    <td>{{ states('sensor.thermal_comfort_outside_simmerzone')\
+      \ | regex_replace(find='_', replace=' ') | title }}</td>\n    <td>{{ states('sensor.thermal_comfort_outside_perception')\
+      \ | regex_replace(find='_', replace=' ') | title }}</td>\n  </tr>\n  <tr>\n\
+      \    <td>Indoor Average</td>\n    <td>{{ states('sensor.thermal_comfort_indoor_average_simmerzone')\
+      \ | regex_replace(find='_', replace=' ') | title }}</td>\n    <td>{{ states('sensor.thermal_comfort_indoor_average_perception')\
+      \ | regex_replace(find='_', replace=' ') | title }}</td>\n  </tr>\n  <tr>\n\
+      \    <td>Bedroom</td>\n    <td>{{ states('sensor.thermal_comfort_bedroom_simmerzone')\
+      \ | regex_replace(find='_', replace=' ') | title }}</td>\n    <td>{{ states('sensor.thermal_comfort_bedroom_perception')\
+      \ | regex_replace(find='_', replace=' ') | title }}</td>\n  </tr>\n  <tr>\n\
+      \    <td>Office</td>\n    <td>{{ states('sensor.thermal_comfort_office_simmerzone')\
+      \ | regex_replace(find='_', replace=' ') | title }}</td>\n    <td>{{ states('sensor.thermal_comfort_office_perception')\
+      \ | regex_replace(find='_', replace=' ') | title }}</td>\n  </tr>\n  <tr>\n\
+      \    <td>Living Room</td>\n    <td>{{ states('sensor.thermal_comfort_living_room_simmerzone')\
+      \ | regex_replace(find='_', replace=' ') | title }}</td>\n    <td>{{ states('sensor.thermal_comfort_living_room_perception')\
+      \ | regex_replace(find='_', replace=' ') | title }}</td>\n  </tr>\n  <tr>\n\
+      \    <td>Bathroom</td>\n    <td>{{ states('sensor.thermal_comfort_bathroom_simmerzone')\
+      \ | regex_replace(find='_', replace=' ') | title }}</td>\n    <td>{{ states('sensor.thermal_comfort_bathroom_perception')\
+      \ | regex_replace(find='_', replace=' ') | title }}</td>\n  </tr>\n  <tr>\n\
+      \    <td>Toilet</td>\n    <td>{{ states('sensor.thermal_comfort_toilet_simmerzone')\
+      \ | regex_replace(find='_', replace=' ') | title }}</td>\n    <td>{{ states('sensor.thermal_comfort_toilet_perception')\
+      \ | regex_replace(find='_', replace=' ') | title }}</td>\n  </tr>\n</table>\n"
+    type: markdown
+  - entities:
+    - entity: sensor.temperature_livingroom_temperature
+      name: Living room
+      secondary: '💦 {{ states(''sensor.temperature_livingroom_tv_humidity'') }}%,
+        ⚖️ {{ states(''sensor.temperature_livingroom_tv_pressure'') }} hPa, 🔋 {{ states(''sensor.temperature_livingroom_tv_battery'')
+        }}% '
+      state: '{{ states("sensor.temperature_livingroom_temperature") }} °C'
+      type: custom:template-entity-row
+    - entity: sensor.temperature_bedroom_2_temperature
+      name: Bedroom
+      secondary: '💦 {{ states(''sensor.temperature_bedroom_2_humidity'') }}%, ⚖️ {{
+        states(''sensor.temperature_bedroom_2_pressure'') }} hPa, 🔋 {{ states(''sensor.temperature_bedroom_2_battery'')
+        }}% '
+      state: '{{ states("sensor.temperature_bedroom_2_temperature") }} °C'
+      type: custom:template-entity-row
+    - entity: sensor.temperature_office_temperature
+      name: Office
+      secondary: '💦 {{ states(''sensor.temperature_office_humidity'') }}%, ⚖️ {{ states(''sensor.temperature_office_pressure'')
+        }} hPa, 🔋 {{ states(''sensor.temperature_Office_battery'') }}% '
+      state: '{{ states("sensor.temperature_office_temperature") }} °C'
+      type: custom:template-entity-row
+    - entity: sensor.temperature_toilet_temperature
+      name: Toilet
+      secondary: '💦 {{ states(''sensor.temperature_toilet_humidity'') }}%, ⚖️ {{ states(''sensor.temperature_toilet_pressure'')
+        }} hPa, 🔋 {{ states(''sensor.temperature_toilet_battery'') }}% '
+      state: '{{ states("sensor.temperature_toilet_temperature") }} °C'
+      type: custom:template-entity-row
+    - entity: sensor.temperature_bathroom_temperature
+      name: Bathroom
+      secondary: '💦 {{ states(''sensor.temperature_bathroom_humidity'') }}%, ⚖️ {{
+        states(''sensor.temperature_bathroom_pressure'') }} hPa, 🔋 {{ states(''sensor.temperature_bathroom_battery'')
+        }}% '
+      state: '{{ states("sensor.temperature_bathroom_temperature") }} °C'
+      type: custom:template-entity-row
+    title: Temperature sensors
+    type: entities
   icon: mdi:home-thermometer
   path: climate
   theme: Backend-selected
@@ -608,7 +585,7 @@ views:
 - badges: []
   cards:
   - entities:
-    - entity: sensor.temperature_outdoor_humidity
+    - entity: input_text.light_to_switch
     - entity: sensor.temperature_outdoor_temperature
     - entity: binary_sensor.office_pc_on
     - entity: binary_sensor.ping_bedroom_tv
@@ -633,29 +610,6 @@ views:
     type: entities
   - entity: media_player.lbxbox
     type: media-control
-  - entities:
-    - entity: sensor.temperature_living_room
-      name: Living room
-      secondary: '💦 {{ states(''sensor.temperature_livingroom_tv_humidity'') }}%,
-        ⚖️ {{ states(''sensor.temperature_livingroom_tv_pressure'') }} hPa, 🔋 {{ states(''sensor.temperature_livingroom_tv_battery'')
-        }}% '
-      state: '{{ states("sensor.temperature_livingroom_temperature") }} °C'
-      type: custom:template-entity-row
-    - entity: sensor.temperature_living_room
-      name: Bedroom
-      secondary: '💦 {{ states(''sensor.temperature_bedroom_2_humidity'') }}%, ⚖️ {{
-        states(''sensor.temperature_bedroom_2_pressure'') }} hPa, 🔋 {{ states(''sensor.temperature_bedroom_2_battery'')
-        }}% '
-      state: '{{ states("sensor.temperature_bedroom_2_temperature") }} °C'
-      type: custom:template-entity-row
-    - entity: sensor.temperature_living_room
-      name: Office
-      secondary: '💦 {{ states(''sensor.temperature_office_humidity'') }}%, ⚖️ {{ states(''sensor.temperature_office_pressure'')
-        }} hPa, 🔋 {{ states(''sensor.temperature_Office_battery'') }}% '
-      state: '{{ states("sensor.temperature_office_temperature") }} °C'
-      type: custom:template-entity-row
-    title: Temperature sensors
-    type: entities
   - entities:
     - active: '{{ is_state("binary_sensor.motion_livingroom_occupancy", "on") }}'
       entity: binary_sensor.motion_livingroom_occupancy

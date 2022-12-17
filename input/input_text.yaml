@@ -14,6 +14,9 @@ REDACTED
     name: Remote Living Room Light selectionREDACTED
     initial: AllREDACTED
 REDACTED
+  light_to_switch:REDACTED
+    name: Light to switch for presence simultionREDACTED
+REDACTED
  ## CHORESREDACTED
  REDACTED
 # PlantsREDACTED

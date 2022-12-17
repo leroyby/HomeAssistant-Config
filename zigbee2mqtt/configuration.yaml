@@ -3,6 +3,9 @@ mqtt:
   server: mqtt://core-mosquitto:1883
   user: addons
   password: Uoloo5ud9oot8Gee6iulei4eec9gie3auhoongoph3eshuew8aewohche1Iphaih
+  keepalive: 60
+  reject_unauthorized: false
+  version: 4
 serial:
   port: /dev/ttyACM0
   adapter: deconz
@@ -12,14 +15,6 @@ devices:
   '0x00158d0008048909':
     friendly_name: Aqara Button Office
     legacy: false
-  '0x003c84fffe282720':
-    friendly_name: button_bedroom
-  '0x00158d0007e2122f':
-    friendly_name: motion_livingroom
-    illuminance_lux_calibration: ''
-    occupancy_timeout: 0
-  '0x94deb8fffe60c570':
-    friendly_name: Livingroom_Deckenfluter_TV
   '0x9035eafffe2b5f86':
     friendly_name: remote_livingroom
   '0x086bd7fffe3c5fde':
@@ -55,8 +50,25 @@ devices:
     friendly_name: temperature_bathroom
   '0x00158d0008e1c503':
     friendly_name: contact_bedroom_window
+  '0x00158d0007e2122f':
+    friendly_name: ' motion_livingroom'
+  '0x003c84fffe282720':
+    friendly_name: button_bedroom
+  '0x94deb8fffe60c570':
+    friendly_name: livingroom_sofa
 advanced:
   log_level: info
+  log_syslog:
+    app_name: Zigbee2MQTT
+    eol: /n
+    host: localhost
+    localhost: localhost
+    path: /dev/log
+    pid: process.pid
+    port: 123
+    protocol: tcp4
+    type: '5424'
+  channel: 15
 shell_command:
   pushupdates_github: /bin/bash /root/addons/Tools/pushupdates.sh
 permit_join: false

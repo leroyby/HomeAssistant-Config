@@ -85,9 +85,18 @@ REDACTED
       friendly_name: Any media player is onREDACTED
       value_template: >REDACTED
         {% set office_media_player_on = is_state("media_player.lbxbox", "on") %}REDACTED
-        {% set bedroom_media_player_on = is_state("", "on") %}REDACTED
+        {% set bedroom_media_player_on = is_state("binary_sensor.ping_bedroom_tv", "on") %}REDACTED
         {% set living_room_media_player_on = is_state("media_player.lg_webos_tv_a4ab", "on") %}REDACTED
         {{ office_media_player_on or bedroom_media_player_on or living_room_media_player_on }}REDACTED
+REDACTED
+    any_switch_on:REDACTED
+      friendly_name: Any switch is onREDACTED
+      value_template: >REDACTED
+        {% set sw1 = is_state("", "on") %}REDACTED
+        {% set sw2 = is_state("", "on") %}REDACTED
+        {% set sw3 = is_state("", "on") %}REDACTED
+        {% set sw4 = is_state("", "on") %}REDACTED
+        {{ sw1 or sw2 or sw3 or sw4 }}REDACTED
 REDACTED
     anything_on:REDACTED
       friendly_name: Anything is onREDACTED
@@ -100,7 +109,8 @@ REDACTED
       friendly_name: No one is homeREDACTED
       value_template: >REDACTED
         {{ not is_state("person.leroy", "home")REDACTED
-            and not is_state("person.USER2", "home") }}REDACTED
+            and not is_state("person.USER2", "home") REDACTED
+            and not is_state("media_player.lbxbox", "on")}}REDACTED
 REDACTED
 - platform: workdayREDACTED
   country: CHREDACTED

@@ -23,4 +23,58 @@
   - service: script.bedroom_offREDACTED
   - service: script.office_offREDACTED
   - service: script.living_room_offREDACTED
-  mode: single
+  mode: singleREDACTED
+REDACTED
+#############################################################################REDACTED
+## Turn on/off indoor lights randomlyREDACTED
+#############################################################################REDACTED
+- alias: Turn on light presence simulatonREDACTED
+  initial_state: TrueREDACTED
+REDACTED
+  trigger:REDACTED
+    - platform: time_patternREDACTED
+      minutes: '/15'REDACTED
+REDACTED
+  condition:REDACTED
+    - condition: stateREDACTED
+      entity_id: input_boolean.away_modeREDACTED
+      state: 'on'REDACTED
+    - condition: sunREDACTED
+      after: sunsetREDACTED
+      after_offset: '-00:15:00'REDACTED
+    - condition: timeREDACTED
+      before: '23:15:00'REDACTED
+REDACTED
+  action:REDACTED
+REDACTED
+    # Selecting entity for togglingREDACTED
+#    - service: input_text.set_valueREDACTED
+#      data_template:REDACTED
+#        entity_id: input_text.light_to_switchREDACTED
+#        value: '{{ state_attr(''group.Living_room_lights'',''entity_id'') | random }}'REDACTED
+REDACTED
+    # Toggling entity stateREDACTED
+    - service: homeassistant.toggleREDACTED
+      data_template:REDACTED
+        entity_id: '{{ states.group.living_room_lights.attributes.entity_id | random }}'REDACTED
+    - delay: "00:{{ '{:02}'.format(range(0,30) | random | int) }}:00"REDACTED
+################################################################REDACTED
+## Stopping presence simulation randomly 23:30REDACTED
+################################################################REDACTED
+- alias: Turn off all lights presence simulatonREDACTED
+  initial_state: TrueREDACTED
+REDACTED
+  trigger:REDACTED
+    - platform: timeREDACTED
+      at: '23:30:00'REDACTED
+REDACTED
+  condition:REDACTED
+    - condition: stateREDACTED
+      entity_id: input_boolean.away_modeREDACTED
+      state: 'on'REDACTED
+REDACTED
+  action:REDACTED
+    - delay: '00:{{ range(15,59) | random | int }}:00'REDACTED
+    - service: homeassistant.turn_offREDACTED
+      entity_id: group.Living_room_lightsREDACTED
+  
