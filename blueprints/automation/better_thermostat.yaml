@@ -23,11 +23,11 @@ REDACTED
     night_temp:REDACTED
       name: Night TemperatureREDACTED
       description: The target temperature at nightREDACTED
-      default: 1REDACTED
+      default: 18REDACTED
       selector:REDACTED
         number:REDACTED
-          min: REDACTED
-          max: 3REDACTED
+          min: 5REDACTED
+          max: 35REDACTED
           unit_of_measurement: °CREDACTED
 REDACTED
 mode: queuedREDACTED

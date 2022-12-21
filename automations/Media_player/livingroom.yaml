@@ -7,7 +7,7 @@ REDACTED
 - alias: Media_Player start timer TV LivingroomREDACTED
   trigger:REDACTED
     platform: stateREDACTED
-    entity_id: media_player.lg_webos_tv_a4abREDACTED
+    entity_id: binary_sensor.ping_livingroom_tvREDACTED
     to: 'off'REDACTED
   condition: REDACTED
   action:REDACTED
@@ -26,12 +26,12 @@ REDACTED
   - service: switch.turn_offREDACTED
     target:REDACTED
       entity_id: REDACTED
-      - switch.livingroom_tvREDACTED
+      - switch.tvREDACTED
 REDACTED
 - alias: Media_Player restart timer TV LivingroomREDACTED
   trigger:REDACTED
     platform: stateREDACTED
-    entity_id: media_player.lg_webos_tv_a4abREDACTED
+    entity_id: binary_sensor.ping_livingroom_tvREDACTED
     to: 'on'REDACTED
   condition: REDACTED
   action:REDACTED

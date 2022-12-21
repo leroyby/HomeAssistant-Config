@@ -46,9 +46,9 @@ REDACTED
     target:  REDACTED
         entity_id: light.livingroom_tvREDACTED
     data:  REDACTED
-      brightness: 25REDACTED
+      brightness: 255REDACTED
       kelvin: 5000 REDACTED
-      transition: REDACTED
+      transition: 5REDACTED
   - service: light.turn_onREDACTED
     target:  REDACTED
         entity_id: light.livingroom_sofaREDACTED
@@ -62,7 +62,7 @@ REDACTED
     data:  REDACTED
       brightness_pct: 100REDACTED
       kelvin: 3300 REDACTED
-      transition: REDACTED
+      transition: 5REDACTED
 ###########################################REDACTED
 REDACTED
 - alias: livingroom button 2 light table toggleREDACTED
@@ -206,9 +206,9 @@ REDACTED
     target:  REDACTED
         entity_id: light.livingroom_tvREDACTED
     data:  REDACTED
-      brightness: 25REDACTED
+      brightness: 255REDACTED
       kelvin: 5000 REDACTED
-      transition: REDACTED
+      transition: 5REDACTED
 REDACTED
  ###########################################REDACTED
 REDACTED

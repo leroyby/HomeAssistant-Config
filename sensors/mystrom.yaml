@@ -11,7 +11,7 @@
     device_class: powerREDACTED
     state_class: measurementREDACTED
     value_template: "{{ value_json.power }}"REDACTED
-    scan_interval: REDACTED
+    scan_interval: 10REDACTED
 REDACTED
   - platform: restREDACTED
     name: "Power Office PC"REDACTED
@@ -21,7 +21,7 @@ REDACTED
     device_class: powerREDACTED
     state_class: measurementREDACTED
     value_template: "{{ value_json.power }}"REDACTED
-    scan_interval: REDACTED
+    scan_interval: 10REDACTED
 REDACTED
   - platform: restREDACTED
     name: "Power Office Xbox"REDACTED
@@ -31,7 +31,7 @@ REDACTED
     device_class: powerREDACTED
     state_class: measurementREDACTED
     value_template: "{{ value_json.power }}"REDACTED
-    scan_interval: REDACTED
+    scan_interval: 10REDACTED
 REDACTED
   - platform: restREDACTED
     name: "Power Livingroom Cabinet"REDACTED
@@ -41,4 +41,4 @@ REDACTED
     device_class: powerREDACTED
     state_class: measurementREDACTED
     value_template: "{{ value_json.power }}"REDACTED
-    scan_interval: REDACTED
+    scan_interval: 10REDACTED

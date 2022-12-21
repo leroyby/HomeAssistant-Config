@@ -10,7 +10,7 @@
     type: timeREDACTED
     end: "{{ now() }}"REDACTED
     duration:REDACTED
-      days: REDACTED
+      days: 7REDACTED
 REDACTED
 REDACTED
   - platform: history_statsREDACTED
@@ -19,7 +19,7 @@ REDACTED
     state: "on"REDACTED
     type: timeREDACTED
     duration:REDACTED
-      days: REDACTED
+      days: 7REDACTED
     end: "{{ now() }}"REDACTED
 REDACTED
   - platform: history_statsREDACTED
@@ -28,7 +28,7 @@ REDACTED
     state: "on"REDACTED
     type: timeREDACTED
     duration:REDACTED
-      days: REDACTED
+      days: 7REDACTED
     end: "{{ now() }}"REDACTED
 REDACTED
   - platform: history_statsREDACTED
@@ -37,5 +37,5 @@ REDACTED
     state: "on"REDACTED
     type: timeREDACTED
     duration:REDACTED
-      days: REDACTED
+      days: 7REDACTED
     end: "{{ now() }}"

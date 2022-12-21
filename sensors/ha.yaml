@@ -14,4 +14,14 @@
       - type: network_outREDACTED
         arg: eth0REDACTED
       - type: processor_useREDACTED
-      - type: last_boot
+      - type: last_bootREDACTED
+REDACTED
+  #MariaDB Database SensorREDACTED
+  - platform: sqlREDACTED
+    db_url: !secret mariadb_urlREDACTED
+    scan_interval: 3600REDACTED
+    queries:REDACTED
+      - name: MariaDB Database SizeREDACTED
+        query: 'SELECT table_schema "homeassistant", Round(Sum(data_length + index_length) / POWER(1024,2), 1) "value" FROM information_schema.tables WHERE table_schema="homeassistant" GROUP BY table_schema;'REDACTED
+        column: "value"REDACTED
+        unit_of_measurement: MB

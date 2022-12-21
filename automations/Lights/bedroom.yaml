@@ -19,7 +19,7 @@ REDACTED
       entity_id: REDACTED
       - light.bedroom_lightsREDACTED
     data:REDACTED
-      transition: REDACTED
+      transition: 7REDACTED
 REDACTED
 - alias: Light bedroom off tv timeREDACTED
   trigger:REDACTED

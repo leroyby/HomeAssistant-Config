@@ -9,7 +9,7 @@ normal_lights_office:REDACTED
   sequence:REDACTED
     - data:REDACTED
         entity_id: light.office_lightsREDACTED
-        brightness_pct: 8REDACTED
+        brightness_pct: 85REDACTED
         color_temp: 350REDACTED
       service: light.turn_on  REDACTED
     - service: input_select.select_optionREDACTED

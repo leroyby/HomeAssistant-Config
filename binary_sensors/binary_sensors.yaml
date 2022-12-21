@@ -29,7 +29,8 @@ REDACTED
       friendly_name: Activity in the living roomREDACTED
       value_template: >REDACTED
         {{ is_state("binary_sensor.motion_livingroom_occupancy", "on")REDACTED
-            or is_state("media_player.lg_webos_smart_tv", "on") }}REDACTED
+            or is_state("media_player.lg_webos_smart_tv", "on")REDACTED
+            or is_state("binary_sensor.contact_livingroom_cabinet_contact", "on") }}REDACTED
       delay_off: "00:03:00"REDACTED
 REDACTED
     activity_in_kitchen:REDACTED

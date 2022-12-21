@@ -14,7 +14,7 @@ REDACTED
   entity_id: sensor.total_energy_use_hourlyREDACTED
   state_characteristic: value_maxREDACTED
   max_age:REDACTED
-    hours: REDACTED
+    hours: 1REDACTED
   sampling_size: 20REDACTED
 REDACTED
 - platform: statisticsREDACTED
@@ -22,15 +22,15 @@ REDACTED
   entity_id: sensor.total_energy_use_dailyREDACTED
   state_characteristic: value_maxREDACTED
   max_age:REDACTED
-    days: REDACTED
-  sampling_size: REDACTED
+    days: 1REDACTED
+  sampling_size: 1REDACTED
 REDACTED
 - platform: statisticsREDACTED
   name: "Total Energy Use last hour"REDACTED
   state_characteristic: meanREDACTED
   entity_id: sensor.total_energy_useREDACTED
   max_age:REDACTED
-    hours: REDACTED
+    hours: 1REDACTED
   sampling_size: 360REDACTED
 REDACTED
 - platform: statisticsREDACTED
@@ -57,4 +57,4 @@ REDACTED
   source: sensor.total_energy_useREDACTED
   name: Total Energy SpendREDACTED
   unit_prefix: kREDACTED
-  round: REDACTED
+  round: 2REDACTED

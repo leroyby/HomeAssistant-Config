@@ -4,56 +4,64 @@
 # binary sensors pingREDACTED
 ######################################################################################################REDACTED
 - platform: pingREDACTED
-  host: 192.168.178.REDACTED
+  host: 192.168.178.1REDACTED
   name: "ping modem"REDACTED
-  count: REDACTED
+  count: 2REDACTED
   scan_interval: 30REDACTED
 REDACTED
 - platform: pingREDACTED
-  host: 1.1.1.REDACTED
+  host: 1.1.1.1REDACTED
   name: "ping cloudflare"REDACTED
-  count: REDACTED
+  count: 2REDACTED
   scan_interval: 30REDACTED
 REDACTED
 - platform: pingREDACTED
-  host: 8.8.8.REDACTED
+  host: 8.8.8.8REDACTED
   name: "ping google"REDACTED
-  count: REDACTED
+  count: 2REDACTED
   scan_interval: 30REDACTED
 REDACTED
 - platform: pingREDACTED
-  host: ubnt.leroyby.chREDACTED
+  host: REDACTED
   name: "ping my website"REDACTED
-  count: REDACTED
+  count: 2REDACTED
   scan_interval: 30REDACTED
 REDACTED
 - platform: pingREDACTED
-  host: 192.168.178.REDACTED
+  host: 192.168.178.1REDACTED
   name: "ping modem"REDACTED
-  count: REDACTED
+  count: 2REDACTED
   scan_interval: 30REDACTED
 REDACTED
 - platform: pingREDACTED
-  host: 192.168.178.REDACTED
+  host: 192.168.178.1REDACTED
   name: "ping router"REDACTED
-  count: REDACTED
+  count: 2REDACTED
   scan_interval: 30REDACTED
 REDACTED
 - platform: pingREDACTED
-  host: 192.168.178.1REDACTED
+  host: 192.168.178.15REDACTED
   name: "ping switch"REDACTED
-  count: REDACTED
+  count: 2REDACTED
   scan_interval: 30REDACTED
 REDACTED
 - platform: pingREDACTED
-  host: 192.168.178.1REDACTED
+  host: 192.168.178.16REDACTED
   name: "ping ap"REDACTED
-  count: REDACTED
+  count: 2REDACTED
   scan_interval: 30REDACTED
 REDACTED
 - platform: pingREDACTED
-  host: 192.168.178.10REDACTED
+  host: 192.168.178.101REDACTED
+  name: "ping livingroom tv"REDACTED
+  count: 2REDACTED
+  scan_interval: 60REDACTED
+REDACTED
+- platform: pingREDACTED
+  host: 192.168.178.102REDACTED
   name: "ping bedroom tv"REDACTED
-  count: REDACTED
-  scan_interval: 30  REDACTED
+  count: 2REDACTED
+  scan_interval: 60REDACTED
+REDACTED
+REDACTED
 REDACTED

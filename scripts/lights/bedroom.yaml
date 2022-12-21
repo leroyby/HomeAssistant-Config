@@ -9,7 +9,7 @@ bedroom_cozy_lights:REDACTED
   sequence:REDACTED
     - data:REDACTED
         entity_id: light.bedroom_lightsREDACTED
-        brightness_pct: REDACTED
+        brightness_pct: 3REDACTED
         color_temp: 450 REDACTED
       service: light.turn_onREDACTED
 #    - service: input_select.select_optionREDACTED
@@ -44,11 +44,11 @@ bedroom_tv_lights:REDACTED
   mode: parallelREDACTED
   sequence:REDACTED
     - data:REDACTED
-        entity_id: light.decke_lREDACTED
-        brightness_pct: REDACTED
+        entity_id: light.decke_l1REDACTED
+        brightness_pct: 3REDACTED
         color_temp: 450 REDACTED
       service: light.turn_onREDACTED
     - service: light.turn_offREDACTED
-      entity_id: light.decke_lREDACTED
+      entity_id: light.decke_l2REDACTED
     - service: light.turn_offREDACTED
       entity_id: light.decke_l3

@@ -4,7 +4,7 @@
 # Automation away mode REDACTED
 ######################################################################################################REDACTED
 - alias: Mode_Away_onREDACTED
-  id: 9521d521-00dc-4116-b467-5150735fcffREDACTED
+  id: 9521d521-00dc-4116-b467-5150735fcff9REDACTED
   trigger:REDACTED
     - platform: stateREDACTED
       entity_id: REDACTED

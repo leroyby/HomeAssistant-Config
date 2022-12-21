@@ -56,22 +56,22 @@ views:
       type: custom:fold-entity-row
     - entities:
       - light.bedroom_lights
-      - entity: script.cozy_lights_bedroom
+      - entity: script.bedroom_cozy_lights
         icon_height: 20px
         name: Cozy lights
         show_icon: false
         show_name: true
         tap_action:
           action: call-service
-          service: script.cozy_lights_bedroom
-      - entity: script.normal_lights_bedroom
+          service: script.bedroom_cozy_lights
+      - entity: script.bedroom_normal_lights
         icon_height: 20px
         name: normal light
         show_icon: false
         show_name: true
         tap_action:
           action: call-service
-          service: script.normal_lights_bedroom
+          service: script.bedroom_normal_lights
       - entity: script.tv_lights_bedroom
         icon_height: 20px
         name: TV light
@@ -117,7 +117,7 @@ views:
     type: entities
   - entities:
     - entities:
-      - entity: switch.livingroom_tv
+      - entity: switch.tv
         name: TV
         toggle: true
       - entity: switch.kitchen
@@ -223,6 +223,12 @@ views:
         type: horizontal-stack
       type: vertical-stack
     type: custom:swipe-card
+  - entity: light.light_tree
+    show_icon: true
+    show_name: true
+    tap_action:
+      action: toggle
+    type: button
   icon: mdi:home
   path: default_view
   theme: Backend-selected
@@ -255,8 +261,8 @@ views:
   - entities:
     - entity: sensor.temperature_livingroom_temperature
       name: Living room
-      secondary: '💦 {{ states(''sensor.temperature_livingroom_tv_humidity'') }}%,
-        ⚖️ {{ states(''sensor.temperature_livingroom_tv_pressure'') }} hPa, 🔋 {{ states(''sensor.temperature_livingroom_tv_battery'')
+      secondary: '💦 {{ states(''sensor.temperature_livingroom_humidity'') }}%, ⚖️
+        {{ states(''sensor.temperature_livingroom_pressure'') }} hPa, 🔋 {{ states(''sensor.temperature_livingroom_battery'')
         }}% '
       state: '{{ states("sensor.temperature_livingroom_temperature") }} °C'
       type: custom:template-entity-row
@@ -361,6 +367,7 @@ views:
           \ 0, 0)';\n}\n"
         type: custom:bar-card
       - type: divider
+      - entity: sensor.mariadb_database_size
       show_header_toggle: false
       title: System
       type: entities
@@ -481,9 +488,7 @@ views:
     show_header_toggle: false
     title: Activity in the house
     type: entities
-  - entities:
-    - entity: sensor.vibration_office_1_action
-    - entity: sensor.vibration_office_1_battery
+  - entities: []
     title: Vibration sensors
     type: glance
   - columns: 3
@@ -496,12 +501,6 @@ views:
       name: Battery
     - entity: binary_sensor.motion_office_occupancy
       name: Office
-    - entity: sensor.motion_office_illuminance_lux
-    - entity: sensor.motion_office_battery
-      name: Battery
-    - entity: binary_sensor.motion_livingroom_cabinet_occupancy
-    - entity: sensor.motion_livingroom_cabinet_illuminance_lux
-    - entity: sensor.motion_livingroom_cabinet_battery
     show_icon: true
     show_name: true
     state_color: true
@@ -523,28 +522,6 @@ views:
     show_header_toggle: false
     title: Devices are on
     type: entities
-  - columns: 4
-    entities:
-    - entity: sensor.temperature_livingroom_temperature
-      name: Living room
-    - entity: sensor.temperature_livingroom_tv_pressure
-      name: ''
-    - entity: sensor.temperature_livingroom_tv_humidity
-      name: ''
-    - entity: sensor.temperature_livingroom_tv_battery
-      name: ''
-    - entity: sensor.temperature_bedroom_average
-      name: Bedroom
-    - entity: sensor.temperature_office_average
-      name: Office
-    - entity: sensor.temperature_home
-      name: Home
-    show_icon: true
-    show_name: true
-    show_state: true
-    theme: Backend-selected
-    title: Temperature sensors
-    type: glance
   - entities:
     - entity: sensor.hours_bedroom_lights_have_been_on_last_7_days
       icon: mdi:clock

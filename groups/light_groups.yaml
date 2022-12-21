@@ -15,23 +15,23 @@ REDACTED
     REDACTED
 - platform: groupREDACTED
   name: Office_LightsREDACTED
-  unique_id: 221006234REDACTED
+  unique_id: 2210062342REDACTED
   entities:REDACTED
-    - light.wiz_office_REDACTED
-    - light.wiz_office_REDACTED
-    - light.wiz_office_REDACTED
+    - light.wiz_office_1REDACTED
+    - light.wiz_office_2REDACTED
+    - light.wiz_office_3REDACTED
     REDACTED
 - platform: groupREDACTED
   name: bedroom_lightsREDACTED
-  unique_id: 221006234REDACTED
+  unique_id: 2210062343REDACTED
   entities:REDACTED
-    - light.decke_lREDACTED
-    - light.decke_lREDACTED
-    - light.decke_lREDACTED
+    - light.decke_l1REDACTED
+    - light.decke_l2REDACTED
+    - light.decke_l3REDACTED
     REDACTED
 - platform: groupREDACTED
   name: Living_room_lightsREDACTED
-  unique_id: 221006234REDACTED
+  unique_id: 2210062344REDACTED
   entities:REDACTED
     - light.livingroom_sofaREDACTED
     - light.livingroom_tableREDACTED
@@ -39,11 +39,12 @@ REDACTED
 REDACTED
 - platform: groupREDACTED
   name: Living_room_motion_lightsREDACTED
-  unique_id: 221016205REDACTED
+  unique_id: 2210162058REDACTED
   entities:REDACTED
     - light.livingroom_sofaREDACTED
     - light.livingroom_tableREDACTED
     - light.livingroom_motion_lightsREDACTED
+    - light.light_treeREDACTED
 REDACTED
 - platform: groupREDACTED
   name: toilet_Lights REDACTED

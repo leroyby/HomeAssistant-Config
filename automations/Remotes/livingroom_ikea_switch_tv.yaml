@@ -13,7 +13,7 @@
   - service: switch.turn_onREDACTED
     target:REDACTED
       entity_id: REDACTED
-      - switch.livingroom_tvREDACTED
+      - switch.tvREDACTED
 REDACTED
 - alias: Shutdown TV Living RoomREDACTED
   trigger:REDACTED
@@ -25,4 +25,4 @@ REDACTED
   - service: switch.turn_offREDACTED
     target:REDACTED
       entity_id: REDACTED
-      - switch.livingroom_tv
+      - switch.tv
