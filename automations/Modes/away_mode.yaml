@@ -10,7 +10,7 @@
       entity_id: REDACTED
       - input_boolean.away_modeREDACTED
       to: 'on'REDACTED
-      for: '00:15:00'REDACTED
+      for: "00:02:30"REDACTED
   condition: []REDACTED
   action:REDACTED
   - service: input_boolean.turn_offREDACTED
@@ -28,24 +28,24 @@ REDACTED
 #############################################################################REDACTED
 ## Turn on/off indoor lights randomlyREDACTED
 #############################################################################REDACTED
-- alias: Turn on light presence simulatonREDACTED
-  initial_state: TrueREDACTED
+#- alias: Turn on light presence simulatonREDACTED
+#  initial_state: TrueREDACTED
 REDACTED
-  trigger:REDACTED
-    - platform: time_patternREDACTED
-      minutes: '/15'REDACTED
+#  trigger:REDACTED
+#    - platform: time_patternREDACTED
+#      minutes: '/15'REDACTED
 REDACTED
-  condition:REDACTED
-    - condition: stateREDACTED
-      entity_id: input_boolean.away_modeREDACTED
-      state: 'on'REDACTED
-    - condition: sunREDACTED
-      after: sunsetREDACTED
-      after_offset: '-00:15:00'REDACTED
-    - condition: timeREDACTED
-      before: '23:15:00'REDACTED
+#  condition:REDACTED
+##    - condition: stateREDACTED
+#      entity_id: input_boolean.away_modeREDACTED
+#      state: 'on'REDACTED
+#    - condition: sunREDACTED
+#      after: sunsetREDACTED
+#      after_offset: '-00:15:00'REDACTED
+#    - condition: timeREDACTED
+#      before: '23:15:00'REDACTED
 REDACTED
-  action:REDACTED
+#  action:REDACTED
 REDACTED
     # Selecting entity for togglingREDACTED
 #    - service: input_text.set_valueREDACTED
@@ -54,27 +54,27 @@ REDACTED
 #        value: '{{ state_attr(''group.Living_room_lights'',''entity_id'') | random }}'REDACTED
 REDACTED
     # Toggling entity stateREDACTED
-    - service: homeassistant.toggleREDACTED
-      data_template:REDACTED
-        entity_id: '{{ states.group.living_room_lights.attributes.entity_id | random }}'REDACTED
-    - delay: "00:{{ '{:02}'.format(range(0,30) | random | int) }}:00"REDACTED
+#    - service: homeassistant.toggleREDACTED
+#      data_template:REDACTED
+#        entity_id: '{{ states.group.living_room_lights.attributes.entity_id | random }}'REDACTED
+#    - delay: "00:{{ '{:02}'.format(range(0,30) | random | int) }}:00"REDACTED
 ################################################################REDACTED
 ## Stopping presence simulation randomly 23:30REDACTED
 ################################################################REDACTED
-- alias: Turn off all lights presence simulatonREDACTED
-  initial_state: TrueREDACTED
+#- alias: Turn off all lights presence simulatonREDACTED
+#  initial_state: TrueREDACTED
 REDACTED
-  trigger:REDACTED
-    - platform: timeREDACTED
-      at: '23:30:00'REDACTED
+#  trigger:REDACTED
+#    - platform: timeREDACTED
+#      at: '23:30:00'REDACTED
 REDACTED
-  condition:REDACTED
-    - condition: stateREDACTED
-      entity_id: input_boolean.away_modeREDACTED
-      state: 'on'REDACTED
+#  condition:REDACTED
+#    - condition: stateREDACTED
+#      entity_id: input_boolean.away_modeREDACTED
+#      state: 'on'REDACTED
 REDACTED
-  action:REDACTED
-    - delay: '00:{{ range(15,59) | random | int }}:00'REDACTED
-    - service: homeassistant.turn_offREDACTED
-      entity_id: group.Living_room_lightsREDACTED
+#  action:REDACTED
+#    - delay: '00:{{ range(15,59) | random | int }}:00'REDACTED
+#    - service: homeassistant.turn_offREDACTED
+#      entity_id: group.Living_room_lightsREDACTED
   

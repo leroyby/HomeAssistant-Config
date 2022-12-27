@@ -36,6 +36,7 @@ REDACTED
     - light.livingroom_sofaREDACTED
     - light.livingroom_tableREDACTED
     - light.livingroom_tvREDACTED
+    - light.light_treeREDACTED
 REDACTED
 - platform: groupREDACTED
   name: Living_room_motion_lightsREDACTED
@@ -43,8 +44,7 @@ REDACTED
   entities:REDACTED
     - light.livingroom_sofaREDACTED
     - light.livingroom_tableREDACTED
-    - light.livingroom_motion_lightsREDACTED
-    - light.light_treeREDACTED
+    - light.light_tree   REDACTED
 REDACTED
 - platform: groupREDACTED
   name: toilet_Lights REDACTED

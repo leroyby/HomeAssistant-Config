@@ -562,10 +562,8 @@ views:
 - badges: []
   cards:
   - entities:
-    - entity: input_text.light_to_switch
-    - entity: sensor.temperature_outdoor_temperature
-    - entity: binary_sensor.office_pc_on
-    - entity: binary_sensor.ping_bedroom_tv
+    - entity: binary_sensor.bedroom_tv_on
+    - entity: sensor.power_bedroom_tv
     show_header_toggle: false
     title: Test apps
     type: entities

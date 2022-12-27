@@ -7,7 +7,7 @@ REDACTED
 - alias: Media_Player start timer TV BedroomREDACTED
   trigger:REDACTED
     platform: stateREDACTED
-    entity_id: binary_sensor.ping_bedroom_tvREDACTED
+    entity_id: binary_sensor.bedroom_tv_onREDACTED
     to: 'off'REDACTED
   condition: REDACTED
   action:REDACTED
@@ -31,7 +31,7 @@ REDACTED
 - alias: Media_Player restart timer TV LivingroomREDACTED
   trigger:REDACTED
     platform: stateREDACTED
-    entity_id: media_player.leroys_55_tvREDACTED
+    entity_id: binary_sensor.bedroom_tv_onREDACTED
     to: 'on'REDACTED
   condition: REDACTED
   action:REDACTED

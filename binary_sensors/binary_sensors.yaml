@@ -76,6 +76,11 @@ REDACTED
       value_template: "{{ states('sensor.power_office_pc')|float > 50.0 }}"REDACTED
       delay_off: "00:01:00"REDACTED
 REDACTED
+    bedroom_tv_on:REDACTED
+      friendly_name: bedroom tv is onREDACTED
+      value_template: "{{ states('sensor.power_bedroom_tv')|float > 24.5 }}"REDACTED
+      delay_off: "00:15:00"REDACTED
+REDACTED
     livingroom_cabinet_on:REDACTED
       friendly_name: livingroom cabinet is onREDACTED
       value_template: "{{ states('sensor.power_livingroom_cabinet')|float > 10.0 }}"REDACTED

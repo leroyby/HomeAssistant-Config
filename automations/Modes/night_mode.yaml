@@ -5,7 +5,7 @@
 ######################################################################################################REDACTED
 - id: '1663422926689'REDACTED
   alias: Mode_Night_onREDACTED
-  description: ''REDACTED
+  description: 'Turning everything down for night mode (except bedroom)'REDACTED
   trigger:REDACTED
   - platform: stateREDACTED
     entity_id:REDACTED
