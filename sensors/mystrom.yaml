@@ -1,44 +1,44 @@
-######################################################################################################REDACTED
-# @LeroybyREDACTED
-# Original Repo : https://github.com/Leroyby/Homeassistant-ConfigREDACTED
-# Definition of myStrom via REST to get Power consumtion and reported temperature-ConfigREDACTED
-######################################################################################################REDACTED
-  - platform: restREDACTED
-    name: "Power Bedroom TV"REDACTED
-    resource: http://192.168.178.21/reportREDACTED
-    method: GETREDACTED
-    unit_of_measurement: WREDACTED
-    device_class: powerREDACTED
-    state_class: measurementREDACTED
-    value_template: "{{ value_json.power }}"REDACTED
-    scan_interval: 10REDACTED
-REDACTED
-  - platform: restREDACTED
-    name: "Power Office PC"REDACTED
-    resource: http://192.168.178.22/reportREDACTED
-    method: GETREDACTED
-    unit_of_measurement: WREDACTED
-    device_class: powerREDACTED
-    state_class: measurementREDACTED
-    value_template: "{{ value_json.power }}"REDACTED
-    scan_interval: 10REDACTED
-REDACTED
-  - platform: restREDACTED
-    name: "Power Office Xbox"REDACTED
-    resource: http://192.168.178.23/reportREDACTED
-    method: GETREDACTED
-    unit_of_measurement: WREDACTED
-    device_class: powerREDACTED
-    state_class: measurementREDACTED
-    value_template: "{{ value_json.power }}"REDACTED
-    scan_interval: 10REDACTED
-REDACTED
-  - platform: restREDACTED
-    name: "Power Livingroom Cabinet"REDACTED
-    resource: http://192.168.178.24/reportREDACTED
-    method: GETREDACTED
-    unit_of_measurement: WREDACTED
-    device_class: powerREDACTED
-    state_class: measurementREDACTED
-    value_template: "{{ value_json.power }}"REDACTED
-    scan_interval: 10REDACTED
+######################################################################################################
+# @Leroyby
+# Original Repo : https://github.com/Leroyby/Homeassistant-Config
+# Definition of myStrom via REST to get Power consumtion and reported temperature-Config
+######################################################################################################
+  - platform: rest
+    name: "Power Bedroom TV"
+    resource: http://192.168.178.21/report
+    method: GET
+    unit_of_measurement: W
+    device_class: power
+    state_class: measurement
+    value_template: "{{ value_json.power }}"
+    scan_interval: REDACTED
+
+  - platform: rest
+    name: "Power Office PC"
+    resource: http://192.168.178.22/report
+    method: GET
+    unit_of_measurement: W
+    device_class: power
+    state_class: measurement
+    value_template: "{{ value_json.power }}"
+    scan_interval: REDACTED
+
+  - platform: rest
+    name: "Power Office Xbox"
+    resource: http://192.168.178.23/report
+    method: GET
+    unit_of_measurement: W
+    device_class: power
+    state_class: measurement
+    value_template: "{{ value_json.power }}"
+    scan_interval: REDACTED
+
+  - platform: rest
+    name: "Power Livingroom Cabinet"
+    resource: http://192.168.178.24/report
+    method: GET
+    unit_of_measurement: W
+    device_class: power
+    state_class: measurement
+    value_template: "{{ value_json.power }}"
+    scan_interval: REDACTED

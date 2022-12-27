@@ -1,14 +1,14 @@
-######################################################################################################REDACTED
-# @LeroybyREDACTED
-# Original Repo : https://github.com/Leroyby/Homeassistant-ConfigREDACTED
-# Scripts BedroomREDACTED
-######################################################################################################REDACTED
-bedroom_off:REDACTED
-  alias: "Turn bedroom off"REDACTED
-  sequence:REDACTED
-    - service: switch.turn_offREDACTED
-      data:REDACTED
-        entity_id: switch.bedroom_switchesREDACTED
-    - service: light.turn_offREDACTED
-      data:REDACTED
-        entity_id: light.bedroom_lightsREDACTED
+######################################################################################################
+# @Leroyby
+# Original Repo : https://github.com/Leroyby/Homeassistant-Config
+# Scripts Bedroom
+######################################################################################################
+bedroom_off:
+  alias: "Turn bedroom off"
+  sequence:
+    - service: switch.turn_off
+      data:
+        entity_id: switch.bedroom_switches
+    - service: light.turn_off
+      data:
+        entity_id: light.bedroom_lights

@@ -1,80 +1,80 @@
-######################################################################################################REDACTED
-# @LeroybyREDACTED
-# Original Repo : https://github.com/Leroyby/Homeassistant-ConfigREDACTED
-# Automation away mode REDACTED
-######################################################################################################REDACTED
-- alias: Mode_Away_onREDACTED
-  id: 9521d521-00dc-4116-b467-5150735fcff9REDACTED
-  trigger:REDACTED
-    - platform: stateREDACTED
-      entity_id: REDACTED
-      - input_boolean.away_modeREDACTED
-      to: 'on'REDACTED
-      for: "00:02:30"REDACTED
-  condition: []REDACTED
-  action:REDACTED
-  - service: input_boolean.turn_offREDACTED
-    target:REDACTED
-      entity_id: REDACTED
-      - input_boolean.work_modeREDACTED
-      - input_boolean.normal_modeREDACTED
-      - input_boolean.gaming_modeREDACTED
-      - input_boolean.night_modeREDACTED
-  - service: script.bedroom_offREDACTED
-  - service: script.office_offREDACTED
-  - service: script.living_room_offREDACTED
-  mode: singleREDACTED
-REDACTED
-#############################################################################REDACTED
-## Turn on/off indoor lights randomlyREDACTED
-#############################################################################REDACTED
-#- alias: Turn on light presence simulatonREDACTED
-#  initial_state: TrueREDACTED
-REDACTED
-#  trigger:REDACTED
-#    - platform: time_patternREDACTED
-#      minutes: '/15'REDACTED
-REDACTED
-#  condition:REDACTED
-##    - condition: stateREDACTED
-#      entity_id: input_boolean.away_modeREDACTED
-#      state: 'on'REDACTED
-#    - condition: sunREDACTED
-#      after: sunsetREDACTED
-#      after_offset: '-00:15:00'REDACTED
-#    - condition: timeREDACTED
-#      before: '23:15:00'REDACTED
-REDACTED
-#  action:REDACTED
-REDACTED
-    # Selecting entity for togglingREDACTED
-#    - service: input_text.set_valueREDACTED
-#      data_template:REDACTED
-#        entity_id: input_text.light_to_switchREDACTED
-#        value: '{{ state_attr(''group.Living_room_lights'',''entity_id'') | random }}'REDACTED
-REDACTED
-    # Toggling entity stateREDACTED
-#    - service: homeassistant.toggleREDACTED
-#      data_template:REDACTED
-#        entity_id: '{{ states.group.living_room_lights.attributes.entity_id | random }}'REDACTED
-#    - delay: "00:{{ '{:02}'.format(range(0,30) | random | int) }}:00"REDACTED
-################################################################REDACTED
-## Stopping presence simulation randomly 23:30REDACTED
-################################################################REDACTED
-#- alias: Turn off all lights presence simulatonREDACTED
-#  initial_state: TrueREDACTED
-REDACTED
-#  trigger:REDACTED
-#    - platform: timeREDACTED
-#      at: '23:30:00'REDACTED
-REDACTED
-#  condition:REDACTED
-#    - condition: stateREDACTED
-#      entity_id: input_boolean.away_modeREDACTED
-#      state: 'on'REDACTED
-REDACTED
-#  action:REDACTED
-#    - delay: '00:{{ range(15,59) | random | int }}:00'REDACTED
-#    - service: homeassistant.turn_offREDACTED
-#      entity_id: group.Living_room_lightsREDACTED
+######################################################################################################
+# @Leroyby
+# Original Repo : https://github.com/Leroyby/Homeassistant-Config
+# Automation away mode 
+######################################################################################################
+- alias: Mode_Away_on
+  id: 9521d521-00dc-4116-b467-5150735fcff9
+  trigger:
+    - platform: state
+      entity_id: 
+      - input_boolean.away_mode
+      to: 'on'
+      for: "00:02:30"
+  condition: []
+  action:
+  - service: input_boolean.turn_off
+    target:
+      entity_id: 
+      - input_boolean.work_mode
+      - input_boolean.normal_mode
+      - input_boolean.gaming_mode
+      - input_boolean.night_mode
+  - service: script.bedroom_off
+  - service: script.office_off
+  - service: script.living_room_off
+  mode: single
+
+#############################################################################
+## Turn on/off indoor lights randomly
+#############################################################################
+#- alias: Turn on light presence simulaton
+#  initial_state: True
+
+#  trigger:
+#    - platform: time_pattern
+#      minutes: '/15'
+
+#  condition:
+##    - condition: state
+#      entity_id: input_boolean.away_mode
+#      state: 'on'
+#    - condition: sun
+#      after: sunset
+#      after_offset: '-00:15:00'
+#    - condition: time
+#      before: '23:15:00'
+
+#  action:
+
+    # Selecting entity for toggling
+#    - service: input_text.set_value
+#      data_template:
+#        entity_id: input_text.light_to_switch
+#        value: '{{ state_attr(''group.Living_room_lights'',''entity_id'') | random }}'
+
+    # Toggling entity state
+#    - service: homeassistant.toggle
+#      data_template:
+#        entity_id: '{{ states.group.living_room_lights.attributes.entity_id | random }}'
+#    - delay: "00:{{ '{:02}'.format(range(0,30) | random | int) }}:00"
+################################################################
+## Stopping presence simulation randomly 23:30
+################################################################
+#- alias: Turn off all lights presence simulaton
+#  initial_state: True
+
+#  trigger:
+#    - platform: time
+#      at: '23:30:00'
+
+#  condition:
+#    - condition: state
+#      entity_id: input_boolean.away_mode
+#      state: 'on'
+
+#  action:
+#    - delay: '00:{{ range(15,59) | random | int }}:00'
+#    - service: homeassistant.turn_off
+#      entity_id: group.Living_room_lights
   

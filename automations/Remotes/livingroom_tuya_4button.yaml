@@ -1,224 +1,224 @@
-######################################################################################################REDACTED
-# @LeroybyREDACTED
-# Original Repo : https://github.com/Leroyby/Homeassistant-ConfigREDACTED
-# Automations Livingroom Tuya Switch (4-Gang) (Entity: remote_livingroom_2)REDACTED
-######################################################################################################REDACTED
-REDACTED
-- alias: livingroom button 1 light toggleREDACTED
-  trigger:REDACTED
-    platform: stateREDACTED
-    entity_id: sensor.remote_livingroom_2_actionREDACTED
-    to: '1_single' REDACTED
-  condition: []REDACTED
-  action:REDACTED
-  - service: switch.turn_offREDACTED
-    target:REDACTED
-      entity_id: switch.adaptive_lighting_livingroomREDACTED
-  - service: light.toggleREDACTED
-    target:REDACTED
-        entity_id: light.living_room_lightsREDACTED
-REDACTED
-- alias: livingroom button 1 lights cozyREDACTED
-  trigger:REDACTED
-    platform: stateREDACTED
-    entity_id: sensor.remote_livingroom_2_actionREDACTED
-    to: '1_double' REDACTED
-  condition: []REDACTED
-  action:REDACTED
-  - service: switch.turn_offREDACTED
-    target:REDACTED
-      entity_id: switch.adaptive_lighting_livingroomREDACTED
-  - service: script.turn_onREDACTED
-    target:REDACTED
-        entity_id: script.living_room_cozy_lightsREDACTED
-REDACTED
-- alias: livingroom button 1 light whiteREDACTED
-  trigger:REDACTED
-    platform: stateREDACTED
-    entity_id: sensor.remote_livingroom_2_actionREDACTED
-    to: '1_hold'REDACTED
-  condition: []REDACTED
-  action:REDACTED
-  - service: switch.turn_offREDACTED
-    target:REDACTED
-      entity_id: switch.adaptive_lighting_livingroomREDACTED
-  - service: light.turn_onREDACTED
-    target:  REDACTED
-        entity_id: light.livingroom_tvREDACTED
-    data:  REDACTED
-      brightness: 255REDACTED
-      kelvin: 5000 REDACTED
-      transition: 5REDACTED
-  - service: light.turn_onREDACTED
-    target:  REDACTED
-        entity_id: light.livingroom_sofaREDACTED
-    data:  REDACTED
-      brightness_pct: 100REDACTED
-      rgb_color: [255,255,255]  REDACTED
-      transition: 5   REDACTED
-  - service: light.turn_onREDACTED
-    target:  REDACTED
-        entity_id: light.livingroom_tableREDACTED
-    data:  REDACTED
-      brightness_pct: 100REDACTED
-      kelvin: 3300 REDACTED
-      transition: 5REDACTED
-###########################################REDACTED
-REDACTED
-- alias: livingroom button 2 light table toggleREDACTED
-  trigger:REDACTED
-    platform: stateREDACTED
-    entity_id: sensor.remote_livingroom_2_actionREDACTED
-    to: '2_single' REDACTED
-  condition: []REDACTED
-  action:REDACTED
-  - service: switch.turn_offREDACTED
-    target:REDACTED
-      entity_id: switch.adaptive_lighting_livingroomREDACTED
-  - service: light.toggleREDACTED
-    target:REDACTED
-        entity_id: light.livingroom_tableREDACTED
-REDACTED
-- alias: livingroom button 2 light table brightnessREDACTED
-  trigger:REDACTED
-    platform: stateREDACTED
-    entity_id: sensor.remote_livingroom_2_actionREDACTED
-    to: '2_double' REDACTED
-  condition: []REDACTED
-  action:REDACTED
-  - service: switch.turn_offREDACTED
-    target:REDACTED
-      entity_id: switch.adaptive_lighting_livingroomREDACTED
-  - service: light.turn_onREDACTED
-    target:REDACTED
-        entity_id: light.livingroom_tableREDACTED
-    data:    REDACTED
-        brightness_step_pct: "{{ 20 if state_attr('light.livingroom_table', 'brightness')|int <= 250 else -80 }}"REDACTED
-REDACTED
-- alias: livingroom button 2 light table whiteREDACTED
-  trigger:REDACTED
-    platform: stateREDACTED
-    entity_id: sensor.remote_livingroom_2_actionREDACTED
-    to: '2_hold'REDACTED
-  condition: []REDACTED
-  action:REDACTED
-  - service: switch.turn_offREDACTED
-    target:REDACTED
-      entity_id: switch.adaptive_lighting_livingroomREDACTED
-  - service: light.turn_onREDACTED
-    target:  REDACTED
-        entity_id: light.livingroom_tableREDACTED
-    data:  REDACTED
-      brightness_pct: 100REDACTED
-      kelvin: 3300 REDACTED
-      transition: 5      REDACTED
-###########################################REDACTED
-REDACTED
-- alias: livingroom button 3 light sofa toggleREDACTED
-  trigger:REDACTED
-    platform: stateREDACTED
-    entity_id: sensor.remote_livingroom_2_actionREDACTED
-    to: '3_single' REDACTED
-  condition: []REDACTED
-  action:REDACTED
-  - service: switch.turn_offREDACTED
-    target:REDACTED
-      entity_id: switch.adaptive_lighting_livingroomREDACTED
-  - service: light.toggleREDACTED
-    target:REDACTED
-        entity_id: light.livingroom_sofaREDACTED
-REDACTED
-- alias: livingroom button 3 light sofa brightnessREDACTED
-  trigger:REDACTED
-    platform: stateREDACTED
-    entity_id: sensor.remote_livingroom_2_actionREDACTED
-    to: '3_double' REDACTED
-  condition: []REDACTED
-  action:REDACTED
-  - service: switch.turn_offREDACTED
-    target:REDACTED
-      entity_id: switch.adaptive_lighting_livingroomREDACTED
-  - service: light.turn_onREDACTED
-    target:REDACTED
-        entity_id: light.livingroom_sofaREDACTED
-    data:    REDACTED
-        brightness_step_pct: "{{ 20 if state_attr('light.livingroom_sofa', 'brightness')|int <= 250 else -80 }}"REDACTED
-REDACTED
-- alias: livingroom button 3 light sofa whiteREDACTED
-  trigger:REDACTED
-    platform: stateREDACTED
-    entity_id: sensor.remote_livingroom_2_actionREDACTED
-    to: '3_hold'REDACTED
-  condition: []REDACTED
-  action:REDACTED
-  - service: switch.turn_offREDACTED
-    target:REDACTED
-      entity_id: switch.adaptive_lighting_livingroomREDACTED
-  - service: light.turn_onREDACTED
-    target:  REDACTED
-        entity_id: light.livingroom_sofaREDACTED
-    data:  REDACTED
-      brightness_pct: 100REDACTED
-      rgb_color: [255,255,255]  REDACTED
-      transition: 5  REDACTED
-###########################################REDACTED
-REDACTED
-- alias: livingroom button 4 light tv toggleREDACTED
-  trigger:REDACTED
-    platform: stateREDACTED
-    entity_id: sensor.remote_livingroom_2_actionREDACTED
-    to: '4_single' REDACTED
-  condition: []REDACTED
-  action:REDACTED
-  - service: switch.turn_offREDACTED
-    target:REDACTED
-      entity_id: switch.adaptive_lighting_livingroomREDACTED
-  - service: light.toggleREDACTED
-    target:REDACTED
-        entity_id: light.livingroom_tvREDACTED
-REDACTED
-- alias: livingroom button 4 light tv brightnessREDACTED
-  trigger:REDACTED
-    platform: stateREDACTED
-    entity_id: sensor.remote_livingroom_2_actionREDACTED
-    to: '4_double' REDACTED
-  condition: []REDACTED
-  action:REDACTED
-  - service: switch.turn_offREDACTED
-    target:REDACTED
-      entity_id: switch.adaptive_lighting_livingroomREDACTED
-  - service: light.turn_onREDACTED
-    target:REDACTED
-        entity_id: light.livingroom_tvREDACTED
-    data:    REDACTED
-        brightness_step_pct: "{{ 20 if state_attr('light.livingroom_tv', 'brightness')|int <= 250 else -80 }}"REDACTED
-- alias: livingroom button 4 light tv whiteREDACTED
-  trigger:REDACTED
-    platform: stateREDACTED
-    entity_id: sensor.remote_livingroom_2_actionREDACTED
-    to: '4_hold'REDACTED
-  condition: []REDACTED
-  action:REDACTED
-  - service: switch.turn_offREDACTED
-    target:REDACTED
-      entity_id: switch.adaptive_lighting_livingroomREDACTED
-  - service: light.turn_onREDACTED
-    target:  REDACTED
-        entity_id: light.livingroom_tvREDACTED
-    data:  REDACTED
-      brightness: 255REDACTED
-      kelvin: 5000 REDACTED
-      transition: 5REDACTED
-REDACTED
- ###########################################REDACTED
-REDACTED
-- alias: livingroom turn adaptive light onREDACTED
-  trigger:REDACTED
-    platform: stateREDACTED
-    entity_id: light.living_room_lightsREDACTED
-    to: 'off' REDACTED
-  condition: []REDACTED
-  action:REDACTED
-  - service: switch.turn_onREDACTED
-    target:REDACTED
+######################################################################################################
+# @Leroyby
+# Original Repo : https://github.com/Leroyby/Homeassistant-Config
+# Automations Livingroom Tuya Switch (4-Gang) (Entity: remote_livingroom_2)
+######################################################################################################
+
+- alias: livingroom button 1 light toggle
+  trigger:
+    platform: state
+    entity_id: sensor.remote_livingroom_2_action
+    to: '1_single' 
+  condition: []
+  action:
+  - service: switch.turn_off
+    target:
+      entity_id: switch.adaptive_lighting_livingroom
+  - service: light.toggle
+    target:
+        entity_id: light.living_room_lights
+
+- alias: livingroom button 1 lights cozy
+  trigger:
+    platform: state
+    entity_id: sensor.remote_livingroom_2_action
+    to: '1_double' 
+  condition: []
+  action:
+  - service: switch.turn_off
+    target:
+      entity_id: switch.adaptive_lighting_livingroom
+  - service: script.turn_on
+    target:
+        entity_id: script.living_room_cozy_lights
+
+- alias: livingroom button 1 light white
+  trigger:
+    platform: state
+    entity_id: sensor.remote_livingroom_2_action
+    to: '1_hold'
+  condition: []
+  action:
+  - service: switch.turn_off
+    target:
+      entity_id: switch.adaptive_lighting_livingroom
+  - service: light.turn_on
+    target:  
+        entity_id: light.livingroom_tv
+    data:  
+      brightness: 255
+      kelvin: 5000 
+      transition: 5
+  - service: light.turn_on
+    target:  
+        entity_id: light.livingroom_sofa
+    data:  
+      brightness_pct: 100
+      rgb_color: [255,255,255]  
+      transition: 5   
+  - service: light.turn_on
+    target:  
+        entity_id: light.livingroom_table
+    data:  
+      brightness_pct: 100
+      kelvin: 3300 
+      transition: 5
+###########################################
+
+- alias: livingroom button 2 light table toggle
+  trigger:
+    platform: state
+    entity_id: sensor.remote_livingroom_2_action
+    to: '2_single' 
+  condition: []
+  action:
+  - service: switch.turn_off
+    target:
+      entity_id: switch.adaptive_lighting_livingroom
+  - service: light.toggle
+    target:
+        entity_id: light.livingroom_table
+
+- alias: livingroom button 2 light table brightness
+  trigger:
+    platform: state
+    entity_id: sensor.remote_livingroom_2_action
+    to: '2_double' 
+  condition: []
+  action:
+  - service: switch.turn_off
+    target:
+      entity_id: switch.adaptive_lighting_livingroom
+  - service: light.turn_on
+    target:
+        entity_id: light.livingroom_table
+    data:    
+        brightness_step_pct: "{{ 20 if state_attr('light.livingroom_table', 'brightness')|int <= 250 else -80 }}"
+
+- alias: livingroom button 2 light table white
+  trigger:
+    platform: state
+    entity_id: sensor.remote_livingroom_2_action
+    to: '2_hold'
+  condition: []
+  action:
+  - service: switch.turn_off
+    target:
+      entity_id: switch.adaptive_lighting_livingroom
+  - service: light.turn_on
+    target:  
+        entity_id: light.livingroom_table
+    data:  
+      brightness_pct: 100
+      kelvin: 3300 
+      transition: 5      
+###########################################
+
+- alias: livingroom button 3 light sofa toggle
+  trigger:
+    platform: state
+    entity_id: sensor.remote_livingroom_2_action
+    to: '3_single' 
+  condition: []
+  action:
+  - service: switch.turn_off
+    target:
+      entity_id: switch.adaptive_lighting_livingroom
+  - service: light.toggle
+    target:
+        entity_id: light.livingroom_sofa
+
+- alias: livingroom button 3 light sofa brightness
+  trigger:
+    platform: state
+    entity_id: sensor.remote_livingroom_2_action
+    to: '3_double' 
+  condition: []
+  action:
+  - service: switch.turn_off
+    target:
+      entity_id: switch.adaptive_lighting_livingroom
+  - service: light.turn_on
+    target:
+        entity_id: light.livingroom_sofa
+    data:    
+        brightness_step_pct: "{{ 20 if state_attr('light.livingroom_sofa', 'brightness')|int <= 250 else -80 }}"
+
+- alias: livingroom button 3 light sofa white
+  trigger:
+    platform: state
+    entity_id: sensor.remote_livingroom_2_action
+    to: '3_hold'
+  condition: []
+  action:
+  - service: switch.turn_off
+    target:
+      entity_id: switch.adaptive_lighting_livingroom
+  - service: light.turn_on
+    target:  
+        entity_id: light.livingroom_sofa
+    data:  
+      brightness_pct: 100
+      rgb_color: [255,255,255]  
+      transition: 5  
+###########################################
+
+- alias: livingroom button 4 light tv toggle
+  trigger:
+    platform: state
+    entity_id: sensor.remote_livingroom_2_action
+    to: '4_single' 
+  condition: []
+  action:
+  - service: switch.turn_off
+    target:
+      entity_id: switch.adaptive_lighting_livingroom
+  - service: light.toggle
+    target:
+        entity_id: light.livingroom_tv
+
+- alias: livingroom button 4 light tv brightness
+  trigger:
+    platform: state
+    entity_id: sensor.remote_livingroom_2_action
+    to: '4_double' 
+  condition: []
+  action:
+  - service: switch.turn_off
+    target:
+      entity_id: switch.adaptive_lighting_livingroom
+  - service: light.turn_on
+    target:
+        entity_id: light.livingroom_tv
+    data:    
+        brightness_step_pct: "{{ 20 if state_attr('light.livingroom_tv', 'brightness')|int <= 250 else -80 }}"
+- alias: livingroom button 4 light tv white
+  trigger:
+    platform: state
+    entity_id: sensor.remote_livingroom_2_action
+    to: '4_hold'
+  condition: []
+  action:
+  - service: switch.turn_off
+    target:
+      entity_id: switch.adaptive_lighting_livingroom
+  - service: light.turn_on
+    target:  
+        entity_id: light.livingroom_tv
+    data:  
+      brightness: 255
+      kelvin: 5000 
+      transition: 5
+
+ ###########################################
+
+- alias: livingroom turn adaptive light on
+  trigger:
+    platform: state
+    entity_id: light.living_room_lights
+    to: 'off' 
+  condition: []
+  action:
+  - service: switch.turn_on
+    target:
       entity_id: switch.adaptive_lighting_livingroom

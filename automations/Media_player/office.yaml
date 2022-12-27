@@ -1,48 +1,48 @@
-######################################################################################################REDACTED
-# @LeroybyREDACTED
-# Original Repo : https://github.com/Leroyby/Homeassistant-ConfigREDACTED
-# Automations Mediaplayer OfficeREDACTED
-######################################################################################################REDACTED
-- alias: media_player xbox trigger gaming modeREDACTED
-  trigger:REDACTED
-    platform: stateREDACTED
-    entity_id: media_player.wohnzimmer_xboxREDACTED
-    to: 'on'REDACTED
-  condition:REDACTED
-  action:REDACTED
-  - service: automation.turn_onREDACTED
-    entity_id: automation.gaming_mode_onREDACTED
-  - service: light.turn_offREDACTED
-    target:REDACTED
-      entity_id: REDACTED
-      - light.office_wiz_lights_ceilingREDACTED
-  - service: input_boolean.turn_onREDACTED
-    target:REDACTED
-      entity_id: input_boolean.gaming_modeREDACTED
-REDACTED
-- alias: media_player xbox offREDACTED
-  trigger:REDACTED
-    platform: stateREDACTED
-    entity_id: media_player.wohnzimmer_xboxREDACTED
-    to: 'off'REDACTED
-  condition:REDACTED
-  action:REDACTED
-  - service: input_boolean.turn_onREDACTED
-    target:REDACTED
-      entity_id: input_boolean.normal_modeREDACTED
-  - service: timer.startREDACTED
-    target:REDACTED
-      entity_id: timer.office_xboxREDACTED
-REDACTED
-- alias: "Timerstop office xbox"REDACTED
-  id: "Timerstop office xbox"REDACTED
-  trigger:REDACTED
-  - platform: eventREDACTED
-    event_type: timer.finishedREDACTED
-    event_data:REDACTED
-      entity_id: timer.office_xboxREDACTED
-  action:REDACTED
-  - service: switch.turn_offREDACTED
-    target:REDACTED
-      entity_id: REDACTED
+######################################################################################################
+# @Leroyby
+# Original Repo : https://github.com/Leroyby/Homeassistant-Config
+# Automations Mediaplayer Office
+######################################################################################################
+- alias: media_player xbox trigger gaming mode
+  trigger:
+    platform: state
+    entity_id: media_player.wohnzimmer_xbox
+    to: 'on'
+  condition:
+  action:
+  - service: automation.turn_on
+    entity_id: automation.gaming_mode_on
+  - service: light.turn_off
+    target:
+      entity_id: 
+      - light.office_wiz_lights_ceiling
+  - service: input_boolean.turn_on
+    target:
+      entity_id: input_boolean.gaming_mode
+
+- alias: media_player xbox off
+  trigger:
+    platform: state
+    entity_id: media_player.wohnzimmer_xbox
+    to: 'off'
+  condition:
+  action:
+  - service: input_boolean.turn_on
+    target:
+      entity_id: input_boolean.normal_mode
+  - service: timer.start
+    target:
+      entity_id: timer.office_xbox
+
+- alias: "Timerstop office xbox"
+  id: "Timerstop office xbox"
+  trigger:
+  - platform: event
+    event_type: timer.finished
+    event_data:
+      entity_id: timer.office_xbox
+  action:
+  - service: switch.turn_off
+    target:
+      entity_id: 
       - switch.office_xbox

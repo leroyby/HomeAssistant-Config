@@ -1,52 +1,52 @@
-######################################################################################################REDACTED
-# @LeroybyREDACTED
-# Original Repo : https://github.com/leroyby/Homeassistant-ConfigREDACTED
-# Lights group yaml fileREDACTED
-######################################################################################################REDACTED
-REDACTED
-- platform: groupREDACTED
-  name: All Lights REDACTED
-  unique_id: 2210171730REDACTED
-  entities:REDACTED
-    - light.office_lightsREDACTED
-    - light.bedroom_lightsREDACTED
-    - light.Living_room_lightsREDACTED
-    - light.bad_kleinREDACTED
-    REDACTED
-- platform: groupREDACTED
-  name: Office_LightsREDACTED
-  unique_id: 2210062342REDACTED
-  entities:REDACTED
-    - light.wiz_office_1REDACTED
-    - light.wiz_office_2REDACTED
-    - light.wiz_office_3REDACTED
-    REDACTED
-- platform: groupREDACTED
-  name: bedroom_lightsREDACTED
-  unique_id: 2210062343REDACTED
-  entities:REDACTED
-    - light.decke_l1REDACTED
-    - light.decke_l2REDACTED
-    - light.decke_l3REDACTED
-    REDACTED
-- platform: groupREDACTED
-  name: Living_room_lightsREDACTED
-  unique_id: 2210062344REDACTED
-  entities:REDACTED
-    - light.livingroom_sofaREDACTED
-    - light.livingroom_tableREDACTED
-    - light.livingroom_tvREDACTED
-    - light.light_treeREDACTED
-REDACTED
-- platform: groupREDACTED
-  name: Living_room_motion_lightsREDACTED
-  unique_id: 2210162058REDACTED
-  entities:REDACTED
-    - light.livingroom_sofaREDACTED
-    - light.livingroom_tableREDACTED
-    - light.light_tree   REDACTED
-REDACTED
-- platform: groupREDACTED
-  name: toilet_Lights REDACTED
-  entities:REDACTED
+######################################################################################################
+# @Leroyby
+# Original Repo : https://github.com/leroyby/Homeassistant-Config
+# Lights group yaml file
+######################################################################################################
+
+- platform: group
+  name: All Lights 
+  unique_id: 2210171730
+  entities:
+    - light.office_lights
+    - light.bedroom_lights
+    - light.Living_room_lights
+    - light.bad_klein
+    
+- platform: group
+  name: Office_Lights
+  unique_id: 2210062342
+  entities:
+    - light.wiz_office_1
+    - light.wiz_office_2
+    - light.wiz_office_3
+    
+- platform: group
+  name: bedroom_lights
+  unique_id: 2210062343
+  entities:
+    - light.decke_l1
+    - light.decke_l2
+    - light.decke_l3
+    
+- platform: group
+  name: Living_room_lights
+  unique_id: 2210062344
+  entities:
+    - light.livingroom_sofa
+    - light.livingroom_table
+    - light.livingroom_tv
+    - light.light_tree
+
+- platform: group
+  name: Living_room_motion_lights
+  unique_id: 2210162058
+  entities:
+    - light.livingroom_sofa
+    - light.livingroom_table
+    - light.light_tree   
+
+- platform: group
+  name: toilet_Lights 
+  entities:
     - light.bad_klein

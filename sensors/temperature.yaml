@@ -1,80 +1,80 @@
-######################################################################################################REDACTED
-# @LeroybyREDACTED
-# Original Repo : https://github.com/Leroyby/Homeassistant-ConfigREDACTED
-# Temperature-Sensors incl. average sensors (via addon)REDACTED
-######################################################################################################REDACTED
-  - platform: min_maxREDACTED
-    name: 'Temperature Home'REDACTED
-    type: meanREDACTED
-    entity_ids:REDACTED
-      - sensor.temperature_office_averageREDACTED
-      - sensor.temperature_livingroom_averageREDACTED
-      - sensor.temperature_bedroom_averageREDACTED
-REDACTED
-  - platform: averageREDACTED
-    name: 'Temperature Office Average'REDACTED
-    entities:REDACTED
-      - sensor.temperature_office_pcREDACTED
-      - sensor.temperature_office_xboxREDACTED
-      - sensor.temperature_officeREDACTED
-REDACTED
-  - platform: averageREDACTED
-    name: 'Temperature Livingroom Average'REDACTED
-    entities:REDACTED
-      - sensor.temperature_livingroom_temperatureREDACTED
-      - sensor.temperature_livingroom_2REDACTED
-REDACTED
-  - platform: min_maxREDACTED
-    name: 'Temperature Bedroom Average'REDACTED
-    type: 'mean'REDACTED
-    entity_ids:REDACTED
-      - sensor.temperature_bedroomREDACTED
-      - sensor.temperature_bedroom_2REDACTED
-REDACTED
-  - platform: restREDACTED
-    name: "Temperature Bedroom"REDACTED
-    resource: http://192.168.178.21/reportREDACTED
-    method: GETREDACTED
-    unit_of_measurement: °CREDACTED
-    device_class: temperatureREDACTED
-    state_class: measurementREDACTED
-    value_template: "{{ value_json.temperature }}"REDACTED
-    scan_interval: 10REDACTED
-REDACTED
-  - platform: restREDACTED
-    name: "Temperature Office PC"REDACTED
-    resource: http://192.168.178.22/reportREDACTED
-    method: GETREDACTED
-    unit_of_measurement: °CREDACTED
-    device_class: temperatureREDACTED
-    state_class: measurementREDACTED
-    value_template: "{{ value_json.temperature }}"REDACTED
-    scan_interval: 10REDACTED
-REDACTED
-  - platform: restREDACTED
-    name: "Temperature Office Xbox"REDACTED
-    resource: http://192.168.178.23/reportREDACTED
-    method: GETREDACTED
-    unit_of_measurement: °CREDACTED
-    device_class: temperatureREDACTED
-    state_class: measurementREDACTED
-    value_template: "{{ value_json.temperature }}"REDACTED
-    scan_interval: 10REDACTED
-REDACTED
-  - platform: restREDACTED
-    name: "Temperature Livingroom 2"REDACTED
-    resource: http://192.168.178.24/reportREDACTED
-    method: GETREDACTED
-    unit_of_measurement: °CREDACTED
-    device_class: temperatureREDACTED
-    state_class: measurementREDACTED
-    value_template: "{{ value_json.temperature }}"REDACTED
-    scan_interval: 10REDACTED
-REDACTED
-  - platform: templateREDACTED
-    sensors:REDACTED
-      indoor_outdoor_temperature_difference:REDACTED
-        friendly_name: "Difference"REDACTED
-        unit_of_measurement: '°C'REDACTED
-        value_template: >REDACTED
+######################################################################################################
+# @Leroyby
+# Original Repo : https://github.com/Leroyby/Homeassistant-Config
+# Temperature-Sensors incl. average sensors (via addon)
+######################################################################################################
+  - platform: min_max
+    name: 'Temperature Home'
+    type: mean
+    entity_ids:
+      - sensor.temperature_office_average
+      - sensor.temperature_livingroom_average
+      - sensor.temperature_bedroom_average
+
+  - platform: average
+    name: 'Temperature Office Average'
+    entities:
+      - sensor.temperature_office_pc
+      - sensor.temperature_office_xbox
+      - sensor.temperature_office
+
+  - platform: average
+    name: 'Temperature Livingroom Average'
+    entities:
+      - sensor.temperature_livingroom_temperature
+      - sensor.temperature_livingroom_2
+
+  - platform: min_max
+    name: 'Temperature Bedroom Average'
+    type: 'mean'
+    entity_ids:
+      - sensor.temperature_bedroom
+      - sensor.temperature_bedroom_2
+
+  - platform: rest
+    name: "Temperature Bedroom"
+    resource: http://192.168.178.21/report
+    method: GET
+    unit_of_measurement: °C
+    device_class: temperature
+    state_class: measurement
+    value_template: "{{ value_json.temperature }}"
+    scan_interval: REDACTED
+
+  - platform: rest
+    name: "Temperature Office PC"
+    resource: http://192.168.178.22/report
+    method: GET
+    unit_of_measurement: °C
+    device_class: temperature
+    state_class: measurement
+    value_template: "{{ value_json.temperature }}"
+    scan_interval: REDACTED
+
+  - platform: rest
+    name: "Temperature Office Xbox"
+    resource: http://192.168.178.23/report
+    method: GET
+    unit_of_measurement: °C
+    device_class: temperature
+    state_class: measurement
+    value_template: "{{ value_json.temperature }}"
+    scan_interval: REDACTED
+
+  - platform: rest
+    name: "Temperature Livingroom 2"
+    resource: http://192.168.178.24/report
+    method: GET
+    unit_of_measurement: °C
+    device_class: temperature
+    state_class: measurement
+    value_template: "{{ value_json.temperature }}"
+    scan_interval: REDACTED
+
+  - platform: template
+    sensors:
+      indoor_outdoor_temperature_difference:
+        friendly_name: "Difference"
+        unit_of_measurement: '°C'
+        value_template: >
           {{ states('sensor.temperature_outdoor_temperature')|float - states('sensor.temperature_home')|float }}

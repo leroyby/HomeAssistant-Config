@@ -1,125 +1,125 @@
-######################################################################################################REDACTED
-# @LeroybyREDACTED
-# Original Repo : https://github.com/Leroyby/Homeassistant-ConfigREDACTED
-# binary sensorsREDACTED
-######################################################################################################REDACTED
-- platform: templateREDACTED
-  sensors:REDACTED
-    motion_detected:REDACTED
-      friendly_name: Any motion detectedREDACTED
-      value_template: >REDACTED
-        {{ is_state("binary_sensor.activity_in_kitchen", "on")REDACTED
-            or is_state("binary_sensor.activity_in_livingroom", "on")REDACTED
-            or is_state("binary_sensor.activity_in_office", "on")REDACTED
-            or is_state("binary_sensor.activity_in_bedroom", "on") }}REDACTED
-            REDACTED
-    motion_detected_in_last_hour:REDACTED
-      friendly_name: Any motion detected in last hourREDACTED
-      value_template: >REDACTED
-        {{ is_state("binary_sensor.motion_detected", "on") }}REDACTED
-      delay_off: "01:00:00"REDACTED
-REDACTED
-    someone_in_the_house_in_last_hour:REDACTED
-      friendly_name: Someone in the house in the last hourREDACTED
-      value_template: >REDACTED
-        {{ is_state("binary_sensor.motion_detected_in_last_hour", "on") }}REDACTED
-      delay_off: "01:00:00"REDACTED
-REDACTED
-    activity_in_livingroom:REDACTED
-      friendly_name: Activity in the living roomREDACTED
-      value_template: >REDACTED
-        {{ is_state("binary_sensor.motion_livingroom_occupancy", "on")REDACTED
-            or is_state("media_player.lg_webos_smart_tv", "on")REDACTED
-            or is_state("binary_sensor.contact_livingroom_cabinet_contact", "on") }}REDACTED
-      delay_off: "00:03:00"REDACTED
-REDACTED
-    activity_in_kitchen:REDACTED
-      friendly_name: Activity in the kitchenREDACTED
-      value_template: >REDACTED
-        {{ is_state("binary_sensor.motion_livingroom_occupancy", "on") }}REDACTED
-      delay_off: "00:01:00"REDACTED
-REDACTED
-    activity_in_office:REDACTED
-      friendly_name: Activity in the officeREDACTED
-      value_template: >REDACTED
-        {{ is_state("media_player.wohnzimmer_xbox", "on")REDACTED
-            or is_state("binary_sensor.motion_office_occupancy", "on") REDACTED
-            or is_state("binary_sensor.office_pc_on", "on")REDACTED
-            }}REDACTED
-      delay_off: "00:01:00"REDACTED
-REDACTED
-    activity_in_bedroom:REDACTED
-      friendly_name: Activity in the bedroomREDACTED
-      value_template: >REDACTED
-        {{ is_state("switch.bedroom_tv", "on")REDACTED
-            or is_state("light.bedroom_lights", "on")REDACTED
-           }}REDACTED
-      delay_off: "00:01:00"REDACTED
-REDACTED
-    activity_on_dining_table:REDACTED
-      friendly_name: Activity on the dining tableREDACTED
-      value_template: >REDACTED
-        {{ is_state("sensor.Vibration_office_1_action", "on")REDACTED
-           }}REDACTED
-      delay_off: "00:05:00"REDACTED
-REDACTED
-    any_light_on:REDACTED
-      friendly_name: Any light is onREDACTED
-      value_template: >REDACTED
-        {% set office_lights_on = is_state("light.office_lights", "on") %}REDACTED
-        {% set bedroom_lights_on = is_state("light.bedroom_lights", "on") %}REDACTED
-        {% set living_room_lights_on = is_state("light.livingroom_lights", "on") %}REDACTED
-        {{ office_lights_on or bedroom_lights_on or living_room_lights_on }}REDACTED
-REDACTED
-    office_pc_on:REDACTED
-      friendly_name: office pc is onREDACTED
-      value_template: "{{ states('sensor.power_office_pc')|float > 50.0 }}"REDACTED
-      delay_off: "00:01:00"REDACTED
-REDACTED
-    bedroom_tv_on:REDACTED
-      friendly_name: bedroom tv is onREDACTED
-      value_template: "{{ states('sensor.power_bedroom_tv')|float > 24.5 }}"REDACTED
-      delay_off: "00:15:00"REDACTED
-REDACTED
-    livingroom_cabinet_on:REDACTED
-      friendly_name: livingroom cabinet is onREDACTED
-      value_template: "{{ states('sensor.power_livingroom_cabinet')|float > 10.0 }}"REDACTED
-      delay_off: "00:01:00"REDACTED
-REDACTED
-REDACTED
-    any_media_player_on:REDACTED
-      friendly_name: Any media player is onREDACTED
-      value_template: >REDACTED
-        {% set office_media_player_on = is_state("media_player.lbxbox", "on") %}REDACTED
-        {% set bedroom_media_player_on = is_state("binary_sensor.ping_bedroom_tv", "on") %}REDACTED
-        {% set living_room_media_player_on = is_state("media_player.lg_webos_tv_a4ab", "on") %}REDACTED
-        {{ office_media_player_on or bedroom_media_player_on or living_room_media_player_on }}REDACTED
-REDACTED
-    any_switch_on:REDACTED
-      friendly_name: Any switch is onREDACTED
-      value_template: >REDACTED
-        {% set sw1 = is_state("", "on") %}REDACTED
-        {% set sw2 = is_state("", "on") %}REDACTED
-        {% set sw3 = is_state("", "on") %}REDACTED
-        {% set sw4 = is_state("", "on") %}REDACTED
-        {{ sw1 or sw2 or sw3 or sw4 }}REDACTED
-REDACTED
-    anything_on:REDACTED
-      friendly_name: Anything is onREDACTED
-      value_template: >REDACTED
-        {% set light_on = is_state("binary_sensor.any_light_on", "on") %}REDACTED
-        {% set media_player_on = is_state("binary_sensor.any_media_player_on", "on") %}REDACTED
-        {{ light_on or media_player_on }}REDACTED
-  REDACTED
-    no_one_home:REDACTED
-      friendly_name: No one is homeREDACTED
-      value_template: >REDACTED
-        {{ not is_state("person.leroy", "home")REDACTED
-            and not is_state("person.USER2", "home") REDACTED
-            and not is_state("media_player.lbxbox", "on")}}REDACTED
-REDACTED
-- platform: workdayREDACTED
-  country: CHREDACTED
-  workdays: [mon, tue, wed, thu, fri]REDACTED
-  excludes: [sat, sun]REDACTED
-REDACTED
+######################################################################################################
+# @Leroyby
+# Original Repo : https://github.com/Leroyby/Homeassistant-Config
+# binary sensors
+######################################################################################################
+- platform: template
+  sensors:
+    motion_detected:
+      friendly_name: Any motion detected
+      value_template: >
+        {{ is_state("binary_sensor.activity_in_kitchen", "on")
+            or is_state("binary_sensor.activity_in_livingroom", "on")
+            or is_state("binary_sensor.activity_in_office", "on")
+            or is_state("binary_sensor.activity_in_bedroom", "on") }}
+            
+    motion_detected_in_last_hour:
+      friendly_name: Any motion detected in last hour
+      value_template: >
+        {{ is_state("binary_sensor.motion_detected", "on") }}
+      delay_off: "01:00:00"
+
+    someone_in_the_house_in_last_hour:
+      friendly_name: Someone in the house in the last hour
+      value_template: >
+        {{ is_state("binary_sensor.motion_detected_in_last_hour", "on") }}
+      delay_off: "01:00:00"
+
+    activity_in_livingroom:
+      friendly_name: Activity in the living room
+      value_template: >
+        {{ is_state("binary_sensor.motion_livingroom_occupancy", "on")
+            or is_state("media_player.lg_webos_smart_tv", "on")
+            or is_state("binary_sensor.contact_livingroom_cabinet_contact", "on") }}
+      delay_off: "00:03:00"
+
+    activity_in_kitchen:
+      friendly_name: Activity in the kitchen
+      value_template: >
+        {{ is_state("binary_sensor.motion_livingroom_occupancy", "on") }}
+      delay_off: "00:01:00"
+
+    activity_in_office:
+      friendly_name: Activity in the office
+      value_template: >
+        {{ is_state("media_player.wohnzimmer_xbox", "on")
+            or is_state("binary_sensor.motion_office_occupancy", "on") 
+            or is_state("binary_sensor.office_pc_on", "on")
+            }}
+      delay_off: "00:01:00"
+
+    activity_in_bedroom:
+      friendly_name: Activity in the bedroom
+      value_template: >
+        {{ is_state("switch.bedroom_tv", "on")
+            or is_state("light.bedroom_lights", "on")
+           }}
+      delay_off: "00:01:00"
+
+    activity_on_dining_table:
+      friendly_name: Activity on the dining table
+      value_template: >
+        {{ is_state("sensor.Vibration_office_1_action", "on")
+           }}
+      delay_off: "00:05:00"
+
+    any_light_on:
+      friendly_name: Any light is on
+      value_template: >
+        {% set office_lights_on = is_state("light.office_lights", "on") %}
+        {% set bedroom_lights_on = is_state("light.bedroom_lights", "on") %}
+        {% set living_room_lights_on = is_state("light.livingroom_lights", "on") %}
+        {{ office_lights_on or bedroom_lights_on or living_room_lights_on }}
+
+    office_pc_on:
+      friendly_name: office pc is on
+      value_template: "{{ states('sensor.power_office_pc')|float > 50.0 }}"
+      delay_off: "00:01:00"
+
+    bedroom_tv_on:
+      friendly_name: bedroom tv is on
+      value_template: "{{ states('sensor.power_bedroom_tv')|float > 24.5 }}"
+      delay_off: "00:15:00"
+
+    livingroom_cabinet_on:
+      friendly_name: livingroom cabinet is on
+      value_template: "{{ states('sensor.power_livingroom_cabinet')|float > 10.0 }}"
+      delay_off: "00:01:00"
+
+
+    any_media_player_on:
+      friendly_name: Any media player is on
+      value_template: >
+        {% set office_media_player_on = is_state("media_player.lbxbox", "on") %}
+        {% set bedroom_media_player_on = is_state("binary_sensor.ping_bedroom_tv", "on") %}
+        {% set living_room_media_player_on = is_state("media_player.lg_webos_tv_a4ab", "on") %}
+        {{ office_media_player_on or bedroom_media_player_on or living_room_media_player_on }}
+
+    any_switch_on:
+      friendly_name: Any switch is on
+      value_template: >
+        {% set sw1 = is_state("", "on") %}
+        {% set sw2 = is_state("", "on") %}
+        {% set sw3 = is_state("", "on") %}
+        {% set sw4 = is_state("", "on") %}
+        {{ sw1 or sw2 or sw3 or sw4 }}
+
+    anything_on:
+      friendly_name: Anything is on
+      value_template: >
+        {% set light_on = is_state("binary_sensor.any_light_on", "on") %}
+        {% set media_player_on = is_state("binary_sensor.any_media_player_on", "on") %}
+        {{ light_on or media_player_on }}
+  
+    no_one_home:
+      friendly_name: No one is home
+      value_template: >
+        {{ not is_state("person.leroy", "home")
+            and not is_state("person.USER2", "home") 
+            and not is_state("media_player.lbxbox", "on")}}
+
+- platform: workday
+  country: CH
+  workdays: [mon, tue, wed, thu, fri]
+  excludes: [sat, sun]
+

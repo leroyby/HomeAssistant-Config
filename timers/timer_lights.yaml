@@ -1,20 +1,20 @@
-######################################################################################################REDACTED
-# @LeroybyREDACTED
-# Original Repo : https://github.com/leroyby/Homeassistant-ConfigREDACTED
-# Timer LightsREDACTED
-######################################################################################################REDACTED
-REDACTED
-  office_lights_manual:REDACTED
-    name: Office Lights Manual controlREDACTED
-    duration: '00:30:00'REDACTED
-    icon: mdi:timer-outlineREDACTED
-REDACTED
-  livingroom_lights_manual:REDACTED
-    name: Livingroom Lights Manual controlREDACTED
-    duration: '00:30:00'REDACTED
-    icon: mdi:timer-outlineREDACTED
-REDACTED
-  livingroom_lights_morning:REDACTED
-    name: Livingroom Lights MorningREDACTED
-    duration: '00:15:00'REDACTED
-    icon: mdi:timer-outlineREDACTED
+######################################################################################################
+# @Leroyby
+# Original Repo : https://github.com/leroyby/Homeassistant-Config
+# Timer Lights
+######################################################################################################
+
+  office_lights_manual:
+    name: Office Lights Manual control
+    duration: '00:30:00'
+    icon: mdi:timer-outline
+
+  livingroom_lights_manual:
+    name: Livingroom Lights Manual control
+    duration: '00:30:00'
+    icon: mdi:timer-outline
+
+  livingroom_lights_morning:
+    name: Livingroom Lights Morning
+    duration: '00:15:00'
+    icon: mdi:timer-outline

@@ -1,40 +1,40 @@
-######################################################################################################REDACTED
-# @LeroybyREDACTED
-# Original Repo : https://github.com/Leroyby/Homeassistant-ConfigREDACTED
-# Automations Mediaplayer BedroomREDACTED
-######################################################################################################REDACTED
-REDACTED
-- alias: Media_Player start timer TV BedroomREDACTED
-  trigger:REDACTED
-    platform: stateREDACTED
-    entity_id: binary_sensor.bedroom_tv_onREDACTED
-    to: 'off'REDACTED
-  condition: REDACTED
-  action:REDACTED
-  - service: timer.startREDACTED
-    target:REDACTED
-      entity_id: timer.bedroom_tvREDACTED
-REDACTED
-- alias: "Timerstop tv bedroom"REDACTED
-  id: "Timerstop"REDACTED
-  trigger:REDACTED
-  - platform: eventREDACTED
-    event_type: timer.finishedREDACTED
-    event_data:REDACTED
-      entity_id: timer.bedroom_tvREDACTED
-  action:REDACTED
-  - service: switch.turn_offREDACTED
-    target:REDACTED
-      entity_id: REDACTED
-      - switch.bedroom_tvREDACTED
-REDACTED
-- alias: Media_Player restart timer TV LivingroomREDACTED
-  trigger:REDACTED
-    platform: stateREDACTED
-    entity_id: binary_sensor.bedroom_tv_onREDACTED
-    to: 'on'REDACTED
-  condition: REDACTED
-  action:REDACTED
-  - service: timer.cancelREDACTED
-    target:REDACTED
+######################################################################################################
+# @Leroyby
+# Original Repo : https://github.com/Leroyby/Homeassistant-Config
+# Automations Mediaplayer Bedroom
+######################################################################################################
+
+- alias: Media_Player start timer TV Bedroom
+  trigger:
+    platform: state
+    entity_id: binary_sensor.bedroom_tv_on
+    to: 'off'
+  condition: 
+  action:
+  - service: timer.start
+    target:
+      entity_id: timer.bedroom_tv
+
+- alias: "Timerstop tv bedroom"
+  id: "Timerstop"
+  trigger:
+  - platform: event
+    event_type: timer.finished
+    event_data:
+      entity_id: timer.bedroom_tv
+  action:
+  - service: switch.turn_off
+    target:
+      entity_id: 
+      - switch.bedroom_tv
+
+- alias: Media_Player restart timer TV Livingroom
+  trigger:
+    platform: state
+    entity_id: binary_sensor.bedroom_tv_on
+    to: 'on'
+  condition: 
+  action:
+  - service: timer.cancel
+    target:
       entity_id: timer.bedroom_tv

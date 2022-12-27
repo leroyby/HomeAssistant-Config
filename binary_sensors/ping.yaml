@@ -1,67 +1,67 @@
-######################################################################################################REDACTED
-# @LeroybyREDACTED
-# Original Repo : https://github.com/Leroyby/Homeassistant-ConfigREDACTED
-# binary sensors pingREDACTED
-######################################################################################################REDACTED
-- platform: pingREDACTED
-  host: 192.168.178.1REDACTED
-  name: "ping modem"REDACTED
-  count: 2REDACTED
-  scan_interval: 30REDACTED
-REDACTED
-- platform: pingREDACTED
-  host: 1.1.1.1REDACTED
-  name: "ping cloudflare"REDACTED
-  count: 2REDACTED
-  scan_interval: 30REDACTED
-REDACTED
-- platform: pingREDACTED
-  host: 8.8.8.8REDACTED
-  name: "ping google"REDACTED
-  count: 2REDACTED
-  scan_interval: 30REDACTED
-REDACTED
-- platform: pingREDACTED
+######################################################################################################
+# @Leroyby
+# Original Repo : https://github.com/Leroyby/Homeassistant-Config
+# binary sensors ping
+######################################################################################################
+- platform: ping
+  host: 192.168.178.1
+  name: "ping modem"
+  count: 2
+  scan_interval: 30
+
+- platform: ping
+  host: 1.1.1.1
+  name: "ping cloudflare"
+  count: 2
+  scan_interval: 30
+
+- platform: ping
+  host: 8.8.8.8
+  name: "ping google"
+  count: 2
+  scan_interval: 30
+
+- platform: ping
   host: REDACTED
-  name: "ping my website"REDACTED
-  count: 2REDACTED
-  scan_interval: 30REDACTED
-REDACTED
-- platform: pingREDACTED
-  host: 192.168.178.1REDACTED
-  name: "ping modem"REDACTED
-  count: 2REDACTED
-  scan_interval: 30REDACTED
-REDACTED
-- platform: pingREDACTED
-  host: 192.168.178.1REDACTED
-  name: "ping router"REDACTED
-  count: 2REDACTED
-  scan_interval: 30REDACTED
-REDACTED
-- platform: pingREDACTED
-  host: 192.168.178.15REDACTED
-  name: "ping switch"REDACTED
-  count: 2REDACTED
-  scan_interval: 30REDACTED
-REDACTED
-- platform: pingREDACTED
-  host: 192.168.178.16REDACTED
-  name: "ping ap"REDACTED
-  count: 2REDACTED
-  scan_interval: 30REDACTED
-REDACTED
-- platform: pingREDACTED
-  host: 192.168.178.101REDACTED
-  name: "ping livingroom tv"REDACTED
-  count: 2REDACTED
-  scan_interval: 60REDACTED
-REDACTED
-- platform: pingREDACTED
-  host: 192.168.178.102REDACTED
-  name: "ping bedroom tv"REDACTED
-  count: 2REDACTED
-  scan_interval: 60REDACTED
-REDACTED
-REDACTED
-REDACTED
+  name: "ping my website"
+  count: 2
+  scan_interval: 30
+
+- platform: ping
+  host: 192.168.178.1
+  name: "ping modem"
+  count: 2
+  scan_interval: 30
+
+- platform: ping
+  host: 192.168.178.1
+  name: "ping router"
+  count: 2
+  scan_interval: 30
+
+- platform: ping
+  host: 192.168.178.REDACTED
+  name: "ping switch"
+  count: 2
+  scan_interval: 30
+
+- platform: ping
+  host: 192.168.178.16
+  name: "ping ap"
+  count: 2
+  scan_interval: 30
+
+- platform: ping
+  host: 192.168.178.101
+  name: "ping livingroom tv"
+  count: 2
+  scan_interval: 60
+
+- platform: ping
+  host: 192.168.178.102
+  name: "ping bedroom tv"
+  count: 2
+  scan_interval: 60
+
+
+

@@ -1,9 +1,9 @@
-######################################################################################################REDACTED
-# @LeroybyREDACTED
-# Original Repo : https://github.com/Leroyby/Homeassistant-ConfigREDACTED
-# Input Date and TimesREDACTED
-######################################################################################################REDACTED
-alarm_clock:REDACTED
-  name: Alarm clockREDACTED
-  has_date: falseREDACTED
-  has_time: trueREDACTED
+######################################################################################################
+# @Leroyby
+# Original Repo : https://github.com/Leroyby/Homeassistant-Config
+# Input Date and Times
+######################################################################################################
+alarm_clock:
+  name: Alarm clock
+  has_date: false
+  has_time: true

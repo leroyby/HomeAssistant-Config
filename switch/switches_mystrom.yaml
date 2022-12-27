@@ -1,17 +1,17 @@
-######################################################################################################REDACTED
-# @LeroybyREDACTED
-# Original Repo : https://github.com/Leroyby/Homeassistant-ConfigREDACTED
-# Definition of myStrom Switches as switches (integration not working)REDACTED
-######################################################################################################REDACTED
-  - platform: mystromREDACTED
-    host: 192.168.178.21REDACTED
-    name: bedroom_tvREDACTED
-  - platform: mystromREDACTED
-    host: 192.168.178.22REDACTED
-    name: office_pcREDACTED
-  - platform: mystromREDACTED
-    host: 192.168.178.23REDACTED
-    name: office_xboxREDACTED
-  - platform: mystromREDACTED
-    host: 192.168.178.24REDACTED
+######################################################################################################
+# @Leroyby
+# Original Repo : https://github.com/Leroyby/Homeassistant-Config
+# Definition of myStrom Switches as switches (integration not working)
+######################################################################################################
+  - platform: mystrom
+    host: 192.168.178.REDACTED
+    name: bedroom_tv
+  - platform: mystrom
+    host: 192.168.178.REDACTED
+    name: office_pc
+  - platform: mystrom
+    host: 192.168.178.REDACTED
+    name: office_xbox
+  - platform: mystrom
+    host: 192.168.178.REDACTED
     name: kitchen

@@ -1,25 +1,25 @@
-######################################################################################################REDACTED
-# @LeroybyREDACTED
-# Original Repo : https://github.com/Leroyby/Homeassistant-ConfigREDACTED
-# Automations normal modeREDACTED
-######################################################################################################REDACTED
-- id: '1663445389361'REDACTED
-  alias: Mode normal onREDACTED
-  description: ''REDACTED
-  trigger:REDACTED
-  - platform: stateREDACTED
-    entity_id:REDACTED
-    - input_boolean.normal_modeREDACTED
-    to: 'on'REDACTED
-    from: 'off'REDACTED
-  condition: []REDACTED
-  action:REDACTED
-  - service: input_boolean.turn_offREDACTED
-    target:REDACTED
-      entity_id: REDACTED
-      - input_boolean.work_modeREDACTED
-      - input_boolean.gaming_modeREDACTED
-      - input_boolean.away_modeREDACTED
-      - input_boolean.night_modeREDACTED
-    metadata: {}REDACTED
+######################################################################################################
+# @Leroyby
+# Original Repo : https://github.com/Leroyby/Homeassistant-Config
+# Automations normal mode
+######################################################################################################
+- id: '1663445389361'
+  alias: Mode normal on
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - input_boolean.normal_mode
+    to: 'on'
+    from: 'off'
+  condition: []
+  action:
+  - service: input_boolean.turn_off
+    target:
+      entity_id: 
+      - input_boolean.work_mode
+      - input_boolean.gaming_mode
+      - input_boolean.away_mode
+      - input_boolean.night_mode
+    metadata: {}
   mode: single

@@ -1,25 +1,25 @@
-######################################################################################################REDACTED
-# @LeroybyREDACTED
-# Original Repo : https://github.com/Leroyby/Homeassistant-ConfigREDACTED
-# Input SelectsREDACTED
-######################################################################################################REDACTED
-sleep_mode:REDACTED
-  options:REDACTED
-    - total # everyone is sleepingREDACTED
-    - half # one person is awake and one person is sleepingREDACTED
-    - "off" # everyone is awakeREDACTED
-REDACTED
-last_script_living_room:REDACTED
-  options:REDACTED
-    - script.cozy_lights_living_roomREDACTED
-    - script.normal_lights_living_roomREDACTED
-REDACTED
-last_script_bedroom:REDACTED
-  options:REDACTED
-    - script.cozy_lights_bedroomREDACTED
-    - script.normal_lights_bedroomREDACTED
-REDACTED
-last_script_office:REDACTED
-  options:REDACTED
-    - script.work_lights_officeREDACTED
+######################################################################################################
+# @Leroyby
+# Original Repo : https://github.com/Leroyby/Homeassistant-Config
+# Input Selects
+######################################################################################################
+sleep_mode:
+  options:
+    - total # everyone is sleeping
+    - half # one person is awake and one person is sleeping
+    - "off" # everyone is awake
+
+last_script_living_room:
+  options:
+    - script.cozy_lights_living_room
+    - script.normal_lights_living_room
+
+last_script_bedroom:
+  options:
+    - script.cozy_lights_bedroom
+    - script.normal_lights_bedroom
+
+last_script_office:
+  options:
+    - script.work_lights_office
     - script.normal_lights_office

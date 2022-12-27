@@ -1,62 +1,62 @@
-######################################################################################################REDACTED
-# @LeroybyREDACTED
-# Original Repo : https://github.com/Leroyby/Homeassistant-ConfigREDACTED
-# Automation Climate REDACTED
-# https://pelaxa.com/blog/2022/04/10/automating-your-home-climate-control-with-home-assistant/REDACTED
-######################################################################################################REDACTED
-REDACTED
-## BedroomREDACTED
-- alias: shutdown heatingREDACTED
-  trigger:REDACTED
-    - platform: numeric_stateREDACTED
+######################################################################################################
+# @Leroyby
+# Original Repo : https://github.com/Leroyby/Homeassistant-Config
+# Automation Climate 
+# https://pelaxa.com/blog/2022/04/10/automating-your-home-climate-control-with-home-assistant/
+######################################################################################################
+
+## Bedroom
+- alias: shutdown heating
+  trigger:
+    - platform: numeric_state
       entity_id: REDACTED
-      above: '20'REDACTED
-      for: '24:00:00'REDACTED
-  condition: []REDACTED
-  action:REDACTED
-    - service: climate.set_hvac_modeREDACTED
-      target:REDACTED
-        entity_id: climate.bedroom_thermostatREDACTED
-      data:REDACTED
-        hvac_mode: "off" REDACTED
-REDACTED
-- alias: start heatingREDACTED
-  trigger:REDACTED
-    - platform: numeric_stateREDACTED
+      above: '20'
+      for: '24:00:00'
+  condition: []
+  action:
+    - service: climate.set_hvac_mode
+      target:
+        entity_id: climate.bedroom_thermostat
+      data:
+        hvac_mode: "off" 
+
+- alias: start heating
+  trigger:
+    - platform: numeric_state
       entity_id: REDACTED
-      below: '20'REDACTED
-      for: '24:00:00'REDACTED
-  condition: []REDACTED
-  action:REDACTED
-    - service: climate.set_hvac_modeREDACTED
-      target:REDACTED
-        entity_id: climate.bedroom_thermostatREDACTED
-      data:REDACTED
-        hvac_mode: REDACTED
-REDACTED
-- alias: shutdown heating window openREDACTED
-  trigger:REDACTED
-    - platform: stateREDACTED
-      entity_id: binary_sensor.contact_bedroom_window_contactREDACTED
-      to: "on"REDACTED
-  action:REDACTED
-    - service: climate.set_hvac_modeREDACTED
-      target:REDACTED
-        entity_id: climate.bedroom_thermostatREDACTED
-      data:REDACTED
-        hvac_mode: "off" REDACTED
-REDACTED
-- alias: reset heating window closedREDACTED
-  trigger:REDACTED
-    - platform: stateREDACTED
-      entity_id: binary_sensor.contact_bedroom_window_contactREDACTED
-      to: "off"REDACTED
-  condition: []REDACTED
-  action:REDACTED
-    - service: climate.set_hvac_modeREDACTED
-      target:REDACTED
-        entity_id: climate.bedroom_thermostatREDACTED
-      data:REDACTED
-        hvac_mode: "auto"        REDACTED
-REDACTED
-REDACTED
+      below: '20'
+      for: '24:00:00'
+  condition: []
+  action:
+    - service: climate.set_hvac_mode
+      target:
+        entity_id: climate.bedroom_thermostat
+      data:
+        hvac_mode: 
+
+- alias: shutdown heating window open
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.contact_bedroom_window_contact
+      to: "on"
+  action:
+    - service: climate.set_hvac_mode
+      target:
+        entity_id: climate.bedroom_thermostat
+      data:
+        hvac_mode: "off" 
+
+- alias: reset heating window closed
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.contact_bedroom_window_contact
+      to: "off"
+  condition: []
+  action:
+    - service: climate.set_hvac_mode
+      target:
+        entity_id: climate.bedroom_thermostat
+      data:
+        hvac_mode: "auto"        
+
+

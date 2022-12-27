@@ -1,27 +1,27 @@
-######################################################################################################REDACTED
-# @LeroybyREDACTED
-# Original Repo : https://github.com/Leroyby/Homeassistant-ConfigREDACTED
-# System Monitor HA Sensors REDACTED
-######################################################################################################REDACTED
-  - platform: systemmonitorREDACTED
-    resources:REDACTED
-      - type: memory_freeREDACTED
-      - type: disk_use_percentREDACTED
-        arg: "/"REDACTED
-      - type: memory_use_percentREDACTED
-      - type: network_inREDACTED
-        arg: eth0REDACTED
-      - type: network_outREDACTED
-        arg: eth0REDACTED
-      - type: processor_useREDACTED
-      - type: last_bootREDACTED
-REDACTED
-  #MariaDB Database SensorREDACTED
-  - platform: sqlREDACTED
-    db_url: !secret mariadb_urlREDACTED
-    scan_interval: 3600REDACTED
-    queries:REDACTED
-      - name: MariaDB Database SizeREDACTED
-        query: 'SELECT table_schema "homeassistant", Round(Sum(data_length + index_length) / POWER(1024,2), 1) "value" FROM information_schema.tables WHERE table_schema="homeassistant" GROUP BY table_schema;'REDACTED
-        column: "value"REDACTED
+######################################################################################################
+# @Leroyby
+# Original Repo : https://github.com/Leroyby/Homeassistant-Config
+# System Monitor HA Sensors 
+######################################################################################################
+  - platform: systemmonitor
+    resources:
+      - type: memory_free
+      - type: disk_use_percent
+        arg: "/"
+      - type: memory_use_percent
+      - type: network_in
+        arg: eth0
+      - type: network_out
+        arg: eth0
+      - type: processor_use
+      - type: last_boot
+
+  #MariaDB Database Sensor
+  - platform: sql
+    db_url: !secret mariadb_url
+    scan_interval: 3600
+    queries:
+      - name: MariaDB Database Size
+        query: 'SELECT table_schema "homeassistant", Round(Sum(data_length + index_length) / POWER(1024,2), 1) "value" FROM information_schema.tables WHERE table_schema="homeassistant" GROUP BY table_schema;'
+        column: "value"
         unit_of_measurement: MB

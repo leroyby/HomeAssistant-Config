@@ -1,28 +1,28 @@
-######################################################################################################REDACTED
-# @LeroybyREDACTED
-# Original Repo : https://github.com/Leroyby/Homeassistant-ConfigREDACTED
-# Input TextsREDACTED
-######################################################################################################REDACTED
-  bedroom_ikea_button:REDACTED
-    name: bedroom_ikea_buttonREDACTED
-    initial: bedroom_ikea_buttonREDACTED
-  remote_bedroom_action_text:REDACTED
-    name: Remote Bedroom action textREDACTED
-    initial: TextREDACTED
-REDACTED
-  remote_living_room_light_selection:REDACTED
-    name: Remote Living Room Light selectionREDACTED
-    initial: AllREDACTED
-REDACTED
-  light_to_switch:REDACTED
-    name: Light to switch for presence simultionREDACTED
-REDACTED
- ## CHORESREDACTED
- REDACTED
-# PlantsREDACTED
-  chore_water_plants:REDACTED
-    name: Water PlantsREDACTED
-    icon: mdi:watering-canREDACTED
-  chore_fertilize_plants:REDACTED
-    name: Fertilize PlantsREDACTED
+######################################################################################################
+# @Leroyby
+# Original Repo : https://github.com/Leroyby/Homeassistant-Config
+# Input Texts
+######################################################################################################
+  bedroom_ikea_button:
+    name: bedroom_ikea_button
+    initial: bedroom_ikea_button
+  remote_bedroom_action_text:
+    name: Remote Bedroom action text
+    initial: Text
+
+  remote_living_room_light_selection:
+    name: Remote Living Room Light selection
+    initial: All
+
+  light_to_switch:
+    name: Light to switch for presence simultion
+
+ ## CHORES
+ 
+# Plants
+  chore_water_plants:
+    name: Water Plants
+    icon: mdi:watering-can
+  chore_fertilize_plants:
+    name: Fertilize Plants
     icon: mdi:flower

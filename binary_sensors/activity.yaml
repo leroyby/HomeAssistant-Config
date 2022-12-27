@@ -1,14 +1,14 @@
-######################################################################################################REDACTED
-# @LeroybyREDACTED
-# Original Repo : https://github.com/Leroyby/Homeassistant-ConfigREDACTED
-# binary sensors activityREDACTED
-######################################################################################################REDACTED
-- platform: templateREDACTED
-  sensors:REDACTED
-    activity_in_livingroom_cabinet:REDACTED
-      friendly_name: Activity in the living room cabinetREDACTED
-      value_template: >REDACTED
-        {{ is_state("binary_sensor.motion_livingroom_cabinet_occupancy", "on")REDACTED
-            or is_state("binary_sensor.livingroom_cabinet_on", "on")REDACTED
-            }}REDACTED
+######################################################################################################
+# @Leroyby
+# Original Repo : https://github.com/Leroyby/Homeassistant-Config
+# binary sensors activity
+######################################################################################################
+- platform: template
+  sensors:
+    activity_in_livingroom_cabinet:
+      friendly_name: Activity in the living room cabinet
+      value_template: >
+        {{ is_state("binary_sensor.motion_livingroom_cabinet_occupancy", "on")
+            or is_state("binary_sensor.livingroom_cabinet_on", "on")
+            }}
       delay_off: "00:03:00"

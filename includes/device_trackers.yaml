@@ -1,9 +1,9 @@
-######################################################################################################REDACTED
-# @LeroybyREDACTED
-# Original Repo : https://github.com/Leroyby/Homeassistant-ConfigREDACTED
-# Device trackersREDACTED
-######################################################################################################REDACTED
-  - platform: pingREDACTED
-    hosts:REDACTED
-      a72_von_USER2_ping: 192.168.178.210REDACTED
-      iphone_von_leroy_ping: 192.168.178.211REDACTED
+######################################################################################################
+# @Leroyby
+# Original Repo : https://github.com/Leroyby/Homeassistant-Config
+# Device trackers
+######################################################################################################
+  - platform: ping
+    hosts:
+      a72_von_USER2_ping: 192.168.178.2REDACTED
+      iphone_von_leroy_ping: 192.168.178.2REDACTED

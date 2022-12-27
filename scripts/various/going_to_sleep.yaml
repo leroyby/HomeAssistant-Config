@@ -1,19 +1,19 @@
-######################################################################################################REDACTED
-# @LeroybyREDACTED
-# Original Repo : https://github.com/Leroyby/Homeassistant-ConfigREDACTED
-# Script Going to SleepREDACTED
-######################################################################################################REDACTED
-going_to_sleep:REDACTED
-  sequence:REDACTED
-    - service: logbook.logREDACTED
-      data_template:REDACTED
-        name: EVENTREDACTED
-        message: "Going to Sleep started"REDACTED
-    ##REDACTED
-    - service: input_select.select_optionREDACTED
-      target:REDACTED
-        entity_id: input_select.sleep_modeREDACTED
-      data:REDACTED
-        option: "total"REDACTED
-      REDACTED
+######################################################################################################
+# @Leroyby
+# Original Repo : https://github.com/Leroyby/Homeassistant-Config
+# Script Going to Sleep
+######################################################################################################
+going_to_sleep:
+  sequence:
+    - service: logbook.log
+      data_template:
+        name: EVENT
+        message: "Going to Sleep started"
+    ##
+    - service: input_select.select_option
+      target:
+        entity_id: input_select.sleep_mode
+      data:
+        option: "total"
+      
        
