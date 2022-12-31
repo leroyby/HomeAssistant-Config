@@ -56,13 +56,6 @@
            }}
       delay_off: "00:01:00"
 
-    activity_on_dining_table:
-      friendly_name: Activity on the dining table
-      value_template: >
-        {{ is_state("sensor.Vibration_office_1_action", "on")
-           }}
-      delay_off: "00:05:00"
-
     any_light_on:
       friendly_name: Any light is on
       value_template: >
@@ -74,6 +67,11 @@
     office_pc_on:
       friendly_name: office pc is on
       value_template: "{{ states('sensor.power_office_pc')|float > 50.0 }}"
+      delay_off: "00:01:00"
+
+    livingroom_icemachine_on:
+      friendly_name: office pc is on
+      value_template: "{{ states('sensor.power_livingroom_cabinet')|float > 50.0 }}"
       delay_off: "00:01:00"
 
     bedroom_tv_on:

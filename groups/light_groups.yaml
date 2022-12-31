@@ -36,15 +36,13 @@
     - light.livingroom_sofa
     - light.livingroom_table
     - light.livingroom_tv
-    - light.light_tree
 
 - platform: group
   name: Living_room_motion_lights
   unique_id: 2210162058
   entities:
     - light.livingroom_sofa
-    - light.livingroom_table
-    - light.light_tree   
+    - light.livingroom_table 
 
 - platform: group
   name: toilet_Lights 

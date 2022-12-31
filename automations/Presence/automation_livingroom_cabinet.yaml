@@ -7,7 +7,7 @@
 - alias: livingroom cabinet on
   trigger:
     platform: state
-    entity_id: binary_sensor.contact_livingroom_cabinet_contact
+    entity_id: binary_sensor.activity_in_livingroom_cabinet
     to: 'on'
   condition: []
   action:
@@ -18,7 +18,7 @@
 - alias: livingroom cabinet off
   trigger:
     platform: state
-    entity_id: binary_sensor.contact_livingroom_cabinet_contact
+    entity_id: binary_sensor.activity_in_livingroom_cabinet
     to: 'off'
   condition: []
   action:

@@ -11,7 +11,7 @@
 
   office_xbox:
     name: Timer Office Xbox
-    duration: '00:05:00'
+    duration: '00:30:00'
     icon: mdi:timer-outline
 
   bedroom_tv:

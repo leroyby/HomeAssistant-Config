@@ -271,7 +271,7 @@ views:
       secondary: '💦 {{ states(''sensor.temperature_bedroom_2_humidity'') }}%, ⚖️ {{
         states(''sensor.temperature_bedroom_2_pressure'') }} hPa, 🔋 {{ states(''sensor.temperature_bedroom_2_battery'')
         }}% '
-      state: '{{ states("sensor.temperature_bedroom_2_temperature") }} °C'
+      state: '{{ states("sensor.temperature_bedroom_average") }} °C'
       type: custom:template-entity-row
     - entity: sensor.temperature_office_temperature
       name: Office
@@ -564,6 +564,9 @@ views:
   - entities:
     - entity: binary_sensor.bedroom_tv_on
     - entity: sensor.power_bedroom_tv
+    - entity: sensor.power_livingroom_cabinet
+    - entity: sensor.power_office_xbox
+    - entity: binary_sensor.activity_in_livingroom_cabinet
     show_header_toggle: false
     title: Test apps
     type: entities

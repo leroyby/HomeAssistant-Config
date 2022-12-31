@@ -25,7 +25,7 @@
 
   - platform: rest
     name: "Power Office Xbox"
-    resource: http://192.168.178.23/report
+    resource: http://192.168.178.24/report
     method: GET
     unit_of_measurement: W
     device_class: power
@@ -35,7 +35,7 @@
 
   - platform: rest
     name: "Power Livingroom Cabinet"
-    resource: http://192.168.178.24/report
+    resource: http://192.168.178.23/report
     method: GET
     unit_of_measurement: W
     device_class: power
