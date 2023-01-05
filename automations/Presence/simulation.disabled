@@ -1,0 +1,32 @@
+- alias: presence simulation light
+  trigger:
+    platform: state
+    entity_id: binary_sensor.no_one_home
+    to: 'on'
+  condition:
+  - condition: state
+    entity_id: sun.sun
+    state: "below_horizon"
+  repeat:
+    until:
+      condition: sun
+      after: sunrise
+  - service: input_text.set_value
+    target:
+      entity_id: input_text.current_random_light
+    data:
+      value: '{{ state_attr(''group.vacation_lights'',''entity_id'') | random }}'
+  - service: homeassistant.turn_on
+    data:
+      entity_id: '{{ states(''input_text.current_random_light'') }}'
+  - delay:
+      minutes: '{{ range(5,59) | random | int }}'
+  - service: homeassistant.turn_off
+    data:
+      entity_id: '{{ states(''input_text.current_random_light'') }}'
+  - service: input_text.set_value
+    data:
+      entity_id: input_text.current_random_lightvalue: "None"
+
+
+Source: https://www.slacker-labs.com/blog/2021/07/31/randomized-lighting-in-home-assistant

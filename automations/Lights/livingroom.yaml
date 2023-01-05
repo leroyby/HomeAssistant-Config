@@ -30,6 +30,7 @@
     target:
       entity_id: 
       - light.livingroom_motion_lights
+      - light.light_tree
 
 - alias: Light Livingroom on after Motion
   trigger:
@@ -48,6 +49,7 @@
     target:
       entity_id: 
       - light.livingroom_motion_lights
+      - light.light_tree
 
 
 #- alias: Light Livingroom Tree on

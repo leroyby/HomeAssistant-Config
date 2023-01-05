@@ -21,7 +21,24 @@
     target:
       entity_id: input_boolean.vacuum_ran
 
-# Reset Vacum ran every evening
+- alias: Vacuum start away safety run
+  trigger:
+    platform: time
+    at: "11:00:00"
+  condition:
+  - condition: state
+    entity_id: input_boolean.vacuum_ran
+    state: "off"
+  - condition: state
+    entity_id: binary_sensor.no_one_home
+    to: 'on'
+  action:
+  - service: script.vacuum_start
+  - service: input_boolean.turn_on
+    target:
+      entity_id: input_boolean.vacuum_ran
+
+# Reset Vacum reset binary switch "ran" every evening
 - alias: Vacuum reset vacuum_ran sensor
   trigger:
     - platform: time

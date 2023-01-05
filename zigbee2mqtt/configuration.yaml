@@ -17,8 +17,6 @@ devices:
     legacy: false
   '0x9035eafffe2b5f86':
     friendly_name: remote_livingroom
-  '0x086bd7fffe3c5fde':
-    friendly_name: tv_button_switch_livingroom
   '0x086bd7fffe51879e':
     friendly_name: TV
   '0x00158d00086521c7':
@@ -56,6 +54,16 @@ devices:
     friendly_name: ' motion_livingroom'
   '0x003c84fffe282720':
     friendly_name: button_bedroom
+  '0x086bd7fffe3c5fde':
+    friendly_name: Tv _button_switch_livingroom
+  '0x00158d0008cec378':
+    friendly_name: temperature_hall
+  '0x94deb8fffe60c570':
+    friendly_name: livingroom_sofa
+  '0x94deb8fffe6d75e8':
+    friendly_name: livingroom_table
+  '0x0017880109230122':
+    friendly_name: livingroom_tv
 advanced:
   log_level: info
   log_syslog:
@@ -89,4 +97,4 @@ advanced:
     - 249
 shell_command:
   pushupdates_github: /bin/bash /root/addons/Tools/pushupdates.sh
-permit_join: false
+permit_join: true

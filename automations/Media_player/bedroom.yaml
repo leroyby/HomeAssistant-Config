@@ -28,7 +28,7 @@
       entity_id: 
       - switch.bedroom_tv
 
-- alias: Media_Player restart timer TV Livingroom
+- alias: Media_Player restart timer TV bedroom
   trigger:
     platform: state
     entity_id: binary_sensor.bedroom_tv_on

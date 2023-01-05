@@ -50,21 +50,5 @@ recorder:
   db_url: !secret mariadb_url
   purge_keep_days: 30
   commit_interval: 20
-influxdb:  
-  api_version: 2
-  ssl: false
-  host: !secret influxdb_ip
-  port: 8086
-#  database: homeassistant
-#  username: !secret influxdb_user
-#  password: !secret influxdb_pass
-  token: !secret influxdb_token
-  organization: !secret influxdb_org
-  bucket: Home Assistant
-  precision: s
-  max_retries: 3
-  default_measurement: state
-  tags:
-    source: HA  
 
 

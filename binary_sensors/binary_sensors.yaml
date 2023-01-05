@@ -25,37 +25,6 @@
         {{ is_state("binary_sensor.motion_detected_in_last_hour", "on") }}
       delay_off: "01:00:00"
 
-    activity_in_livingroom:
-      friendly_name: Activity in the living room
-      value_template: >
-        {{ is_state("binary_sensor.motion_livingroom_occupancy", "on")
-            or is_state("media_player.lg_webos_smart_tv", "on")
-            or is_state("binary_sensor.contact_livingroom_cabinet_contact", "on") }}
-      delay_off: "00:03:00"
-
-    activity_in_kitchen:
-      friendly_name: Activity in the kitchen
-      value_template: >
-        {{ is_state("binary_sensor.motion_livingroom_occupancy", "on") }}
-      delay_off: "00:01:00"
-
-    activity_in_office:
-      friendly_name: Activity in the office
-      value_template: >
-        {{ is_state("media_player.wohnzimmer_xbox", "on")
-            or is_state("binary_sensor.motion_office_occupancy", "on") 
-            or is_state("binary_sensor.office_pc_on", "on")
-            }}
-      delay_off: "00:01:00"
-
-    activity_in_bedroom:
-      friendly_name: Activity in the bedroom
-      value_template: >
-        {{ is_state("switch.bedroom_tv", "on")
-            or is_state("light.bedroom_lights", "on")
-           }}
-      delay_off: "00:01:00"
-
     any_light_on:
       friendly_name: Any light is on
       value_template: >
@@ -108,13 +77,6 @@
         {% set light_on = is_state("binary_sensor.any_light_on", "on") %}
         {% set media_player_on = is_state("binary_sensor.any_media_player_on", "on") %}
         {{ light_on or media_player_on }}
-  
-    no_one_home:
-      friendly_name: No one is home
-      value_template: >
-        {{ not is_state("person.leroy", "home")
-            and not is_state("person.USER2", "home") 
-            and not is_state("media_player.lbxbox", "on")}}
 
 - platform: workday
   country: CH

@@ -14,8 +14,8 @@
     name: Remote Living Room Light selection
     initial: All
 
-  light_to_switch:
-    name: Light to switch for presence simultion
+  current_random_light:
+    name: Light to switch for presence simulation
 
  ## CHORES
  

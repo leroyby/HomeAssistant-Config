@@ -19,10 +19,10 @@ views:
   cards:
   - entities:
     - entities:
-      - light.livingroom_tv
       - light.livingroom_sofa
       - light.livingroom_table
       - light.tradfri_bulb_4
+      - light.light_tree
       - entity: script.living_room_cozy_lights
         icon_height: 20px
         name: Cozy lights
@@ -196,7 +196,7 @@ views:
           group: false
           hour24: true
           line_width: 6
-          points_per_hour: 1
+          points_per_hour: 2
           show:
             extrema: false
             fill: fade
@@ -223,41 +223,14 @@ views:
         type: horizontal-stack
       type: vertical-stack
     type: custom:swipe-card
-  - entity: light.light_tree
-    show_icon: true
-    show_name: true
-    tap_action:
-      action: toggle
-    type: button
   icon: mdi:home
   path: default_view
   theme: Backend-selected
   title: Home
 - badges: []
   cards:
-  - content: "\n<table width=\"100%\">\n  <tr>\n    <th>Area</th>\n    <th>Temperature</th>\n\
-      \    <th>Humidity</th>\n  </tr>\n  <tr>\n    <td>Outdoor</td>\n    <td>{{ states('sensor.thermal_comfort_outside_simmerzone')\
-      \ | regex_replace(find='_', replace=' ') | title }}</td>\n    <td>{{ states('sensor.thermal_comfort_outside_perception')\
-      \ | regex_replace(find='_', replace=' ') | title }}</td>\n  </tr>\n  <tr>\n\
-      \    <td>Indoor Average</td>\n    <td>{{ states('sensor.thermal_comfort_indoor_average_simmerzone')\
-      \ | regex_replace(find='_', replace=' ') | title }}</td>\n    <td>{{ states('sensor.thermal_comfort_indoor_average_perception')\
-      \ | regex_replace(find='_', replace=' ') | title }}</td>\n  </tr>\n  <tr>\n\
-      \    <td>Bedroom</td>\n    <td>{{ states('sensor.thermal_comfort_bedroom_simmerzone')\
-      \ | regex_replace(find='_', replace=' ') | title }}</td>\n    <td>{{ states('sensor.thermal_comfort_bedroom_perception')\
-      \ | regex_replace(find='_', replace=' ') | title }}</td>\n  </tr>\n  <tr>\n\
-      \    <td>Office</td>\n    <td>{{ states('sensor.thermal_comfort_office_simmerzone')\
-      \ | regex_replace(find='_', replace=' ') | title }}</td>\n    <td>{{ states('sensor.thermal_comfort_office_perception')\
-      \ | regex_replace(find='_', replace=' ') | title }}</td>\n  </tr>\n  <tr>\n\
-      \    <td>Living Room</td>\n    <td>{{ states('sensor.thermal_comfort_living_room_simmerzone')\
-      \ | regex_replace(find='_', replace=' ') | title }}</td>\n    <td>{{ states('sensor.thermal_comfort_living_room_perception')\
-      \ | regex_replace(find='_', replace=' ') | title }}</td>\n  </tr>\n  <tr>\n\
-      \    <td>Bathroom</td>\n    <td>{{ states('sensor.thermal_comfort_bathroom_simmerzone')\
-      \ | regex_replace(find='_', replace=' ') | title }}</td>\n    <td>{{ states('sensor.thermal_comfort_bathroom_perception')\
-      \ | regex_replace(find='_', replace=' ') | title }}</td>\n  </tr>\n  <tr>\n\
-      \    <td>Toilet</td>\n    <td>{{ states('sensor.thermal_comfort_toilet_simmerzone')\
-      \ | regex_replace(find='_', replace=' ') | title }}</td>\n    <td>{{ states('sensor.thermal_comfort_toilet_perception')\
-      \ | regex_replace(find='_', replace=' ') | title }}</td>\n  </tr>\n</table>\n"
-    type: markdown
+  - entity: climate.bedroom_thermostat
+    type: thermostat
   - entities:
     - entity: sensor.temperature_livingroom_temperature
       name: Living room
@@ -292,8 +265,160 @@ views:
         }}% '
       state: '{{ states("sensor.temperature_bathroom_temperature") }} °C'
       type: custom:template-entity-row
+    - entity: sensor.temperature_bathroom_temperature
+      name: Hall
+      secondary: '💦 {{ states(''sensor.temperature_hall_humidity'') }}%, ⚖️ {{ states(''sensor.temperature_hall_pressure'')
+        }} hPa, 🔋 {{ states(''sensor.temperature_hall_battery'') }}% '
+      state: '{{ states("sensor.temperature_hall_temperature") }} °C'
+      type: custom:template-entity-row
     title: Temperature sensors
     type: entities
+  - experimental:
+      color_threshold: true
+    graph_span: 1d
+    header:
+      colorize_states: true
+      show: true
+      show_states: true
+      standard_format: false
+      title: Humidity
+    now:
+      color: red
+      label: Now
+      show: true
+    series:
+    - entity: sensor.temperature_livingroom_humidity
+      group_by:
+        duration: 15m
+        func: last
+      name: Livingroom
+      show:
+        header_color_threshold: true
+      stroke_width: 3
+      type: line
+    - entity: sensor.temperature_office_humidity
+      group_by:
+        duration: 15m
+        func: last
+      name: Office
+      show:
+        header_color_threshold: true
+      stroke_width: 3
+      type: line
+    - entity: sensor.temperature_bedroom_2_humidity
+      group_by:
+        duration: 15m
+        func: last
+      name: Bedroom
+      show:
+        header_color_threshold: true
+      stroke_width: 3
+      type: line
+    - entity: sensor.temperature_toilet_humidity
+      group_by:
+        duration: 15m
+        func: last
+      name: Toilet
+      show:
+        header_color_threshold: true
+      stroke_width: 3
+      type: line
+    - entity: sensor.temperature_bathroom_humidity
+      group_by:
+        duration: 15m
+        func: last
+      name: Bathroom
+      show:
+        header_color_threshold: true
+      stroke_width: 3
+      type: line
+    - entity: sensor.temperature_hall_humidity
+      group_by:
+        duration: 15m
+        func: last
+      name: Hall
+      show:
+        header_color_threshold: true
+      stroke_width: 3
+      type: line
+    show:
+      last_updated: true
+    span:
+      offset: -30min
+      start: day
+    type: custom:apexcharts-card
+  - content: "\n<table width=\"100%\">\n  <tr>\n    <th>Area</th>\n    <th>Temperature</th>\n\
+      \    <th>Humidity</th>\n  </tr>\n  <tr>\n    <td>Outdoor</td>\n    <td>{{ states('sensor.thermal_comfort_outside_simmerzone')\
+      \ | regex_replace(find='_', replace=' ') | title }}</td>\n    <td>{{ states('sensor.thermal_comfort_outside_perception')\
+      \ | regex_replace(find='_', replace=' ') | title }}</td>\n  </tr>\n  <tr>\n\
+      \    <td>Indoor Average</td>\n    <td>{{ states('sensor.thermal_comfort_indoor_average_simmerzone')\
+      \ | regex_replace(find='_', replace=' ') | title }}</td>\n    <td>{{ states('sensor.thermal_comfort_indoor_average_perception')\
+      \ | regex_replace(find='_', replace=' ') | title }}</td>\n  </tr>\n  <tr>\n\
+      \    <td>Bedroom</td>\n    <td>{{ states('sensor.thermal_comfort_bedroom_simmerzone')\
+      \ | regex_replace(find='_', replace=' ') | title }}</td>\n    <td>{{ states('sensor.thermal_comfort_bedroom_perception')\
+      \ | regex_replace(find='_', replace=' ') | title }}</td>\n  </tr>\n  <tr>\n\
+      \    <td>Office</td>\n    <td>{{ states('sensor.thermal_comfort_office_simmerzone')\
+      \ | regex_replace(find='_', replace=' ') | title }}</td>\n    <td>{{ states('sensor.thermal_comfort_office_perception')\
+      \ | regex_replace(find='_', replace=' ') | title }}</td>\n  </tr>\n  <tr>\n\
+      \    <td>Living Room</td>\n    <td>{{ states('sensor.thermal_comfort_living_room_simmerzone')\
+      \ | regex_replace(find='_', replace=' ') | title }}</td>\n    <td>{{ states('sensor.thermal_comfort_living_room_perception')\
+      \ | regex_replace(find='_', replace=' ') | title }}</td>\n  </tr>\n  <tr>\n\
+      \    <td>Bathroom</td>\n    <td>{{ states('sensor.thermal_comfort_bathroom_simmerzone')\
+      \ | regex_replace(find='_', replace=' ') | title }}</td>\n    <td>{{ states('sensor.thermal_comfort_bathroom_perception')\
+      \ | regex_replace(find='_', replace=' ') | title }}</td>\n  </tr>\n  <tr>\n\
+      \    <td>Toilet</td>\n    <td>{{ states('sensor.thermal_comfort_toilet_simmerzone')\
+      \ | regex_replace(find='_', replace=' ') | title }}</td>\n    <td>{{ states('sensor.thermal_comfort_toilet_perception')\
+      \ | regex_replace(find='_', replace=' ') | title }}</td>\n  </tr>\n  <tr>\n\
+      \    <td>Hall</td>\n    <td>{{ states('sensor.thermal_comfort_hall_simmerzone')\
+      \ | regex_replace(find='_', replace=' ') | title }}</td>\n    <td>{{ states('sensor.thermal_comfort_hall_perception')\
+      \ | regex_replace(find='_', replace=' ') | title }}</td>\n  </tr>\n</table>\n"
+    type: markdown
+  - experimental:
+      color_threshold: true
+    graph_span: 12h
+    header:
+      colorize_states: true
+      show: true
+      show_states: true
+      standard_format: false
+      title: Humidity
+    now:
+      color: red
+      label: Now
+      show: true
+    series:
+    - entity: sensor.temperature_livingroom_temperature
+      group_by:
+        duration: 60m
+        func: last
+      name: Livingroom
+      show:
+        header_color_threshold: true
+      stroke_width: 3
+      type: line
+    - entity: sensor.temperature_office_temperature
+      group_by:
+        duration: 60m
+        func: last
+      name: Office
+      show:
+        header_color_threshold: true
+      stroke_width: 3
+      type: line
+    - entity: sensor.temperature_bedroom_2_temperature
+      group_by:
+        duration: 60m
+        func: last
+      name: Bedroom
+      show:
+        header_color_threshold: true
+      stroke_width: 3
+      type: line
+    show:
+      last_updated: true
+    span:
+      start: day
+    type: custom:apexcharts-card
   icon: mdi:home-thermometer
   path: climate
   theme: Backend-selected
@@ -562,11 +687,13 @@ views:
 - badges: []
   cards:
   - entities:
-    - entity: binary_sensor.bedroom_tv_on
+    - entity: lock.frontdoor
     - entity: sensor.power_bedroom_tv
     - entity: sensor.power_livingroom_cabinet
     - entity: sensor.power_office_xbox
     - entity: binary_sensor.activity_in_livingroom_cabinet
+    - entity: binary_sensor.ping_livingroom_tv
+    - entity: binary_sensor.ping_google
     show_header_toggle: false
     title: Test apps
     type: entities
@@ -773,3 +900,35 @@ views:
   path: mediaplayer
   theme: Backend-selected
   title: Mediaplayer
+- badges: []
+  cards:
+  - chart_type: radialBar
+    header:
+      colorize_states: true
+      show: true
+      show_states: true
+      title: Temperature Sensors Battery Levels
+    series:
+    - entity: sensor.temperature_bedroom_2_battery
+      name: Bedroom
+    - entity: sensor.temperature_office_battery
+      name: Office
+    - entity: sensor.temperature_livingroom_battery
+      name: Livingroom
+    type: custom:apexcharts-card
+  - chart_type: radialBar
+    header:
+      colorize_states: true
+      show: true
+      show_states: true
+      title: Contact Sensor Battery Levels
+    series:
+    - entity: sensor.contact_bedroom_window_battery
+      name: Bedroom
+    - entity: sensor.contact_livingroom_cabinet_battery
+      name: Livingroom Cabinet
+    type: custom:apexcharts-card
+  icon: mdi:battery-50
+  path: battery
+  theme: Backend-selected
+  title: Battery
