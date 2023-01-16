@@ -16,21 +16,19 @@
     activity_in_bedroom:
       friendly_name: Activity in the bedroom
       value_template: >
-        {{ is_state("switch.bedroom_tv", "on")
-            or is_state("light.bedroom_lights", "on")
-           }}
+        {{ is_state("binary_sensor.bedroom_tv_on", "on") }}
       delay_off: "00:01:00"
+
     activity_on_dining_table:
       friendly_name: Activity on the dining table
       value_template: >
-        {{ is_state("sensor.Vibration_office_1_action", "on")
-           }}
+        {{ is_state("sensor.Vibration_office_1_action", "on") }}
       delay_off: "00:05:00"
 
     activity_in_office:
       friendly_name: Activity in the office
       value_template: >
-        {{ is_state("media_player.wohnzimmer_xbox", "on")
+        {{ is_state("binary_sensor.xbox_on","on")
             or is_state("binary_sensor.motion_office_occupancy", "on") 
             or is_state("binary_sensor.office_pc_on", "on")
             }}
@@ -47,8 +45,7 @@
       friendly_name: Activity in the living room
       value_template: >
         {{ is_state("binary_sensor.motion_livingroom_occupancy", "on")
-            or is_state("media_player.lg_webos_smart_tv", "on")
-            or is_state("binary_sensor.contact_livingroom_cabinet_contact", "on") }}
+            or is_state("media_player.lg_webos_smart_tv", "on")}}
       delay_off: "00:03:00"
 
     activity_in_kitchen:
@@ -56,13 +53,14 @@
       value_template: >
         {{ is_state("binary_sensor.motion_livingroom_occupancy", "on") }}
       delay_off: "00:01:00"
+
     no_one_home:
       friendly_name: No one is home
       value_template: >
         {{ not is_state("person.leroy", "home")
             and not is_state("person.USER2", "home") 
             and not is_state("activity_in_hall", "on")
-            and not is_state("activity_in_office", "on")
-            and not is_state("activity_in_bedroom", "on")
+            and not is_state("binary_sensor.activity_in_office", "on")
+            and not is_state("binary_sensor.activity_in_bedroom", "on")
             and not is_state("activity_in_kitchen", "on")
             and not is_state("activity_in_livingroom", "on") }}      

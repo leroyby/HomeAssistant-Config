@@ -14,7 +14,6 @@
     target:
       entity_id: 
       - light.livingroom_tv   
-      - light.light_tree
 
 - alias: Light Livingroom off after Motion
   trigger:
@@ -30,7 +29,6 @@
     target:
       entity_id: 
       - light.livingroom_motion_lights
-      - light.light_tree
 
 - alias: Light Livingroom on after Motion
   trigger:
@@ -40,35 +38,9 @@
   condition:
   - condition: state
     entity_id: sun.sun
-    state: "below_horizon"
-  - condition: state
-    entity_id: binary_sensor.activity_in_livingroom
-    state: 'off'    
+    state: "below_horizon"  
   action:
   - service: light.turn_on
     target:
       entity_id: 
       - light.livingroom_motion_lights
-      - light.light_tree
-
-
-#- alias: Light Livingroom Tree on
-#  trigger:
-#    platform: time_pattern
-#    minutes: /8
-#  condition:
-#  - condition: state
-#    entity_id: sun.sun
-#    state: "below_horizon"
-#  - condition: state
-#    entity_id: binary_sensor.ping_livingroom_tv
-#    state: "off"
-#  - condition: state
-#    entity_id: binary_sensor.activity_in_livingroom
-#    state: "on"    
-#  action:
-#  - service: light.turn_on
-#    target:
-#      entity_id: 
-#      - light.light_tree
-

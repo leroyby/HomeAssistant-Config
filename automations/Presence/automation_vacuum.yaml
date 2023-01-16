@@ -13,7 +13,7 @@
     entity_id: input_boolean.vacuum_ran
     state: "off"
   - condition: time
-    after: "09:00:00"
+    after: "07:00:00"
     before: "20:00:00"  
   action:
   - service: script.vacuum_start
@@ -23,15 +23,15 @@
 
 - alias: Vacuum start away safety run
   trigger:
-    platform: time
-    at: "11:00:00"
+    - platform: time
+      at: "11:00:00"
   condition:
   - condition: state
     entity_id: input_boolean.vacuum_ran
     state: "off"
   - condition: state
     entity_id: binary_sensor.no_one_home
-    to: 'on'
+    state: 'on'
   action:
   - service: script.vacuum_start
   - service: input_boolean.turn_on

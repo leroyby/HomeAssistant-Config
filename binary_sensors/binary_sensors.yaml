@@ -35,7 +35,12 @@
 
     office_pc_on:
       friendly_name: office pc is on
-      value_template: "{{ states('sensor.power_office_pc')|float > 50.0 }}"
+      value_template: "{{ states('sensor.power_office_pc')|float > 25.0 }}"
+      delay_off: "00:01:00"
+
+    xbox_on:
+      friendly_name: office xbox is on
+      value_template: "{{ states('sensor.power_office_pc')|float > 1.0 }}"
       delay_off: "00:01:00"
 
     livingroom_icemachine_on:
@@ -57,7 +62,7 @@
     any_media_player_on:
       friendly_name: Any media player is on
       value_template: >
-        {% set office_media_player_on = is_state("media_player.lbxbox", "on") %}
+        {% set office_media_player_on = is_state("binary:_sensor.xbox_on", "on") %}
         {% set bedroom_media_player_on = is_state("binary_sensor.ping_bedroom_tv", "on") %}
         {% set living_room_media_player_on = is_state("media_player.lg_webos_tv_a4ab", "on") %}
         {{ office_media_player_on or bedroom_media_player_on or living_room_media_player_on }}

@@ -7,15 +7,17 @@
 - alias: Media_Player start timer TV Livingroom
   trigger:
     platform: state
-    entity_id: binary_sensor.ping_livingroom_tv
+    entity_id: binary_sensor.activity_in_livingroom
     to: 'off'
-  condition: 
+    for: 
+      hours: 1
+  condition: []
   action:
   - service: timer.start
     target:
       entity_id: timer.livingroom_tv
 
-- alias: "Timerstop tv livingroom"
+- alias: "Timerstop livingroom tv"
   id: "Timerstop"
   trigger:
   - platform: event

@@ -6,7 +6,7 @@
 - alias: media_player xbox trigger gaming mode
   trigger:
     platform: state
-    entity_id: media_player.wohnzimmer_xbox
+    entity_id: binary_sensor.liryREDACTED
     to: 'on'
   condition:
   action:
@@ -20,29 +20,40 @@
     target:
       entity_id: input_boolean.gaming_mode
 
-- alias: media_player xbox off
-  trigger:
-    platform: state
-    entity_id: media_player.wohnzimmer_xbox
-    to: 'off'
-  condition:
-  action:
-  - service: input_boolean.turn_on
-    target:
-      entity_id: input_boolean.normal_mode
-  - service: timer.start
-    target:
-      entity_id: timer.office_xbox
+#- alias: media_player xbox off
+#  trigger:
+#    platform: state
+#    entity_id: binary_sensor.liryREDACTED
+#    to: 'off'
+#  condition:
+#  action:
+#  - service: input_boolean.turn_on
+#    target:
+#      entity_id: input_boolean.normal_mode
+#  - service: timer.start
+#    target:
+#      entity_id: timer.office_xbox
 
-- alias: "Timerstop office xbox"
-  id: "Timerstop office xbox"
-  trigger:
-  - platform: event
-    event_type: timer.finished
-    event_data:
-      entity_id: timer.office_xbox
-  action:
-  - service: switch.turn_off
-    target:
-      entity_id: 
-      - switch.office_xbox
+#- alias: "Timerstop office xbox"
+#  id: "Timerstop office xbox"
+#  trigger:
+#  - platform: event
+#    event_type: timer.finished
+#    event_data:
+#      entity_id: timer.office_xbox
+#  action:
+#  - service: switch.turn_off
+#    target:
+#      entity_id: 
+#      - switch.office_xbox
+
+#- alias: Media_Player restart timer office xbox
+#  trigger:
+#    platform: state
+#    entity_id: binary_sensor.liryREDACTED
+#    to: 'on'
+#  condition: 
+#  action:
+#  - service: timer.cancel
+#    target:
+#      entity_id: timer.livingroom_tv
