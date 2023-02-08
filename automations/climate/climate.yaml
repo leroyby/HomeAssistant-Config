@@ -2,39 +2,11 @@
 # @Leroyby
 # Original Repo : https://github.com/Leroyby/Homeassistant-Config
 # Automation Climate 
-# https://pelaxa.com/blog/2022/04/10/automating-your-home-climate-control-with-home-assistant/
 ######################################################################################################
 
-## Bedroom
-- alias: shutdown heating
-  trigger:
-    - platform: numeric_state
-      entity_id: sensor.hq_by_zofingen_realfeel_temperature
-      above: '20'
-      for: '24:00:00'
-  condition: []
-  action:
-    - service: climate.set_hvac_mode
-      target:
-        entity_id: climate.bedroom_thermostat
-      data:
-        hvac_mode: "off" 
-
-- alias: start heating
-  trigger:
-    - platform: numeric_state
-      entity_id: sensor.hq_by_zofingen_realfeel_temperature
-      below: '20'
-      for: '24:00:00'
-  condition: []
-  action:
-    - service: climate.set_hvac_mode
-      target:
-        entity_id: climate.bedroom_thermostat
-      data:
-        hvac_mode: 
-
-- alias: shutdown heating window open
+# Automation climate temp out: >=20 - off, <20 - 20, <5 - 21, <0 - REDACTED
+    
+- alias: climate bedroom shutdown window open
   trigger:
     - platform: state
       entity_id: binary_sensor.contact_bedroom_window_contact
@@ -46,7 +18,7 @@
       data:
         hvac_mode: "off" 
 
-- alias: reset heating window closed
+- alias: climate bedroom reset heating window closed
   trigger:
     - platform: state
       entity_id: binary_sensor.contact_bedroom_window_contact

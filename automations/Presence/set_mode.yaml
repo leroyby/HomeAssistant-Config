@@ -12,7 +12,7 @@
   condition:
   - condition: time
     after: 06:00:00
-    before: '23:30:00'
+    before: '22:30:00'
   action:
   - service: input_boolean.turn_on
     target:

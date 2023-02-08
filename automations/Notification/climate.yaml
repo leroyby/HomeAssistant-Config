@@ -1,37 +1,8 @@
 ######################################################################################################
 # @Leroyby
 # Original Repo : https://github.com/Leroyby/Homeassistant-Config
-# Automation Notification Temperature
+# Automation Notification Climate
 ######################################################################################################
-
-## Bedroom
-- alias: Temperature Bedroom low Notification
-  trigger:
-    - platform: numeric_state
-      entity_id: sensor.temperature_bedroom
-      below: '19'
-      for: '00:02:00'
-  condition: []
-  action:
-    - service: notify.mobile_app_iphone_von_leroy
-      data:
-        title: "Temperatur Bedroom low"
-        message: "Die Temperatur im Schlafzimmer ist unter 19 Grad" 
-  mode: single
-
-- alias: Temperature Bedroom high Notification
-  trigger:
-    - platform: numeric_state
-      entity_id: sensor.temperature_bedroom
-      above: '21.0'
-      for: '00:02:00'
-  condition: []
-  action:
-    - service: notify.mobile_app_iphone_von_leroy
-      data:
-        title: "Temperatur Bedroom high"
-        message: "Die Temperatur im Schlafzimmer über 21 Grad" 
-  mode: single  
 
  ## Living Room
 - alias: Temperature Living area low Notification
