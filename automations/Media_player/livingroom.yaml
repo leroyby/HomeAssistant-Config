@@ -30,13 +30,13 @@
       entity_id: 
       - switch.tv
 
-- alias: Media_Player restart timer TV Livingroom
+- alias: Media_Player start timer TV Bedroom
   trigger:
     platform: state
-    entity_id: binary_sensor.ping_livingroom_tv
+    entity_id: switch.tv
     to: 'on'
   condition: 
   action:
-  - service: timer.cancel
+  - service: timer.start
     target:
       entity_id: timer.livingroom_tv

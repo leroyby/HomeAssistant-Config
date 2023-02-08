@@ -694,6 +694,8 @@ views:
     - entity: sensor.power_office_xbox
     - entity: binary_sensor.ping_livingroom_tv
     - entity: binary_sensor.xbox_on
+    - entity: sensor.power_office_pc
+    - entity: binary_sensor.office_pc_on
     show_header_toggle: false
     title: Test apps
     type: entities

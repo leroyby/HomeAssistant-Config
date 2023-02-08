@@ -19,6 +19,13 @@
         {{ is_state("binary_sensor.motion_detected", "on") }}
       delay_off: "01:00:00"
 
+    motion_in_office:
+      friendly_name: Activity in the office
+      value_template: >
+        {{ is_state("binary_sensor.motion_office_occupancy", "on") 
+            }}
+      delay_off: "00:05:00"
+
     someone_in_the_house_in_last_hour:
       friendly_name: Someone in the house in the last hour
       value_template: >

@@ -10,7 +10,6 @@
       entity_id: 
       - input_boolean.away_mode
       to: 'on'
-      for: "00:02:30"
   condition: []
   action:
   - service: input_boolean.turn_off

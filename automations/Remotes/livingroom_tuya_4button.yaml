@@ -11,12 +11,9 @@
     to: '1_single' 
   condition: []
   action:
-  - service: switch.turn_off
+  - service: switch.toggle
     target:
-      entity_id: switch.adaptive_lighting_livingroom
-  - service: light.toggle
-    target:
-        entity_id: light.living_room_lights
+      entity_id: switch.tv
 
 - alias: livingroom button 1 lights cozy
   trigger:

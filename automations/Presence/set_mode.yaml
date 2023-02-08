@@ -8,6 +8,7 @@
     platform: state
     entity_id: binary_sensor.no_one_home
     to: 'on'
+    for: 00:10:00
   condition:
   - condition: time
     after: 06:00:00
@@ -27,3 +28,19 @@
   - service: input_boolean.turn_on
     target:
       entity_id: input_boolean.normal_mode
+
+- alias: presence set night mode weekdays
+  trigger:
+    - platform: time
+      at: "00:30:00"
+  condition: time
+  weekday:
+    - mon
+    - tue
+    - wed
+    - thu
+    - fri
+  action:
+  - service: input_boolean.turn_on
+    target:
+      entity_id: input_boolean.night_mode

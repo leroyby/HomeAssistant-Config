@@ -21,9 +21,6 @@
     entity_id: binary_sensor.activity_in_livingroom
     to: 'off'
   condition: 
-  - condition: state
-    entity_id: input_boolean.morning_lights_livingroom
-    state: "off"
   action:
   - service: light.turn_off
     target:
@@ -38,7 +35,10 @@
   condition:
   - condition: state
     entity_id: sun.sun
-    state: "below_horizon"  
+    state: "below_horizon"
+  - condition: state
+    entity_id: input_boolean.night_mode
+    state: "on"
   action:
   - service: light.turn_on
     target:

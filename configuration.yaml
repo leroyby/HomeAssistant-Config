@@ -50,5 +50,13 @@ recorder:
   db_url: !secret mariadb_url
   purge_keep_days: 30
   commit_interval: 20
+duckdns:
+  domain: !secret duckdns_url
+  access_token: !secret duckdns_token
+http:
+  ssl_certificate: /ssl/fullchain.pem
+  ssl_key: /ssl/privkey.pem
+  ip_ban_enabled: true
+  login_attempts_threshold: 5
 
 

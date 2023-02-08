@@ -6,7 +6,7 @@
 
   livingroom_tv:
     name: Livingroom TV
-    duration: '00:30:00'
+    duration: '04:00:00'
     icon: mdi:timer-outline
 
   office_xbox:
