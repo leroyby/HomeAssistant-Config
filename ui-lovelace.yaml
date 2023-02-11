@@ -244,7 +244,7 @@ views:
       secondary: '💦 {{ states(''sensor.temperature_bedroom_2_humidity'') }}%, ⚖️ {{
         states(''sensor.temperature_bedroom_2_pressure'') }} hPa, 🔋 {{ states(''sensor.temperature_bedroom_2_battery'')
         }}% '
-      state: '{{ states("sensor.temperature_bedroom_average") }} °C'
+      state: '{{ states("sensor.temperature_bedroom_2_temperature") }} °C'
       type: custom:template-entity-row
     - entity: sensor.temperature_office_temperature
       name: Office
