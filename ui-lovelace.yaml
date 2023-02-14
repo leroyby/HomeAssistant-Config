@@ -273,6 +273,32 @@ views:
       type: custom:template-entity-row
     title: Temperature sensors
     type: entities
+  - content: "\n<table width=\"100%\">\n  <tr>\n    <th>Area</th>\n    <th>Temperature</th>\n\
+      \    <th>Humidity</th>\n  </tr>\n  <tr>\n    <td>Outdoor</td>\n    <td>{{ states('sensor.thermal_comfort_outside_simmerzone')\
+      \ | regex_replace(find='_', replace=' ') | title }}</td>\n    <td>{{ states('sensor.thermal_comfort_outside_perception')\
+      \ | regex_replace(find='_', replace=' ') | title }}</td>\n  </tr>\n  <tr>\n\
+      \    <td>Indoor Average</td>\n    <td>{{ states('sensor.thermal_comfort_indoor_average_simmerzone')\
+      \ | regex_replace(find='_', replace=' ') | title }}</td>\n    <td>{{ states('sensor.thermal_comfort_indoor_average_perception')\
+      \ | regex_replace(find='_', replace=' ') | title }}</td>\n  </tr>\n  <tr>\n\
+      \    <td>Bedroom</td>\n    <td>{{ states('sensor.thermal_comfort_bedroom_simmerzone')\
+      \ | regex_replace(find='_', replace=' ') | title }}</td>\n    <td>{{ states('sensor.thermal_comfort_bedroom_perception')\
+      \ | regex_replace(find='_', replace=' ') | title }}</td>\n  </tr>\n  <tr>\n\
+      \    <td>Office</td>\n    <td>{{ states('sensor.thermal_comfort_office_simmerzone')\
+      \ | regex_replace(find='_', replace=' ') | title }}</td>\n    <td>{{ states('sensor.thermal_comfort_office_perception')\
+      \ | regex_replace(find='_', replace=' ') | title }}</td>\n  </tr>\n  <tr>\n\
+      \    <td>Living Room</td>\n    <td>{{ states('sensor.thermal_comfort_living_room_simmerzone')\
+      \ | regex_replace(find='_', replace=' ') | title }}</td>\n    <td>{{ states('sensor.thermal_comfort_living_room_perception')\
+      \ | regex_replace(find='_', replace=' ') | title }}</td>\n  </tr>\n  <tr>\n\
+      \    <td>Bathroom</td>\n    <td>{{ states('sensor.thermal_comfort_bathroom_simmerzone')\
+      \ | regex_replace(find='_', replace=' ') | title }}</td>\n    <td>{{ states('sensor.thermal_comfort_bathroom_perception')\
+      \ | regex_replace(find='_', replace=' ') | title }}</td>\n  </tr>\n  <tr>\n\
+      \    <td>Toilet</td>\n    <td>{{ states('sensor.thermal_comfort_toilet_simmerzone')\
+      \ | regex_replace(find='_', replace=' ') | title }}</td>\n    <td>{{ states('sensor.thermal_comfort_toilet_perception')\
+      \ | regex_replace(find='_', replace=' ') | title }}</td>\n  </tr>\n  <tr>\n\
+      \    <td>Hall</td>\n    <td>{{ states('sensor.thermal_comfort_hall_simmerzone')\
+      \ | regex_replace(find='_', replace=' ') | title }}</td>\n    <td>{{ states('sensor.thermal_comfort_hall_perception')\
+      \ | regex_replace(find='_', replace=' ') | title }}</td>\n  </tr>\n</table>\n"
+    type: markdown
   - experimental:
       color_threshold: true
     graph_span: 1d
@@ -347,32 +373,6 @@ views:
       offset: -30min
       start: day
     type: custom:apexcharts-card
-  - content: "\n<table width=\"100%\">\n  <tr>\n    <th>Area</th>\n    <th>Temperature</th>\n\
-      \    <th>Humidity</th>\n  </tr>\n  <tr>\n    <td>Outdoor</td>\n    <td>{{ states('sensor.thermal_comfort_outside_simmerzone')\
-      \ | regex_replace(find='_', replace=' ') | title }}</td>\n    <td>{{ states('sensor.thermal_comfort_outside_perception')\
-      \ | regex_replace(find='_', replace=' ') | title }}</td>\n  </tr>\n  <tr>\n\
-      \    <td>Indoor Average</td>\n    <td>{{ states('sensor.thermal_comfort_indoor_average_simmerzone')\
-      \ | regex_replace(find='_', replace=' ') | title }}</td>\n    <td>{{ states('sensor.thermal_comfort_indoor_average_perception')\
-      \ | regex_replace(find='_', replace=' ') | title }}</td>\n  </tr>\n  <tr>\n\
-      \    <td>Bedroom</td>\n    <td>{{ states('sensor.thermal_comfort_bedroom_simmerzone')\
-      \ | regex_replace(find='_', replace=' ') | title }}</td>\n    <td>{{ states('sensor.thermal_comfort_bedroom_perception')\
-      \ | regex_replace(find='_', replace=' ') | title }}</td>\n  </tr>\n  <tr>\n\
-      \    <td>Office</td>\n    <td>{{ states('sensor.thermal_comfort_office_simmerzone')\
-      \ | regex_replace(find='_', replace=' ') | title }}</td>\n    <td>{{ states('sensor.thermal_comfort_office_perception')\
-      \ | regex_replace(find='_', replace=' ') | title }}</td>\n  </tr>\n  <tr>\n\
-      \    <td>Living Room</td>\n    <td>{{ states('sensor.thermal_comfort_living_room_simmerzone')\
-      \ | regex_replace(find='_', replace=' ') | title }}</td>\n    <td>{{ states('sensor.thermal_comfort_living_room_perception')\
-      \ | regex_replace(find='_', replace=' ') | title }}</td>\n  </tr>\n  <tr>\n\
-      \    <td>Bathroom</td>\n    <td>{{ states('sensor.thermal_comfort_bathroom_simmerzone')\
-      \ | regex_replace(find='_', replace=' ') | title }}</td>\n    <td>{{ states('sensor.thermal_comfort_bathroom_perception')\
-      \ | regex_replace(find='_', replace=' ') | title }}</td>\n  </tr>\n  <tr>\n\
-      \    <td>Toilet</td>\n    <td>{{ states('sensor.thermal_comfort_toilet_simmerzone')\
-      \ | regex_replace(find='_', replace=' ') | title }}</td>\n    <td>{{ states('sensor.thermal_comfort_toilet_perception')\
-      \ | regex_replace(find='_', replace=' ') | title }}</td>\n  </tr>\n  <tr>\n\
-      \    <td>Hall</td>\n    <td>{{ states('sensor.thermal_comfort_hall_simmerzone')\
-      \ | regex_replace(find='_', replace=' ') | title }}</td>\n    <td>{{ states('sensor.thermal_comfort_hall_perception')\
-      \ | regex_replace(find='_', replace=' ') | title }}</td>\n  </tr>\n</table>\n"
-    type: markdown
   - experimental:
       color_threshold: true
     graph_span: 12h
@@ -381,7 +381,7 @@ views:
       show: true
       show_states: true
       standard_format: false
-      title: Humidity
+      title: Temperature
     now:
       color: red
       label: Now
@@ -627,6 +627,8 @@ views:
       name: Battery
     - entity: binary_sensor.motion_office_occupancy
       name: Office
+    - entity: sensor.motion_office_illuminance_lux
+    - entity: sensor.motion_office_battery
     show_icon: true
     show_name: true
     state_color: true

@@ -9,7 +9,7 @@ The Automations are sorted to a few subfolders
 - [Remotes](https://github.com/leroyby/Homeassistant/tree/main/automations/remotes), everything that has to do with remotes (for controlling things)
 
 # <a name="menu">Menu</a>
-| [Home](https://github.com/leroyby/Homeassistant) | [Climate](#Climate) | [HA](#HA) | [Lights](#Lights) | [Mediaplayer](#Mediaplayer) | [Modes](#Modes) | [Presence](#Presence) | [Remotes](#Remotes) |
+| [Home](https://github.com/leroyby/Homeassistant) | [Climate](#Climate) | [HA](#HA) | [Lights](#Lights) | [Mediaplayer](#Mediaplayer) | [Modes](#Modes) | [Notification](#Notification) |[Presence](#Presence) | [Remotes](#Remotes) |
 
 ## <a name="Climate">[climate](https://github.com/leroyby/HomeAssistant-Config/tree/main/automations/climate)</a>
 | [Go to Menu](#menu) |
@@ -20,16 +20,17 @@ The Automations are sorted to a few subfolders
 | [Go to Menu](#menu) |
 | Zone |YAML-File| Status |
 | --- | --- | --- |
+| --- | [system.yaml](https://github.com/leroyby/HomeAssistant-Config/blob/main/automations/HA/system.yaml) | OK |
 
 ## <a name="Lights">[Lights](https://github.com/leroyby/HomeAssistant-Config/tree/main/automations/Lights)</a>
 | [Go to Menu](#menu) |
 | Room |YAML-File| Status |
 | --- | --- | --- |
 | Bathroom | [bathroom.yaml](https://github.com/leroyby/Homeassistant-Config/blob/main/automations/Lights/bathroom.yaml)| emtpy |
-| Bedroom | [Bedroom.yaml](https://github.com/leroyby/Homeassistant-Config/blob/main/automations/Lights/bedroom.yaml) | emtpy |
+| Bedroom | [Bedroom.yaml](https://github.com/leroyby/Homeassistant-Config/blob/main/automations/Lights/bedroom.yaml) | OK |
 | Kitchen | [bathroom.yaml](https://github.com/leroyby/Homeassistant-Config/blob/main/automations/Lights/kitchen.yaml) | emtpy |
 | Livingroom | [livingroom.yaml](https://github.com/leroyby/Homeassistant-Config/blob/main/automations/Lights/livingroom.yaml) | OK |
-| Office | [office.yaml](https://github.com/leroyby/Homeassistant-Config/blob/main/automations/Lights/office.yaml) | emtpy |
+| Office | [office.yaml](https://github.com/leroyby/Homeassistant-Config/blob/main/automations/Lights/office.yaml) | OK |
 | Toilet | [toilet.yaml](https://github.com/leroyby/Homeassistant-Config/blob/main/automations/Lights/toilet.yaml) | emtpy |
 
 ## <a name="Mediaplayer">[Mediaplayer](https://github.com/leroyby/Homeassistant-Config/blob/main/automations/media_player)</a>
@@ -50,6 +51,11 @@ The Automations are sorted to a few subfolders
 | Night | [Night_Mode.yaml](https://github.com/leroyby/HomeAssistant-Config/blob/main/automations/Modes/night_mode.yaml) | OK |
 | Normal | [Normal_Mode.yaml](https://github.com/leroyby/HomeAssistant-Config/blob/main/automations/Modes/normal_mode.yaml) | OK |
 | Work | [Work_Mode.yaml](https://github.com/leroyby/HomeAssistant-Config/blob/main/automations/Modes/work_mode.yaml) | OK | 
+
+## <a name="Notification">[Notification](https://github.com/leroyby/Homeassistant-Config/blob/main/automations/notification)</a>
+| [Go to Menu](#menu) |
+| Room |YAML-File| Status |
+| --- | --- | --- |
 
 ## <a name="Presence">[Presence](https://github.com/leroyby/Homeassistant-Config/blob/main/automations/modes)</a>
 | [Go to Menu](#menu) |

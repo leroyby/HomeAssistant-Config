@@ -8,7 +8,7 @@
     platform: state
     entity_id: binary_sensor.no_one_home
     to: 'on'
-    for: 00:10:00
+    for: "00:05:00"
   condition:
   - condition: time
     after: 06:00:00
@@ -20,9 +20,9 @@
 
 - alias: presence set home mode
   trigger:
-    platform: state
-    entity_id: binary_sensor.no_one_home
-    to: 'off'
+    - platform: state
+      entity_id: binary_sensor.no_one_home
+      to: 'off'
   condition: []
   action:
   - service: input_boolean.turn_on
@@ -36,17 +36,17 @@
     - platform: state
       entity_id: sensor.iphone_von_leroy_battery_state
       to: 'Charging'
-  conditions: 
-    condition: time
-    weekday:
-      - mon
-      - tue
-      - wed
-      - thu
-      - fri
-    condition: time
-    after: "21:30:00"
-    before: "04:00:00"
+  condition: 
+    - condition: time
+      weekday:
+          - mon
+          - tue
+          - wed
+          - thu
+          - fri
+    - condition: time
+      after: "21:30:00"
+      before: "04:00:00"
   action:
   - service: input_boolean.turn_on
     target:

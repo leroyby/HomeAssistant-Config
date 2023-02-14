@@ -1,0 +1,19 @@
+######################################################################################################
+# @Leroyby
+# Original Repo : https://github.com/Leroyby/Homeassistant-Config
+# Automation Notification Security
+######################################################################################################
+
+- alias: Security front door unlocked for 5 min
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.temperature_livingroom_average
+      above: '22.5'
+      for: '00:05:00'
+  condition: []
+  action:
+    - service: notify.mobile_app_iphone_von_leroy
+      data:
+        title: "Frontdoor unlocked for over 5 Minutes"
+        message: "Die Haustüre ist seit 5 Minuten offen! Bitte prüfen!" 
+  mode: single  

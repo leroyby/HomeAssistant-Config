@@ -8,3 +8,10 @@
     entities:
       - sensor.power_office_xbox
       - sensor.power_office_pc
+
+  - platform: group
+    name: all switches
+    entities:
+      - sensor.power_office_xbox
+      - sensor.power_office_pc
+
