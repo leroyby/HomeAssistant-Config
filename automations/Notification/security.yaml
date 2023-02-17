@@ -6,9 +6,9 @@
 
 - alias: Security front door unlocked for 5 min
   trigger:
-    - platform: numeric_state
-      entity_id: sensor.temperature_livingroom_average
-      above: '22.5'
+    - platform: state
+      entity_id: lock.frontdoor
+      state: "unlocked"
       for: '00:05:00'
   condition: []
   action:

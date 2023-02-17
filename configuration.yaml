@@ -28,6 +28,8 @@ automation: !include automations.yaml
 automation split: !include_dir_merge_list automations
 homeassistant:
   packages: !include_dir_named packages
+  external_url: "https://hq-by-zof.leroyby.ch"
+  internal_url: "http://192.168.178.2:8123"
 light: !include groups/light_groups.yaml
 script: !include_dir_merge_named scripts
 timer: !include_dir_merge_named timers

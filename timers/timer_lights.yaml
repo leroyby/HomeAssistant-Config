@@ -18,3 +18,8 @@
     name: Livingroom Lights Morning
     duration: '00:15:00'
     icon: mdi:timer-outline
+
+  livingroom_lights_motion:
+    name: Livingroom Lights motion
+    duration: '00:5:00'
+    icon: mdi:timer-outline

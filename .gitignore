@@ -16,3 +16,4 @@ home-assistant.log*
 *db*
 secrets.yaml
 *.ps1
+ip_bans.yaml
