@@ -34,3 +34,19 @@
       - light.bedroom_lights
     data:
       transition: 5  
+
+- alias: Light bedroom off night windows open
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.contact_bedroom_window_contact
+      to: "on"
+  condition:
+  - condition: state
+    entity_id: sun.sun
+    state: "below_horizon"
+  action:
+    - service: climate.set_hvac_mode
+      target:
+        entity_id: climate.bedroom_thermostat
+      data:
+        hvac_mode: "off"
