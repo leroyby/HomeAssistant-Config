@@ -17,10 +17,6 @@
     before: "20:00:00"  
   action:
   - service: script.vacuum_start
-  - service: light.turn_on
-    target:
-      entity_id: 
-      - light.livingroom_motion_lights
   - service: input_boolean.turn_on
     target:
       entity_id: input_boolean.vacuum_ran
@@ -38,10 +34,6 @@
     state: 'on'
   action:
   - service: script.vacuum_start
-  - service: light.turn_on
-    target:
-      entity_id: 
-      - light.livingroom_motion_lights
   - service: input_boolean.turn_on
     target:
       entity_id: input_boolean.vacuum_ran
@@ -73,16 +65,25 @@
   - service: light.turn_off
     target:
       entity_id: 
-      - light.livingroom_motion_lights
+      - light.Living_room_lights
 
 - alias: Vacuum running
   trigger:
     - platform: state
       entity_id: vacuum.rombacus
-      to: 'running'
+      to: 'cleaning'
+    - platform: state
+      entity_id: vacuum.rombacus
+      to: 'User Docking'
+    - platform: state
+      entity_id: vacuum.rombacus
+      to: 'returning'
+    - platform: state
+      entity_id: vacuum.rombacus
+      to: 'idle'
   condition:
   action:
   - service: light.turn_on
     target:
       entity_id: 
-      - light.livingroom_motion_lights
+      - light.Living_room_lights

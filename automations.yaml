@@ -22,19 +22,3 @@
       button_double_press: false
       button_long_loop: false
       helper_double_press_delay: 500
-- id: '1673886559382'
-  alias: Bedroom Remote
-  description: ''
-  use_blueprint:
-    path: EPMatt/ikea_remote_5button.yaml
-    input:
-      integration: Zigbee2MQTT
-      controller_device: e732e0cbb9e6baab1adec1f8a8342b8a
-      controller_entity: sensor.remote_bedroom_action
-      helper_last_controller_event: input_text.remote_bedroom_action_text
-      action_button_center_short:
-      - service: light.toggle
-        data:
-          transition: 5
-        target:
-          entity_id: light.bedroom_lights

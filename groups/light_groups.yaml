@@ -35,7 +35,7 @@
   entities:
     - light.livingroom_sofa
     - light.livingroom_table
-    - light.livingroom_tv
+    - light.livingroom_tv_2
 
 - platform: group
   name: Living_room_motion_lights

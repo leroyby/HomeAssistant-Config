@@ -21,6 +21,7 @@ views:
     - entities:
       - light.livingroom_sofa
       - light.livingroom_table
+      - light.livingroom_tv_2
       - entity: script.living_room_cozy_lights
         icon_height: 20px
         name: Cozy lights
@@ -695,14 +696,7 @@ views:
 - badges: []
   cards:
   - entities:
-    - entity: binary_sensor.motion_in_livingroom
-    - entity: sensor.power_bedroom_tv
-    - entity: sensor.power_livingroom_cabinet
-    - entity: sensor.power_office_xbox
-    - entity: binary_sensor.ping_livingroom_tv
-    - entity: binary_sensor.xbox_on
-    - entity: sensor.power_office_pc
-    - entity: binary_sensor.office_pc_on
+    - entity: input_text.remote_bedroom_action_text
     show_header_toggle: false
     title: Test apps
     type: entities
