@@ -29,7 +29,7 @@
       target:
         entity_id: climate.bedroom_thermostat
       data:
-        hvac_mode: "manual"   
+        hvac_mode: "on"     
         
 - alias: climate bedroom no one home
   trigger:

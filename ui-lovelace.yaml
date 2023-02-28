@@ -21,8 +21,6 @@ views:
     - entities:
       - light.livingroom_sofa
       - light.livingroom_table
-      - light.tradfri_bulb_4
-      - light.light_tree
       - entity: script.living_room_cozy_lights
         icon_height: 20px
         name: Cozy lights
@@ -223,6 +221,12 @@ views:
         type: horizontal-stack
       type: vertical-stack
     type: custom:swipe-card
+  - cards:
+    - entities:
+      - entity: lock.frontdoor
+      show_header_toggle: false
+      type: entities
+    type: vertical-stack
   icon: mdi:home
   path: default_view
   theme: Backend-selected
@@ -536,6 +540,7 @@ views:
       - entity: timer.office_lights_manual
       - entity: timer.office_xbox
       - entity: timer.bedroom_tv
+      - entity: timer.livingroom_lights_motion
       show_icon: true
       show_name: true
       show_state: true
@@ -690,7 +695,7 @@ views:
 - badges: []
   cards:
   - entities:
-    - entity: timer.livingroom_tv
+    - entity: binary_sensor.motion_in_livingroom
     - entity: sensor.power_bedroom_tv
     - entity: sensor.power_livingroom_cabinet
     - entity: sensor.power_office_xbox

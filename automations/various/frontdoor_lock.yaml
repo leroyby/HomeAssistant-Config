@@ -8,7 +8,7 @@
   trigger:
     - platform: time_pattern
       # Matches every hour at 1 minute past whole
-      minutes: 1
+      minutes: 3
   condition:
     condition: state
     entity_id: lock.frontdoor
