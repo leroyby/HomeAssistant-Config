@@ -25,11 +25,11 @@
       to: "off"
   condition: []
   action:
-    - service: climate.set_preset_mode
+    - service: climate.set_hvac_mode
       target:
         entity_id: climate.bedroom_thermostat
       data:
-        hvac_mode: "on"     
+        hvac_mode: "auto"
         
 - alias: climate bedroom no one home
   trigger:

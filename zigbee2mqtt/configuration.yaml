@@ -67,6 +67,12 @@ devices:
     friendly_name: livingroom_tv
   '0x001788010bfb6730':
     friendly_name: '0x001788010bfb6730'
+  '0x001788010cee8fc1':
+    friendly_name: '0x001788010cee8fc1'
+  '0x001788010cee8fd0':
+    friendly_name: '0x001788010cee8fd0'
+  '0x001788010cf6cb2f':
+    friendly_name: '0x001788010cf6cb2f'
 advanced:
   log_level: info
   log_syslog:

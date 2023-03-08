@@ -60,6 +60,9 @@
     - platform: state
       entity_id: vacuum.rombacus
       to: 'error'
+    - platform: state
+      entity_id: vacuum.rombacus
+      to: 'idle'
   condition:
   action:
   - service: light.turn_off
@@ -74,14 +77,8 @@
       to: 'cleaning'
     - platform: state
       entity_id: vacuum.rombacus
-      to: 'User Docking'
-    - platform: state
-      entity_id: vacuum.rombacus
       to: 'returning'
-    - platform: state
-      entity_id: vacuum.rombacus
-      to: 'idle'
-  condition:
+  condition: []
   action:
   - service: light.turn_on
     target:
