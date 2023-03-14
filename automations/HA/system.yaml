@@ -10,22 +10,3 @@
   condition:
   action:
   - service: script.system_generate_readme
-
-- alias: System backup daily
-  trigger:
-    - platform: time
-      at: "02:00:00"
-  condition:
-  action:
-  - service: auto_backup.backup
-    data:
-        name: "AutoBackup: {{ now().strftime('%a, %-I:%M %p (%d/%m/%Y)') }}"
-        addons:
-          - mosquitto broker
-          - core_mariadb
-        folders:
-          - homeassistant
-          - Share
-          - ssl
-          - Local add-ons
-        keep_days: 3

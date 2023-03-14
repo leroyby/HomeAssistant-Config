@@ -12,11 +12,17 @@
       entity_id: binary_sensor.contact_bedroom_window_contact
       to: "on"
   action:
-    - service: climate.set_hvac_mode
+#    - service: climate.set_hvac_mode
+#      target:
+#        entity_id: climate.bedroom_thermostat
+#      data:
+#        hvac_mode: "off"
+    - service: climate.set_temperature
       target:
         entity_id: climate.bedroom_thermostat
       data:
-        hvac_mode: "off"
+        temperature: REDACTED
+        hvac_mode: aus
 
 - alias: climate bedroom reset heating window closed
   trigger:
@@ -25,11 +31,12 @@
       to: "off"
   condition: []
   action:
-    - service: climate.set_hvac_mode
+    - service: climate.set_temperature
       target:
         entity_id: climate.bedroom_thermostat
       data:
-        hvac_mode: "auto"
+        temperature: 20
+        hvac_mode: auto
         
 - alias: climate bedroom no one home
   trigger:
@@ -37,11 +44,12 @@
       entity_id: binary_sensor.no_one_home
       to: "on"
   action:
-    - service: climate.set_preset_mode
+    - service: climate.set_temperature
       target:
         entity_id: climate.bedroom_thermostat
       data:
-        preset_mode: 'eco'
+        temperature: 16
+        hvac_mode: auto
 
 - alias: climate bedroom getting home
   trigger:
@@ -49,10 +57,10 @@
       entity_id: binary_sensor.no_one_home
       to: "on"
   action:
-    - service: climate.set_preset_mode
+    - service: climate.set_temperature
       target:
         entity_id: climate.bedroom_thermostat
       data:
-        preset_mode: 'manual'     
-
+        temperature: 18
+        hvac_mode: auto
 

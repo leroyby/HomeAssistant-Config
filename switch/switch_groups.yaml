@@ -23,7 +23,7 @@
 - platform: group
   name: Livingroom Switches
   entities:
-    - switch.livingroom_tv
+    - switch.tv
     - switch.kitchen
 ## Bedroom
 - platform: group
