@@ -33,10 +33,6 @@
     icon: mdi:desk
     initial: off
 
-  USER2_home:
-    name: USER2 Home
-    icon: mdi:Account
-
   vacuum_ran:
     name: Vacuum Ran
     icon: mdi:vacuum
@@ -59,3 +55,8 @@
 
   living_room_light_level_under_7:
     icon: mdi:lamp
+
+  armed_mode:
+    name: armed Mode
+    icon: mdi:shield-alert-outline
+    initial: off

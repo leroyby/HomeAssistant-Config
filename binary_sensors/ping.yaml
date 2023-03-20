@@ -40,7 +40,7 @@
   scan_interval: 30
 
 - platform: ping
-  host: 192.168.178.REDACTED
+  host: 192.168.178.15
   name: "ping switch"
   count: 2
   scan_interval: 30

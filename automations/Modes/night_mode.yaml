@@ -20,6 +20,7 @@
       - input_boolean.gaming_mode
       - input_boolean.away_mode
       - input_boolean.work_mode
+      - input_boolean_armed_mode
   - service: script.office_off
   - service: script.living_room_off
   mode: single

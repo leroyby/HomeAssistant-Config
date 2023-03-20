@@ -32,19 +32,15 @@ devices:
     friendly_name: Bedroom_thermostat
   '0x00158d0008cf22d0':
     friendly_name: motion_office
-  '0x00158d0008cf2323':
-    friendly_name: motion_livingroom_cabinet
   '0x00158d0008e1c947':
     friendly_name: contact_livingroom_cabinet
   '0x00158d0008cec364':
-    friendly_name: temperature_bedroom_2
+    friendly_name: temperature_outdoor
     temperature_precision: 1
+    temperature_calibration: -2
   '0x00158d0008cec36e':
     friendly_name: temperature_office
     temperature_precision: 1
-  '0x00158d0008c99136':
-    friendly_name: temperature_outdoor
-    temperature_calibration: -4
   '0x00158d0008cec350':
     friendly_name: temperature_toilet
   '0x00158d0008cef84c':
@@ -53,8 +49,6 @@ devices:
     friendly_name: contact_bedroom_window
   '0x00158d0007e2122f':
     friendly_name: ' motion_livingroom'
-  '0x003c84fffe282720':
-    friendly_name: button_bedroom
   '0x086bd7fffe3c5fde':
     friendly_name: Tv _button_switch_livingroom
   '0x00158d0008cec378':
@@ -65,14 +59,14 @@ devices:
     friendly_name: livingroom_table
   '0x0017880109230122':
     friendly_name: livingroom_tv
-  '0x001788010bfb6730':
-    friendly_name: '0x001788010bfb6730'
-  '0x001788010cee8fc1':
-    friendly_name: '0x001788010cee8fc1'
-  '0x001788010cee8fd0':
-    friendly_name: '0x001788010cee8fd0'
-  '0x001788010cf6cb2f':
-    friendly_name: '0x001788010cf6cb2f'
+  '0x00158d0008c99136':
+    friendly_name: temperature_bedroom_2
+  '0x003c84fffe282720':
+    friendly_name: button_bedroom
+  '0x00158d0008cf2323':
+    friendly_name: motion_hall
+  '0x00124b002517876b':
+    friendly_name: motion_livingroom_2
 advanced:
   log_level: info
   log_syslog:
@@ -86,7 +80,7 @@ advanced:
     protocol: tcp4
     type: '5424'
   pan_id: 6754
-  channel: 15
+  channel: 25
   network_key:
     - 169
     - 126
@@ -106,4 +100,4 @@ advanced:
     - 249
 shell_command:
   pushupdates_github: /bin/bash /root/addons/Tools/pushupdates.sh
-permit_join: true
+permit_join: false

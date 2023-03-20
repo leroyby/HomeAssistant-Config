@@ -24,5 +24,6 @@
       - input_boolean.gaming_mode
       - input_boolean.away_mode
       - input_boolean.night_mode
+      - input_boolean.armed_mode
     metadata: {}
   mode: single

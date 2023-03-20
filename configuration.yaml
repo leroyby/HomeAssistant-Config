@@ -11,6 +11,21 @@ frontend:
 tts:
   - platform: google_translate
 my:
+# Alarm Panel
+alarm_control_panel:
+  - platform: manual
+    name: Home Alarm
+    code: !secret alarm_code
+    code_arm_required: false
+    arming_time: 45
+    delay_time: 30
+    disarm_after_trigger: false
+    disarmed:
+      trigger_time: 0
+    armed_home:
+      arming_time: 0
+      delay_time: 0
+
 # Inputs
 input_datetime: !include input/input_datetimes.yaml
 binary_sensor: !include_dir_merge_list binary_sensors
@@ -24,7 +39,7 @@ sensor: !include_dir_merge_list sensors
 scene: !include_dir_merge_list scene
 utility_meter: !include_dir_merge_list utilities
 automation: !include automations.yaml
-automation split: !include_dir_merge_list automations
+automation manual: !include_dir_merge_list automations
 homeassistant:
   packages: !include_dir_named packages
 light: !include groups/light_groups.yaml

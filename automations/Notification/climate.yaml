@@ -4,7 +4,7 @@
 # Automation Notification Climate
 ######################################################################################################
 
- ## Living Room
+## Living Room
 - alias: Temperature Living area low Notification
   trigger:
     - platform: numeric_state

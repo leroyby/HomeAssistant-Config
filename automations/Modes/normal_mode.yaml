@@ -14,6 +14,10 @@
     from: 'off'
   condition: []
   action:
+  - service: alarmo.disarm
+    data:
+      entity_id: alarm_control_panel.alarmo
+      code: !secret alarm_code
   - service: input_boolean.turn_off
     target:
       entity_id: 
@@ -21,5 +25,6 @@
       - input_boolean.gaming_mode
       - input_boolean.away_mode
       - input_boolean.night_mode
+      - input_boolean.armed_mode
     metadata: {}
   mode: single

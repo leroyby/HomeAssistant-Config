@@ -11,6 +11,7 @@
         {{ is_state("binary_sensor.activity_in_kitchen", "on")
             or is_state("binary_sensor.activity_in_livingroom", "on")
             or is_state("binary_sensor.activity_in_office", "on")
+            or is_state("binary_sensor.activity_in_hall", "on")
             or is_state("binary_sensor.activity_in_bedroom", "on") }}
             
     motion_detected_in_last_hour:

@@ -182,6 +182,7 @@ views:
     - entity: input_boolean.gaming_mode
     - entity: input_boolean.work_mode
     - entity: input_boolean.night_mode
+    - entity: input_boolean.armed_mode
     show_header_toggle: false
     type: entities
   - cards:
@@ -222,6 +223,11 @@ views:
         type: horizontal-stack
       type: vertical-stack
     type: custom:swipe-card
+  - entity: alarm_control_panel.alarmo
+    states:
+    - arm_home
+    - arm_away
+    type: alarm-panel
   - cards:
     - entities:
       - entity: lock.frontdoor
@@ -237,6 +243,13 @@ views:
   - entity: climate.bedroom_thermostat
     type: thermostat
   - entities:
+    - entity: sensor.temperature_outdoor_temperature
+      name: Outdoor
+      secondary: '💦 {{ states(''sensor.temperature_outdoor_humidity'') }}%, ⚖️ {{
+        states(''sensor.temperature_outdoor_pressure'') }} hPa, 🔋 {{ states(''sensor.temperature_outdoor_battery'')
+        }}% '
+      state: '{{ states("sensor.temperature_outdoor_temperature") }} °C'
+      type: custom:template-entity-row
     - entity: sensor.temperature_livingroom_temperature
       name: Living room
       secondary: '💦 {{ states(''sensor.temperature_livingroom_humidity'') }}%, ⚖️
@@ -270,7 +283,7 @@ views:
         }}% '
       state: '{{ states("sensor.temperature_bathroom_temperature") }} °C'
       type: custom:template-entity-row
-    - entity: sensor.temperature_bathroom_temperature
+    - entity: sensor.temperature_hall_temperature
       name: Hall
       secondary: '💦 {{ states(''sensor.temperature_hall_humidity'') }}%, ⚖️ {{ states(''sensor.temperature_hall_pressure'')
         }} hPa, 🔋 {{ states(''sensor.temperature_hall_battery'') }}% '
@@ -394,7 +407,7 @@ views:
     series:
     - entity: sensor.temperature_livingroom_temperature
       group_by:
-        duration: 60m
+        duration: 15m
         func: last
       name: Livingroom
       show:
@@ -403,7 +416,7 @@ views:
       type: line
     - entity: sensor.temperature_office_temperature
       group_by:
-        duration: 60m
+        duration: 15m
         func: last
       name: Office
       show:
@@ -412,7 +425,7 @@ views:
       type: line
     - entity: sensor.temperature_bedroom_2_temperature
       group_by:
-        duration: 60m
+        duration: 15m
         func: last
       name: Bedroom
       show:
@@ -697,7 +710,9 @@ views:
   cards:
   - entities:
     - entity: input_text.remote_bedroom_action_text
+    - entity: sensor.temperature_outdoor_temperature
     show_header_toggle: false
+    theme: Fluent Green
     title: Test apps
     type: entities
   - entities:
@@ -711,13 +726,6 @@ views:
     show_header_toggle: false
     title: Datetimes
     type: entities
-  - entities:
-    - entity: sensor.times_tv_has_been_on_last_7_days
-    - entity: sensor.hours_tv_has_been_on_last_7_days
-    title: Stats
-    type: entities
-  - entity: media_player.lbxbox
-    type: media-control
   - entities:
     - active: '{{ is_state("binary_sensor.motion_livingroom_occupancy", "on") }}'
       entity: binary_sensor.motion_livingroom_occupancy
@@ -743,8 +751,6 @@ views:
         \ state.entity_id,\n        'variables': {\n          'name': NAME\n     \
         \   },\n      }\n    }},\n  {%- endif -%} \n{%- endfor %}\n"
     type: custom:auto-entities
-  - entity: climate.bedroom_thermostat
-    type: thermostat
   - entity: sensor.bedroom_thermostat_position
     max: 100
     min: 35

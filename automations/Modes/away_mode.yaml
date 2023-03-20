@@ -4,10 +4,10 @@
 # Automation away mode 
 ######################################################################################################
 - alias: Mode_Away_on
-  id: 9521d521-00dc-4116-b467-5150735fcff9
   trigger:
     - platform: state
       entity_id: 
+      - binary_sensor.no_one_home
       - input_boolean.away_mode
       to: 'on'
   condition: []
@@ -22,4 +22,11 @@
   - service: script.bedroom_off
   - service: script.office_off
   - service: script.living_room_off
+  - service: alarmo.arm
+    data:
+      entity_id: alarm_control_panel.alarmo
+      code: !secret alarm_code
+      mode: away
   mode: single
+
+
