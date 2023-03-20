@@ -3,8 +3,7 @@
 # Original Repo : https://github.com/Leroyby/Homeassistant-Config
 # Automations night mode
 ######################################################################################################
-- id: '1663422926689'
-  alias: Mode_Night_on
+- alias: Mode_night_on
   description: 'Turning everything down for night mode (except bedroom)'
   trigger:
   - platform: state
@@ -20,7 +19,7 @@
       - input_boolean.gaming_mode
       - input_boolean.away_mode
       - input_boolean.work_mode
-      - input_boolean_armed_mode
+      - input_boolean.armed_mode
   - service: script.office_off
   - service: script.living_room_off
   mode: single

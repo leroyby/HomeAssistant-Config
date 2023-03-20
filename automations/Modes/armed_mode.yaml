@@ -7,24 +7,30 @@
   trigger:
     - platform: state
       entity_id: 
-      - input_boolean.away_mode
+      - input_boolean.armed_mode
       to: 'on'
   condition: []
   action:
-  - service: input_boolean.turn_off
-    target:
-      entity_id: 
-      - input_boolean.normal_mode
-      - input_boolean.work_mode
-      - input_boolean.gaming_mode
-      - input_boolean.night_mode
-  - service: input_boolean.turn_on
-    target:
+  - service: alarmo.arm
+    data:
+      entity_id: alarm_control_panel.alarmo
+      code: !secret alarm_code
+      mode: away 
+      skip_delay: true
+  mode: single
+
+- alias: Mode_Away_off
+  trigger:
+    - platform: state
       entity_id: 
       - input_boolean.armed_mode
-  - service: script.bedroom_off
-  - service: script.office_off
-  - service: script.living_room_off
-  mode: single
+      to: 'off'
+  condition: []
+  action:
+  - service: alarmo.disarm
+    data:
+      entity_id: alarm_control_panel.alarmo
+      code: !secret alarm_code
+  mode: single  
 
 

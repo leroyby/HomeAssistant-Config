@@ -3,3 +3,15 @@
 # Original Repo : https://github.com/Leroyby/Homeassistant-Config
 # Automation gaming mode on
 ######################################################################################################
+- alias: Mode_gaming_on
+  trigger:
+    - platform: state
+      entity_id: 
+      - input_boolean.gaming_mode
+      to: 'on'
+  condition: []
+  action:
+  - service: input_boolean.turn_off
+    target:
+      entity_id: 
+      - input_boolean.gaming_mode

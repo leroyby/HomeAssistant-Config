@@ -37,8 +37,8 @@
     activity_in_hall:
       friendly_name: Activity in hall
       value_template: >
-        {{ is_state("binary_sensor.motion_hall_occupancy", "on")}}
-            }}
+        {{ is_state("binary_sensor.motion_hall_occupancy", "on")
+        }}
       delay_off: "00:01:00"
 
     activity_in_livingroom:
@@ -46,7 +46,8 @@
       value_template: >
         {{ is_state("binary_sensor.motion_in_livingroom", "on")
             or is_state("media_player.lg_webos_smart_tv", "on")
-            or is_state("binary_sensor.activity_in_livingroom_cabinet", "on")}}
+            or is_state("binary_sensor.activity_in_livingroom_cabinet", "on")
+            }}
       delay_off: "00:03:00"
 
     activity_in_kitchen:

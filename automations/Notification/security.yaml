@@ -18,3 +18,28 @@
         message: "Die Haustüre ist seit 5 Minuten offen! Bitte prüfen!" 
   mode: single  
 
+- alias: "Alarm ACTIVATED"
+  trigger:
+    - platform: state
+      entity_id: alarm_control_panel.alarmo
+      to: "armed_away"
+  condition: []
+  action:
+    - service: notify.mobile_app_iphone_von_leroy
+      data:
+        title: "Alarm ACTIVATED"
+        message: "Das Alarmsystem wurde erfogreich aktiviert!" 
+  mode: single  
+
+- alias: "Alarm Disabled"
+  trigger:
+    - platform: state
+      entity_id: alarm_control_panel.alarmo
+      to: "disarmed"
+  condition: []
+  action:
+    - service: notify.mobile_app_iphone_von_leroy
+      data:
+        title: "Alarm DISABLED"
+        message: "Das Alarmsystem wurde deaktiviert!" 
+  mode: single  

@@ -8,7 +8,6 @@
     platform: state
     entity_id: binary_sensor.no_one_home
     to: 'on'
-    for: "00:05:00"
   condition:
   - condition: time
     after: 06:00:00
