@@ -624,6 +624,7 @@ views:
     - entity: binary_sensor.activity_in_livingroom_cabinet
     - entity: binary_sensor.activity_in_office
     - entity: binary_sensor.activity_in_bedroom
+    - entity: binary_sensor.activity_in_hall
     - type: divider
     - entity: binary_sensor.motion_detected_in_last_hour
     - entity: binary_sensor.motion_detected
@@ -648,6 +649,11 @@ views:
       name: Office
     - entity: sensor.motion_office_illuminance_lux
     - entity: sensor.motion_office_battery
+    - entity: binary_sensor.motion_hall_occupancy
+    - entity: sensor.motion_hall_illuminance_lux
+    - entity: sensor.motion_hall_battery
+    - entity: binary_sensor.motion_livingroom_2_occupancy
+    - entity: sensor.motion_livingroom_2_battery
     show_icon: true
     show_name: true
     state_color: true

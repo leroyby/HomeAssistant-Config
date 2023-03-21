@@ -27,4 +27,24 @@
   - service: script.living_room_off
   mode: single
 
+- alias: Mode_Away_on_safety_arm_alarm
+  trigger:
+    - platform: time_pattern
+      # Matches every 3 hours
+      hours: 3
+  condition: and
+  conditions:
+    - condition: state
+      entity_id: "binary_sensor.no_one_home"
+      state: "on"
+    - condition: state
+      entity_id: alarm_control_panel.alarmo
+      state: disarmed
+  action:
+  - service: input_boolean.turn_on
+    target:
+      entity_id: 
+      - input_boolean.armed_mode
+  mode: single
+
 

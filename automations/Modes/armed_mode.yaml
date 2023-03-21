@@ -3,11 +3,10 @@
 # Original Repo : https://github.com/Leroyby/Homeassistant-Config
 # Automation away mode 
 ######################################################################################################
-- alias: Mode_Away_on
+- alias: Mode_armed_on
   trigger:
     - platform: state
-      entity_id: 
-      - input_boolean.armed_mode
+      entity_id: input_boolean.armed_mode
       to: 'on'
   condition: []
   action:
@@ -19,7 +18,7 @@
       skip_delay: true
   mode: single
 
-- alias: Mode_Away_off
+- alias: Mode_armed_off
   trigger:
     - platform: state
       entity_id: 
@@ -31,6 +30,7 @@
     data:
       entity_id: alarm_control_panel.alarmo
       code: !secret alarm_code
+      skip_delay: true
   mode: single  
 
 
