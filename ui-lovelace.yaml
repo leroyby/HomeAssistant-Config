@@ -650,10 +650,7 @@ views:
     - entity: sensor.motion_office_illuminance_lux
     - entity: sensor.motion_office_battery
     - entity: binary_sensor.motion_hall_occupancy
-    - entity: sensor.motion_hall_illuminance_lux
     - entity: sensor.motion_hall_battery
-    - entity: binary_sensor.motion_livingroom_2_occupancy
-    - entity: sensor.motion_livingroom_2_battery
     show_icon: true
     show_name: true
     state_color: true

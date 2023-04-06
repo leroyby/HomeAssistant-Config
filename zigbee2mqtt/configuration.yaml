@@ -64,9 +64,9 @@ devices:
   '0x003c84fffe282720':
     friendly_name: button_bedroom
   '0x00158d0008cf2323':
-    friendly_name: motion_hall
+    friendly_name: motion_tba
   '0x00124b002517876b':
-    friendly_name: motion_livingroom_2
+    friendly_name: motion_hall
 advanced:
   log_level: info
   log_syslog:

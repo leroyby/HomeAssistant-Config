@@ -1,5 +1,5 @@
 [![GitHub last commit](https://img.shields.io/github/last-commit/leroyby/homeassistant-config?style=plasticr)](https://github.com/leroyby/HomeAssistant-Config/commits/main)
-[![HA Version](https://img.shields.io/badge/Running%20Home%20Assistant-2023.3.5%20-darkblue)](https://github.com/home-assistant/home-assistant/releases/latest)
+[![HA Version](https://img.shields.io/badge/Running%20Home%20Assistant-2023.3.6%20-darkblue)](https://github.com/home-assistant/home-assistant/releases/latest)
 
 # <a name="table">Table of Contents - Index </a>
    * [Home Assistant configuration](#home-assistant-configuration-overview)
@@ -31,7 +31,7 @@ At this point also a big thanks to the whole home assistant community and especa
 # Repository statistics
 | Lines of code| Sensors| Binary Sensors | Switches  | Automations | Scripts | Scenes |
 | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
-| 0 | 416 | 59 | 17 | 74 | 32 | 3 |
+| 31,912 | 432 | 57 | 17 | 74 | 32 | 3 |
 
 ###  <a name="History">History</a>
 Started in 2014 with the [Tradfri Gateway](https://www.ikea.com/ch/en/search/products/?q=tradfri) (with 3 White spectrum bulbs) and with the [myStrom Switches](https://mystrom.ch/). Added a LED-Strip from China to the setup and started tinkering with HA. But not for very long. During this time I tested also Apple HomeKit, but I was never really statisfied. 2022 I got some time and started again with HA and now here we are... 
@@ -67,7 +67,7 @@ And I will be adding a wall tablet soon (WIP).
 | Device  | Amazon Link | Quantity | Connection | Home Assistant | Notes | Status |
 | ------------- | :---: | :---: | ------------- | ------------- | ------------- | ------------- |
 | [TRÅDFRI Gateway V1](https://www.ikea.com/ch/de/p/tradfri-gateway-weiss-40337806)| - | 1 | Ethernet|[IKEA TRÅDFRI](https://www.home-assistant.io/integrations/tradfri) | V1, because V2 is comming soon (late 2022) / userd for integration of TRÅDFRI lights. Maybe will be renewd with the new [Dirigera Hub](https://about.ikea.com/en/newsroom/2022/05/25/ikea-launches-dirigera-the-matter-ready-hub-for-smart-products-and-a-new-ikea-home-smart-app) |integrated|
-| [Hue Bridge v2](https://www.philips-hue.com/de-de/p/hue-hue-bridge/8719514342620)| [Amazon](https://amzn.to/3xPfduH) | 1 | Ethernet |[Philips Hue](https://www.home-assistant.io/integrations/hue/)|-|integrated|
+
 
 ### <a name="Lights">Lightning</a>
 | [Go to Menu](#menu) |
