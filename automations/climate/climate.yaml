@@ -19,10 +19,10 @@
 #        hvac_mode: "off"
     - service: climate.set_temperature
       target:
-        entity_id: climate.bedroom_thermostat
+        entity_id: climate.thermostat_bedroom
       data:
         temperature: 15
-        hvac_mode: aus
+        hvac_mode: "off"
 
 - alias: climate bedroom reset heating window closed
   trigger:
@@ -33,10 +33,10 @@
   action:
     - service: climate.set_temperature
       target:
-        entity_id: climate.bedroom_thermostat
+        entity_id: climate.thermostat_bedroom
       data:
         temperature: 20
-        hvac_mode: auto
+        hvac_mode: "auto"
         
 - alias: climate bedroom away
   trigger:
@@ -46,7 +46,7 @@
   action:
     - service: climate.set_temperature
       target:
-        entity_id: climate.bedroom_thermostat
+        entity_id: climate.thermostat_bedroom
       data:
         temperature: 15
         hvac_mode: auto
@@ -59,7 +59,7 @@
   action:
     - service: climate.set_temperature
       target:
-        entity_id: climate.bedroom_thermostat
+        entity_id: climate.thermostat_bedroom
       data:
         temperature: 17
         hvac_mode: auto

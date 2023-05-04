@@ -30,14 +30,14 @@ views:
         tap_action:
           action: call-service
           service: script.living_room_normal_lights
-      - entity: script.tv_lights_living_room
+      - entity: script.living_room_tv_lights
         icon_height: 20px
         name: TV lights
         show_icon: false
         show_name: true
         tap_action:
           action: call-service
-          service: script.tv_lights_living_room
+          service: script.living_room_tv_lights
       - entity: script.living_room_normal_lights
         icon_height: 20px
         name: White lights
@@ -71,14 +71,14 @@ views:
         tap_action:
           action: call-service
           service: script.bedroom_normal_lights
-      - entity: script.tv_lights_bedroom
+      - entity: script.bedroom_tv_lights
         icon_height: 20px
         name: TV light
         show_icon: false
         show_name: true
         tap_action:
           action: call-service
-          service: script.tv_lights_bedroom
+          service: script.bedroom_tv_lights
       head:
         entity: light.bedroom_lights
         hide_when_off: false
@@ -240,7 +240,8 @@ views:
   title: Home
 - badges: []
   cards:
-  - entity: climate.bedroom_thermostat
+  - entity: climate.thermostat_bedroom
+    name: Bedroom
     type: thermostat
   - entities:
     - entity: sensor.temperature_outdoor_temperature
