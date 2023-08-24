@@ -1,0 +1,75 @@
+######################################################################################################
+# @Leroyby
+# Original Repo : https://github.com/Leroyby/Homeassistant-Config
+# binary sensors ping
+######################################################################################################
+- platform: ping
+  host: 192.168.178.1
+  name: "ping modem"
+  count: 2
+  scan_interval: 30
+
+- platform: ping
+  host: 1.1.1.1
+  name: "ping cloudflare"
+  count: 2
+  scan_interval: 30
+
+- platform: ping
+  host: 8.8.8.8
+  name: "ping google"
+  count: 2
+  scan_interval: 30
+
+- platform: ping
+  host: ubnt.leroyby.ch
+  name: "ping my website"
+  count: 2
+  scan_interval: 30
+
+- platform: ping
+  host: 192.168.178.1
+  name: "ping modem"
+  count: 2
+  scan_interval: 30
+
+- platform: ping
+  host: 192.168.178.1
+  name: "ping router"
+  count: 2
+  scan_interval: 30
+
+- platform: ping
+  host: 192.168.178.15
+  name: "ping switch"
+  count: 2
+  scan_interval: 30
+
+- platform: ping
+  host: 192.168.178.16
+  name: "ping ap livingroom"
+  count: 2
+  scan_interval: 30
+
+- platform: ping
+  host: 192.168.178.17
+  name: "ping ap door"
+  count: 2
+  scan_interval: 30
+
+- platform: ping
+  host: 192.168.178.101
+  name: "ping livingroom tv"
+  count: 2
+  scan_interval: 60
+
+- platform: ping
+  host: 192.168.178.102
+  name: "ping bedroom tv"
+  count: 2
+  scan_interval: 60
+
+
+
+
+

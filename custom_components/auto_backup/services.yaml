@@ -78,6 +78,12 @@ backup:
           step: 0.01
           unit_of_measurement: days
           mode: box
+    location: &location
+      name: Location
+      description: Name of a backup network storage to put backup (or /backup)
+      example: my_backup_mount
+      selector:
+        backup_location:
     download_path: &download_path
       name: Download path
       description: Locations to download the backup to after creation.
@@ -87,7 +93,13 @@ backup:
         select:
           multiple: true
           custom_value: true
-          options: []
+          options: [ ]
+    compressed: &compressed
+      name: Compressed
+      description: Use compressed archives
+      default: true
+      selector:
+        boolean:
 
 backup_full:
   name: Backup Full
@@ -98,12 +110,14 @@ backup_full:
       name: Exclude
       description: Addons/Folders to exclude from the backup.
       example: '{"addons": ["MariaDB"], "folders": ["Local add-ons", "share"]}'
-      default: {"addons": ["MariaDB"], "folders": ["Local add-ons", "share"]}
+      default: { "addons": ["MariaDB"], "folders": ["Local add-ons", "share"] }
       selector:
         object:
     password: *password
     keep_days: *keep_days
+    location: *location
     download_path: *download_path
+    compressed: *compressed
 
 backup_partial:
   name: Backup Partial
@@ -138,7 +152,9 @@ backup_partial:
               value: addons
     password: *password
     keep_days: *keep_days
+    location: *location
     download_path: *download_path
+    compressed: *compressed
 
 purge:
   name: Purge

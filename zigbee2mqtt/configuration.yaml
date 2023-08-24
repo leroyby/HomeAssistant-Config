@@ -25,7 +25,7 @@ devices:
     friendly_name: remote_bedroom
     legacy: true
   '0x00158d0007ec9426':
-    friendly_name: Vibration_office_1
+    friendly_name: Vibration_1
   '0xb4e3f9fffe14e4a3':
     friendly_name: remote_livingroom_2
   '0x8cf681fffea9c5d2':
@@ -64,9 +64,11 @@ devices:
   '0x003c84fffe282720':
     friendly_name: button_bedroom
   '0x00158d0008cf2323':
-    friendly_name: motion_tba
-  '0x00124b002517876b':
     friendly_name: motion_hall
+  '0x00124b002517876b':
+    friendly_name: motion_tba_2
+  '0xcc86ecfffec72586':
+    friendly_name: livingroom_c_1
 advanced:
   log_level: info
   log_syslog:

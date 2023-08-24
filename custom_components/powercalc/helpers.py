@@ -1,15 +1,17 @@
 import decimal
 import logging
 from decimal import Decimal
-from typing import Union
 
 from homeassistant.helpers.template import Template
 
 _LOGGER = logging.getLogger(__name__)
 
 
-async def evaluate_power(power: Union[Template, Decimal, float]) -> Decimal | None:
+async def evaluate_power(power: Template | Decimal | float) -> Decimal | None:
     """When power is a template render it."""
+
+    if isinstance(power, Decimal):
+        return power
 
     try:
         if isinstance(power, Template):
@@ -17,6 +19,7 @@ async def evaluate_power(power: Union[Template, Decimal, float]) -> Decimal | No
             if power == "unknown":
                 return None
 
-        return Decimal(power)
+        return Decimal(power)  # type: ignore[arg-type]
     except decimal.DecimalException:
         _LOGGER.error(f"Could not convert power value {power} to decimal")
+        return None

@@ -1,0 +1,3 @@
+device_tracker:
+  - platform: swisscom
+  - host: 192.168.178.1

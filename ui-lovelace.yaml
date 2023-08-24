@@ -15,7 +15,6 @@ title: Home
 views:
 - badges:
   - entity: person.leroy
-  - entity: person.USER2
   cards:
   - entities:
     - entities:
@@ -713,10 +712,9 @@ views:
 - badges: []
   cards:
   - entities:
-    - entity: input_text.remote_bedroom_action_text
     - entity: sensor.temperature_outdoor_temperature
+    - entity: sensor.season
     show_header_toggle: false
-    theme: Fluent Green
     title: Test apps
     type: entities
   - entities:
@@ -760,6 +758,9 @@ views:
     min: 35
     needle: true
     type: gauge
+  - entities:
+    - light.livingroom_c_1
+    type: entities
   icon: mdi:test-tube
   path: tests
   title: Tests

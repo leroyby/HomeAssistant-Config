@@ -23,14 +23,14 @@
   trigger:
     - platform: numeric_state
       entity_id: sensor.temperature_livingroom_average
-      above: '22.5'
+      above: '24'
       for: '00:02:00'
   condition: []
   action:
     - service: notify.mobile_app_iphone_von_leroy
       data:
         title: "Temperatur living area high"
-        message: "Die Temperatur im Wohnzimmer über 22.5 Grad" 
+        message: "Die Temperatur im Wohnzimmer über 24 Grad" 
   mode: single  
 
  ## Office 
@@ -46,16 +46,18 @@
       data:
         title: "Temperatur office low"
         message: "Die Temperatur im Büro unter 20 Grad" 
+  mode: single 
 
 - alias: Temperature office high Notification
   trigger:
     - platform: numeric_state
       entity_id: sensor.temperature_office_average
-      above: '23'
-      for: '00:02:00'
+      above: '24'
+      for: '00:05:00'
   condition: []
   action:
     - service: notify.mobile_app_iphone_von_leroy
       data:
         title: "Temperatur office high"
-        message: "Die Temperatur im Büro über 23 Grad" 
+        message: "Die Temperatur im Büro über 24 Grad" 
+  mode: single 

@@ -44,7 +44,7 @@
           - thu
           - fri
     - condition: time
-      after: "21:30:00"
+      after: "23:30:00"
       before: "04:00:00"
   action:
   - service: input_boolean.turn_on

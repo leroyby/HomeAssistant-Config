@@ -78,7 +78,9 @@
     - platform: state
       entity_id: vacuum.rombacus
       to: 'returning'
-  condition: []
+  condition: time
+  after: "23:00:00"
+  before: "06:00:00"
   action:
   - service: light.turn_on
     target:
