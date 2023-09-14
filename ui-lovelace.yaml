@@ -239,6 +239,8 @@ views:
   title: Home
 - badges: []
   cards:
+  - entity: climate.climate01
+    type: thermostat
   - entity: climate.thermostat_bedroom
     name: Bedroom
     type: thermostat
@@ -658,8 +660,8 @@ views:
     type: glance
   - columns: 2
     entities:
-    - entity: binary_sensor.contact_bedroom_window_contact
-      name: Bedroom Window
+    - entity: binary_sensor.contact_office_window_contact
+      name: Office Window
     - entity: binary_sensor.contact_livingroom_cabinet_contact
       name: Livingroom Cabinet
     show_icon: true

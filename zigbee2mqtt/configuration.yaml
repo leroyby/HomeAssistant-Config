@@ -46,7 +46,7 @@ devices:
   '0x00158d0008cef84c':
     friendly_name: temperature_bathroom
   '0x00158d0008e1c503':
-    friendly_name: contact_bedroom_window
+    friendly_name: contact_office_window
   '0x00158d0007e2122f':
     friendly_name: ' motion_livingroom'
   '0x086bd7fffe3c5fde':
