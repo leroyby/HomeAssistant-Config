@@ -224,7 +224,6 @@ views:
     type: custom:swipe-card
   - entity: alarm_control_panel.alarmo
     states:
-    - arm_home
     - arm_away
     type: alarm-panel
   - cards:

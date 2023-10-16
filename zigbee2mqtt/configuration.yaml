@@ -61,6 +61,9 @@ devices:
     friendly_name: livingroom_tv
   '0x00158d0008c99136':
     friendly_name: temperature_bedroom_2
+    temperature_precision: 2
+    pressure_precision: 0
+    temperature_calibration: 0
   '0x003c84fffe282720':
     friendly_name: button_bedroom
   '0x00158d0008cf2323':
@@ -68,7 +71,9 @@ devices:
   '0x00124b002517876b':
     friendly_name: motion_tba_2
   '0xcc86ecfffec72586':
-    friendly_name: livingroom_c_1
+    friendly_name: livingroom_c_6-1
+  '0xa4c138402c4b5647':
+    friendly_name: livingroom_c_1-2
 advanced:
   log_level: info
   log_syslog:

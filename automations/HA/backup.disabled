@@ -1,0 +1,25 @@
+######################################################################################################
+# @Leroyby
+# Original Repo : https://github.com/Leroyby/Homeassistant-Config
+# Automations Backup
+######################################################################################################
+
+- alias: "AutoBackup: Hourly Backup"
+  trigger: 
+    platform: time_pattern
+    hours: "/3"
+  action:
+    # partial backup to save storage
+    service: auto_backup.backup_partial 
+    data:
+      name: "AutoBackup: {{ now().strftime('%a, %-I:%M %p (%d/%m/%Y)') }}"
+      addons:
+        - core_mariadb
+        - core_mosquitto
+      folders:
+        - homeassistant
+        - share
+        - ssl
+      keep_days: 2
+
+  

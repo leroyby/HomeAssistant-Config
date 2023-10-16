@@ -60,8 +60,4 @@
       friendly_name: No one is home
       value_template: >
         {{ not is_state("person.leroy", "home")
-            and not is_state("activity_in_hall", "on")
-            and not is_state("binary_sensor.activity_in_office", "on")
-            and not is_state("binary_sensor.activity_in_bedroom", "on")
-            and not is_state("activity_in_kitchen", "on")
-            and not is_state("activity_in_livingroom", "on") }}      
+            }}    

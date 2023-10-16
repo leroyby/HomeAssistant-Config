@@ -38,6 +38,12 @@
     - light.livingroom_tv_2
 
 - platform: group
+  name: Living_room_ceiling_lights
+  unique_id: 2310062344
+  entities:
+    - light.livingroom_c_1
+
+- platform: group
   name: Living_room_motion_lights
   unique_id: 2210162058
   entities:
