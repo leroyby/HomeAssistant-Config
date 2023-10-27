@@ -56,9 +56,7 @@ devices:
   '0x94deb8fffe60c570':
     friendly_name: livingroom_sofa
   '0x94deb8fffe6d75e8':
-    friendly_name: livingroom_table
-  '0x0017880109230122':
-    friendly_name: livingroom_tv
+    friendly_name: office_desk
   '0x00158d0008c99136':
     friendly_name: temperature_bedroom_2
     temperature_precision: 2
@@ -74,6 +72,14 @@ devices:
     friendly_name: livingroom_c_6-1
   '0xa4c138402c4b5647':
     friendly_name: livingroom_c_1-2
+  '0x000b57fffe2a4361':
+    friendly_name: office_c1
+  '0x000b57fffe269bc9':
+    friendly_name: office_c2
+  '0x000b57fffe468821':
+    friendly_name: office_c3
+  '0x0017880109230122':
+    friendly_name: bedroom_light
 advanced:
   log_level: info
   log_syslog:

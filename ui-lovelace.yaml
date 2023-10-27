@@ -47,7 +47,7 @@ views:
           service: script.living_room_normal_lights
       head:
         color_picker: true
-        entity: light.living_room_lights
+        entity: light.livingroom_lights
         hide_when_off: false
         name: Living
         type: custom:slider-entity-row
@@ -86,7 +86,7 @@ views:
       name: Bed
       type: custom:fold-entity-row
     - entities:
-      - light.office_lights
+      - light.office_lights_2
       - entity: script.work_lights_office
         icon_height: 20px
         name: Work lights
@@ -760,8 +760,107 @@ views:
     needle: true
     type: gauge
   - entities:
-    - light.livingroom_c_1
+    - entity: light.bedroom_lights
+    - entity: light.office_lights
     type: entities
+  - action_button:
+      icon: mdi:power
+      mode: custom
+      show: true
+      show_spinner: true
+      tap_action:
+        action: toggle
+    compact: false
+    entity: light.all_lights_2
+    icon:
+      show: true
+      tap_action:
+        action: more-info
+      use_state_color: true
+    name: Alle Lichter
+    show_name: true
+    show_state: true
+    slider:
+      background: gradient
+      direction: left-right
+      force_square: false
+      show_attribute: false
+      show_track: true
+      toggle_on_click: false
+      use_percentage_bg_opacity: true
+      use_state_color: true
+    type: custom:slider-button-card
+  - collapsible_controls: true
+    entity: light.all_lights_2
+    fill_container: false
+    show_brightness_control: true
+    show_color_control: true
+    show_color_temp_control: true
+    type: custom:mushroom-light-card
+    use_light_color: true
+  - entity: vacuum.rombacus
+    map: camera.octoprint_camera
+    type: custom:vacuum-card
+  - cards:
+    - action_button:
+        mode: toggle
+      entity: light.all_lights_2
+      icon:
+        tap_action:
+          action: more-info
+        use_state_color: true
+      slider:
+        background: gradient
+        direction: left-right
+        use_state_color: true
+      type: custom:slider-button-card
+    - action_button:
+        mode: toggle
+        tap_action:
+          action: toggle
+      entity: light.office_lights
+      icon:
+        tap_action:
+          action: more-info
+        use_state_color: true
+      name: Switch
+      slider:
+        background: custom
+        direction: left-right
+        toggle_on_click: true
+      type: custom:slider-button-card
+    - action_button:
+        mode: custom
+        tap_action:
+          action: toggle
+      entity: fan.living_fan
+      icon:
+        tap_action:
+          action: more-info
+      name: Fan
+      slider:
+        background: triangle
+        direction: left-right
+        show_track: true
+      type: custom:slider-button-card
+    - action_button:
+        icon: mdi:swap-vertical
+        mode: custom
+        tap_action:
+          action: toggle
+      entity: cover.living_cover
+      icon:
+        show: true
+        tap_action:
+          action: more-info
+      name: Cover
+      slider:
+        background: striped
+        direction: top-bottom
+      type: custom:slider-button-card
+    columns: 4
+    square: false
+    type: grid
   icon: mdi:test-tube
   path: tests
   title: Tests

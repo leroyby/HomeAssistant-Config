@@ -5,46 +5,64 @@
 ######################################################################################################
 
 - platform: group
-  name: All Lights 
-  unique_id: 2210171730
+  name: All_Lights 
   entities:
     - light.office_lights
     - light.bedroom_lights
-    - light.Living_room_lights
+    - light.Livingroom_lights
     - light.bad_klein
     
 - platform: group
-  name: Office_Lights
-  unique_id: 2210062342
+  name: bedroom_c_lights
   entities:
-    - light.wiz_office_1
-    - light.wiz_office_2
-    - light.wiz_office_3
-    
+    - light.bedroom_c1
+    - light.bedroom_c2
+    - light.bedroom_c3
+
 - platform: group
   name: bedroom_lights
-  unique_id: 2210062343
   entities:
-    - light.decke_l1
-    - light.decke_l2
-    - light.decke_l3
+    - light.bedroom_c1
+    - light.bedroom_c2
+    - light.bedroom_c3
+    - light.bedroom_light
     
 - platform: group
-  name: Living_room_lights
-  unique_id: 2210062344
+  name: Livingroom_lights
   entities:
     - light.livingroom_sofa
     - light.livingroom_table
     - light.livingroom_tv_2
+    - light.livingroom_c_lights
 
 - platform: group
-  name: Living_room_ceiling_lights
-  unique_id: 2310062344
+  name: Livingroom_c_lights
+  unique_id: 2310232127
   entities:
-    - light.livingroom_c_1
+    - light.livingroom_c_1_2
+    - light.livingroom_c_6_1
 
 - platform: group
-  name: Living_room_motion_lights
+  name: office_lights
+  unique_id: 23101232058
+  entities:
+    - light.office_c1
+    - light.office_c2
+    - light.office_c3
+    - light.office_desk
+
+- platform: group
+  name: office_c_lights
+  unique_id: 23102731REDACTED
+  entities:
+    - light.office_c1
+    - light.office_c2
+    - light.office_c3
+     
+
+
+- platform: group
+  name: Livingroom_motion_lights
   unique_id: 2210162058
   entities:
     - light.livingroom_sofa

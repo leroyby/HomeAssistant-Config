@@ -15,10 +15,12 @@
           entity_id: light.bedroom_lights
       action_button_double: []
       action_button_long:
-      - service: switch.toggle
-        data: {}
+      - service: light.toggle
+        data:
+          transition: 3
+          color_temp: 414
         target:
-          entity_id: switch.bedroom_tv
+          device_id: c1dc928aea9849e3bc6ae748eeaaef3f
       button_double_press: false
       button_long_loop: false
       helper_double_press_delay: 500
