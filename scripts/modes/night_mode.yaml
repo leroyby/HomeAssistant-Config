@@ -1,0 +1,11 @@
+######################################################################################################
+# @Leroyby
+# Original Repo : https://github.com/Leroyby/Homeassistant-Config
+# Script Night Mode
+######################################################################################################
+night_mode_on:
+  alias: "Set night mode"
+  mode: parallel
+  sequence:
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.night_mode

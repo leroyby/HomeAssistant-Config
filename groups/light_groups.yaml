@@ -6,45 +6,52 @@
 
 - platform: group
   name: All_Lights 
+  unique_id: 4e9c2053-a14d-474c-a83e-c5cafe164f78
   entities:
     - light.office_lights
     - light.bedroom_lights
     - light.Livingroom_lights
     - light.bad_klein
-    
-- platform: group
-  name: bedroom_c_lights
-  entities:
-    - light.bedroom_c1
-    - light.bedroom_c2
-    - light.bedroom_c3
 
 - platform: group
   name: bedroom_lights
+  unique_id: 4e9c2053-a14d-474c-a83e-231028dd0109
   entities:
     - light.bedroom_c1
     - light.bedroom_c2
     - light.bedroom_c3
     - light.bedroom_light
-    
+     
+- platform: group
+  name: bedroom_c_light
+  unique_id: 4e9c2053-a14d-474c-a83e-231028dd0108
+  entities:
+    - light.bedroom_c1
+    - light.bedroom_c2
+    - light.bedroom_c3
+
 - platform: group
   name: Livingroom_lights
+  unique_id: 4e9c2053-a14d-474c-a83e-231028dd01REDACTED
   entities:
     - light.livingroom_sofa
-    - light.livingroom_table
-    - light.livingroom_tv_2
-    - light.livingroom_c_lights
+
+- platform: group
+  name: Livingroom_motion_lights
+  unique_id: 4e9c2053-a14d-474c-a83e-231028dd0120
+  entities:
+    - light.livingroom_sofa
 
 - platform: group
   name: Livingroom_c_lights
-  unique_id: 2310232127
+  unique_id: 4e9c2053-a14d-474c-a83e-231028dd0117
   entities:
     - light.livingroom_c_1_2
     - light.livingroom_c_6_1
 
 - platform: group
   name: office_lights
-  unique_id: 23101232058
+  unique_id: 4e9c2053-a14d-474c-a83e-231028dd0118
   entities:
     - light.office_c1
     - light.office_c2
@@ -53,23 +60,15 @@
 
 - platform: group
   name: office_c_lights
-  unique_id: 23102731REDACTED
+  unique_id: 4e9c2053-a14d-474c-a83e-231028dd0119
   entities:
     - light.office_c1
     - light.office_c2
     - light.office_c3
-     
-
-
-- platform: group
-  name: Livingroom_motion_lights
-  unique_id: 2210162058
-  entities:
-    - light.livingroom_sofa
-    - light.livingroom_table
 
 - platform: group
   name: toilet_Lights 
+  unique_id: 4e9c2053-a14d-474c-a83e-231028dd01REDACTED
   entities:
     - light.bad_klein
 
