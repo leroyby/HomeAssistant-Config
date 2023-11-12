@@ -5,5 +5,5 @@
 ######################################################################################################
   - platform: ping
     hosts:
-      a72_von_USER2_ping: 192.168.178.2REDACTED
+      a72_von_silvana_ping: 192.168.178.2REDACTED
       iphone_von_leroy_ping: 192.168.178.2REDACTED

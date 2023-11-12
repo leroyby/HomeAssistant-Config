@@ -19,8 +19,6 @@ views:
   - entities:
     - entities:
       - light.livingroom_sofa
-      - light.livingroom_table
-      - light.livingroom_tv_2
       - entity: script.living_room_cozy_lights
         icon_height: 20px
         name: Cozy lights
@@ -54,6 +52,8 @@ views:
       type: custom:fold-entity-row
     - entities:
       - light.bedroom_lights
+      - entity: light.bedroom_c_light
+      - entity: light.bedroom_light
       - entity: script.bedroom_cozy_lights
         icon_height: 20px
         name: Cozy lights
@@ -86,7 +86,9 @@ views:
       name: Bed
       type: custom:fold-entity-row
     - entities:
-      - light.office_lights_2
+      - light.office_lights
+      - light.office_c_lights
+      - light.office_desk
       - entity: script.work_lights_office
         icon_height: 20px
         name: Work lights
@@ -1046,3 +1048,14 @@ views:
   path: battery
   theme: Backend-selected
   title: Battery
+- badges: []
+  cards:
+  - collapsible_controls: true
+    entity: light.all_lights
+    show_brightness_control: true
+    show_color_control: true
+    show_color_temp_control: true
+    type: custom:mushroom-light-card
+    use_light_color: false
+  path: main
+  title: Main

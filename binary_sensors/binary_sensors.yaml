@@ -99,8 +99,3 @@
         {% set media_player_on = is_state("binary_sensor.any_media_player_on", "on") %}
         {{ light_on or media_player_on }}
 
-- platform: workday
-  country: CH
-  workdays: [mon, tue, wed, thu, fri]
-  excludes: [sat, sun]
-
