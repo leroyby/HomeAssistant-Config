@@ -15,6 +15,7 @@ title: Home
 views:
 - badges:
   - entity: person.leroy
+  - entity: person.dominique
   cards:
   - entities:
     - entities:
@@ -229,10 +230,12 @@ views:
     - arm_away
     type: alarm-panel
   - cards:
-    - entities:
-      - entity: lock.frontdoor
-      show_header_toggle: false
-      type: entities
+    - entity: lock.eingangstuer
+      layout: horizontal
+      type: custom:mushroom-lock-card
+    - entity: lock.frontdoor
+      layout: horizontal
+      type: custom:mushroom-lock-card
     type: vertical-stack
   icon: mdi:home
   path: default_view
@@ -242,7 +245,7 @@ views:
   cards:
   - entity: climate.climate01
     type: thermostat
-  - entity: climate.thermostat_bedroom
+  - entity: climate.bedroom_thermostat
     name: Bedroom
     type: thermostat
   - entities:
@@ -294,152 +297,9 @@ views:
       type: custom:template-entity-row
     title: Temperature sensors
     type: entities
-  - content: "\n<table width=\"100%\">\n  <tr>\n    <th>Area</th>\n    <th>Temperature</th>\n\
-      \    <th>Humidity</th>\n  </tr>\n  <tr>\n    <td>Outdoor</td>\n    <td>{{ states('sensor.thermal_comfort_outside_simmerzone')\
-      \ | regex_replace(find='_', replace=' ') | title }}</td>\n    <td>{{ states('sensor.thermal_comfort_outside_perception')\
-      \ | regex_replace(find='_', replace=' ') | title }}</td>\n  </tr>\n  <tr>\n\
-      \    <td>Indoor Average</td>\n    <td>{{ states('sensor.thermal_comfort_indoor_average_simmerzone')\
-      \ | regex_replace(find='_', replace=' ') | title }}</td>\n    <td>{{ states('sensor.thermal_comfort_indoor_average_perception')\
-      \ | regex_replace(find='_', replace=' ') | title }}</td>\n  </tr>\n  <tr>\n\
-      \    <td>Bedroom</td>\n    <td>{{ states('sensor.thermal_comfort_bedroom_simmerzone')\
-      \ | regex_replace(find='_', replace=' ') | title }}</td>\n    <td>{{ states('sensor.thermal_comfort_bedroom_perception')\
-      \ | regex_replace(find='_', replace=' ') | title }}</td>\n  </tr>\n  <tr>\n\
-      \    <td>Office</td>\n    <td>{{ states('sensor.thermal_comfort_office_simmerzone')\
-      \ | regex_replace(find='_', replace=' ') | title }}</td>\n    <td>{{ states('sensor.thermal_comfort_office_perception')\
-      \ | regex_replace(find='_', replace=' ') | title }}</td>\n  </tr>\n  <tr>\n\
-      \    <td>Living Room</td>\n    <td>{{ states('sensor.thermal_comfort_living_room_simmerzone')\
-      \ | regex_replace(find='_', replace=' ') | title }}</td>\n    <td>{{ states('sensor.thermal_comfort_living_room_perception')\
-      \ | regex_replace(find='_', replace=' ') | title }}</td>\n  </tr>\n  <tr>\n\
-      \    <td>Bathroom</td>\n    <td>{{ states('sensor.thermal_comfort_bathroom_simmerzone')\
-      \ | regex_replace(find='_', replace=' ') | title }}</td>\n    <td>{{ states('sensor.thermal_comfort_bathroom_perception')\
-      \ | regex_replace(find='_', replace=' ') | title }}</td>\n  </tr>\n  <tr>\n\
-      \    <td>Toilet</td>\n    <td>{{ states('sensor.thermal_comfort_toilet_simmerzone')\
-      \ | regex_replace(find='_', replace=' ') | title }}</td>\n    <td>{{ states('sensor.thermal_comfort_toilet_perception')\
-      \ | regex_replace(find='_', replace=' ') | title }}</td>\n  </tr>\n  <tr>\n\
-      \    <td>Hall</td>\n    <td>{{ states('sensor.thermal_comfort_hall_simmerzone')\
-      \ | regex_replace(find='_', replace=' ') | title }}</td>\n    <td>{{ states('sensor.thermal_comfort_hall_perception')\
-      \ | regex_replace(find='_', replace=' ') | title }}</td>\n  </tr>\n</table>\n"
-    type: markdown
-  - experimental:
-      color_threshold: true
-    graph_span: 1d
-    header:
-      colorize_states: true
-      show: true
-      show_states: true
-      standard_format: false
-      title: Humidity
-    now:
-      color: red
-      label: Now
-      show: true
-    series:
-    - entity: sensor.temperature_livingroom_humidity
-      group_by:
-        duration: 15m
-        func: last
-      name: Livingroom
-      show:
-        header_color_threshold: true
-      stroke_width: 3
-      type: line
-    - entity: sensor.temperature_office_humidity
-      group_by:
-        duration: 15m
-        func: last
-      name: Office
-      show:
-        header_color_threshold: true
-      stroke_width: 3
-      type: line
-    - entity: sensor.temperature_bedroom_2_humidity
-      group_by:
-        duration: 15m
-        func: last
-      name: Bedroom
-      show:
-        header_color_threshold: true
-      stroke_width: 3
-      type: line
-    - entity: sensor.temperature_toilet_humidity
-      group_by:
-        duration: 15m
-        func: last
-      name: Toilet
-      show:
-        header_color_threshold: true
-      stroke_width: 3
-      type: line
-    - entity: sensor.temperature_bathroom_humidity
-      group_by:
-        duration: 15m
-        func: last
-      name: Bathroom
-      show:
-        header_color_threshold: true
-      stroke_width: 3
-      type: line
-    - entity: sensor.temperature_hall_humidity
-      group_by:
-        duration: 15m
-        func: last
-      name: Hall
-      show:
-        header_color_threshold: true
-      stroke_width: 3
-      type: line
-    show:
-      last_updated: true
-    span:
-      offset: -30min
-      start: day
-    type: custom:apexcharts-card
-  - experimental:
-      color_threshold: true
-    graph_span: 12h
-    header:
-      colorize_states: true
-      show: true
-      show_states: true
-      standard_format: false
-      title: Temperature
-    now:
-      color: red
-      label: Now
-      show: true
-    series:
-    - entity: sensor.temperature_livingroom_temperature
-      group_by:
-        duration: 15m
-        func: last
-      name: Livingroom
-      show:
-        header_color_threshold: true
-      stroke_width: 3
-      type: line
-    - entity: sensor.temperature_office_temperature
-      group_by:
-        duration: 15m
-        func: last
-      name: Office
-      show:
-        header_color_threshold: true
-      stroke_width: 3
-      type: line
-    - entity: sensor.temperature_bedroom_2_temperature
-      group_by:
-        duration: 15m
-        func: last
-      name: Bedroom
-      show:
-        header_color_threshold: true
-      stroke_width: 3
-      type: line
-    show:
-      last_updated: true
-    span:
-      start: day
-    type: custom:apexcharts-card
+  - entity: sensor.bedroom_thermostat_position
+    name: Ventilöffnung
+    type: gauge
   icon: mdi:home-thermometer
   path: climate
   theme: Backend-selected
@@ -672,6 +532,7 @@ views:
   - entities:
     - entity: binary_sensor.anything_on
     - entity: binary_sensor.any_light_on
+    - entity: binary_sensor.office_pc_on
     show_header_toggle: false
     title: Devices are on
     type: entities
@@ -715,8 +576,10 @@ views:
 - badges: []
   cards:
   - entities:
-    - entity: sensor.temperature_outdoor_temperature
+    - entity: input_select.last_light_bedroom
     - entity: sensor.season
+    - entity: binary_sensor.office_pc_on
+    - entity: sensor.power_office_pc
     show_header_toggle: false
     title: Test apps
     type: entities

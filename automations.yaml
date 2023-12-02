@@ -6,21 +6,104 @@
     input:
       integration: Zigbee2MQTT
       controller_device: dff73f19aab0d896445eb69e0b797d49
-      controller_entity: sensor.button_bedroom_action
-      helper_last_controller_event: input_text.bedroom_ikea_button
+      controller_entity: sensor.button_livingroom_action
+      helper_last_controller_event: input_text.livingroom_ikea_button
       action_button_short:
-      - service: light.toggle
+      - service: switch.toggle
         data: {}
         target:
-          entity_id: light.bedroom_lights
+          entity_id: switch.tv
       action_button_double: []
-      action_button_long:
-      - service: light.toggle
-        data:
-          transition: 3
-          color_temp: 414
-        target:
-          device_id: c1dc928aea9849e3bc6ae748eeaaef3f
+      action_button_long: []
       button_double_press: false
       button_long_loop: false
       helper_double_press_delay: 500
+- id: '1701126185865'
+  alias: Remote Bedroom
+  description: ''
+  use_blueprint:
+    path: EPMatt/ikea_e2001_e2002.yaml
+    input:
+      integration: Zigbee2MQTT
+      controller_entity: sensor.remote_bedroom_action
+      helper_last_controller_event: input_text.remote_bedroom_action_text
+      action_button_up_short:
+      - service: light.turn_on
+        data:
+          transition: 10
+        target:
+          entity_id: light.bedroom_lights
+      action_button_down_short:
+      - service: light.turn_off
+        data:
+          transition: 3
+        target:
+          entity_id: light.bedroom_lights
+      button_right_long_loop: false
+      button_up_long_loop: true
+      button_down_long_loop: true
+      action_button_up_long:
+      - service: light.turn_on
+        data:
+          brightness_step_pct: 10
+        target:
+          entity_id: light.bedroom_lights
+      action_button_up_double: []
+      helper_double_press_delay: 1000
+      button_down_double_press: false
+      button_up_double_press: true
+      action_button_down_long:
+      - service: light.turn_on
+        data:
+          brightness_step_pct: -3
+        target:
+          entity_id: light.bedroom_lights
+      action_button_left_long: []
+      action_button_left_short:
+      - service: script.bedroom_cozy_lights
+        data: {}
+      action_button_right_short:
+      - service: automation.trigger
+        data:
+          skip_condition: true
+        target:
+          entity_id: automation.bedroom_light_scene_switch
+- id: '1701358647921'
+  alias: Bedroom Light Scene Switch
+  description: ''
+  trigger: []
+  condition: []
+  action:
+  - if:
+    - condition: state
+      entity_id: input_select.last_light_bedroom
+      state: automation.Bedroom White Light
+    then:
+    - service: automation.trigger
+      data:
+        skip_condition: true
+      target:
+        entity_id: automation.bedroom_cold_white_light_2
+    else:
+    - if:
+      - condition: state
+        entity_id: input_select.last_light_bedroom
+        state: automation.Bedroom Cold White Light
+      then:
+      - service: automation.trigger
+        data:
+          skip_condition: true
+        target:
+          entity_id: automation.bedroom_warm_white_light
+      else:
+      - if:
+        - condition: state
+          entity_id: input_select.last_light_bedroom
+          state: automation.Bedroom Warm White Light
+        then:
+        - service: automation.trigger
+          data:
+            skip_condition: true
+          target:
+            entity_id: automation.bedroom_white_light
+  mode: single

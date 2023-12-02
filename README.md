@@ -1,5 +1,5 @@
 [![GitHub last commit](https://img.shields.io/github/last-commit/leroyby/homeassistant-config?style=plasticr)](https://github.com/leroyby/HomeAssistant-Config/commits/main)
-[![HA Version](https://img.shields.io/badge/Running%20Home%20Assistant-2023.11.2%20-darkblue)](https://github.com/home-assistant/home-assistant/releases/latest)
+[![HA Version](https://img.shields.io/badge/Running%20Home%20Assistant-2023.11.3%20-darkblue)](https://github.com/home-assistant/home-assistant/releases/latest)
 
 # <a name="table">Table of Contents - Index </a>
    * [Home Assistant configuration](#home-assistant-configuration-overview)
@@ -31,7 +31,7 @@ At this point also a big thanks to the whole home assistant community and especa
 # Repository statistics
 | Lines of code| Sensors| Binary Sensors | Switches  | Automations | Scripts | Scenes |
 | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
-| 31,728 | 470 | 49 | 19 | 75 | 24 | 3 |
+| 32,460 | 377 | 49 | 19 | 77 | 24 | 3 |
 
 ###  <a name="History">History</a>
 Started in 2014 with the [Tradfri Gateway](https://www.ikea.com/ch/en/search/products/?q=tradfri) (with 3 White spectrum bulbs) and with the [myStrom Switches](https://mystrom.ch/). Added a LED-Strip from China to the setup and started tinkering with HA. But not for very long. During this time I tested also Apple HomeKit, but I was never really statisfied. 2022 I got some time and started again with HA and now here we are... 
@@ -57,29 +57,29 @@ And I will be adding a wall tablet soon (WIP).
 [Go to Table of Contents](#table)
 ### <a name="Components">Components</a>
 | [Go to Menu](#menu) |
-| Device  | Amazon Link | Quantity | Connection | Home Assistant | Notes | Status |
-| ------------- | :---: | :---: | ------------- | ------------- | ------------- | ------------- |
-| Proxmox VM | - | 1 | Ethernet | - | Runs Home Assistant, is the heart of the whole home | integrated |
-| [Phoscon ConBee II](https://phoscon.de/de/conbee2) | [Amazon](https://amzn.to/3rseX15) | 1 | USB | - | Zigbee Adapter for Home Assistant | integrated |
+| Device | Quantity | Connection | Home Assistant | Notes | Status |
+| ------------- | :---: | ------------- | ------------- | ------------- | ------------- |
+| Proxmox VM | 1 | Ethernet | - | Runs Home Assistant, is the heart of the whole home | integrated |
+| [Phoscon ConBee II](https://phoscon.de/de/conbee2) | 1 | USB | - | Zigbee Adapter for Home Assistant | integrated |
 
 ### <a name="hubs">Hubs</a>
 | [Go to Menu](#menu) |
-| Device  | Amazon Link | Quantity | Connection | Home Assistant | Notes | Status |
-| ------------- | :---: | :---: | ------------- | ------------- | ------------- | ------------- |
-| [TRÅDFRI Gateway V1](https://www.ikea.com/ch/de/p/tradfri-gateway-weiss-40337806)| - | 1 | Ethernet|[IKEA TRÅDFRI](https://www.home-assistant.io/integrations/tradfri) | V1, because V2 is comming soon (late 2022) / userd for integration of TRÅDFRI lights. Maybe will be renewd with the new [Dirigera Hub](https://about.ikea.com/en/newsroom/2022/05/25/ikea-launches-dirigera-the-matter-ready-hub-for-smart-products-and-a-new-ikea-home-smart-app) |integrated|
+| Device  | Quantity | Connection | Home Assistant | Notes | Status |
+| ------------- | :---: | ------------- | ------------- | ------------- | ------------- |
+| [TRÅDFRI Gateway V1](https://www.ikea.com/ch/de/p/tradfri-gateway-weiss-40337806)| 1 | Ethernet|[IKEA TRÅDFRI](https://www.home-assistant.io/integrations/tradfri) | V1, because V2 is comming soon (late 2022) / userd for integration of TRÅDFRI lights. Maybe will be renewd with the new [Dirigera Hub](https://about.ikea.com/en/newsroom/2022/05/25/ikea-launches-dirigera-the-matter-ready-hub-for-smart-products-and-a-new-ikea-home-smart-app) |not used|
 
 
 ### <a name="Lights">Lightning</a>
 | [Go to Menu](#menu) |
-| Device  | Amazon Link | Quantity | Connection | Home Assistant | Notes | Status |
-| ------------- | :---: | :---: | ------------- | ------------- | ------------- | ------------- |
-| [TRÅDFRI Bulb E27 White Spectrum](https://www.ikea.com/ch/en/p/tradfri-led-bulb-e27-1055-lumen-wireless-dimmable-white-spectrum-globe-opal-white-40486783/) | - | 4 | Ikea Hub (Zigbee) |[IKEA TRÅDFRI](https://www.home-assistant.io/integrations/tradfri) | - | integrated|
-| [TRÅDFRI Bulb E27 RGBW](https://www.ikea.com/ch/en/p/tradfri-led-bulb-e27-806-lumen-smart-wireless-dimmable-colour-and-white-spectrum-globe-70439158/) | - | 1 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)| - | integrated|
-| [TRÅDFRI Bulb E14 White Spectrum](https://www.ikea.com/ch/en/p/tradfri-led-bulb-e14-470-lumen-wireless-dimmable-white-spectrum-globe-opal-white-50486787/) | - | 1 | Ikea Hub (Zigbee) |[IKEA TRÅDFRI](https://www.home-assistant.io/integrations/tradfri) | - |integrated|
-| [TRÅDFRI LED Panel Floatl Warm White](tba) | - | 1 | Ikea Hub (Zigbee) |[IKEA TRÅDFRI](https://www.home-assistant.io/integrations/tradfri) | - |not integrated|
-| [Philips Hue Gradient Signe Floor lamp RGBW](https://www.philips-hue.com/en-us/p/hue-white-and-color-ambiance-gradient-signe-floor-lamp/046677803506) | [Amazon](https://amzn.to/3xPaKrN) | 1 | Hue Hub (Zigbee)|[Philips Hue](https://www.home-assistant.io/integrations/hue) | -  |integrated|
-| [Gledopto Spot MR16 RGBW](https://www.gledopto.eu/smart-zigbee-led-mr16-led-rgbcct) | [Amazon](https://amzn.to/3LH9yN1) | 2 | ConBee II (ZigBee) | [MQTT](https://www.home-assistant.io/integrations/mqtt/) | - | integrated |
-| [WiZ Spot 4.9W PAR16 RGBW](https://www.wizconnected.com/de-ch/p/led-lampe-spot-4-9-w--entspr-50-w--par16-gu10-x2/8719514551312)| [Single-Pack](https://amzn.to/3dM5mPf) [Double-Pack](https://amzn.to/3DRK3qq) | 1 | Wi-Fi | [WIZ](https://www.home-assistant.io/integrations/wiz/) | - | integrated |
+| Device  | Quantity | Connection | Home Assistant | Notes | Status |
+| -------------  | :---: | ------------- | ------------- | ------------- | ------------- |
+| [TRÅDFRI Bulb E27 White Spectrum](https://www.ikea.com/ch/en/p/tradfri-led-bulb-e27-1055-lumen-wireless-dimmable-white-spectrum-globe-opal-white-40486783/) | 4 | Ikea Hub (Zigbee) |[IKEA TRÅDFRI](https://www.home-assistant.io/integrations/tradfri) | - | integrated|
+| [TRÅDFRI Bulb E27 RGBW](https://www.ikea.com/ch/en/p/tradfri-led-bulb-e27-806-lumen-smart-wireless-dimmable-colour-and-white-spectrum-globe-70439158/) | 1 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)| - | integrated|
+| [TRÅDFRI Bulb E14 White Spectrum](https://www.ikea.com/ch/en/p/tradfri-led-bulb-e14-470-lumen-wireless-dimmable-white-spectrum-globe-opal-white-50486787/) | 1 | Ikea Hub (Zigbee) |[IKEA TRÅDFRI](https://www.home-assistant.io/integrations/tradfri) | - |integrated|
+| [TRÅDFRI LED Panel Floatl Warm White](tba) | 1 | Ikea Hub (Zigbee) |[IKEA TRÅDFRI](https://www.home-assistant.io/integrations/tradfri) | - |not integrated|
+| [Philips Hue Gradient Signe Floor lamp RGBW](https://www.philips-hue.com/en-us/p/hue-white-and-color-ambiance-gradient-signe-floor-lamp/046677803506)  | 1 | Hue Hub (Zigbee)|[Philips Hue](https://www.home-assistant.io/integrations/hue) | -  |integrated|
+| [Gledopto Spot MR16 RGBW](https://www.gledopto.eu/smart-zigbee-led-mr16-led-rgbcct) | 4 | ConBee II (ZigBee) | [MQTT](https://www.home-assistant.io/integrations/mqtt/) | - | integrated |
+| [WiZ Spot 4.9W PAR16 RGBW](https://www.wizconnected.com/de-ch/p/led-lampe-spot-4-9-w--entspr-50-w--par16-gu10-x2/8719514551312) | 1 | Wi-Fi | [WIZ](https://www.home-assistant.io/integrations/wiz/) | - | integrated |
 
 | Lights are grouped in [light_groups.yaml](https://github.com/leroyby/HomeAssistant-Config/blob/main/groups/light_groups.yaml) |
 ### <a name="Outlets">Outlets & Switches</a>
@@ -91,9 +91,9 @@ And I will be adding a wall tablet soon (WIP).
 
 ### <a name="Locks">Locks</a>
 | [Go to Menu](#menu) |
-| Device  | Amazon Link | Quantity | Connection | Home Assistant | Notes | Status |
-| ------------- | :---: | :---: | ------------- | ------------- | ------------- | ------------- |
-| [Nuki Smartlock with Bridge G2](https://nuki.io/en/) | [Lock G3](https://amzn.to/3r2nK9N) [Bundle G3](https://amzn.to/3RbEbv9) | 1 | Nuki Bridge (Bluetooth) |[Nuki](https://www.home-assistant.io/integrations/nuki) | tested with [Nuki Card v11](https://community.home-assistant.io/t/nuki-card-with-callback-support-supports-both-lock-opener-it-replaces-the-official-integration/311932) but currently using the build in option |integrated|
+| Device | Quantity | Connection | Home Assistant | Notes | Status |
+| ------------- | :---: | ------------- | ------------- | ------------- | ------------- |
+| [Nuki Smartlock with Bridge G2](https://nuki.io/en/) | 1 | Nuki Bridge (Bluetooth) |[Nuki](https://www.home-assistant.io/integrations/nuki) | tested with [Nuki Card v11](https://community.home-assistant.io/t/nuki-card-with-callback-support-supports-both-lock-opener-it-replaces-the-official-integration/311932) but currently using the build in option |integrated|
 
 ### <a name="Sensors">Sensors</a>
 | [Go to Menu](#menu) |
@@ -120,11 +120,11 @@ And I will be adding a wall tablet soon (WIP).
 | Device  | Amazon Link | Quantity | Connection | Home Assistant | Notes | Status |
 | ------------- | :---: | :---: | ------------- | ------------- | ------------- | ------------- |
 | [TRÅDFRI Wireless dimmer](https://www.ikea.com/ch/en/p/tradfri-wireless-dimmer-white-70408595/)| - | 1 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)|-| integrated |
-|[TRÅDFRI STYRBAR Remote control](https://www.ikea.com/ch/en/p/styrbar-remote-control-white-30488363/)| - | 1 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)|-| integrated |
+| [TRÅDFRI STYRBAR Remote control](https://www.ikea.com/ch/en/p/styrbar-remote-control-white-30488363/)| - | 1 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)|-| integrated |
 | TRÅDFRI Wireless 5-Button Remote| - | 1 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)|-| integrated |
-|[TRÅDFRI Shortcut button](https://www.ikea.com/ch/en/p/tradfri-shortcut-button-white-smart-40356381/)| - | 1 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)|-| integrated |
-|[Aquara Wireless Mini Switch](https://www.aqara.com/eu/wireless_mini_switch.html)| [Amazon](https://amzn.to/3SbrK3L) | 1 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)|-| integrated |
-|[Tuya 4-Gang Switch](https://solution.tuya.com/projects/CMa4ie3gzka6ns) | [-]() | 1 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)|-|integrated |
+| [TRÅDFRI Shortcut button](https://www.ikea.com/ch/en/p/tradfri-shortcut-button-white-smart-40356381/)| - | 1 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)|-| integrated |
+| [Aquara Wireless Mini Switch](https://www.aqara.com/eu/wireless_mini_switch.html)| [Amazon](https://amzn.to/3SbrK3L) | 1 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)|-| integrated |
+| [Tuya 4-Gang Switch](https://solution.tuya.com/projects/CMa4ie3gzka6ns) | [-]() | 1 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)|-|integrated |
 
 # <a name="Climate">Climate</a>
 | [Go to Menu](#menu) |
@@ -140,11 +140,12 @@ And I will be adding a wall tablet soon (WIP).
 | iRobot Roomba 975 | [Roomba](https://amzn.to/3xKQVBZ) | 1 | Wi-Fi |[iRobot](https://www.home-assistant.io/integrations/roomba/) | Same type as 976 | planned |
 ### <a name="various">Various</a>
 | [Go to Menu](#menu) |
-| Device  | Amazon Link | Quantity | Connection | Home Assistant | Notes | Status |
-| ------------- | :---: | :---: | ------------- | ------------- | ------------- | ------------- |
-| HP OfficeJet Pro 7740 Printer | [Amazon](https://amzn.to/3LDks6p) | 1 | Wi-Fi | [IPP](https://www.home-assistant.io/integrations/ipp/) | - | integrated |
-| Ender 3 3D-Printer | [Ender 3](https://amzn.to/3xP8Wz3) | 1 | Wi-Fi (via OctoPrint) | [OctoPrint](https://www.home-assistant.io/integrations/octoprint/) | used for printing gadgets, mainly holder etc | integrated|
-| Visual Studio Code | - | 1 | - | - | used for editing .yaml or .md Files | - |
+| Device | Quantity | Connection | Home Assistant | Notes | Status |
+| ------------- | :---: | ------------- | ------------- | ------------- | ------------- |
+| HP OfficeJet Pro 7740 Printer | 1 | Wi-Fi | [IPP](https://www.home-assistant.io/integrations/ipp/) | - | integrated |
+| Ender 3 3D-Printer | 1 | Wi-Fi (via OctoPrint) | [OctoPrint](https://www.home-assistant.io/integrations/octoprint/) | used for printing gadgets, mainly holder etc | integrated|
+| Visual Studio Code| 1 | - | - | used for editing .yaml or .md Files | - |
+| Shelly Plus 1  | 1 | - | - | - | not integrated |
 
 ## <a name="Useful-links">Useful Links</a>
 | Type  | Link |

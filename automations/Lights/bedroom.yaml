@@ -33,21 +33,74 @@
       entity_id: 
       - light.bedroom_lights
     data:
-      transition: 5  
+      transition: 5
 
-- alias: Light bedroom off night windows open
-  trigger:
-    - platform: state
-      entity_id: binary_sensor.contact_bedroom_window_contact
-      to: "on"
-  condition:
-  - condition: state
-    entity_id: sun.sun
-    state: "below_horizon"
+
+- alias: Bedroom Warm White Light
+  description: ''
+  trigger: []
+  condition: []
   action:
-  - service: light.turn_off
-    target:
-      entity_id: 
-      - light.bedroom_lights
+  - parallel:
+    - service: light.turn_on
+      data:
+        kelvin: 2000
+      target:
+        entity_id: light.bedroom_c_light
+    - service: light.turn_on
+      data:
+        kelvin: 2000
+      target:
+        entity_id: light.bedroom_light
+  - service: input_select.select_option
     data:
-      transition: 5  
+      option: automation.Bedroom Warm White Light
+    target:
+      entity_id: input_select.last_light_bedroom
+  mode: single
+
+- alias: Bedroom Cold White Light
+  description: ''
+  trigger: []
+  condition: []
+  action:
+  - parallel:
+    - service: light.turn_on
+      data:
+        kelvin: 6000
+      target:
+        entity_id: light.bedroom_c_light
+    - service: light.turn_on
+      data:
+        kelvin: 6000
+      target:
+        entity_id: light.bedroom_light
+  - service: input_select.select_option
+    data:
+      option: automation.Bedroom Cold White Light
+    target:
+      entity_id: input_select.last_light_bedroom
+  mode: single
+
+- alias: Bedroom White Light
+  description: ''
+  trigger: []
+  condition: []
+  action:
+  - parallel:
+    - service: light.turn_on
+      data:
+        kelvin: 3000
+      target:
+        entity_id: light.bedroom_c_light
+    - service: light.turn_on
+      data:
+        kelvin: 3000
+      target:
+        entity_id: light.bedroom_light
+  - service: input_select.select_option
+    data:
+      option: automation.Bedroom White Light
+    target:
+      entity_id: input_select.last_light_bedroom
+  mode: single

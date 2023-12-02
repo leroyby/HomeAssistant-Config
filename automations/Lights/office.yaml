@@ -32,7 +32,7 @@
   - service: light.turn_on
     target:
       entity_id: 
-      - light.office_lights
+      - light.office_desk
 
 
 - alias: "Timerstop office lights manual"

@@ -3,30 +3,3 @@
 # Original Repo : https://github.com/Leroyby/Homeassistant-Config
 # Automation Bedroom Remote
 ######################################################################################################
-
-- alias: Start TV bedroom
-  trigger:
-    platform: state
-    entity_id: sensor.remote_bedroom_action
-    to: 'toggle'
-  condition:
-  action:
-  - service: switch.toggle
-    target:
-      entity_id: 
-      - switch.bedroom_tv
-
-- alias: Remote Bedroom toggle light
-  trigger:
-    - platform: state
-      entity_id: sensor.remote_bedroom_action
-      to: 'brightness_up_click'
-    - platform: state
-      entity_id: sensor.remote_bedroom_action
-      to: 'brightness_down_click'
-  condition: []
-  action:
-  - service: light.toggle
-    target:
-      entity_id: 
-      - light.bedroom_lights

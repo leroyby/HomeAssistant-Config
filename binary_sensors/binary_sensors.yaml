@@ -50,19 +50,19 @@
         {{ office_lights_on or bedroom_lights_on or living_room_lights_on }}
 
     office_pc_on:
-      friendly_name: office pc is on
-      value_template: "{{ states('sensor.power_office_pc')|float > 25.0 }}"
+      friendly_name: Office PC is on
+      value_template: "{{ states('sensor.power_office_pc')|float > 50.0 }}"
       delay_off: "00:01:00"
 
     xbox_on:
-      friendly_name: office xbox is on
-      value_template: "{{ states('sensor.power_office_pc')|float > 1.0 }}"
+      friendly_name: Office Xbox is on
+      value_template: "{{ states('sensor.power_office_pc')|float > 30.0 }}"
       delay_off: "00:01:00"
 
     livingroom_icemachine_on:
-      friendly_name: office pc is on
+      friendly_name: Icemachine is on
       value_template: "{{ states('sensor.power_livingroom_cabinet')|float > 50.0 }}"
-      delay_off: "00:01:00"
+      delay_off: "00:45:00"
 
     bedroom_tv_on:
       friendly_name: bedroom tv is on

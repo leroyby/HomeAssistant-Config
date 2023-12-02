@@ -23,3 +23,9 @@ last_script_office:
   options:
     - script.work_lights_office
     - script.normal_lights_office
+
+last_light_bedroom:
+  options:
+    - automation.Bedroom Warm White Light
+    - automation.Bedroom Cold White Light
+    - automation.Bedroom White Light

@@ -54,10 +54,10 @@ lovelace:
   dashboards:
     lovelace-yaml:
       mode: yaml
-      title: YAML
+      title: Dashboard
       icon: mdi:script
       show_in_sidebar: true
-      filename: ui/ui-lovelace.yaml
+      filename: uiv2/uiv2-lovelace.yaml
 powercalc:
   create_utility_meters: true
 recorder:
@@ -71,6 +71,6 @@ http:
   ssl_certificate: /ssl/fullchain.pem
   ssl_key: /ssl/privkey.pem
   ip_ban_enabled: true
-  login_attempts_threshold: 5
+  login_attempts_threshold: 3
 
 
