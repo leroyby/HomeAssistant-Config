@@ -59,6 +59,11 @@
       value_template: "{{ states('sensor.power_office_pc')|float > 30.0 }}"
       delay_off: "00:01:00"
 
+    bedroom_tv_on:
+      friendly_name: Bedroom TV on
+      value_template: "{{ states('sensor.power_bedroom_tv')|float > 30.0 }}"
+      delay_off: "00:01:00"
+
     livingroom_icemachine_on:
       friendly_name: Icemachine is on
       value_template: "{{ states('sensor.power_livingroom_cabinet')|float > 50.0 }}"

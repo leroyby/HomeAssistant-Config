@@ -107,3 +107,11 @@
           target:
             entity_id: automation.bedroom_white_light
   mode: single
+- id: '1701642492107'
+  alias: Bedroom TVR Temperature Calibration
+  description: ''
+  use_blueprint:
+    path: Tuya/tvr.yaml
+    input:
+      valve: climate.bedroom_thermostat
+      temp_sensor: sensor.temperature_bedroom_2_temperature

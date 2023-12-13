@@ -1,0 +1,46 @@
+blueprint:
+  name: Temperature Calibration
+  description: Temperature calibration for Zigbee valve TS0601, according to external temperature sensor
+  domain: automation
+  input:
+    valve:
+      name: Smart Valve
+      selector:
+        entity:
+          domain: climate
+    temp_sensor:
+      name: Temperature Sensor
+      selector:
+        entity:
+          domain: sensor
+          device_class: temperature
+          
+variables:
+  valve: !input "valve"
+  temp_sensor: !input "temp_sensor"
+
+trigger: 
+  - platform: time_pattern
+    minutes: "/10"
+  - platform: template
+    value_template: "{{ ( state_attr('valve', 'current_temperature')|float - states('temp_sensor')|float)|abs > 0.4 }}"
+    for: '00:00:02'
+condition:
+  condition: and
+  conditions:
+    - condition: template
+      value_template: "{{ states(temp_sensor) != 'unavailable' }}"
+    - condition: template
+      value_template: "{{ states(temp_sensor) != 'unknown' }}"
+action:
+  - service: mqtt.publish
+    data_template:
+      topic: "zigbee2mqtt/{{state_attr(valve,'friendly_name')}}/set/local_temperature_calibration"
+      payload_template: >-
+        {{(state_attr(valve,'local_temperature_calibration')|float -
+             state_attr(valve, 'current_temperature')|float +
+            states(temp_sensor)|float)|round(1,'half')}}
+            
+            
+            
+            

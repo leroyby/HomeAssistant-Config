@@ -31,7 +31,7 @@ At this point also a big thanks to the whole home assistant community and especa
 # Repository statistics
 | Lines of code| Sensors| Binary Sensors | Switches  | Automations | Scripts | Scenes |
 | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
-| 32,460 | 377 | 49 | 19 | 77 | 24 | 3 |
+| 0 | 373 | 48 | 19 | 78 | 24 | 3 |
 
 ###  <a name="History">History</a>
 Started in 2014 with the [Tradfri Gateway](https://www.ikea.com/ch/en/search/products/?q=tradfri) (with 3 White spectrum bulbs) and with the [myStrom Switches](https://mystrom.ch/). Added a LED-Strip from China to the setup and started tinkering with HA. But not for very long. During this time I tested also Apple HomeKit, but I was never really statisfied. 2022 I got some time and started again with HA and now here we are... 

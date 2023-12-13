@@ -247,6 +247,7 @@ views:
     type: thermostat
   - entity: climate.bedroom_thermostat
     name: Bedroom
+    theme: Google Dark Theme
     type: thermostat
   - entities:
     - entity: sensor.temperature_outdoor_temperature
@@ -580,6 +581,7 @@ views:
     - entity: sensor.season
     - entity: binary_sensor.office_pc_on
     - entity: sensor.power_office_pc
+    - entity: sensor.power_bedroom_tv
     show_header_toggle: false
     title: Test apps
     type: entities

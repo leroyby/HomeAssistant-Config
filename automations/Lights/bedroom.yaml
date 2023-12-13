@@ -21,19 +21,22 @@
     data:
       transition: 7
 
-- alias: Light bedroom off tv time
+- alias: Bedroom TV on
   trigger:
     platform: state
-    entity_id: binary_sensor.ping_bedroom_tv
+    entity_id: binary_sensor.bedroom_tv_on
     to: 'on'
   condition: 
   action:
   - service: light.turn_off
     target:
       entity_id: 
-      - light.bedroom_lights
-    data:
-      transition: 5
+      - light.bedroom_c_light
+  - service: script.turn_on
+    target:
+      entity_id: 
+      - script.bedroom_cozy_lights
+
 
 
 - alias: Bedroom Warm White Light

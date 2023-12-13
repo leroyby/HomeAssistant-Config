@@ -1,32 +1,15 @@
-
-a72_von_silvana_ping:
-  name: a72_von_silvana_ping
-  mac:
-  icon:
-  picture:
-  track: true
-
-iphone_von_leroy_ping:
-  name: iphone_von_leroy_ping
-  mac:
-  icon:
-  picture:
-  track: true
-
 ping_cloudflare:
   name: ping_cloudflare
   mac:
   icon:
   picture:
   track: true
-
 ping_google:
   name: ping_google
   mac:
   icon:
   picture:
   track: true
-
 ping_modem:
   name: ping_modem
   mac:
