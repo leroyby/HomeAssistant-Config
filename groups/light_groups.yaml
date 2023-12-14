@@ -12,6 +12,7 @@
     - light.bedroom_lights
     - light.Livingroom_lights
     - light.bad_klein
+    - light.light_tree
 
 - platform: group
   name: bedroom_lights

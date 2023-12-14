@@ -113,6 +113,7 @@ views:
         name: Office
         type: custom:slider-entity-row
       type: custom:fold-entity-row
+    - entity: light.light_tree
     show_header_toggle: false
     title: Lights
     type: entities
@@ -419,6 +420,7 @@ views:
       - entity: timer.office_xbox
       - entity: timer.bedroom_tv
       - entity: timer.livingroom_lights_motion
+      - entity: timer.livingroom_light_christmas
       show_icon: true
       show_name: true
       show_state: true
@@ -469,7 +471,9 @@ views:
 - badges: []
   cards:
   - columns: 5
-    entities: []
+    entities:
+    - entity: update.remote_bedroom
+    - entity: remote.wohnzimmer_xbox_remote
     show_icon: true
     show_name: false
     title: Buttons
@@ -577,11 +581,10 @@ views:
 - badges: []
   cards:
   - entities:
-    - entity: input_select.last_light_bedroom
     - entity: sensor.season
-    - entity: binary_sensor.office_pc_on
-    - entity: sensor.power_office_pc
-    - entity: sensor.power_bedroom_tv
+    - entity: sensor.sun_elevation
+    - entity: sensor.sun_next_dusk
+    - entity: sun.sun
     show_header_toggle: false
     title: Test apps
     type: entities
@@ -621,11 +624,6 @@ views:
         \ state.entity_id,\n        'variables': {\n          'name': NAME\n     \
         \   },\n      }\n    }},\n  {%- endif -%} \n{%- endfor %}\n"
     type: custom:auto-entities
-  - entity: sensor.bedroom_thermostat_position
-    max: 100
-    min: 35
-    needle: true
-    type: gauge
   - entities:
     - entity: light.bedroom_lights
     - entity: light.office_lights

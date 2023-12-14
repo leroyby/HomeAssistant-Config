@@ -1,0 +1,26 @@
+######################################################################################################
+# @Leroyby
+# Original Repo : https://github.com/Leroyby/Homeassistant-Config
+# Automations Christmas Lights
+######################################################################################################
+
+- alias: Light Christmas on
+  trigger:
+    platform: state
+    entity_id: binary_sensor.motion_detected
+    to: 'on'
+  condition: 
+    - condition: template
+      value_template: "{{ state_attr('sun.sun', 'elevation') < -15 }}"
+  action:
+  - service: light.turn_on
+    target:
+      entity_id: 
+      - light.light_tree
+  - service: light.turn_off
+    target:
+      entity_id: 
+      - light.livingroom_sofa
+  - service: timer.start
+    target:
+      entity_id: timer.livingroom_light_christmas

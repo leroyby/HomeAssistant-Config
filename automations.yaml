@@ -115,3 +115,29 @@
     input:
       valve: climate.bedroom_thermostat
       temp_sensor: sensor.temperature_bedroom_2_temperature
+- id: '1702557798957'
+  alias: Christmas Light turn off
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - timer.livingroom_light_christmas
+    to: idle
+    from: active
+  condition: []
+  action:
+  - if:
+    - condition: state
+      entity_id: binary_sensor.motion_detected
+      state: 'off'
+    then:
+    - service: light.turn_off
+      target:
+        entity_id: light.light_tree
+      data: {}
+    else:
+    - service: timer.start
+      target:
+        entity_id: timer.livingroom_light_christmas
+      data: {}
+  mode: single
