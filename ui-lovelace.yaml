@@ -15,7 +15,7 @@ title: Home
 views:
 - badges:
   - entity: person.leroy
-  - entity: person.dominique
+  - entity: person.USER1
   cards:
   - entities:
     - entities:
@@ -159,9 +159,25 @@ views:
     show_header_toggle: false
     title: Switches
     type: entities
-  - entity: weather.forecast_home
-    name: Weather
-    type: custom:simple-weather-card
+  - animated_icon: true
+    date_pattern: ccc, d.MM.yy
+    entity: weather.forecast_home
+    forecast_rows: 5
+    hide_clock: false
+    hide_date: false
+    hide_forecast_section: false
+    hide_today_section: false
+    hourly_forecast: true
+    locale: de-DE
+    sun_entity: sun.sun
+    temperature_sensor: sensor.outdoor_temp
+    time_format: 24
+    time_pattern: HH:mm
+    time_zone: null
+    title: Home
+    type: custom:clock-weather-card
+    use_browser_time: true
+    weather_icon_type: line
   - cards:
     - entities:
       - entity: vacuum.rombacus
@@ -575,6 +591,14 @@ views:
       type: custom:template-entity-row
     title: Lights on last 7 days
     type: entities
+  - entities:
+    - entity: binary_sensor.shellysmokeplus01_smoke
+    - entity: sensor.shellysmokeplus01_battery
+    show_icon: true
+    show_name: true
+    show_state: true
+    title: Smoke Detectos
+    type: glance
   icon: mdi:motion-sensor
   path: sensors
   title: Sensors
@@ -585,6 +609,9 @@ views:
     - entity: sensor.sun_elevation
     - entity: sensor.sun_next_dusk
     - entity: sun.sun
+    - entity: binary_sensor.dominiqesiphone
+    - entity: device_tracker.dominiqesiphone_home
+    - entity: binary_sensor.USER1_home
     show_header_toggle: false
     title: Test apps
     type: entities
@@ -663,9 +690,6 @@ views:
     show_color_temp_control: true
     type: custom:mushroom-light-card
     use_light_color: true
-  - entity: vacuum.rombacus
-    map: camera.octoprint_camera
-    type: custom:vacuum-card
   - cards:
     - action_button:
         mode: toggle

@@ -1,5 +1,16 @@
 ######################################################################################################
 # @Leroyby
 # Original Repo : https://github.com/Leroyby/Homeassistant-Config
-# Automation Bedroom Remote
+# Automation Bedroom Button
 ######################################################################################################
+
+- alias: bedroom button single
+  trigger:
+    platform: state
+    entity_id: sensor.bedroom_button_action
+    to: 'single' 
+  condition: []
+  action:
+  - service: light.toggle
+    target:
+      entity_id: bedroom_lights

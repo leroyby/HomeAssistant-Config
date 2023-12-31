@@ -58,5 +58,11 @@
     no_one_home:
       friendly_name: No one is home
       value_template: >
-        {{ not is_state("person.leroy", "home")
-            }}    
+        {{ is_state("binary_sensor.USER1_home", "off")
+        and not is_state("person.leroy", "home") }} 
+           
+    USER1_home:
+      friendly_name: Dominique is home
+      value_template: >
+        {{ is_state ("person.USER1", "home") }}
+      delay_off: "00:30:00"

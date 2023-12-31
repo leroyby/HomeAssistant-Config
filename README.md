@@ -31,7 +31,7 @@ At this point also a big thanks to the whole home assistant community and especa
 # Repository statistics
 | Lines of code| Sensors| Binary Sensors | Switches  | Automations | Scripts | Scenes |
 | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
-| 0 | 373 | 48 | 19 | 80 | 24 | 3 |
+| 0 | 399 | 57 | 20 | 83 | 24 | 3 |
 
 ###  <a name="History">History</a>
 Started in 2014 with the [Tradfri Gateway](https://www.ikea.com/ch/en/search/products/?q=tradfri) (with 3 White spectrum bulbs) and with the [myStrom Switches](https://mystrom.ch/). Added a LED-Strip from China to the setup and started tinkering with HA. But not for very long. During this time I tested also Apple HomeKit, but I was never really statisfied. 2022 I got some time and started again with HA and now here we are... 
@@ -97,34 +97,36 @@ And I will be adding a wall tablet soon (WIP).
 
 ### <a name="Sensors">Sensors</a>
 | [Go to Menu](#menu) |
-| Device  | Amazon Link | Quantity | Connection | Home Assistant | Notes | Status |
-| ------------- | :---: | :---: | ------------- | ------------- | ------------- | ------------- |
-| [Aqara Motion Sensor](https://www.aqara.com/eu/motion_sensor.html) | [Amazon](https://amzn.to/3UzKNGu) | 3 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)| - |integrated|
-| [Sonoff Motion Sensor](https://sonoff.tech/product/smart-home-security/snzb-03/) | [Amazon](https://amzn.to/3F94M9F) | 1  | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/) | - |integrated |
-| [Aqara Temperature and Humidity Sensor](https://www.aqara.com/eu/temperature_humidity_sensor.html) | [Amazon](https://amzn.to/3dCzpsT) | 7 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)| - | integrated |
-| [Aqara door & window contact sensor](https://www.aqara.com/eu/door_and_window_sensor.html) | [Amazon](https://amzn.to/3U4cENs) | 2  | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/) | - |integrated |
-| [Aqara Vibration Sensor](https://www.aqara.com/eu/vibration_sensor.html) | [Amazon](https://amzn.to/3dGX0sm) | 1  | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/) | - |integrated |
+| Device  | Quantity | Connection | Home Assistant | Notes | Status |
+| ------------- | :---: | ------------- | ------------- | ------------- | ------------- |
+| [Aqara Motion Sensor](https://www.aqara.com/eu/motion_sensor.html)  | 3 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)| - |integrated|
+| [Sonoff Motion Sensor](https://sonoff.tech/product/smart-home-security/snzb-03/) |  1  | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/) | - |integrated |
+| [Aqara Temperature and Humidity Sensor](https://www.aqara.com/eu/temperature_humidity_sensor.html) | 7 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)| - | integrated |
+| [Aqara door & window contact sensor](https://www.aqara.com/eu/door_and_window_sensor.html)  | 2  | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/) | - |integrated |
+| [Aqara Vibration Sensor](https://www.aqara.com/eu/vibration_sensor.html)  | 1  | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/) | - |integrated |
+| [Shelly Plus Smoke](https://www.shelly.com/products/product-overview/shelly-plus-smoke)  | 1  | Wi-Fi |[Shelly](https://www.home-assistant.io/integrations/shelly/) | - |integrated |
 
 ### <a name="Multimedia">Multimedia</a>
 | [Go to Menu](#menu) |
-| Device  | Amazon Link | Quantity | Connection | Home Assistant | Notes | Status |
-| ------------- | :---: | :---: | ------------- | ------------- | ------------- | ------------- |
+| Device  | Quantity | Connection | Home Assistant | Notes | Status |
+| ------------- | :---: | ------------- | ------------- | ------------- | ------------- |
 | [Sonos One](https://www.sonos.com/en/shop/one) | [Sonos](https://amzn.to/3DO0tQj) | 1 | Wi-Fi | [Sonos](https://www.home-assistant.io/integrations/sonos/)|-|integrated|
-| [Google Home Mini](https://store.google.com/ch/product/google_nest_mini?pli=1&hl=de) | - | 1 | Wi-Fi | [Google Cast](https://www.home-assistant.io/integrations/cast/)|-|integrated|
-| [Xbox Series X](https://www.xbox.com/en-US/consoles/xbox-series-x?xr=shellnav) |[Xbox](https://amzn.to/3fhObWk) | 1 | Wi-Fi | [Xbox](https://www.home-assistant.io/integrations/xbox/) & [Xbox Live](https://www.home-assistant.io/integrations/xbox_live/)|-|integrated|
-| Samsung Smart TV 55"| - | 1 | Wi-Fi| - | - | not integrated |
-| LG OLED TV 65"| [LG OLED TVs](https://amzn.to/3r0Y2m5) | 1 | Ethernet| [HomeKit-Controller](https://www.home-assistant.io/integrations/homekit_controller/) | - | Integrated |
+| [Google Home Mini](https://store.google.com/ch/product/google_nest_mini?pli=1&hl=de) | 1 | Wi-Fi | [Google Cast](https://www.home-assistant.io/integrations/cast/)|-|integrated|
+| [Xbox Series X](https://www.xbox.com/en-US/consoles/xbox-series-x?xr=shellnav) | 1 | Wi-Fi | [Xbox](https://www.home-assistant.io/integrations/xbox/) & [Xbox Live](https://www.home-assistant.io/integrations/xbox_live/)|-|integrated|
+| Samsung Smart TV 55"| 1 | Wi-Fi| - | - | not integrated |
+| LG OLED TV 65"|  1 | Ethernet| [HomeKit-Controller](https://www.home-assistant.io/integrations/homekit_controller/) | - | Integrated |
 
 ### <a name="Remotes">Remotes</a>
 | [Go to Menu](#menu) |
-| Device  | Amazon Link | Quantity | Connection | Home Assistant | Notes | Status |
-| ------------- | :---: | :---: | ------------- | ------------- | ------------- | ------------- |
+| Device  | Quantity | Connection | Home Assistant | Notes | Status |
+| ------------- | :---: | ------------- | ------------- | ------------- | ------------- |
 | [TRÅDFRI Wireless dimmer](https://www.ikea.com/ch/en/p/tradfri-wireless-dimmer-white-70408595/)| - | 1 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)|-| integrated |
 | [TRÅDFRI STYRBAR Remote control](https://www.ikea.com/ch/en/p/styrbar-remote-control-white-30488363/)| - | 1 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)|-| integrated |
 | TRÅDFRI Wireless 5-Button Remote| - | 1 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)|-| integrated |
 | [TRÅDFRI Shortcut button](https://www.ikea.com/ch/en/p/tradfri-shortcut-button-white-smart-40356381/)| - | 1 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)|-| integrated |
-| [Aquara Wireless Mini Switch](https://www.aqara.com/eu/wireless_mini_switch.html)| [Amazon](https://amzn.to/3SbrK3L) | 1 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)|-| integrated |
-| [Tuya 4-Gang Switch](https://solution.tuya.com/projects/CMa4ie3gzka6ns) | [-]() | 1 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)|-|integrated |
+| [Aquara Wireless Mini Switch](https://www.aqara.com/eu/wireless_mini_switch.html) | 1 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)|-| integrated |
+| [Tuya 4-Gang Switch](https://solution.tuya.com/projects/CMa4ie3gzka6ns) | 1 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)|-|integrated |
+| [Zigbee Button]() | 1 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)|-|integrated |
 
 # <a name="Climate">Climate</a>
 | [Go to Menu](#menu) |

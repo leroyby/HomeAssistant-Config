@@ -141,3 +141,19 @@
         entity_id: timer.livingroom_light_christmas
       data: {}
   mode: single
+- id: '1702635551397'
+  alias: Unlock door
+  description: ''
+  trigger:
+  - platform: tag
+    tag_id: 445cf3fe-8a7c-4aff-b0f5-53c01fd8696e
+  condition:
+  - condition: state
+    entity_id: binary_sensor.no_one_home
+    state: 'off'
+  action:
+  - service: lock.unlock
+    data: {}
+    target:
+      entity_id: lock.eingangstuer
+  mode: single
