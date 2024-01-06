@@ -192,6 +192,8 @@ views:
         type: custom:multiple-entity-row
       - entity: input_boolean.vacuum_ran
       - entity: script.vacuum_start
+      - entity: binary_sensor.rombacus_bin_full
+      - entity: sensor.rombacus_durchschnittliche_missionszeit
       show_header_toggle: false
       type: entities
     type: vertical-stack

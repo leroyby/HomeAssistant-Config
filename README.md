@@ -1,5 +1,5 @@
 [![GitHub last commit](https://img.shields.io/github/last-commit/leroyby/homeassistant-config?style=plasticr)](https://github.com/leroyby/HomeAssistant-Config/commits/main)
-[![HA Version](https://img.shields.io/badge/Running%20Home%20Assistant-2023.11.3%20-darkblue)](https://github.com/home-assistant/home-assistant/releases/latest)
+[![HA Version](https://img.shields.io/badge/Running%20Home%20Assistant-2024.1.1%20-darkblue)](https://github.com/home-assistant/home-assistant/releases/latest)
 
 # <a name="table">Table of Contents - Index </a>
    * [Home Assistant configuration](#home-assistant-configuration-overview)
@@ -31,7 +31,7 @@ At this point also a big thanks to the whole home assistant community and especa
 # Repository statistics
 | Lines of code| Sensors| Binary Sensors | Switches  | Automations | Scripts | Scenes |
 | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
-| 0 | 399 | 57 | 20 | 83 | 24 | 3 |
+| 0 | 416 | 58 | 21 | 83 | 25 | 3 |
 
 ###  <a name="History">History</a>
 Started in 2014 with the [Tradfri Gateway](https://www.ikea.com/ch/en/search/products/?q=tradfri) (with 3 White spectrum bulbs) and with the [myStrom Switches](https://mystrom.ch/). Added a LED-Strip from China to the setup and started tinkering with HA. But not for very long. During this time I tested also Apple HomeKit, but I was never really statisfied. 2022 I got some time and started again with HA and now here we are... 
@@ -84,10 +84,10 @@ And I will be adding a wall tablet soon (WIP).
 | Lights are grouped in [light_groups.yaml](https://github.com/leroyby/HomeAssistant-Config/blob/main/groups/light_groups.yaml) |
 ### <a name="Outlets">Outlets & Switches</a>
 | [Go to Menu](#menu) |
-| Device  | Amazon Link | Quantity | Connection | Home Assistant | Notes | Status |
-| ------------- | :---: | :---: | ------------- | ------------- | ------------- | ------------- |
-| [myStrom WiFi Switch](https://mystrom.ch/de/wifi-switch/) | - | 4 | WLAN |[myStrom](https://www.home-assistant.io/integrations/mystrom) | REST API used for other features |integrated|
-| [TRÅDFRI Switch](https://www.ikea.com/ch/en/p/tradfri-wireless-control-outlet-smart-00473650/) | | 1 | Ikea Hub (Zigbee)|[IKEA TRÅDFRI](https://www.home-assistant.io/integrations/tradfri) | - |integrated|
+| Device  | Quantity | Connection | Home Assistant | Notes | Status |
+| ------------- | :---: | ------------- | ------------- | ------------- | ------------- |
+| [myStrom WiFi Switch](https://mystrom.ch/de/wifi-switch/) | 4 | WLAN |[myStrom](https://www.home-assistant.io/integrations/mystrom) | REST API used for other features |integrated|
+| [TRÅDFRI Switch](https://www.ikea.com/ch/en/p/tradfri-wireless-control-outlet-smart-00473650/) | 1 | Ikea Hub (Zigbee)|[IKEA TRÅDFRI](https://www.home-assistant.io/integrations/tradfri) | - |integrated|
 
 ### <a name="Locks">Locks</a>
 | [Go to Menu](#menu) |
@@ -110,7 +110,7 @@ And I will be adding a wall tablet soon (WIP).
 | [Go to Menu](#menu) |
 | Device  | Quantity | Connection | Home Assistant | Notes | Status |
 | ------------- | :---: | ------------- | ------------- | ------------- | ------------- |
-| [Sonos One](https://www.sonos.com/en/shop/one) | [Sonos](https://amzn.to/3DO0tQj) | 1 | Wi-Fi | [Sonos](https://www.home-assistant.io/integrations/sonos/)|-|integrated|
+| [Sonos One](https://www.sonos.com/en/shop/one) | 1 | Wi-Fi | [Sonos](https://www.home-assistant.io/integrations/sonos/)|-|integrated|
 | [Google Home Mini](https://store.google.com/ch/product/google_nest_mini?pli=1&hl=de) | 1 | Wi-Fi | [Google Cast](https://www.home-assistant.io/integrations/cast/)|-|integrated|
 | [Xbox Series X](https://www.xbox.com/en-US/consoles/xbox-series-x?xr=shellnav) | 1 | Wi-Fi | [Xbox](https://www.home-assistant.io/integrations/xbox/) & [Xbox Live](https://www.home-assistant.io/integrations/xbox_live/)|-|integrated|
 | Samsung Smart TV 55"| 1 | Wi-Fi| - | - | not integrated |
@@ -120,10 +120,10 @@ And I will be adding a wall tablet soon (WIP).
 | [Go to Menu](#menu) |
 | Device  | Quantity | Connection | Home Assistant | Notes | Status |
 | ------------- | :---: | ------------- | ------------- | ------------- | ------------- |
-| [TRÅDFRI Wireless dimmer](https://www.ikea.com/ch/en/p/tradfri-wireless-dimmer-white-70408595/)| - | 1 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)|-| integrated |
-| [TRÅDFRI STYRBAR Remote control](https://www.ikea.com/ch/en/p/styrbar-remote-control-white-30488363/)| - | 1 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)|-| integrated |
-| TRÅDFRI Wireless 5-Button Remote| - | 1 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)|-| integrated |
-| [TRÅDFRI Shortcut button](https://www.ikea.com/ch/en/p/tradfri-shortcut-button-white-smart-40356381/)| - | 1 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)|-| integrated |
+| [TRÅDFRI Wireless dimmer](https://www.ikea.com/ch/en/p/tradfri-wireless-dimmer-white-70408595/)| 1 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)|-| integrated |
+| [TRÅDFRI STYRBAR Remote control](https://www.ikea.com/ch/en/p/styrbar-remote-control-white-30488363/) | 1 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)|-| integrated |
+| TRÅDFRI Wireless 5-Button Remote| - | 1 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)| integrated |
+| [TRÅDFRI Shortcut button](https://www.ikea.com/ch/en/p/tradfri-shortcut-button-white-smart-40356381/) | 1 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)|-| integrated |
 | [Aquara Wireless Mini Switch](https://www.aqara.com/eu/wireless_mini_switch.html) | 1 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)|-| integrated |
 | [Tuya 4-Gang Switch](https://solution.tuya.com/projects/CMa4ie3gzka6ns) | 1 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)|-|integrated |
 | [Zigbee Button]() | 1 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)|-|integrated |
@@ -132,14 +132,16 @@ And I will be adding a wall tablet soon (WIP).
 | [Go to Menu](#menu) |
 | Device  | Amazon Link | Quantity | Connection | Home Assistant | Notes | Status |
 | ------------- | :---: | :---: | ------------- | ------------- | ------------- | ------------- |
-| Tuya TS0601 Thermostat | [Thermostat](https://amzn.to/3g9q6C0) | 1 | ConBee II (ZigBee) | [MQTT](https://www.home-assistant.io/integrations/mqtt/)|-|integrated 
+| Tuya TS0601 Thermostat | 1 | ConBee II (ZigBee) | [MQTT](https://www.home-assistant.io/integrations/mqtt/)|-|integrated 
+| Furber Climate Device | 1 | Wi-Fi | TBA |-|integrated 
 
 ### <a name="Vacuum">Vacuum</a>
 | [Go to Menu](#menu) |
-| Device  | Amazon Link | Quantity | Connection | Home Assistant | Notes | Status |
-| ------------- | :---: | :---: | ------------- | ------------- | ------------- | ------------- |
-| iRobot Roomba 976 | [Roomba](https://amzn.to/3xKQVBZ) | 1 | Wi-Fi |[iRobot](https://www.home-assistant.io/integrations/roomba/) | Same type as 975 |integrated|
-| iRobot Roomba 975 | [Roomba](https://amzn.to/3xKQVBZ) | 1 | Wi-Fi |[iRobot](https://www.home-assistant.io/integrations/roomba/) | Same type as 976 | planned |
+| Device  | Quantity | Connection | Home Assistant | Notes | Status |
+| -------------  | :---: | ------------- | ------------- | ------------- | ------------- |
+| iRobot Roomba 976 |  1 | Wi-Fi |[iRobot](https://www.home-assistant.io/integrations/roomba/) | Same type as 975 |integrated|
+| iRobot Roomba 975 | 1 | Wi-Fi |[iRobot](https://www.home-assistant.io/integrations/roomba/) | Same type as 976 | spare |
+
 ### <a name="various">Various</a>
 | [Go to Menu](#menu) |
 | Device | Quantity | Connection | Home Assistant | Notes | Status |
