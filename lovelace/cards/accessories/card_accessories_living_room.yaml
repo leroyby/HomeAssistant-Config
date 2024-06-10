@@ -1,0 +1,135 @@
+type: vertical-stack
+cards:
+
+
+############################################################################
+#                                                                          #
+#   Title                                                                  #
+#                                                                          #
+############################################################################
+
+  - type: horizontal-stack
+    cards:
+      
+      - type: custom:decluttering-card
+        template: title_button_card
+        variables:
+          - name: Accessories 
+
+
+############################################################################
+#                                                                          #
+#   Accessories                                                            #
+#                                                                          #
+############################################################################
+
+  - type: custom:layout-card
+    layout_type: grid
+
+    layout_options:
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr
+      grid-template-rows: auto
+      grid-gap: 0px 4px
+      mediaquery:
+        "(max-width: 450px)":
+          grid-template-columns: 1fr 1fr 1fr
+  # - type: grid
+  #   columns: 3
+  #   square: false
+    cards:
+
+      - type: custom:decluttering-card # New Year Tree Lights
+        template: light_button
+        variables:
+          - entity: switch.new_year_tree
+          - name: NY Tree
+          - svg_path_colored: 'M471.637 455.625L381.769 352H417.766C443.389 352 457.264 322.75 441.014 303.5L285.037 113.395L264.148 154.975C262.465 158.324 259.232 160 256 160S249.533 158.324 247.852 154.975L226.971 113.412L71.045 303.5C54.795 322.75 68.67 352 94.293 352H130.289L40.422 455.625C21.424 477.5 36.672 512 65.17 512H446.764C475.387 512 490.51 477.375 471.637 455.625ZM192 312C178.752 312 168.002 301.25 168.002 288S178.752 264 192 264C205.248 264 215.998 274.75 215.998 288S205.248 312 192 312ZM320 440C306.752 440 296.002 429.25 296.002 416S306.752 392 320 392S343.998 402.75 343.998 416S333.248 440 320 440Z'
+          - svg_path_colored_on: 'M471.637 455.625L381.769 352H417.766C443.389 352 457.264 322.75 441.014 303.5L285.037 113.395L264.148 154.975C262.465 158.324 259.232 160 256 160S249.533 158.324 247.852 154.975L226.971 113.412L71.045 303.5C54.795 322.75 68.67 352 94.293 352H130.289L40.422 455.625C21.424 477.5 36.672 512 65.17 512H446.764C475.387 512 490.51 477.375 471.637 455.625ZM192 312C178.752 312 168.002 301.25 168.002 288S178.752 264 192 264C205.248 264 215.998 274.75 215.998 288S205.248 312 192 312ZM320 440C306.752 440 296.002 429.25 296.002 416S306.752 392 320 392S343.998 402.75 343.998 416S333.248 440 320 440Z'
+          - svg_path: 'M330.973 71.85L286.492 49.506L264.147 5.025C260.779 -1.676 251.215 -1.676 247.85 5.025L225.504 49.506L181.023 71.85C174.322 75.217 174.322 84.783 181.023 88.148L225.504 110.494L247.85 154.975C249.531 158.324 252.766 160 255.998 160S262.463 158.324 264.147 154.975L286.492 110.494L330.973 88.148C337.672 84.783 337.672 75.217 330.973 71.85ZM191.998 264C178.75 264 168 274.75 168 288S178.75 312 191.998 312C205.246 312 215.996 301.25 215.996 288S205.246 264 191.998 264Z'
+          - svg_path_on: 'M330.973 71.85L286.492 49.506L264.147 5.025C260.779 -1.676 251.215 -1.676 247.85 5.025L225.504 49.506L181.023 71.85C174.322 75.217 174.322 84.783 181.023 88.148L225.504 110.494L247.85 154.975C249.531 158.324 252.766 160 255.998 160S262.463 158.324 264.147 154.975L286.492 110.494L330.973 88.148C337.672 84.783 337.672 75.217 330.973 71.85ZM191.998 264C178.75 264 168 274.75 168 288S178.75 312 191.998 312C205.246 312 215.996 301.25 215.996 288S205.246 264 191.998 264Z'
+          #- svg_icon_y: -64
+          - svg_icon_width: 512
+          - svg_icon_height: 512
+          - svg_fill_on: var(--dmatik-green-color)
+
+      - type: custom:decluttering-card # Living Room Light
+        template: light_button
+        variables:
+          - entity: light.living_room
+          - name: Ceiling
+
+      - type: custom:decluttering-card # Living Room AC
+        template: climate_button
+        variables:
+          - title: AC
+          - room: Living Room
+          - name: living_room
+
+      - type: custom:decluttering-card # Living Room TV
+        template: harmony_button
+        variables:
+          - entity: remote.living_room
+          - title: TV
+          - name: living_room
+
+      - type: custom:decluttering-card # Dining Light
+        template: light_button
+        variables:
+          - entity: light.dining
+          - name: Dining
+
+      - type: custom:decluttering-card # Balcony Light
+        template: light_button
+        variables:
+          - entity: light.balcony
+          - name: Balcony
+
+      - type: custom:decluttering-card # Entrance
+        template: light_button
+        variables:
+          - entity: light.entrance
+          - name: Entrance
+
+      - type: custom:decluttering-card # Living Room Motion Sensor
+        template: motion_sensor_button
+        variables:
+          - entity: binary_sensor.motion_living_room
+          - name: Motion
+          - light_level_sensor: sensor.motion_living_room_lightlevel
+
+      - type: custom:decluttering-card # Dummy Shutter On
+        template: cover_button
+        variables:
+          - entity: sensor.dummy_shutter_open
+          - name: Dummy_1
+          - shutter_position: sensor.dummy_shutter_position
+
+      - type: custom:decluttering-card # Dummy Shutter Off
+        template: cover_button
+        variables:
+          - entity: sensor.dummy_shutter_closed
+          - name: Dummy_2
+          - shutter_position: sensor.dummy_shutter_position
+
+      - type: custom:decluttering-card # Dummy Window On
+        template: window_sensor_button
+        variables:
+          - entity: binary_sensor.dummy_window_open
+          - name: Dummy_1
+
+      - type: custom:decluttering-card # Dummy Window Off
+        template: window_sensor_button
+        variables:
+          - entity: binary_sensor.dummy_window_closed
+          - name: Dummy_2
+        
+      # - type: "custom:button-card"
+      #   color_type: blank-card  
+        
+      # - type: "custom:button-card"
+      #   color_type: blank-card 
+
+  - type: custom:decluttering-card # Separator
+    template: separator
+    variables:
+      - height: 120

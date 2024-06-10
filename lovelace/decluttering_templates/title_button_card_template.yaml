@@ -1,0 +1,35 @@
+title_button_card:
+
+  default:
+    - border_radius: var(--title-border-radius)
+    - background_color: 'rgba(37, 129, 171, 0.0)' #var(--title-button-background)
+    - text_color: var(--title-button-text-color)
+    - padding_left: 10px
+
+  card:
+    type: 'custom:button-card'
+    color_type: label-card
+    show_state: false
+    show_label: false
+    show_icon: false
+    show_name: true
+    name: '[[name]]'
+    layout: name_state
+    styles:
+      card:
+        - border-radius: '[[border_radius]]'
+        - background-color: '[[background_color]]'
+        - height: 18px #42px
+        - box-shadow: 0px 0px 0px 0px
+        #- text-transform: uppercase
+        - padding: 0px
+      name:
+        - color: '[[text_color]]'
+        - justify-self: start
+        - padding-left: '[[padding_left]]'
+        - font-size: 16px #22px
+        - font-weight: bold
+    tap_action:
+      action: none
+    hold_action:
+      action: none

@@ -1,37 +1,32 @@
 from __future__ import annotations
 
 import re
+from enum import StrEnum
 from typing import Protocol, cast
 
-from awesomeversion.awesomeversion import AwesomeVersion
 from homeassistant.components.group import DOMAIN as GROUP_DOMAIN
 from homeassistant.components.light import DOMAIN as LIGHT_DOMAIN
-from homeassistant.const import ATTR_ENTITY_ID
+from homeassistant.const import ATTR_ENTITY_ID, CONF_DOMAIN
 from homeassistant.const import __version__ as HA_VERSION  # noqa
 from homeassistant.core import HomeAssistant, split_entity_id
 from homeassistant.helpers import area_registry, device_registry, entity_registry
 from homeassistant.helpers.area_registry import AreaEntry
 from homeassistant.helpers.entity_component import EntityComponent
+from homeassistant.helpers.entity_registry import RegistryEntry
 from homeassistant.helpers.template import Template
 from homeassistant.helpers.typing import ConfigType
 
 from custom_components.powercalc.const import (
+    CONF_ALL,
     CONF_AND,
     CONF_AREA,
+    CONF_FILTER,
     CONF_GROUP,
     CONF_OR,
     CONF_TEMPLATE,
     CONF_WILDCARD,
 )
 from custom_components.powercalc.errors import SensorConfigurationError
-
-if AwesomeVersion(HA_VERSION) >= AwesomeVersion("2023.8.0"):
-    from enum import StrEnum
-else:
-    from homeassistant.backports.enum import StrEnum  # pragma: no cover
-
-from homeassistant.const import CONF_DOMAIN
-from homeassistant.helpers.entity_registry import RegistryEntry
 
 
 class FilterOperator(StrEnum):
@@ -46,6 +41,10 @@ def create_composite_filter(
 ) -> IncludeEntityFilter:
     """Create filter class."""
     filters: list[IncludeEntityFilter] = []
+
+    if CONF_FILTER in filter_configs and isinstance(filter_configs, dict):
+        filter_configs.update(filter_configs[CONF_FILTER])
+        filter_configs.pop(CONF_FILTER)
 
     if not isinstance(filter_configs, list):
         filter_configs = [{key: value} for key, value in filter_configs.items()]
@@ -73,6 +72,8 @@ def create_filter(
         return GroupFilter(hass, filter_config)  # type: ignore
     if filter_type == CONF_TEMPLATE:
         return TemplateFilter(hass, filter_config)  # type: ignore
+    if filter_type == CONF_ALL:
+        return NullFilter()
     if filter_type == CONF_OR:
         return create_composite_filter(filter_config, hass, FilterOperator.OR)
     if filter_type == CONF_AND:
@@ -155,7 +156,7 @@ class LightGroupFilter(IncludeEntityFilter):
             None,
         )
 
-        entity_ids = light_group.extra_state_attributes.get(ATTR_ENTITY_ID)  # type: ignore
+        entity_ids: list[str] = light_group.extra_state_attributes.get(ATTR_ENTITY_ID)  # type: ignore
         for entity_id in entity_ids:
             registry_entry = entity_reg.async_get(entity_id)
             if registry_entry is None:

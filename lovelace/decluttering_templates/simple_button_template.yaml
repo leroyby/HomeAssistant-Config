@@ -1,0 +1,78 @@
+simple_button:
+
+  default:
+    - layout: vertical
+    - show_name: false
+    - show_label: false
+    - show_icon: true
+    - border_radius: var(--button-card-border-radius)
+    - background_color: var(--button-card-background-color)
+    - name_color: var(--button-card-text-color)
+    - icon_color: var(--button-card-icon-color)
+    - color_type: card
+    - size: 40px
+    - width: ""
+    - height: 54px
+    - font_size: 14px
+    - font_weight: bold
+    - label_font_size: 14px
+    - padding_top: 6px
+    - padding_bottom: 6px
+    - lock: false
+    - lock_color: var(--button-card-text-color) #var(--button-card-lock-color)
+    - tap_action:
+        action: toggle
+    - hold_action:
+        action: none
+    - state:
+        - value: "on"
+          styles:
+            card:
+              - background-color: 'var(--button-color-green)'
+            icon:
+              - color: 'var(--button-card-on-text-color)'
+            name:
+              - color: 'var(--button-card-on-text-color)'
+
+  card:
+    type: custom:button-card
+    entity: '[[entity]]'
+    name: '[[name]]'
+    label: "[[label]]"
+    icon: '[[icon]]'
+    color_type: '[[color_type]]'
+    show_state: false
+    show_label: '[[show_label]]'
+    show_name: '[[show_name]]'
+    show_icon: '[[show_icon]]'
+    size: '[[size]]'
+    layout: '[[layout]]'
+    lock: '[[lock]]'
+    styles:
+      card:
+        - border-radius: '[[border_radius]]'
+        - background-color: '[[background_color]]'
+        - padding-top: '[[padding_top]]'
+        - padding-bottom: '[[padding_bottom]]'
+        - font-weight: '[[font_weight]]'
+        - width: '[[width]]'
+        - height: '[[height]]'
+      name:
+        #- text-transform: lowercase
+        - color: '[[name_color]]'
+        - font-size: '[[font_size]]'
+      label:
+        - color: '[[name_color]]'
+        - font-size: '[[label_font_size]]'
+      img_cell:
+        - color: '[[icon_color]]'
+      lock:
+        - color: '[[lock_color]]'
+        - justify-content: flex-end
+        - align-items: flex-start
+    state:
+      '[[state]]'
+    tap_action:
+      '[[tap_action]]'
+    hold_action:
+      '[[hold_action]]'

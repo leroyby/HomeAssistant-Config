@@ -3,17 +3,6 @@
 # Original Repo : https://github.com/Leroyby/Homeassistant-Config
 # Automation Lights Livingroom
 ######################################################################################################
-- alias: Light Livingroom Floor Off during TV
-  trigger:
-    platform: state
-    entity_id: binary_sensor.ping_livingroom_tv
-    to: 'on'
-  condition:
-  action:
-  - service: light.turn_off
-    target:
-      entity_id: 
-      - light.livingroom_tv   
 
 - alias: Light Livingroom off after Motion
   trigger:

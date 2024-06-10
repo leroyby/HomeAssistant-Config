@@ -1,0 +1,158 @@
+switcher_button:
+
+  default:
+    - icon: mdi:water-boiler
+    #- cust_1_field: "[[[ return entity.state; ]]]"
+    - cust_2_field: ""
+    - corner_background_color: "[[[ return 'var(--secondary-text-color)'; ]]]"
+    - corner_border_radius: 12px
+    - corner_text_color: "var(--button-card-text-field-color)"
+    - svg_fill_on: '#bf4040'
+    # - svg_path: 'M8 2C6.89 2 6 2.89 6 4V16C6 17.11 6.89 18 8 18H9V20H6V22H9C10.11 22 11 21.11 11 20V18H13V20C13 21.11 13.89 22 15 22H18V20H15V18H16C17.11 18 18 17.11 18 16V4C18 2.89 17.11 2 16 2H8M12 4.97A2 2 0 0 1 14 6.97A2 2 0 0 1 12 8.97A2 2 0 0 1 10 6.97A2 2 0 0 1 12 4.97M10 14.5H14V16H10V14.5Z'
+    # - svg_path_on: 'M8 2C6.89 2 6 2.89 6 4V16C6 17.11 6.89 18 8 18H9V20H6V22H9C10.11 22 11 21.11 11 20V18H13V20C13 21.11 13.89 22 15 22H18V20H15V18H16C17.11 18 18 17.11 18 16V4C18 2.89 17.11 2 16 2H8M12 4.97A2 2 0 0 1 14 6.97A2 2 0 0 1 12 8.97A2 2 0 0 1 10 6.97A2 2 0 0 1 12 4.97M10 14.5H14V16H10V14.5Z'
+    # - svg_path_colored: 'M 8,2 C 6.89,2 6,2.89 6,4 v 12 c 0,1.11 0.89,2 2,2 h 1 c 2,0 0,0 2,0 h 2 c 2,0 0,0 2,0 h 1 c 1.11,0 2,-0.89 2,-2 V 4 C 18,2.89 17.11,2 16,2 H 8 m 4,2.97 c 1.104569,0 2,0.8954305 2,2 0,1.1045695 -0.895431,2 -2,2 -1.104569,0 -2,-0.8954305 -2,-2 0,-1.1045695 0.895431,-2 2,-2 m -2,9.53 h 4 V 16 h -4 z'
+    # - svg_path_colored_on: 'M 8,2 C 6.89,2 6,2.89 6,4 v 12 c 0,1.11 0.89,2 2,2 h 1 c 2,0 0,0 2,0 h 2 c 2,0 0,0 2,0 h 1 c 1.11,0 2,-0.89 2,-2 V 4 C 18,2.89 17.11,2 16,2 H 8 m 4,2.97 c 1.104569,0 2,0.8954305 2,2 0,1.1045695 -0.895431,2 -2,2 -1.104569,0 -2,-0.8954305 -2,-2 0,-1.1045695 0.895431,-2 2,-2 m -2,9.53 h 4 V 16 h -4 z'
+    - svg_path: 'm 64,432 v 64 h 48 v -64 z m 144,0 v 64 h 48 v -64 z'
+    - svg_path_on: 'm 64,432 v 64 h 48 v -64 z m 144,0 v 64 h 48 v -64 z'
+    - svg_path_colored: 'M 87.625 16.001953 C 81.333231 16.006039 73.769297 16.016929 64 16.041016 C 31.779623 16.143324 0 46.528143 0 80 L 0 368 C 0 400.27904 30.450437 432 64 432 L 256 432 C 289.01959 432 320 399.28487 320 368 L 320 80 C 320 47.193839 288.22464 16.041016 256 16.041016 C 183.61811 15.952856 163.15671 16.047622 135.02148 16.044922 C 120.95387 16.043522 112.9671 16.019953 103.61328 16.007812 C 98.936375 16.001812 93.916769 15.997853 87.625 16.001953 z M 159.70312 80 A 64 64 0 0 1 160 80 A 64 64 0 0 1 224 144 A 64 64 0 0 1 160 208 A 64 64 0 0 1 96 144 A 64 64 0 0 1 159.70312 80 z'
+    - svg_path_colored_on: 'M 87.625 16.001953 C 81.333231 16.006039 73.769297 16.016929 64 16.041016 C 31.779623 16.143324 0 46.528143 0 80 L 0 368 C 0 400.27904 30.450437 432 64 432 L 256 432 C 289.01959 432 320 399.28487 320 368 L 320 80 C 320 47.193839 288.22464 16.041016 256 16.041016 C 183.61811 15.952856 163.15671 16.047622 135.02148 16.044922 C 120.95387 16.043522 112.9671 16.019953 103.61328 16.007812 C 98.936375 16.001812 93.916769 15.997853 87.625 16.001953 z M 159.70312 80 A 64 64 0 0 1 160 80 A 64 64 0 0 1 224 144 A 64 64 0 0 1 160 208 A 64 64 0 0 1 96 144 A 64 64 0 0 1 159.70312 80 z'
+
+
+
+  card:
+    type: custom:decluttering-card
+    template: button_two_rows_svg
+    variables:
+      - entity: '[[entity]]'
+      - name: '[[name]]'
+      - icon: '[[icon]]'
+      - svg_fill: '[[svg_fill]]'
+      - svg_path: '[[svg_path]]'
+      - svg_fill_on: '[[svg_fill_on]]'
+      - svg_path_on: '[[svg_path_on]]'
+      - svg_path_colored: '[[svg_path_colored]]'
+      - svg_path_colored_on: '[[svg_path_colored_on]]'
+      - svg_icon_x: -64
+      - svg_icon_width: 512
+      - svg_icon_height: 512
+      - color: '[[color]]'
+      - color_type: '[[color_type]]'
+      - text_transform: none
+      - corner_text_color: "[[corner_text_color]]"
+      - corner_icon_color: ""
+      - cust_1_text_color: "[[cust_1_text_color]]"
+      - cust_1_icon_color: "[[cust_1_icon_color]]"
+      - cust_2_text_color: "[[cust_2_text_color]]"
+      - cust_2_icon_color: "[[cust_2_icon_color]]"
+      - corner_field: "[[[ 
+            if (entity.state == 'off')
+              return '';
+            else
+              return states['sensor.switcher_webapi_time_left'].state; 
+          ]]]"
+      - corner_border_radius: "[[corner_border_radius]]"
+      - corner_background_color: "[[[
+            if (entity.state == 'off')
+              return 'rgba(0,0,0,0)';
+            else
+              return 'var(--secondary-text-color)';
+          ]]]"
+      - cust_1_field: "[[[
+            if (entity.state == 'off')
+              return 'Off';
+            else
+              return 'On until ' + states['sensor.switcher_webapi_auto_off_time'].state; 
+          ]]]"
+      - cust_2_field: "[[cust_2_field]]"
+      - state: "[[state]]"
+      - hold_action:
+          action: more-info
+      - tap_action:
+          #haptic: heavy
+          action: fire-dom-event
+          browser_mod:
+            command: popup
+            hide_header: true
+            title: '[[name]]'
+            
+            card:
+
+              type: custom:layout-card
+              layout_type: vertical
+              cards:
+
+                # - type: entities
+                #   state_color: true
+                #   show_header_toggle: false
+                #   style: |
+                #     ha-card.type-entities {
+                #       background: none;
+                #       box-shadow: none;
+                #       padding: 0.3em 1.25em 0.4em 0.5em;
+                #     }
+                #   entities:
+
+                #     - entity: sensor.switcher_webapi_electric_current
+                #       name: Current
+                #     - entity: sensor.switcher_webapi_power_consumption
+                #       name: Power
+                #     - entity: sensor.switcher_webapi_time_left
+                #       name: Time left
+                #     - entity: sensor.switcher_webapi_auto_off_time
+                #       name: Off time
+
+                #     # - type: custom:hui-element
+                #     #   card_type: horizontal-stack
+                #     #   style: |
+                #     #     #root {
+                #     #       justify-content: space-evenly;
+                #     #       margin: 1.4em -0.7em 0.7em 0;
+                #     #     }
+                #     #   cards:
+
+                - type: custom:decluttering-card
+                  template: view_title_button
+                  variables:
+                    - padding_top: '2px'
+                    - title: '[[name]]'
+                    - back_button: true
+                    - tap_action:
+                        action: 'fire-dom-event'
+                        browser_mod:
+                          command: 'close_popup'
+
+                - type: custom:decluttering-card # Switcher State
+                  template: switcher_popup_state
+
+                - type: custom:layout-card
+                  layout_type: grid
+                  layout_options:
+                    grid-template-columns: 1fr 1fr 1fr
+                    grid-template-rows: auto
+                    grid-gap: 0px 4px
+                  cards:
+
+                    - type: custom:decluttering-card # Boiler Power
+                      template: simple_button_svg
+                      variables:
+                        - entity: '[[entity]]'
+                        - name: Power
+                        - show_name: true
+                        - svg_path_colored: 'M381.438 51.562C370.062 44.625 355.313 48.156 348.438 59.438C341.5 70.75 345.031 85.531 356.313 92.438C413.719 127.688 448 188.844 448 256C448 361.875 361.875 448 256 448S64 361.875 64 256C64 188.469 98.562 127.156 156.469 91.969C167.781 85.094 171.406 70.344 164.5 59C157.625 47.688 142.906 44.062 131.531 50.969C59.188 94.906 16 171.531 16 256C16 388.344 123.656 496 256 496S496 388.344 496 256C496 172.031 453.156 95.594 381.438 51.562ZM256 288C269.25 288 280 277.25 280 264V24C280 10.75 269.25 0 256 0S232 10.75 232 24V264C232 277.25 242.75 288 256 288Z'
+                        - svg_path_colored_on: 'M381.438 51.562C370.062 44.625 355.313 48.156 348.438 59.438C341.5 70.75 345.031 85.531 356.313 92.438C413.719 127.688 448 188.844 448 256C448 361.875 361.875 448 256 448S64 361.875 64 256C64 188.469 98.562 127.156 156.469 91.969C167.781 85.094 171.406 70.344 164.5 59C157.625 47.688 142.906 44.062 131.531 50.969C59.188 94.906 16 171.531 16 256C16 388.344 123.656 496 256 496S496 388.344 496 256C496 172.031 453.156 95.594 381.438 51.562ZM256 288C269.25 288 280 277.25 280 264V24C280 10.75 269.25 0 256 0S232 10.75 232 24V264C232 277.25 242.75 288 256 288Z'
+
+                    - type: custom:decluttering-card # Turn ON with Timer
+                      template: simple_script_button_svg
+                      variables:
+                        - entity: script.switcher_turn_on_timer_script
+                        - name: Timer
+                        - show_name: true
+                        - svg_path_colored: 'M256 16C242.75 16 232 26.75 232 40V120C232 133.25 242.75 144 256 144S280 133.25 280 120V65.5C374.594 77.344 448 158.25 448 256C448 361.875 361.875 448 256 448S64 361.875 64 256C64 214.688 76.906 175.344 101.312 142.25C109.188 131.562 106.906 116.562 96.25 108.688C85.562 100.812 70.5 103.094 62.688 113.75C32.156 155.188 16 204.375 16 256C16 388.344 123.656 496 256 496S496 388.344 496 256S388.344 16 256 16ZM239.031 272.969C243.719 277.656 249.844 280 256 280S268.281 277.656 272.969 272.969C282.344 263.594 282.344 248.406 272.969 239.031L192.969 159.031C183.594 149.656 168.406 149.656 159.031 159.031S149.656 183.594 159.031 192.969L239.031 272.969Z'
+                        - svg_path_colored_on: 'M256 16C242.75 16 232 26.75 232 40V120C232 133.25 242.75 144 256 144S280 133.25 280 120V65.5C374.594 77.344 448 158.25 448 256C448 361.875 361.875 448 256 448S64 361.875 64 256C64 214.688 76.906 175.344 101.312 142.25C109.188 131.562 106.906 116.562 96.25 108.688C85.562 100.812 70.5 103.094 62.688 113.75C32.156 155.188 16 204.375 16 256C16 388.344 123.656 496 256 496S496 388.344 496 256S388.344 16 256 16ZM239.031 272.969C243.719 277.656 249.844 280 256 280S268.281 277.656 272.969 272.969C282.344 263.594 282.344 248.406 272.969 239.031L192.969 159.031C183.594 149.656 168.406 149.656 159.031 159.031S149.656 183.594 159.031 192.969L239.031 272.969Z'
+
+
+                    - type: custom:decluttering-card # Timer Minutes 15/30/45/60
+                      template: next_select_simple_button
+                      variables:
+                        - entity: input_select.switcher_timer_minutes_input_select
+                        - label: Minutes

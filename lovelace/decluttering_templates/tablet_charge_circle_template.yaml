@@ -1,0 +1,65 @@
+tablet_charge_circle:
+
+  default:
+
+  card:
+
+    type: picture-elements
+    image: '/local/images/empty.png'
+
+    # style: |
+    #   ha-card { 
+    #     background-color: rgba(0,0,0,0.0);
+    #   }
+    elements:
+
+      - type: custom:circle-sensor-card
+        name: '[[name]]'
+        entity: '[[battery]]'
+        attribute: null
+        fill: 'rgba(0,0,0,0.0)'
+        stroke_color: '#404040'
+        stroke_bg_color: '#404040'
+        stroke_bg_width: 15
+        stroke_width: 15
+        units: '%'
+        max: 100
+        min: 0
+        show_max: false
+        gradient: false
+        font_style:
+          font-size: 15px
+        color_stops:
+          0: '#bf4040'
+          10: '#bf9540'
+          30: '#75BD6F'
+        style:
+          top: 46%
+          left: 46%
+          width: 92%
+          height: 92%
+
+      - type: conditional
+        conditions:
+          - entity: '[[charging]]'
+            state: 'on'
+        elements:
+          - type: icon
+            icon: mdi:lightning-bolt
+            tap_action:
+              action: none
+            style:
+              top: 25%
+              left: 50%
+              color: 'var(--picture-elements-icon-color)'
+              --mdc-icon-size: 18px
+      
+      # - type: state-label
+      #   entity: '[[secondary]]'
+      #   style: 
+      #     top: 75%
+      #     left: 50%
+      #     font-size: 8px
+      #     text-transform: lowercase
+      #     transform: translate(-50%, -50%)
+      #     padding-left: 0px

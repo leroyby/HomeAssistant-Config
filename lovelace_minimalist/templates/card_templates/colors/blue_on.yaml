@@ -1,0 +1,22 @@
+---
+### CHANGED ###
+
+blue_on:
+  state:
+    - styles:
+        icon:
+          - color: 'var(--color-blue-icon)'
+        label:
+          - color: "var(--color-blue-label)"
+        name:
+          - color: "var(--color-blue-name)"
+        img_cell:
+          - background-color: 'var(--color-blue-icon-background)'
+        card:
+          - background-color: "var(--color-background-blue)"
+      id: "on"
+      value: "on"
+
+# Legacy
+blue:
+  template: "blue_on"

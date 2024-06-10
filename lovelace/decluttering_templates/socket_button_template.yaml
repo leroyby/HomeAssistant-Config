@@ -1,0 +1,43 @@
+socket_button:
+
+  default:
+    - icon: mdi:light-switch
+
+  card:
+    type: custom:decluttering-card
+    template: button_two_rows_svg
+    variables:
+      - entity: '[[entity]]'
+      - name: '[[name]]'
+      - icon: '[[icon]]'
+      - svg_fill: '[[svg_fill]]'
+      - svg_path: '[[svg_path]]'
+      - svg_fill_on: '[[svg_fill_on]]'
+      - svg_path_on: '[[svg_path_on]]'
+      - svg_path_colored: '[[svg_path_colored]]'
+      - svg_path_colored_on: '[[svg_path_colored_on]]'
+      - svg_icon_x: '[[svg_icon_x]]'
+      - svg_icon_y: '[[svg_icon_y]]'
+      - svg_icon_width: '[[svg_icon_width]]'
+      - svg_icon_height: '[[svg_icon_height]]'
+      - color: '[[color]]'
+      - color_type: '[[color_type]]'
+      - corner_text_color: ""
+      - corner_icon_color: ""
+      - cust_1_text_color: "[[cust_1_text_color]]"
+      - cust_1_icon_color: "[[cust_1_icon_color]]"
+      - cust_2_text_color: "[[cust_2_text_color]]"
+      - cust_2_icon_color: "[[cust_2_icon_color]]"
+      - corner_field: ""
+      - cust_1_field: "[[[
+            if (entity.state == 'on')
+              return states['[[sensor_power]]'].state + ' W';
+            else
+              return entity.state;                  
+          ]]]"
+      - cust_2_field: '[[cust_2_field]]'
+      - tap_action: 
+          action: toggle
+      - hold_action:
+          action: more-info
+      - state: "[[state]]"

@@ -1,0 +1,93 @@
+type: vertical-stack
+cards:
+
+############################################################################
+#                                                                          #
+#   Title                                                                  #
+#                                                                          #
+############################################################################
+
+  # - type: horizontal-stack
+  #   cards: 
+    
+  #     - type: custom:decluttering-card
+  #       template: title_button_card
+  #       variables:
+  #         - name: Zigbee Sensors
+  #         - padding_left: 22px
+
+
+############################################################################
+#                                                                          #
+#   Batteries card                                                         #
+#                                                                          #
+############################################################################
+
+  - type: horizontal-stack
+    cards: 
+
+      - type: entities
+        state_color: true
+        show_header_toggle: false
+        style: |
+          ha-card.type-entities {
+            background: none;
+            box-shadow: none;
+            border-radius: 0px;           
+            padding: 0em 1.3em 0em 0.5em;
+          }
+        entities:
+
+          - type: custom:bar-card
+            width: 55%
+            height: 2em
+            decimal: 0
+            unit_of_measurement: '%'
+            icon: mdi:harddisk
+            #color: '#5F995A'
+            positions: &pos
+              icon: outside
+              indicator: 'off'
+              name: outside
+            severity:
+              - color: '#bf4040'
+                from: 0
+                to: 10
+              - color: '#bf9540'
+                from: 11
+                to: 35
+              - color: '#5F995A'
+                from: 36
+                to: 100
+            entity_row: true
+            entities:
+              - entity: sensor.work_room_sensor_battery_level
+                name: Work Room
+                icon: mdi:thermometer
+              - entity: sensor.motion_living_room_battery_level
+                name: Living Room
+                icon: mdi:run
+              - entity: sensor.motion_kitchen_battery_level
+                name: Kitchen
+                icon: mdi:run
+              - entity: sensor.motion_kitchen_2_battery_level
+                name: Kitchen 2
+                icon: mdi:run
+              - entity: sensor.button_bedside_dima_battery_level
+                name: Bedside Dima
+                icon: mdi:circle-outline
+              - entity: sensor.button_bedside_galit_battery_level
+                name: Bedside Galit
+                icon: mdi:circle-outline
+              - entity: sensor.button_makeup_battery_level
+                name: Makeup
+                icon: mdi:circle-outline
+              - entity: sensor.button_kitchen_right_battery_level
+                name: Kitchen Strip Right
+                icon: mdi:circle-outline
+              - entity: sensor.button_kitchen_left_battery_level
+                name: Kitchen Strip Left
+                icon: mdi:circle-outline
+          
+  - type: custom:decluttering-card # Separator
+    template: separator

@@ -1,0 +1,70 @@
+type: vertical-stack
+cards:
+
+  
+############################################################################
+#                                                                          #
+#   Title                                                                  #
+#                                                                          #
+############################################################################
+
+  # - type: horizontal-stack
+  #   cards:
+    
+  #     - type: custom:decluttering-card
+  #       template: title_button_card
+  #       variables:
+  #         - name: Presence
+
+
+
+############################################################################
+#                                                                          #
+#   Device trackers                                                        #
+#                                                                          #
+############################################################################
+
+  - type: custom:layout-card
+    layout_type: grid
+
+    layout_options:
+      grid-template-columns: 1fr 1fr
+      grid-template-rows: auto
+      grid-gap: 0px 4px
+  # - type: grid
+  #   columns: 2
+  #   square: false
+    cards:
+ 
+      - type: custom:decluttering-card
+        template: person_button_alt
+        variables:
+          - entity: person.dmatik
+          - direction: left
+          - image_away: '/local/images/dima_2_wide_off.png'
+          - image_home: '/local/images/dima_2_wide.png'
+          - battery: sensor.iphonedima_battery_level
+          - phone_icon: mdi:cellphone-iphone
+          # - tap_action:
+          #     action: navigate
+          #     navigation_path: /lovelace/map/
+          - tap_action:
+                action: more-info
+
+      - type: custom:decluttering-card
+        template: person_button_alt
+        variables:
+          - entity: person.galit
+          - direction: right
+          - image_away: '/local/images/galit_2_wide_off.png'
+          - image_home: '/local/images/galit_2_wide.png'
+          - battery: sensor.sm_n960f_battery_level
+          - phone_icon: mdi:cellphone-android
+          # - tap_action:
+          #     action: navigate
+          #     navigation_path: /lovelace/map/
+          - tap_action:
+                action: more-info      
+
+  - type: custom:decluttering-card # Separator
+    template: separator

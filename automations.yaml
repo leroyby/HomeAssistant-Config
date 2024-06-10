@@ -5,7 +5,6 @@
     path: EPMatt/ikea_e1812.yaml
     input:
       integration: Zigbee2MQTT
-      controller_device: dff73f19aab0d896445eb69e0b797d49
       controller_entity: sensor.button_livingroom_action
       helper_last_controller_event: input_text.livingroom_ikea_button
       action_button_short:
@@ -156,4 +155,47 @@
     data: {}
     target:
       entity_id: lock.eingangstuer
+  mode: single
+- id: '1715119250477'
+  alias: Wake 1
+  description: ''
+  trigger:
+  - platform: template
+    value_template: '{{ states(''sensor.time'') == states(''sensor.wake_time_1'')
+      }}'
+  condition:
+  - condition: template
+    value_template: '{% set today = ''input_boolean.wakeweekday_'' ~ now().strftime("%a")
+      | lower ~ ''_1'' %} {{ is_state(''input_boolean.wakestatus_1'', ''on'') and
+      is_state(today, ''on'') }}
+
+      '
+  action:
+  - service: light.turn_on
+    data:
+      transition: 29
+      brightness: 255
+    target:
+      entity_id: light.bedroom_lights
+  mode: single
+- id: '1717799806080'
+  alias: Bedroom TV on
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.bedroom_tv_on
+    to: 'on'
+  condition:
+  action:
+  - service: light.turn_off
+    target:
+      entity_id:
+      - light.bedroom_c_light
+    data: {}
+  - service: script.turn_on
+    target:
+      entity_id:
+      - script.bedroom_cozy_lights
+    data: {}
   mode: single

@@ -29,7 +29,7 @@ alarm_control_panel:
 # Inputs
 input_datetime: !include input/input_datetimes.yaml
 binary_sensor: !include_dir_merge_list binary_sensors
-#input_number: !include input/input_numbers.yaml
+input_number: !include input/input_numbers.yaml
 input_select: !include input/input_selects.yaml
 input_boolean: !include input/input_booleans.yaml
 input_text: !include input/input_text.yaml
@@ -46,18 +46,20 @@ light: !include groups/light_groups.yaml
 script: !include_dir_merge_named scripts
 timer: !include_dir_merge_named timers
 device_tracker: !include includes/device_trackers.yaml
+template: !include uiv3/sidebar.yaml
 readme:
   convert_lovelace: true
+
 lovelace:
   mode: storage
    # Add yaml dashboards
   dashboards:
     lovelace-yaml:
       mode: yaml
-      title: Dashboard
+      title: Tablet
       icon: mdi:script
       show_in_sidebar: true
-      filename: uiv2/uiv2-lovelace.yaml
+      filename: uiv3/ui-lovelace.yaml
 powercalc:
   create_utility_meters: true
 recorder:

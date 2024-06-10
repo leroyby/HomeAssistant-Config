@@ -1,0 +1,179 @@
+title: נוכחות
+path: minimalist_presense
+visible: false
+# type: custom:grid-layout
+# layout:
+#   grid-template-columns: 1fr
+#   grid-template-rows: auto
+#   mediaquery:
+#     "(min-width: 800px)":
+#       grid-template-columns: 700px
+panel: true
+subview: true
+cards:
+
+  - type: vertical-stack
+    cards:
+
+############################################################################
+#                                                                          #
+#   Header                                                                 #
+#                                                                          #
+############################################################################
+
+      # - type: custom:button-card
+      #   template: card_header
+      #   variables:
+      #     card_header_title: Presense
+      #     card_header_navigate_path: /lovelace/minimalist_home
+      #     card_header_back_button: true
+
+
+############################################################################
+#                                                                          #
+#   View                                                                   #
+#                                                                          #
+############################################################################
+
+      - type: "custom:mod-card"
+        style:
+          layout-card$:
+            grid-layout$: |
+              #root {
+                margin-left: var(--view-margins) !important;
+                margin-right: var(--view-margins) !important;
+                justify-content: center !important;
+              }
+        card:
+          type: custom:layout-card
+          layout_type: grid
+          layout_options:
+            grid-template-columns: 1fr
+            grid-template-rows: auto
+            mediaquery:
+              "(min-width: 800px)":
+                grid-template-columns: 780px
+          cards:
+
+            - type: vertical-stack
+              cards:
+
+
+          ############################################################################
+          #                                                                          #
+          #   Chips                                                                  #
+          #                                                                          #
+          ############################################################################
+
+                - type: custom:layout-card
+                  layout_type: grid
+                  layout_options:
+                    grid-auto-flow: column
+                    grid-auto-columns: max-content
+                    margin: var(--chips-left-margin)
+                  cards:
+
+                      # - type: custom:button-card
+                      #   template: edge
+
+                      # Back Chip
+                      # - type: 'custom:button-card'
+                      #   template: chip_back_new
+                      #   variables:
+                      #     ulm_chip_navigate_path: /lovelace/minimalist_home
+
+                      # # Presense Chip
+                      # - type: 'custom:button-card'
+                      #   template: chip_presence_detection
+                      #   variables:
+                      #     ulm_chip_presence_counter_residents: sensor.number_of_persons_home
+                      #     #ulm_chip_presence_counter_guests: sensor.my_guests_counter
+
+                      # Presense Chip
+                      - type: 'custom:button-card'
+                        template:
+                          - 'chip_icon_label_state'
+                          - 'chip_blue'
+                        icon: 'mdi:home'
+                        variables:
+                          ulm_chip_icon_state_entity: sensor.number_of_persons_home
+
+
+
+          ############################################################################
+          #                                                                          #
+          #   Title                                                                  #
+          #                                                                          #
+          ############################################################################
+
+                - type: horizontal-stack
+                  cards:
+
+                    - type: custom:button-card
+                      template: title
+                      name: "[[[ return variables.ulm_presense; ]]]"
+
+
+
+          ############################################################################
+          #                                                                          #
+          #   Cards                                                                  #
+          #                                                                          #
+          ############################################################################
+
+                - type: "custom:mod-card"
+                  style:
+                    .: |
+                      ha-card {
+                          margin: var(--grid-layout-margins) !important;
+                      }
+                  card:
+
+                    type: custom:layout-card
+                    layout_type: grid
+                    layout_options:
+                      grid-template-columns: 1fr 1fr 1fr 1fr
+                      grid-template-rows: auto
+                      grid-gap: 0px 2px
+                      mediaquery:
+                        "(max-width: 450px)":
+                          grid-template-columns: 1fr 1fr            
+                    cards:
+
+                      # Dima
+                      - type: 'custom:button-card'
+                        template: card_person
+                        variables:
+                          ulm_card_person_entity: person.dmatik
+                          ulm_card_person_use_entity_picture: true
+                          ulm_card_person_battery_level_sensor: sensor.iphonedima_battery_level
+
+                      # Galit
+                      - type: 'custom:button-card'
+                        template: card_person
+                        variables:
+                          ulm_card_person_entity: person.galit
+                          ulm_card_person_use_entity_picture: true
+                          ulm_card_person_battery_level_sensor: sensor.galitphone_battery_level
+
+                      # Ronen
+                      - type: 'custom:button-card'
+                        template: card_person
+                        variables:
+                          ulm_card_person_entity: person.ronen
+                          ulm_card_person_use_entity_picture: true
+                          ulm_card_person_battery_level_sensor: sensor.iphoneronen_battery_level
+
+                      # Kfir
+                      - type: 'custom:button-card'
+                        template: card_person
+                        variables:
+                          ulm_card_person_entity: person.kfir
+                          ulm_card_person_use_entity_picture: true
+                          #ulm_card_person_battery_level_sensor: sensor.ipadkfir_battery_level
+
+
+                - type: custom:button-card
+                  template: spacer
+                  variables:
+                    height: 100px

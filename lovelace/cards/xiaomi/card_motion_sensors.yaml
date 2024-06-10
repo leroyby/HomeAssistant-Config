@@ -1,0 +1,119 @@
+type: conditional
+conditions:
+  - entity: group.all_motion_sensor_entities
+    state: "on"
+card:
+  type: vertical-stack
+  cards:
+
+  ############################################################################
+  #                                                                          #
+  #   Living Room                                                            #
+  #                                                                          #
+  ############################################################################
+
+    - type: conditional
+      conditions:
+        - entity: group.living_room_motion_sensors
+          state: "on"
+      card: 
+        type: vertical-stack
+        cards:
+
+          - type: horizontal-stack
+            cards:
+            
+              - type: custom:decluttering-card
+                template: title_button_card
+                variables:
+                  - name: Living Room
+
+          - type: custom:layout-card
+            layout_type: grid
+
+            layout_options:
+              grid-template-columns: 1fr 1fr 1fr 1fr 1fr
+              grid-template-rows: auto
+              grid-gap: 0px 4px
+              mediaquery:
+                "(max-width: 450px)":
+                  grid-template-columns: 1fr 1fr 1fr
+            cards:
+
+              - type: conditional # Living Room Motion Sensor
+                conditions:
+                  - entity: binary_sensor.motion_living_room
+                    state: "on"
+                card: 
+                  type: custom:decluttering-card
+                  template: motion_sensor_button
+                  variables:
+                    - entity: binary_sensor.motion_living_room
+                    - name: Motion
+                    - light_level_sensor: sensor.motion_living_room_lightlevel
+
+          - type: custom:decluttering-card # Separator
+            template: separator
+
+
+  ############################################################################
+  #                                                                          #
+  #   Kitchen                                                                #
+  #                                                                          #
+  ############################################################################
+
+    - type: conditional
+      conditions:
+        - entity: group.kitchen_motion_sensors
+          state: "on"
+      card:
+        type: vertical-stack
+        cards:
+
+          - type: horizontal-stack
+            cards:
+            
+              - type: custom:decluttering-card
+                template: title_button_card
+                variables:
+                  - name: Kitchen
+
+          - type: custom:layout-card
+            layout_type: grid
+
+            layout_options:
+              grid-template-columns: 1fr 1fr 1fr 1fr 1fr
+              grid-template-rows: auto
+              grid-gap: 0px 4px
+              mediaquery:
+                "(max-width: 450px)":
+                  grid-template-columns: 1fr 1fr 1fr
+            cards:
+ 
+              - type: conditional # Kitchen Motion Sensor
+                conditions:
+                  - entity: binary_sensor.motion_kitchen
+                    state: "on"
+                card: 
+                  type: custom:decluttering-card # Kitchen Motion Sensor
+                  template: motion_sensor_button
+                  variables:
+                    - entity: binary_sensor.motion_kitchen
+                    - name: Motion
+                    - light_level_sensor: sensor.motion_kitchen_lightlevel
+
+              - type: conditional # Kitchen Motion 2 Sensor
+                conditions:
+                  - entity: binary_sensor.motion_kitchen_2
+                    state: "on"
+                card: 
+                  type: custom:decluttering-card # Kitchen Motion Sensor
+                  template: motion_sensor_button
+                  variables:
+                    - entity: binary_sensor.motion_kitchen_2
+                    - name: Motion 2
+                    - light_level_sensor: sensor.motion_kitchen_2_lightlevel
+
+
+          - type: custom:decluttering-card # Separator
+            template: separator       

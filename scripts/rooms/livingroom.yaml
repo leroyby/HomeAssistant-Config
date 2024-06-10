@@ -3,12 +3,3 @@
 # Original Repo : https://github.com/Leroyby/Homeassistant-Config
 # Scripts Living room
 ######################################################################################################
-living_room_off:
-  alias: "Turn living room off"
-  sequence:
-    - service: switch.turn_off
-      data:
-        entity_id: switch.livingroom_switches
-    - service: light.turn_off
-      data:
-        entity_id: light.living_room_lights

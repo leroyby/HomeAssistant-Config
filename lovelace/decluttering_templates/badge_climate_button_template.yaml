@@ -1,0 +1,34 @@
+badge_climate_button:
+
+  default:
+    - entity: 'sensor.number_of_climate_entities_on'
+    #- text_field: "[[[ return Math.round(states['climate.living_room'].attributes.current_temperature) + '°' ]]]"
+    - text_field: "[[[ return states['climate.living_room'].attributes.current_temperature + '°' ]]]"
+
+
+  card:
+    type: 'custom:decluttering-card'
+    template: 'badge_button_text'
+    variables:
+      - entity: '[[entity]]'
+      - name: "[[[
+            if ( entity.state == '0' )
+              return 'Off';
+            else if ( entity.state == '1' )
+              return states['sensor.only_climate_on'].state + ' On';
+            else
+              return entity.state + ' Devices On'; 
+          ]]]"
+      - color: '[[color]]'
+      - color_type: '[[color_type]]'
+      - background_color: '[[background_color]]'
+      - text_color: '[[text_color]]'
+      - text_transform: 'none'
+      - text_field: '[[text_field]]'
+      - state: '[[state]]'
+      - hold_action:
+          action: 'more-info'
+      - tap_action: 
+          action: 'navigate'
+          navigation_path: '/lovelace/climate/'
+

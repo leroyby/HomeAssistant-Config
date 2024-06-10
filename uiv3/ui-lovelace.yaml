@@ -1,0 +1,592 @@
+button_card_templates:
+  !include_dir_merge_named button_card_templates
+
+views:
+  - type: custom:grid-layout
+    title: Home
+    layout:
+      #default
+      margin: 0
+      grid-gap: var(--custom-layout-card-padding)
+      grid-template-columns: repeat(4, 1fr) 0
+      grid-template-rows: 0 repeat(2, fit-content(100%)) 0fr
+      grid-template-areas: |
+        "sidebar  .           .       .       ."
+        "sidebar  Wohnzimmer  Büro  Schlafzimmer  ."
+        "sidebar  media       ANDERE  Home   ."
+        "sidebar  footer      footer  footer  ."
+      mediaquery:
+        #phone
+        "(max-width: 800px)":
+          grid-gap: calc(var(--custom-layout-card-padding) * 1.7)
+          grid-template-columns: 0 repeat(2, 1fr) 0
+          grid-template-rows: 0 repeat(5, fit-content(100%)) 0fr
+          grid-template-areas: |
+            ".  .           .        ."
+            ".  sidebar     sidebar  ."
+            ".  Wohnzimmer  Schlafzimmer   ."
+            ".  Büro      ANDERE   ."
+            ".  media       Home    ."
+            ".  footer      footer   ."
+            ".  .           .        ."
+        #portrait
+        "(max-width: 1200px)":
+          grid-gap: var(--custom-layout-card-padding)
+          grid-template-columns: repeat(3, 1fr) 0
+          grid-template-rows: 0 repeat(3, fit-content(100%)) 0fr
+          grid-template-areas: |
+            "sidebar  .           .       ."
+            "sidebar  Wohnzimmer  Schlafzimmer  ."
+            "sidebar  Büro      ANDERE  ."
+            "sidebar  media       Home   ."
+            "sidebar  footer      footer  ."
+            "sidebar  .           .       ."
+    cards:
+
+      #extra_styles fix, do not remove
+      #also warn if theme is not set
+
+      - type: custom:button-card
+        view_layout:
+          grid-area: 1 / 2 / 2 / 5
+        name: SET THEME TO "tablet" IN PROFILE
+        tap_action:
+          action: navigate
+          navigation_path: /profile
+        styles:
+          card:
+            - display: >
+                [[[
+                  return hass.themes.theme === 'tablet'
+                      ? 'none'
+                      : 'initial';
+                ]]]
+          name:
+            - z-index: 1
+            - overflow: visible
+            - color: red
+            - font-weight: bolder
+            - font-size: xxx-large
+            - background: yellow
+
+      #################################################
+      #                                               #
+      #                    SIDEBAR                    #
+      #                                               #
+      #################################################
+
+      - type: vertical-stack
+        view_layout:
+          grid-area: sidebar
+        cards:
+
+          - type: custom:button-card
+            entity: sensor.template_sidebar
+            template: sidebar
+
+      #################################################
+      #                                               #
+      #                  Wohnzimmer                   #
+      #                                               #
+      #################################################
+
+      - type: grid
+        title: Wohnzimmer
+        view_layout:
+          grid-area: Wohnzimmer
+        columns: 2
+        cards:
+
+          - type: custom:button-card
+            entity: light.Wohnzimmer_group
+            name: Belysning
+            template:
+              - light
+              - icon_hue
+
+          - type: custom:button-card
+            entity: light.Wohnzimmer_horna
+            name: Hörnlampa
+            template:
+              - light
+              - icon_shade
+
+          - type: custom:button-card
+            entity: media_player.lg_webos_tv_a4ab
+            name: Tv
+            state_display: >
+              [[[
+                if (variables.state === 'playing') {
+                    return 'spielt ab';
+                }
+                if (variables.state === true) {
+                    return variables.translate_unknown;
+                }
+              ]]]
+            double_tap_action:
+              !include popup/Wohnzimmer_tv.yaml
+            template:
+              - base
+              - icon_tv
+              - loader
+
+          - type: custom:button-card
+            entity: switch.tv
+            name: TV Switch
+            double_tap_action:
+              !include popup/Wohnzimmer_switch_tv.yaml
+            template:
+              - base
+              - icon_hue
+              - loader
+
+      #################################################
+      #                                               #
+      #                    Büro                     #
+      #                                               #
+      #################################################
+
+      - type: grid
+        title: Büro
+        view_layout:
+          grid-area: Büro
+        columns: 2
+        cards:
+
+          - type: custom:button-card
+            entity: light.office_lights
+            name: Büro Lichter
+            template:
+              - light
+              - icon_hue
+
+          - type: custom:button-card
+            entity: light.office_lights
+            name: Taklampor
+            template:
+              - light
+              - icon_spot
+
+          - type: custom:button-card
+            entity: switch.imac
+            name: Dator
+            double_tap_action:
+              !include popup/office_dator.yaml
+            template:
+              - base
+              - icon_imac
+              - loader
+              - lock
+            variables:
+              lock: >
+                [[[
+                  let lock = states['input_boolean.imac_lock'];
+                  return !lock || lock.state;
+                ]]]
+              trigger: >
+                [[[
+                  let trigger = states['script.home_leave'];
+                  return !trigger || trigger;
+                ]]]
+
+          - type: custom:button-card
+            entity: switch.gosund_monitors_switch
+            name: Monitorer
+            double_tap_action:
+              !include popup/office_monitorer.yaml
+            template:
+              - base
+              - icon_monitors
+              - circle
+              - loader
+            variables:
+              circle_input: >
+                [[[
+                  let volume = states['sensor.monitors_volume'];
+                  if (volume) return parseInt(volume.state);
+                ]]]
+              circle_input_unit: '%'
+
+      #################################################
+      #                                               #
+      #                    Schlafzimmer               #
+      #                                               #
+      #################################################
+
+      - type: grid
+        title: Schlafzimmer
+        view_layout:
+          grid-area: Schlafzimmer
+        columns: 2
+        cards:
+
+          - type: custom:button-card
+            entity: light.bedroom_lights
+            name: Lichter Schlafzimmer
+            template:
+              - light
+              - icon_lamp
+
+          - type: custom:button-card
+            entity: climate.ac
+            name: Klimat
+            double_tap_action:
+              !include popup/Schlafzimmer_klimat.yaml
+            template:
+              - base
+              - icon_climate
+              - circle
+            variables:
+              circle_input: >
+                [[[
+                  if (entity) {
+                      return entity.state === 'cool'
+                          ? Math.round(entity.attributes.temperature).toString()
+                          : Math.round(entity.attributes.current_temperature).toString();
+                  }
+                ]]]
+              circle_input_unit: '°C'
+
+          - type: custom:button-card
+            entity: switch.ps5_635_power
+            name: Playstation
+            double_tap_action:
+              !include popup/Schlafzimmer_playstation.yaml
+            template:
+              - base
+              - icon_ps5
+              - loader
+
+          - type: custom:button-card
+            entity: media_player.samsung
+            name: "Tv\u00B2"
+            double_tap_action:
+              !include popup/Schlafzimmer_tv2.yaml
+            template:
+              - base
+              - icon_tv
+              - loader
+
+      #################################################
+      #                                               #
+      #                     MEDIA                     #
+      #                                               #
+      #################################################
+
+      - type: grid
+        title: Media
+        view_layout:
+          grid-area: media
+        columns: 1
+        cards:
+
+          - type: custom:swipe-card
+            parameters:
+              speed: 550
+              spaceBetween: 40
+              threshold: 5
+            cards:
+
+              - type: horizontal-stack
+                cards:
+
+                  - type: conditional
+                    conditions:
+                      - entity: select.conditional_media
+                        state_not: Wohnzimmer
+
+                      - entity: select.conditional_media
+                        state_not: Schlafzimmer
+
+                      - entity: select.conditional_media
+                        state_not: Spotify
+
+                      - entity: select.conditional_media
+                        state_not: Kök
+                    card:
+                      type: custom:button-card
+                      entity: media_player.spotify
+                      name: Spotify
+                      tap_action:
+                        action: none
+                      template:
+                        - conditional_media
+                        - icon_spotify
+
+                  - type: conditional
+                    conditions:
+                      - entity: select.conditional_media
+                        state: Wohnzimmer
+                    card:
+                      type: custom:button-card
+                      entity: media_player.Wohnzimmer
+                      triggers_update: sensor.youtube_watching
+                      template:
+                        - conditional_media
+                        - icon_apple_tv
+
+                  - type: conditional
+                    conditions:
+                      - entity: select.conditional_media
+                        state: Schlafzimmer
+                    card:
+                      type: custom:button-card
+                      entity: media_player.Schlafzimmer
+                      triggers_update: sensor.youtube_watching
+                      template:
+                        - conditional_media
+                        - icon_apple_tv
+
+                  - type: conditional
+                    conditions:
+                      - entity: select.conditional_media
+                        state: Spotify
+                    card:
+                      type: custom:button-card
+                      entity: media_player.spotify
+                      template:
+                        - conditional_media
+                        - icon_spotify
+
+                  - type: conditional
+                    conditions:
+                      - entity: select.conditional_media
+                        state: Kök
+                    card:
+                      type: custom:button-card
+                      entity: media_player.kok
+                      template:
+                        - conditional_media
+                        - icon_nest_mini
+
+              - type: grid
+                columns: 2
+                cards:
+
+                  - type: custom:button-card
+                    entity: media_player.Wohnzimmer
+                    triggers_update: sensor.youtube_watching
+                    name: Wohnzimmer
+                    template:
+                      - media
+                      - icon_apple_tv
+
+                  - type: custom:button-card
+                    entity: media_player.Schlafzimmer
+                    triggers_update: sensor.youtube_watching
+                    name: Schlafzimmer
+                    template:
+                      - media
+                      - icon_apple_tv
+
+                  - type: custom:button-card
+                    entity: media_player.spotify
+                    name: Spotify
+                    template:
+                      - media
+                      - icon_spotify
+
+                  - type: custom:button-card
+                    entity: media_player.kok
+                    name: Nest Mini
+                    template:
+                      - media
+                      - icon_nest_mini
+
+      #################################################
+      #                                               #
+      #                    ANDERE                     #
+      #                                               #
+      #################################################
+
+      - type: grid
+        title: ANDERE
+        view_layout:
+          grid-area: ANDERE
+        columns: 2
+        cards:
+
+          - type: custom:button-card
+            entity: light.badrum_group
+            name: Badrum
+            template:
+              - light
+              - icon_bathroom
+
+          - type: custom:button-card
+            entity: switch.gosund_fan_switch
+            name: "Fläkt\u00B2"
+            double_tap_action:
+              !include popup/office_flakt.yaml
+            template:
+              - base
+              - icon_fan2
+              - loader
+
+          - type: custom:button-card
+            entity: light.garderob_lampa
+            name: Garderob
+            template:
+              - light
+              - icon_closet
+
+          - type: custom:button-card
+            entity: light.hall_group
+            name: Hall
+            template:
+              - light
+              - icon_spot
+
+      #################################################
+      #                                               #
+      #                     Home                      #
+      #                                               #
+      #################################################
+
+      - type: grid
+        title: Home
+        view_layout:
+          grid-area: Home
+        columns: 2
+        cards:
+
+          - type: custom:button-card
+            entity: person.leroy
+            name: Leroy
+            triggers_update:
+              - sensor.leroy_last_changed
+            double_tap_action:
+              !include popup/Home_leroy.yaml
+            variables:
+              retain: sensor.leroy_last_changed
+            template:
+              - person
+              - circle
+
+          - type: custom:button-card
+            entity: person.USER1
+            name: USER1
+            triggers_update:
+              - sensor.USER1_last_changed
+            double_tap_action:
+              !include popup/Home_USER1.yaml
+            variables:
+              retain: sensor.USER1_last_changed
+            template:
+              - person
+              - circle
+
+          - type: custom:button-card
+            entity: script.home_leave
+            name: Stäng allt
+            template:
+              - base
+              - icon_away
+
+          - type: custom:button-card
+            entity: script.home_arrive
+            name: Home
+            template:
+              - base
+              - icon_home
+
+      #################################################
+      #                                               #
+      #                    FOOTER                     #
+      #                                               #
+      #################################################
+
+      - type: horizontal-stack
+        view_layout:
+          grid-area: footer
+        cards:
+
+          - type: custom:button-card
+            name: >
+              <ha-icon icon="mdi:nas"></ha-icon> NAS
+            tap_action:
+              !include popup/footer_nas.yaml
+            triggers_update:
+              - update.nas_dsm_update
+              - sensor.nas_volume_1_status
+              - binary_sensor.nas_security_status
+              - sensor.disk_use_percent
+            variables:
+              notify: >
+                [[[
+                  let id = this._config.triggers_update;
+                  if (id.every(e => states[e]))
+                      return states[id[0]].state === 'on'
+                          ? 1
+                          : states[id[1]].state === 'background_scrubbing' ||
+                            states[id[2]].state === 'on' ||
+                            parseFloat(states[id[3]].state) >= 85;
+                ]]]
+            template: footer
+
+          - type: custom:button-card
+            entity: sensor.template_updates
+            name: >
+              <ha-icon icon="mdi:arrow-up-bold-circle-outline"></ha-icon> Uppdatera
+            tap_action:
+              !include popup/footer_updates.yaml
+            variables:
+              notify: >
+                [[[
+                  return parseInt(entity?.state);
+                ]]]
+            template: footer
+
+          - type: custom:button-card
+            name: >
+              <ha-icon icon="mdi:robot-vacuum-variant"></ha-icon> Städa
+            tap_action:
+              !include popup/footer_vacuum.yaml
+            triggers_update:
+              - sensor.date
+            variables:
+              notify: >
+                [[[
+                  let id = states['sensor.morty_last_clean_end'];
+                  if (id) return (Date.now() - Date.parse(id.state)) > 6048e5;
+                ]]]
+            template: footer
+
+          - type: custom:button-card
+            name: >
+              <ha-icon icon="mdi:chart-line-variant"></ha-icon> Historik
+            tap_action:
+              !include popup/footer_history.yaml
+            template: footer
+
+          - type: custom:button-card
+            name: >
+              <ha-icon icon="mdi:tablet"></ha-icon> Platta
+            tap_action:
+              !include popup/footer_tablet.yaml
+            variables:
+              notify: >
+                [[[
+                  let id = states['binary_sensor.galaxy_tab_a_plugged_in'];
+                  if (id) return id.state === 'off';
+                ]]]
+            template: footer
+
+          - type: custom:button-card
+            name: >
+              <ha-icon icon="mdi:router-wireless"></ha-icon> Router
+            tap_action:
+              !include popup/footer_router.yaml
+            triggers_update:
+              - update.unifi_dream_machine
+              - binary_sensor.template_udm_internet
+            variables:
+              notify: >
+                [[[
+                  let id = this._config.triggers_update;
+                  if (id.every(e => states[e]))
+                      return states[id[0]].state === 'on'
+                          ? 1
+                          : states[id[1]].state === 'off';
+                ]]]
+            template: footer

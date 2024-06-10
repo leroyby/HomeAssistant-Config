@@ -1,0 +1,17 @@
+######################################################################################################
+# @Leroyby
+# Original Repo : https://github.com/Leroyby/Homeassistant-Config
+# Input Numbers
+######################################################################################################
+
+  wakehour_1:
+    name: Hour
+    min: 00
+    max: REDACTED
+    step: 1
+    icon: mdi:alarm
+  wakeminutes_1:
+    name: Minutes
+    min: 00
+    max: 59
+    step: 1

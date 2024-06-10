@@ -1,5 +1,5 @@
 [![GitHub last commit](https://img.shields.io/github/last-commit/leroyby/homeassistant-config?style=plasticr)](https://github.com/leroyby/HomeAssistant-Config/commits/main)
-[![HA Version](https://img.shields.io/badge/Running%20Home%20Assistant-2024.1.1%20-darkblue)](https://github.com/home-assistant/home-assistant/releases/latest)
+[![HA Version](https://img.shields.io/badge/Running%20Home%20Assistant-2024.1.6%20-darkblue)](https://github.com/home-assistant/home-assistant/releases/latest)
 
 # <a name="table">Table of Contents - Index </a>
    * [Home Assistant configuration](#home-assistant-configuration-overview)
@@ -31,7 +31,7 @@ At this point also a big thanks to the whole home assistant community and especa
 # Repository statistics
 | Lines of code| Sensors| Binary Sensors | Switches  | Automations | Scripts | Scenes |
 | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
-| 0 | 416 | 58 | 21 | 83 | 25 | 3 |
+| 0 | 657 | 69 | 26 | 72 | 25 | 3 |
 
 ###  <a name="History">History</a>
 Started in 2014 with the [Tradfri Gateway](https://www.ikea.com/ch/en/search/products/?q=tradfri) (with 3 White spectrum bulbs) and with the [myStrom Switches](https://mystrom.ch/). Added a LED-Strip from China to the setup and started tinkering with HA. But not for very long. During this time I tested also Apple HomeKit, but I was never really statisfied. 2022 I got some time and started again with HA and now here we are... 
@@ -78,8 +78,8 @@ And I will be adding a wall tablet soon (WIP).
 | [TRÅDFRI Bulb E14 White Spectrum](https://www.ikea.com/ch/en/p/tradfri-led-bulb-e14-470-lumen-wireless-dimmable-white-spectrum-globe-opal-white-50486787/) | 1 | Ikea Hub (Zigbee) |[IKEA TRÅDFRI](https://www.home-assistant.io/integrations/tradfri) | - |integrated|
 | [TRÅDFRI LED Panel Floatl Warm White](tba) | 1 | Ikea Hub (Zigbee) |[IKEA TRÅDFRI](https://www.home-assistant.io/integrations/tradfri) | - |not integrated|
 | [Philips Hue Gradient Signe Floor lamp RGBW](https://www.philips-hue.com/en-us/p/hue-white-and-color-ambiance-gradient-signe-floor-lamp/046677803506)  | 1 | Hue Hub (Zigbee)|[Philips Hue](https://www.home-assistant.io/integrations/hue) | -  |integrated|
-| [Gledopto Spot MR16 RGBW](https://www.gledopto.eu/smart-zigbee-led-mr16-led-rgbcct) | 4 | ConBee II (ZigBee) | [MQTT](https://www.home-assistant.io/integrations/mqtt/) | - | integrated |
-| [WiZ Spot 4.9W PAR16 RGBW](https://www.wizconnected.com/de-ch/p/led-lampe-spot-4-9-w--entspr-50-w--par16-gu10-x2/8719514551312) | 1 | Wi-Fi | [WIZ](https://www.home-assistant.io/integrations/wiz/) | - | integrated |
+| [Gledopto Spot MR16 RGBW](https://www.gledopto.eu/smart-zigbee-led-mr16-led-rgbcct) | 2 (4) | ConBee II (ZigBee) | [MQTT](https://www.home-assistant.io/integrations/mqtt/) | - | integrated |
+| [WiZ Spot 4.9W PAR16 RGBW](https://www.wizconnected.com/de-ch/p/led-lampe-spot-4-9-w--entspr-50-w--par16-gu10-x2/8719514551312) | 3 (4) | Wi-Fi | [WIZ](https://www.home-assistant.io/integrations/wiz/) | - | integrated |
 
 | Lights are grouped in [light_groups.yaml](https://github.com/leroyby/HomeAssistant-Config/blob/main/groups/light_groups.yaml) |
 ### <a name="Outlets">Outlets & Switches</a>
@@ -94,6 +94,7 @@ And I will be adding a wall tablet soon (WIP).
 | Device | Quantity | Connection | Home Assistant | Notes | Status |
 | ------------- | :---: | ------------- | ------------- | ------------- | ------------- |
 | [Nuki Smartlock with Bridge G2](https://nuki.io/en/) | 1 | Nuki Bridge (Bluetooth) |[Nuki](https://www.home-assistant.io/integrations/nuki) | tested with [Nuki Card v11](https://community.home-assistant.io/t/nuki-card-with-callback-support-supports-both-lock-opener-it-replaces-the-official-integration/311932) but currently using the build in option |integrated|
+| [Nuki Opener](https://nuki.io/en/) | 1 | Nuki Bridge (Bluetooth) |[Nuki](https://www.home-assistant.io/integrations/nuki) | tested with [Nuki Card v11](https://community.home-assistant.io/t/nuki-card-with-callback-support-supports-both-lock-opener-it-replaces-the-official-integration/311932) but currently using the build in option |integrated|
 
 ### <a name="Sensors">Sensors</a>
 | [Go to Menu](#menu) |
@@ -105,13 +106,13 @@ And I will be adding a wall tablet soon (WIP).
 | [Aqara door & window contact sensor](https://www.aqara.com/eu/door_and_window_sensor.html)  | 2  | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/) | - |integrated |
 | [Aqara Vibration Sensor](https://www.aqara.com/eu/vibration_sensor.html)  | 1  | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/) | - |integrated |
 | [Shelly Plus Smoke](https://www.shelly.com/products/product-overview/shelly-plus-smoke)  | 1  | Wi-Fi |[Shelly](https://www.home-assistant.io/integrations/shelly/) | - |integrated |
+| [Ikea PARASOLL](https://www.ikea.com/ch/en/p/parasoll-door-window-sensor-smart-white-80504308/)  | 1  | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/) | - |integrated |
 
 ### <a name="Multimedia">Multimedia</a>
 | [Go to Menu](#menu) |
 | Device  | Quantity | Connection | Home Assistant | Notes | Status |
 | ------------- | :---: | ------------- | ------------- | ------------- | ------------- |
 | [Sonos One](https://www.sonos.com/en/shop/one) | 1 | Wi-Fi | [Sonos](https://www.home-assistant.io/integrations/sonos/)|-|integrated|
-| [Google Home Mini](https://store.google.com/ch/product/google_nest_mini?pli=1&hl=de) | 1 | Wi-Fi | [Google Cast](https://www.home-assistant.io/integrations/cast/)|-|integrated|
 | [Xbox Series X](https://www.xbox.com/en-US/consoles/xbox-series-x?xr=shellnav) | 1 | Wi-Fi | [Xbox](https://www.home-assistant.io/integrations/xbox/) & [Xbox Live](https://www.home-assistant.io/integrations/xbox_live/)|-|integrated|
 | Samsung Smart TV 55"| 1 | Wi-Fi| - | - | not integrated |
 | LG OLED TV 65"|  1 | Ethernet| [HomeKit-Controller](https://www.home-assistant.io/integrations/homekit_controller/) | - | Integrated |
@@ -122,7 +123,7 @@ And I will be adding a wall tablet soon (WIP).
 | ------------- | :---: | ------------- | ------------- | ------------- | ------------- |
 | [TRÅDFRI Wireless dimmer](https://www.ikea.com/ch/en/p/tradfri-wireless-dimmer-white-70408595/)| 1 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)|-| integrated |
 | [TRÅDFRI STYRBAR Remote control](https://www.ikea.com/ch/en/p/styrbar-remote-control-white-30488363/) | 1 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)|-| integrated |
-| TRÅDFRI Wireless 5-Button Remote| - | 1 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)| integrated |
+| TRÅDFRI Wireless 5-Button Remote | 1 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)| integrated |
 | [TRÅDFRI Shortcut button](https://www.ikea.com/ch/en/p/tradfri-shortcut-button-white-smart-40356381/) | 1 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)|-| integrated |
 | [Aquara Wireless Mini Switch](https://www.aqara.com/eu/wireless_mini_switch.html) | 1 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)|-| integrated |
 | [Tuya 4-Gang Switch](https://solution.tuya.com/projects/CMa4ie3gzka6ns) | 1 | ConBee II (ZigBee) |[MQTT](https://www.home-assistant.io/integrations/mqtt/)|-|integrated |

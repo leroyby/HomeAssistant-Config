@@ -1,0 +1,49 @@
+badge_window_button:
+
+  default:
+    - entity: 'sensor.number_of_windows_open'
+    # - svg_path: 'M21 20V2H3V20H1V23H23V20M19 4V11H13V4M5 4H11V11H5M5 20V13H11V20M13 20V13H19V20Z'
+    # - svg_path_on: 'M21 20V2H3V20H1V23H23V20M19 4V11H17V4M5 4H7V11H5M5 20V13H7V20M9 20V4H15V20M17 20V13H19V20Z'
+    # - svg_path_colored: 'M 21,20 V 2 H 3 V 20 M 19,4 v 7 H 13 V 4 M 5,4 h 6 v 7 H 5 m 0,9 v -7 h 6 v 7 m 2,0 v -7 h 6 v 7 z'
+    # - svg_path_colored_on: 'M 21,20 V 2 H 3 V 20 M 19,4 v 7 H 17 V 4 M 5,4 h 2 v 7 H 5 m 0,9 v -7 h 2 v 7 m 2,0 V 4 h 6 v 16 m 2,0 v -7 h 2 v 7 z'
+    - svg_path: 'M272 64V224H416V64H272ZM96 224H240V64H96V224ZM96 448H240V288H96V448ZM272 448H416V288H272V448Z'
+    - svg_path_on: 'M240 224.001H96V64.001H240V224.001ZM416 224.001H272V64.001H416V224.001Z'
+    - svg_path_colored: 'M496 448H480V32C480 14.375 465.625 0 448 0H64C46.375 0 32 14.375 32 32V448H16C7.125 448 0 455.125 0 464V496C0 504.875 7.125 512 16 512H496C504.875 512 512 504.875 512 496V464C512 455.125 504.875 448 496 448ZM240 448H96V288H240V448ZM240 224H96V64H240V224ZM416 448H272V288H416V448ZM416 224H272V64H416V224Z'
+    - svg_path_colored_on: 'M480 32C480 14.375 465.625 0 448 0H64C46.375 0 32 14.375 32 32V288H480V32ZM240 224H96V64H240V224ZM416 224H272V64H416V224ZM496 448H480V320H416V448H96V320H32V448H16C7.125 448 0 455.125 0 464V496C0 504.875 7.125 512 16 512H496C504.875 512 512 504.875 512 496V464C512 455.125 504.875 448 496 448Z'
+    - svg_fill_on: var(--accent-color)
+
+
+  card:
+    type: 'custom:decluttering-card'
+    template: 'badge_button_svg'
+    variables:
+      - entity: '[[entity]]'
+      - name: "[[[
+            if ( entity.state == '0' )
+              return 'Closed';
+            else if ( entity.state == '1' )
+              return states['sensor.only_window_open'].state + ' Open';
+            else
+              return entity.state + ' Windows Open'; 
+          ]]]"
+      - icon: '[[icon]]'
+      - svg_fill: '[[svg_fill]]'
+      - svg_path: '[[svg_path]]'
+      - svg_path_colored: '[[svg_path_colored]]'
+      - svg_fill_on: '[[svg_fill_on]]'
+      - svg_path_on: '[[svg_path_on]]'
+      - svg_path_colored_on: '[[svg_path_colored_on]]'
+      - svg_icon_width: 512
+      - svg_icon_height: 512
+      - color: '[[color]]'
+      - color_type: '[[color_type]]'
+      - background_color: '[[background_color]]'
+      - text_color: '[[text_color]]'
+      - text_transform: 'none'
+      - state: '[[state]]'
+      - hold_action:
+          action: 'more-info'
+      - tap_action: 
+          action: 'navigate'
+          navigation_path: '/lovelace/windows/'
+

@@ -1,0 +1,36 @@
+title: System
+icon: fapro:gear #mdi:cog
+path: system_2
+visible: true
+#panel: true
+type: custom:grid-layout
+layout:
+  grid-template-columns: 1fr
+  grid-template-rows: auto
+  mediaquery:
+    "(min-width: 800px)":
+      grid-template-columns: 700px
+  
+cards:
+
+  # - type: custom:decluttering-card
+  #   template: view_title
+  #   variables:
+  #     - title: System
+  #     - top_padding: 16px
+
+  - type: custom:decluttering-card
+    template: view_title_button
+    variables:
+      - title: System
+      - padding_left: 16px
+      - padding_top: 24px
+  
+  - !include /config/lovelace/cards/accessories/card_accessories_system.yaml
+
+  - type: custom:decluttering-card # Separator
+    template: separator
+
+
+
+

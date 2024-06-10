@@ -1,0 +1,267 @@
+title: חדרים
+path: minimalist_rooms
+#icon: mdi:view-grid
+# type: custom:grid-layout
+# layout:
+#   grid-template-columns: 1fr
+#   grid-template-rows: auto
+#   mediaquery:
+#     "(min-width: 800px)":
+#       grid-template-columns: 700px
+panel: true
+cards:
+
+  - type: vertical-stack
+    cards:
+
+############################################################################
+#                                                                          #
+#   Header                                                                 #
+#                                                                          #
+############################################################################
+
+      # - type: custom:button-card
+      #   template: card_header
+      #   variables:
+      #     card_header_title: Rooms
+      #     card_header_navigate_path: /lovelace/minimalist_home
+      #     card_header_back_button: true
+
+
+############################################################################
+#                                                                          #
+#   View                                                                   #
+#                                                                          #
+############################################################################
+
+      - type: "custom:mod-card"
+        style:
+          layout-card$:
+            grid-layout$: |
+              #root {
+                margin-left: var(--view-margins) !important;
+                margin-right: var(--view-margins) !important;
+                justify-content: center !important;
+              }
+        card:
+          type: custom:layout-card
+          layout_type: grid
+          layout_options:
+            grid-template-columns: 1fr
+            grid-template-rows: auto
+            mediaquery:
+              "(min-width: 800px)":
+                grid-template-columns: 780px
+          cards:
+
+            - type: vertical-stack
+              cards:
+
+
+          ############################################################################
+          #                                                                          #
+          #   Chips                                                                  #
+          #                                                                          #
+          ############################################################################
+
+                - type: custom:layout-card
+                  layout_type: grid
+                  layout_options:
+                    grid-auto-flow: column
+                    grid-auto-columns: max-content
+                    margin: var(--chips-left-margin)
+                  cards:
+
+                      # - type: custom:button-card
+                      #   template: edge
+
+                      # Back Chip
+                      # - type: 'custom:button-card'
+                      #   template: chip_back_new
+                      #   variables:
+                      #     ulm_chip_navigate_path: /lovelace/minimalist_home
+
+                      # Climate Chip
+                      - type: 'custom:button-card'
+                        template:
+                          - 'chip_climate'
+                          - 'chip_navigate_only'
+                        variables:
+                          ulm_chip_temperature_low: sensor.lowest_temperature_home
+                          ulm_chip_temperature_high: sensor.highest_temperature_home                     
+                          ulm_chip_devices_on: sensor.number_of_climate_entities_on
+                          ulm_chip_navigate_path: /lovelace/minimalist_climate
+
+                      # Lights Chip
+                      - type: 'custom:button-card'
+                        template:
+                          - 'chip_icon_label_state'
+                          - 'chip_navigate_only'
+                          - 'chip_yellow'
+                        icon: 'mdi:lightbulb'
+                        variables:
+                          ulm_chip_icon_state_entity: sensor.number_of_lights_on
+                          ulm_chip_navigate_path: /lovelace/minimalist_lights
+
+                      # Covers Chip
+                      - type: 'custom:button-card'
+                        template:
+                          - 'chip_icon_label_state'
+                          - 'chip_navigate_only'
+                          - 'chip_blue'
+                        icon: 'mdi:window-shutter'
+                        variables:
+                          ulm_chip_icon_state_entity: sensor.number_of_covers_open
+                          ulm_chip_navigate_path: /lovelace/minimalist_covers
+
+                      # Motion Chip
+                      - type: 'custom:button-card'
+                        template:
+                          - 'chip_icon_label_state'
+                          - 'chip_navigate_only'
+                          - 'chip_blue'
+                        icon: 'mdi:run'
+                        variables:
+                          ulm_chip_icon_state_entity: sensor.number_of_motion_sensors_on
+                          ulm_chip_navigate_path: /lovelace/minimalist_motion
+
+
+                # - type: custom:button-card
+                #   template: spacer
+
+          ############################################################################
+          #                                                                          #
+          #   Title                                                                  #
+          #                                                                          #
+          ############################################################################
+
+                - type: horizontal-stack
+                  cards:
+
+                    - type: custom:button-card
+                      template: title
+                      name: "[[[ return variables.ulm_rooms; ]]]"
+
+
+
+          ############################################################################
+          #                                                                          #
+          #   Cards                                                                  #
+          #                                                                          #
+          ############################################################################
+
+                - type: "custom:mod-card"
+                  style:
+                    .: |
+                      ha-card {
+                          margin: var(--grid-layout-margins) !important;
+                      }
+                  card:
+
+                    type: custom:layout-card
+                    layout_type: grid
+                    layout_options:
+                      grid-template-columns: 1fr 1fr 1fr 1fr
+                      grid-template-rows: auto
+                      grid-gap: 0px 2px
+                      mediaquery:
+                        "(max-width: 450px)":
+                          grid-template-columns: 1fr 1fr            
+                    cards:
+
+                      # Living Room
+                      - type: custom:button-card
+                        template: card_room_two_rows
+                        variables:
+                          ulm_card_room_two_rows_navigate_path: /lovelace/minimalist_living_room
+                          x_ulm_card_room_two_rows_name: "[[[ return variables.ulm_living_room; ]]]"
+                          ulm_card_room_two_rows_icon: mdi:sofa
+                          ulm_card_room_two_rows_light: light.living_room
+                          ulm_card_room_two_rows_temp: sensor.climate_living_room_temp
+                          ulm_card_room_two_rows_sensor: binary_sensor.living_room_motion_sensors
+                          ulm_card_room_two_rows_lights_on: sensor.number_of_lights_on_living_room
+
+                      # Kitchen
+                      - type: custom:button-card
+                        template: card_room_two_rows
+                        variables:
+                          ulm_card_room_two_rows_navigate_path: /lovelace/minimalist_kitchen
+                          x_ulm_card_room_two_rows_name: "[[[ return variables.ulm_kitchen; ]]]"
+                          ulm_card_room_two_rows_icon: mdi:silverware-fork-knife
+                          ulm_card_room_two_rows_light: light.kitchen
+                          ulm_card_room_two_rows_sensor: binary_sensor.kitchen_motion_sensors
+                          ulm_card_room_two_rows_lights_on: sensor.number_of_lights_on_kitchen
+
+                      # Floor 2
+                      - type: custom:button-card
+                        template: card_room_two_rows
+                        variables:
+                          ulm_card_room_two_rows_navigate_path: /lovelace/minimalist_floor_2
+                          x_ulm_card_room_two_rows_name: "[[[ return variables.ulm_floor_2; ]]]"
+                          ulm_card_room_two_rows_icon: mdi:door-open
+                          ulm_card_room_two_rows_light: 'light.hallway_stairs'
+                          ulm_card_room_two_rows_sensor: binary_sensor.floor_2_motion_sensors
+                          ulm_card_room_two_rows_lights_on: sensor.number_of_lights_on_floor_2
+
+                      # Bedroom
+                      - type: custom:button-card
+                        template: card_room_two_rows
+                        variables:
+                          ulm_card_room_two_rows_navigate_path: /lovelace/minimalist_bedroom
+                          x_ulm_card_room_two_rows_name: "[[[ return variables.ulm_bedroom; ]]]"
+                          ulm_card_room_two_rows_icon: mdi:bed-empty
+                          ulm_card_room_two_rows_light: light.bedroom
+                          ulm_card_room_two_rows_temp: sensor.climate_bedroom_temp
+                          ulm_card_room_two_rows_sensor: binary_sensor.bedroom_motion_sensors
+                          ulm_card_room_two_rows_lights_on: sensor.number_of_lights_on_bedroom
+
+                      # Kfir Room
+                      - type: custom:button-card
+                        template: card_room_two_rows
+                        variables:
+                          ulm_card_room_two_rows_navigate_path: /lovelace/minimalist_kfir_room
+                          x_ulm_card_room_two_rows_name: "[[[ return variables.ulm_kfir_room; ]]]"
+                          ulm_card_room_two_rows_icon: mdi:teddy-bear
+                          ulm_card_room_two_rows_light: light.kfir_room
+                          ulm_card_room_two_rows_temp: sensor.climate_kfir_temp
+                          ulm_card_room_two_rows_lights_on: sensor.number_of_lights_on_kfir_room
+
+                      # Ronen Room
+                      - type: custom:button-card
+                        template: card_room_two_rows
+                        variables:
+                          ulm_card_room_two_rows_navigate_path: /lovelace/minimalist_ronen_room
+                          x_ulm_card_room_two_rows_name: "[[[ return variables.ulm_ronen_room; ]]]"
+                          ulm_card_room_two_rows_icon: mdi:soccer
+                          ulm_card_room_two_rows_light: light.ronen_room
+                          ulm_card_room_two_rows_temp: sensor.climate_ronen_temp
+                          ulm_card_room_two_rows_lights_on: sensor.number_of_lights_on_ronen_room
+
+                      # Basement
+                      - type: custom:button-card
+                        template: card_room_two_rows
+                        variables:
+                          ulm_card_room_two_rows_navigate_path: /lovelace/minimalist_basement
+                          x_ulm_card_room_two_rows_name: "[[[ return variables.ulm_basement; ]]]"
+                          ulm_card_room_two_rows_icon: mdi:home-floor-b
+                          ulm_card_room_two_rows_light: light.basement
+                          ulm_card_room_two_rows_temp: sensor.climate_basement_temp
+                          ulm_card_room_two_rows_lights_on: sensor.number_of_lights_on_basement
+
+                      # Work Room
+                      - type: custom:button-card
+                        template: card_room_two_rows
+                        variables:
+                          ulm_card_room_two_rows_navigate_path: /lovelace/minimalist_work_room
+                          x_ulm_card_room_two_rows_name: "[[[ return variables.ulm_work_room; ]]]"
+                          ulm_card_room_two_rows_icon: mdi:laptop
+                          ulm_card_room_two_rows_light: light.work_room
+                          #ulm_card_room_two_rows_temp: sensor.work_room_temperature_sensor_temperature
+                          ulm_card_room_two_rows_lights_on: sensor.number_of_lights_on_work_room
+
+
+
+                - type: custom:button-card
+                  template: spacer
+                  # variables:
+                  #   height: 100px

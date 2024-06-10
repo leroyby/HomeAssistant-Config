@@ -60,3 +60,28 @@
     name: armed Mode
     icon: mdi:shield-alert-outline
     initial: off
+
+  wakestatus_1:
+    name: Alarm 1
+    icon: mdi:alarm
+  wakeweekday_sun_1:
+    name: Sunday
+    icon: mdi:calendar
+  wakeweekday_mon_1:
+    name: Monday        
+    icon: mdi:calendar
+  wakeweekday_tue_1:
+    name: Tuesday        
+    icon: mdi:calendar
+  wakeweekday_wed_1:
+    name: Wednesday       
+    icon: mdi:calendar
+  wakeweekday_thu_1:
+    name: Thursday       
+    icon: mdi:calendar
+  wakeweekday_fri_1:
+    name: Friday        
+    icon: mdi:calendar
+  wakeweekday_sat_1:
+    name: Saturday        
+    icon: mdi:calendar

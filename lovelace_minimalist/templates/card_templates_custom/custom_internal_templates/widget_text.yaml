@@ -1,0 +1,31 @@
+widget_text:
+  variables:
+    ulm_widget_entity: null
+  tap_action:
+    action: "toggle"
+  show_icon: false
+  show_name: true
+  show_label: false
+  styles:
+    grid:
+      - grid-template-areas: "'n'"
+    card:
+      - box-shadow: "none"
+      - padding: "0px"
+      - background-color: "var(--widget-background-color)"
+      - border-radius: "var(--widget-border-radius)"
+      - place-self: "center"
+      - height: "40px"
+      - border-style: "none"
+    name:
+      - color: "var(--widget-icon-color)"
+  size: "20px"
+  color: "var(--google-grey)"
+  state:
+    - operator: "template"
+      value: "[[[ return variables.ulm_widget_entity != null && states[variables.ulm_widget_entity].state == 'on'; ]]]"
+      styles:
+        card:
+          - background-color: "var(--widget-background-color-on)"
+        name:
+          - color : "var(--widget-icon-color-on)"

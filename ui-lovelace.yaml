@@ -256,6 +256,90 @@ views:
       layout: horizontal
       type: custom:mushroom-lock-card
     type: vertical-stack
+  - cards:
+    - entities:
+      - entity: input_boolean.wakestatus_1
+        name: Mode
+      - entity: sensor.wake_time_1
+        name: Wake Time
+      - entity: input_number.wakehour_1
+      - entity: input_number.wakeminutes_1
+      show_header_toggle: false
+      title: Alarm Clock 1
+      type: entities
+    - cards:
+      - entity: input_boolean.wakeweekday_sun_1
+        hold_action:
+          action: none
+        icon_height: 40px
+        name: Sun
+        show_icon: true
+        show_name: true
+        tap_action:
+          action: toggle
+        type: button
+      - entity: input_boolean.wakeweekday_mon_1
+        hold_action:
+          action: none
+        icon_height: 40px
+        name: Mon
+        show_icon: true
+        show_name: true
+        tap_action:
+          action: toggle
+        type: button
+      - entity: input_boolean.wakeweekday_tue_1
+        hold_action:
+          action: none
+        icon_height: 40px
+        name: Tue
+        show_icon: true
+        show_name: true
+        tap_action:
+          action: toggle
+        type: button
+      - entity: input_boolean.wakeweekday_wed_1
+        hold_action:
+          action: none
+        icon_height: 40px
+        name: Wed
+        show_icon: true
+        show_name: true
+        tap_action:
+          action: toggle
+        type: button
+      - entity: input_boolean.wakeweekday_thu_1
+        hold_action:
+          action: none
+        icon_height: 40px
+        name: Thu
+        show_icon: true
+        show_name: true
+        tap_action:
+          action: toggle
+        type: button
+      - entity: input_boolean.wakeweekday_fri_1
+        hold_action:
+          action: none
+        icon_height: 40px
+        name: Fri
+        show_icon: true
+        show_name: true
+        tap_action:
+          action: toggle
+        type: button
+      - entity: input_boolean.wakeweekday_sat_1
+        hold_action:
+          action: none
+        icon_height: 40px
+        name: Sat
+        show_icon: true
+        show_name: true
+        tap_action:
+          action: toggle
+        type: button
+      type: horizontal-stack
+    type: vertical-stack
   icon: mdi:home
   path: default_view
   theme: Backend-selected
@@ -607,13 +691,11 @@ views:
 - badges: []
   cards:
   - entities:
-    - entity: sensor.season
-    - entity: sensor.sun_elevation
+    - entity: sensor.mold_index
+    - entity: sensor.hq_by_zofingen_wind_chill_temperature
     - entity: sensor.sun_next_dusk
     - entity: sun.sun
-    - entity: binary_sensor.dominiqesiphone
-    - entity: device_tracker.dominiqesiphone_home
-    - entity: binary_sensor.USER1_home
+    - entity: binary_sensor.motion_tba_2_occupancy
     show_header_toggle: false
     title: Test apps
     type: entities
@@ -655,7 +737,7 @@ views:
     type: custom:auto-entities
   - entities:
     - entity: light.bedroom_lights
-    - entity: light.office_lights
+    - entity: light.livingroom_c_1_2
     type: entities
   - action_button:
       icon: mdi:power
@@ -901,6 +983,10 @@ views:
     type: media-control
   - entity: media_player.leroys_55_tv
     type: media-control
+  - entity: media_player.spotify
+    type: media-control
+  - entity: media_player.lbxbox
+    type: media-control
   icon: mdi:youtube-tv
   path: mediaplayer
   theme: Backend-selected
@@ -948,3 +1034,48 @@ views:
     use_light_color: false
   path: main
   title: Main
+- cards:
+  - entity: media_player.spotify
+    type: media-control
+  icon: mdi:bookmark-music
+  path: music
+  title: Music
+- cards:
+  - entities:
+    - entity: sensor.ag_495795_odometer
+    - entity: sensor.ag_495795_liquid_consumption_reset
+    - entity: sensor.ag_495795_range_liquid
+    - entity: binary_sensor.ag_495795_tire_warning
+    - entity: sensor.ag_495795_fuel_level
+    title: Mercedes CLA 35 AMG
+    type: entities
+  - header:
+      colorize_states: true
+      show: true
+      show_states: true
+      title: ApexCharts-Card
+    series:
+    - data_generator: "// REMOVE ME\nconst now = new Date();\nconst data = [];\nfor(let\
+        \ i = 0; i <= 24; i++) {\n  data.push([now.getTime() - i * 1000 * 60 * 60,\
+        \ Math.floor((Math.random() * 10) + 1)])\n}\nreturn data.reverse();\n"
+      entity: sensor.hours_toilet_lights_have_been_on_last_7_days
+    - data_generator: "// REMOVE ME\nconst now = new Date();\nconst data = [];\nfor(let\
+        \ i = 0; i <= 24; i++) {\n  data.push([now.getTime() - i * 1000 * 60 * 60,\
+        \ Math.floor((Math.random() * 10) + 1)])\n}\nreturn data.reverse();\n"
+      entity: sensor.hours_livingroom_lights_have_been_on_last_7_days
+      type: column
+    type: custom:apexcharts-card
+  icon: mdi:car
+  path: car
+  title: Car
+- cards:
+  - image_entity: image.hq_by_qr_code
+    type: picture
+  - entities:
+    - button.ap01_entry_restart
+    - button.ap02_livingroom_restart
+    - button.sw01_living_restart
+    type: entities
+  icon: mdi:wifi
+  path: network
+  title: Network

@@ -11,8 +11,6 @@
     - light.office_lights
     - light.bedroom_lights
     - light.Livingroom_lights
-    - light.bad_klein
-    - light.light_tree
 
 - platform: group
   name: bedroom_lights
@@ -22,9 +20,16 @@
     - light.bedroom_c2
     - light.bedroom_c3
     - light.bedroom_light
+
+- platform: group
+  name: bedroom_lights2
+  unique_id: 4e9c2053-a14d-474c-a83e-240506mi0100
+  entities:
+    - light.bedroom_c_lights
+    - light.bedroom_light
      
 - platform: group
-  name: bedroom_c_light
+  name: bedroom_c_lights
   unique_id: 4e9c2053-a14d-474c-a83e-231028dd0108
   entities:
     - light.bedroom_c1
@@ -54,9 +59,7 @@
   name: office_lights
   unique_id: 4e9c2053-a14d-474c-a83e-231028dd0118
   entities:
-    - light.office_c1
-    - light.office_c2
-    - light.office_c3
+    - light.office_c_lights
     - light.office_desk
 
 - platform: group
@@ -66,10 +69,4 @@
     - light.office_c1
     - light.office_c2
     - light.office_c3
-
-- platform: group
-  name: toilet_Lights 
-  unique_id: 4e9c2053-a14d-474c-a83e-231028dd01REDACTED
-  entities:
-    - light.bad_klein
 

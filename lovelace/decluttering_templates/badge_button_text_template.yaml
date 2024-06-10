@@ -1,0 +1,96 @@
+badge_button_text:
+
+  default:
+    - name: ''
+    - state:
+        - value: '0'
+          styles:
+            custom_fields:
+              text_field:
+                - --paper-item-icon-active-color: 'var(--paper-item-icon-color)'
+                - color: 'var(--button-card-text-color)'
+                - background-color: 'var(--button-card-background-color)'
+        - value: 'unavailable'
+          styles:
+            name:
+              - color: 'var(--button-card-disabled-text-color)'
+            custom_fields:
+              text_field:
+                - --paper-item-icon-active-color: 'var(--button-card-disabled-text-color)'
+
+    # Styles
+    - name: ''
+    - color: 'auto'
+    - box_shadow: 'var(--ha-card-box-shadow)'
+    - background_color: 'var(--button-card-on-background)'
+    - text_color: 'var(--button-card-on-text-color)'
+    - text_transform: 'capitalize'
+    - text_field_color: 'var(--button-card-cust-1-on-text-color)'
+    - name_text_color: 'var(--button-card-cust-1-text-color)'
+    - border_color: var(--button-card-on-background)
+
+
+  card:
+    type: 'custom:button-card'
+    entity: '[[entity]]'
+    name: '[[name]]'
+    show_name: true
+    show_icon: false
+    color: '[[color]]'
+    styles:
+      grid:
+        - grid-template-areas: '"text_field" "n"'
+        - grid-template-rows: 2fr 1fr
+        - row-gap: '8px'
+        - justify-items: 'center'
+      card:
+        - box-shadow: 'none'
+        - background: 'none'
+        - place-self: 'center'
+        - width: '70px'
+        - height: '110px'
+        - text-transform: '[[text_transform]]'
+        - color: '[[text_color]]'
+        - font-size: '12px'
+        - font-weight: '500'
+      name:
+        - line-height: '15px'
+        - height: '30px'
+        - width: '68px'
+        - overflow: 'hidden'
+        - text-overflow: 'ellipsis'
+        - display: '-webkit-box'
+        - -webkit-box-orient: 'vertical'
+        - -webkit-line-clamp: 2
+        - justify-content: 'center'
+        - align-items: 'self-start'
+        - align-self: 'normal'
+        - place-self: 'center'
+        - justify-self: 'center'
+        - color: '[[name_text_color]]'
+        - white-space: 'unset'
+        - word-break: 'break-word'
+      custom_fields:
+        text_field:
+          - color: '[[text_field_color]]' 
+          - background-color: '[[background_color]]'
+          - border-radius: '50%'
+          - place-self: 'center'
+          - vertical-align: 'middle'
+          - display: 'inline-block'
+          - line-height: '62px'
+          - width: '62px'
+          - height: '62px'
+          - letter-spacing: 0px   
+          - font-size: '24px'
+          - font-weight: '600'
+          - box-shadow: '[[box_shadow]]'
+          - border-color: '[[border_color]]'
+          - border-style: 'solid'
+          - border-width: '3px'          
+    custom_fields:  
+      text_field: '[[text_field]]'
+    tap_action: '[[tap_action]]'
+    hold_action: '[[hold_action]]'
+    double_tap_action: '[[double_tap_action]]'
+    state: '[[state]]'

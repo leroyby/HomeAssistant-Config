@@ -1,0 +1,383 @@
+title: Floor 2
+path: floor-2
+visible: false
+icon: mdi:home-floor-2
+panel: true
+    
+cards:
+
+  - type: vertical-stack
+    cards:
+
+############################################################################
+#                                                                          #
+#   Content                                                                #
+#                                                                          #
+############################################################################
+
+      - type: custom:layout-card
+        layout_type: grid
+
+        layout_options:
+          grid-template-columns: 1fr 1fr
+          grid-template-rows: auto
+          grid-gap: 0px 4px
+        
+        cards:
+
+
+          ############################################################################
+          #                                                                          #
+          #   Left Column                                                            #
+          #                                                                          #
+          ############################################################################
+
+          - type: vertical-stack
+            cards:
+
+              ############################################################################
+              #                                                                          #
+              #   Air Conditioning                                                       #
+              #                                                                          #
+              ############################################################################
+
+              # Title
+              - type: horizontal-stack
+                cards:
+
+                  - type: custom:button-card
+                    template: title
+                    name: "[[[ return variables.ulm_air_conditioning; ]]]"
+                    variables:
+                      ulm_title_margin_top: "0px"
+                      
+              - type: custom:layout-card
+                layout_type: grid
+                layout_options:
+                  grid-template-columns: 1fr 1fr
+                  grid-template-rows: auto
+                  grid-gap: 0px 4px
+                  mediaquery:
+                    "(max-width: 450px)":
+                      grid-template-columns: 1fr 1fr
+                cards:
+
+                  # Bedroom Climate
+                  - type: 'custom:button-card'
+                    template: card_ac_buttons_with_temp
+                    variables:
+                      ulm_card_ac_entity: climate.bedroom_template
+                      ulm_card_ac_curr_temp_sensor: sensor.climate_bedroom_temp
+                      x_ulm_card_ac_name: "[[[ return variables.ulm_bedroom; ]]]"
+                    view_layout:
+                      grid-row-start: span 3
+
+                  # Kfir Climate
+                  - type: 'custom:button-card'
+                    template: card_ac_buttons_with_temp
+                    variables:
+                      ulm_card_ac_entity: climate.kfir_template
+                      ulm_card_ac_curr_temp_sensor: sensor.climate_kfir_temp
+                      x_ulm_card_ac_name: "[[[ return variables.ulm_kfir; ]]]"
+                    view_layout:
+                      grid-row-start: span 3
+
+                  # Ronen Climate
+                  - type: 'custom:button-card'
+                    template: card_ac_buttons_with_temp
+                    variables:
+                      ulm_card_ac_entity: climate.ronen_template
+                      ulm_card_ac_curr_temp_sensor: sensor.climate_ronen_temp
+                      x_ulm_card_ac_name: "[[[ return variables.ulm_ronen; ]]]"
+                    view_layout:
+                      grid-row-start: span 3
+
+
+
+              ############################################################################
+              #                                                                          #
+              #   Covers                                                                 #
+              #                                                                          #
+              ############################################################################
+
+              # Title
+              - type: horizontal-stack
+                cards:
+
+                  - type: custom:button-card
+                    template: title
+                    name: "[[[ return variables.ulm_covers; ]]]"
+
+              - type: custom:layout-card
+                layout_type: grid
+                layout_options:
+                  grid-template-columns: 1fr 1fr
+                  grid-template-rows: auto
+                  grid-gap: 0px 4px
+                  mediaquery:
+                    "(max-width: 450px)":
+                      grid-template-columns: 1fr 1fr
+                cards:
+
+                  # Bedroom Balcony Cover
+                  - type: 'custom:button-card'
+                    template: card_cover_buttons
+                    variables:
+                      x_ulm_card_cover_buttons_name: "[[[ return variables.ulm_bedroom_balcony; ]]]"
+                      ulm_card_cover_buttons_entity: cover.bedroom_balcony
+                    view_layout:
+                      grid-row-start: span 2
+                      
+                  # Bedroom Window Cover
+                  - type: 'custom:button-card'
+                    template: card_cover_buttons
+                    variables:
+                      x_ulm_card_cover_buttons_name: "[[[ return variables.ulm_bedroom_window; ]]]"
+                      ulm_card_cover_buttons_entity: cover.bedroom_window
+                    view_layout:
+                      grid-row-start: span 2
+
+                  # Bedroom Makup Cover
+                  - type: 'custom:button-card'
+                    template: card_cover_buttons
+                    variables:
+                      x_ulm_card_cover_buttons_name: "[[[ return variables.ulm_bedroom_makeup; ]]]"
+                      ulm_card_cover_buttons_entity: cover.parents_makeup
+                    view_layout:
+                      grid-row-start: span 2
+
+                  # Ronen Room Cover
+                  - type: 'custom:button-card'
+                    template: card_cover_buttons
+                    variables:
+                      x_ulm_card_cover_buttons_name: "[[[ return variables.ulm_ronen_room; ]]]"
+                      ulm_card_cover_buttons_entity: cover.ronen_room
+                    view_layout:
+                      grid-row-start: span 2
+
+                  # Kfir Room Cover
+                  - type: 'custom:button-card'
+                    template: card_cover_buttons
+                    variables:
+                      x_ulm_card_cover_buttons_name: "[[[ return variables.ulm_kfir_room; ]]]"
+                      ulm_card_cover_buttons_entity: cover.kfir_room
+                    view_layout:
+                      grid-row-start: span 2 
+
+
+
+          ############################################################################
+          #                                                                          #
+          #   Right Column                                                           #
+          #                                                                          #
+          ############################################################################
+
+          - type: vertical-stack
+            cards:
+
+
+              ############################################################################
+              #                                                                          #
+              #   Lights                                                                 #
+              #                                                                          #
+              ############################################################################
+
+              # Lights
+              - type: horizontal-stack
+                cards:
+
+                  - type: custom:button-card
+                    template: title
+                    name: "[[[ return variables.ulm_lights; ]]]"
+                    variables:
+                      ulm_title_margin_top: "0px"
+
+              - type: custom:layout-card
+                layout_type: grid
+                layout_options:
+                  grid-template-columns: 1fr 1fr
+                  grid-template-rows: auto
+                  grid-gap: 0px 4px
+                  mediaquery:
+                    "(max-width: 450px)":
+                      grid-template-columns: 1fr 1fr
+                cards:
+
+                  # Hallway Light
+                  - type: 'custom:button-card'
+                    template: 'card_light_simple'
+                    entity: light.hallway_stairs
+                    name: "[[[ return variables.ulm_hallway; ]]]"
+
+                  # Stairs Light
+                  - type: 'custom:button-card'
+                    template: 'card_light_simple'
+                    #entity: light.stairs_floor_2
+                    entity: light.stairs_ground_floor
+                    name: "[[[ return variables.ulm_stairs; ]]]"
+
+                  # Bedroom Light
+                  - type: 'custom:button-card'
+                    template: 'card_light_simple'
+                    entity: light.bedroom
+                    name: "[[[ return variables.ulm_bedroom; ]]]"
+
+                  # Bedroom Balcony Light
+                  - type: 'custom:button-card'
+                    template: 'card_light_simple'
+                    entity: light.bedroom_balcony
+                    name: "[[[ return variables.ulm_balcony; ]]]"
+                    
+                  # Bedside Dima Light
+                  - type: 'custom:button-card'
+                    template: 'card_light_simple'
+                    entity: light.bedside_dima_bulb
+                    icon: 'mdi:lamp'
+                    name: "[[[ return variables.ulm_dima; ]]]"
+                    variables:
+                      ulm_card_light_enable_color: true
+                      ulm_card_light_enable_popup: false
+
+                  # Bedside Galit Light
+                  - type: 'custom:button-card'
+                    template: 'card_light_simple'
+                    entity: light.bedside_galit_bulb
+                    icon: 'mdi:lamp'
+                    name: "[[[ return variables.ulm_galit; ]]]"
+                    variables:
+                      ulm_card_light_enable_color: true
+                      ulm_card_light_enable_popup: false
+
+                  # Parents Bathroom Light
+                  - type: 'custom:button-card'
+                    template: 'card_light_simple'
+                    entity: light.parents_bathroom_ceiling
+                    name: "[[[ return variables.ulm_parents_bathroom; ]]]"
+                    variables:
+                      ulm_card_light_counter_sensor: "sensor.parents_bathroom_light_time_left"                    
+
+                  # Parents Bathroom Mirror Light
+                  - type: 'custom:button-card'
+                    template: 'card_light_simple'
+                    entity: light.parents_bathroom_mirror
+                    name: "[[[ return variables.ulm_parents_bathroom_mirror; ]]]"
+                    variables:
+                      ulm_card_light_counter_sensor: "sensor.parents_bathroom_light_time_left"
+
+                  # Ronen Room Light
+                  - type: 'custom:button-card'
+                    template: 'card_light_simple'
+                    entity: light.ronen_room
+                    name: "[[[ return variables.ulm_ronen_room; ]]]"
+
+                  # Ronen Led Strip
+                  - type: 'custom:button-card'
+                    template: 'card_light_simple'
+                    entity: light.ronen_led_strip
+                    icon: 'mdi:led-strip-variant'
+                    name: "[[[ return variables.ulm_ronen_strip; ]]]"
+                    variables:
+                      ulm_card_light_enable_color: true
+                      ulm_card_light_enable_popup: false
+
+                  # Kfir Room Light
+                  - type: 'custom:button-card'
+                    template: 'card_light_simple'
+                    entity: light.kfir_room
+                    name: "[[[ return variables.ulm_kfir_room; ]]]"
+
+                  # Kfir Led Strip
+                  - type: 'custom:button-card'
+                    template: 'card_light_simple'
+                    entity: light.kfir_led_strip
+                    icon: 'mdi:led-strip-variant'
+                    name: "[[[ return variables.ulm_kfir_strip; ]]]"
+                    variables:
+                      ulm_card_light_enable_color: true
+                      ulm_card_light_enable_popup: false
+
+                  # Bathroom Light
+                  - type: 'custom:button-card'
+                    template: 'card_light_simple'
+                    entity: light.bathroom_ceiling
+                    name: "[[[ return variables.ulm_bathroom; ]]]"
+                    variables:
+                      ulm_card_light_counter_sensor: "sensor.bathroom_light_time_left"
+
+                  # Bathroom Mirror Light
+                  - type: 'custom:button-card'
+                    template: 'card_light_simple'
+                    entity: light.bathroom_mirror
+                    name: "[[[ return variables.ulm_bathroom_mirror; ]]]"
+                    variables:
+                      ulm_card_light_counter_sensor: "sensor.bathroom_light_time_left"
+
+                  # Laundry Light
+                  - type: 'custom:button-card'
+                    template: 'card_light_simple'
+                    entity: light.laundry
+                    name: "[[[ return variables.ulm_laundry; ]]]"
+                    variables:
+                      ulm_card_light_counter_sensor: "sensor.bathroom_light_time_left"
+
+
+              ############################################################################
+              #                                                                          #
+              #   Heating                                                                #
+              #                                                                          #
+              ############################################################################
+
+              # Title
+              - type: horizontal-stack
+                cards:
+
+                  - type: custom:button-card
+                    template: title
+                    name: "[[[ return variables.ulm_heating; ]]]"
+
+              - type: custom:layout-card
+                layout_type: grid
+                layout_options:
+                  grid-template-columns: 1fr 1fr
+                  grid-template-rows: auto
+                  grid-gap: 0px 4px
+                  mediaquery:
+                    "(max-width: 450px)":
+                      grid-template-columns: 1fr 1fr
+                cards:
+
+                  # Bathroom Heater
+                  - type: 'custom:button-card'
+                    template: 
+                      - "card_heater_with_timer"
+                    variables:
+                      ulm_card_heater_consumption_sensor: sensor.bathroom_heater_power
+                      ulm_card_heater_counter_sensor: sensor.bathroom_heater_time_left
+                    entity: switch.bathroom_heater
+                    name: "[[[ return variables.ulm_bathroom; ]]]"
+
+                  # Parents Bathroom Heater
+                  - type: 'custom:button-card'
+                    template: 
+                      - "card_heater_with_timer"
+                    variables:
+                      ulm_card_heater_consumption_sensor: sensor.parents_bathroom_heater_power
+                      ulm_card_heater_counter_sensor: sensor.parents_bathroom_heater_time_left
+                    entity: switch.parents_bathroom_heater
+                    name: "[[[ return variables.ulm_parents_bathroom; ]]]"
+
+                  # Switcher
+                  - type: 'custom:button-card'
+                    template: 
+                      - card_switcher
+                    variables:
+                      x_ulm_card_switcher_name: "[[[ return variables.ulm_boiler; ]]]"
+                      ulm_card_switcher_icon: "mdi:waves"
+                      ulm_card_switcher_entity: switch.switcher_boiler
+                      ulm_card_switcher_timer_script: script.switcher_boiler_turn_on_timer_script
+                      ulm_card_switcher_time_left: sensor.switcher_boiler_time_left_short
+                      ulm_card_switcher_timer_minutes: input_select.switcher_boiler_timer_minutes_input_select
+                      ulm_card_switcher_electric_current: sensor.switcher_boiler_electric_current
+                      ulm_card_switcher_auto_off: sensor.switcher_boiler_auto_off_time
+                    view_layout:
+                      grid-row-start: span 2

@@ -1,0 +1,42 @@
+type: vertical-stack
+cards:
+
+############################################################################
+#                                                                          #
+#   Title                                                                  #
+#                                                                          #
+############################################################################
+
+  - type: horizontal-stack
+    cards: 
+    
+      - type: custom:decluttering-card
+        template: title_button_card
+        variables:
+          - name: Lights
+          - padding_left: 0px  
+
+
+############################################################################
+#                                                                          #
+#   Automations                                                            #
+#                                                                          #
+############################################################################
+
+  - type: horizontal-stack
+    cards:
+
+      - type: entities
+        style: |
+          ha-card.type-entities {
+            padding: 0em 1.3em 0em 0.5em;
+          }
+        title: ""
+        show_header_toggle: false
+        entities:
+          - automation.turn_on_kitchen_strip
+          - automation.turn_off_kitchen_strip
+          - automation.night_lights
+
+  - type: custom:decluttering-card # Separator
+    template: separator

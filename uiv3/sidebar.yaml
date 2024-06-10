@@ -1,0 +1,112 @@
+- sensor:
+    - unique_id: sidebar
+      state: template
+      attributes:
+        time: >
+          {% set hours = now().strftime('%H') %}
+          {% set minutes = now().strftime('%M') %}
+          <span class="time">
+            {{ hours }}<span class="time-colon">:</span>{{ minutes }}
+          </span>
+        date: >
+          <font color='#6a7377'><b>
+          {% if strptime(states('sensor.date'), '%Y-%m-%d').day != None %}
+          {% set days = ['Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag', 'Sonntag'] %}
+          {% set months = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni',
+          'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'] %}
+            {{ days[now().weekday()] }}<br>
+            {{ strptime(states('sensor.date'), '%Y-%m-%d').day }} {{ months[now().month-1] }}
+          {% endif %}
+          </b></font>
+        greet: >
+          <b>
+          {% set time = now().hour %}
+          {% if time <= 1 %} Gute Nacht {{'\U0001F611'}}
+          {% elif time <= 3 %} Gute Nacht {{'\U0001F62A'}}
+          {% elif time <= 5 %} Gute Nacht {{'\U0001F634'}}
+          {% elif time <= 7 %} Guten Morgen {{'\U0001F4A9'}}
+          {% elif time <= 9 %} Guten Morgen {{'\u2615\uFE0F'}}
+          {% elif time <= 10 %} Guten Morgen {{'\U0001F642'}}
+          {% elif time <= 13 %} Guten Tag {{'\U0001F60A'}}
+          {% elif time <= 15 %} Guten Tag {{'\U0001F60E'}}
+          {% elif time <= 17 %} Guten Tag {{'\U0001F44B\U0001F3FB'}}
+          {% elif time <= 19 %} Guten Abend {{'\U0001F44B\U0001F3FB'}}
+          {% elif time <= 22 %} Guten Abend {{'\U0001F60C'}}
+          {% elif time <= 23 %} Guten Abend {{'\U0001F974'}}
+          {% else %} Guten Abend {{'\U0001F974'}}
+          {% endif %}
+          </b>
+        active: >
+          <b>
+          {% set lights = [
+            states.light.bedroom_lights
+          ] %}
+
+          {% set devices = [
+            states.switch.imac,
+            states.switch.ps5_635_power,
+            states.switch.gosund_monitors_switch,
+            states.switch.gosund_fan_switch,
+            states.media_player.samsung,
+            states.media_player.sony_bravia_tv,
+            states.climate.ac
+          ] %}
+
+          {% set lights_on = lights | selectattr('state','eq','on') | list %}
+          {% set lights_name = lights | selectattr('state','eq','on') | map(attribute='name') | join(', ') %}
+
+          {% set devices_on = devices | selectattr('state','search','(on|cool|fan_only|playing)') | list %}
+          {% set devices_name = devices_on | map(attribute='name') | join(', ') %}
+
+          {% if (lights_on | length == 0) and (devices_on | length > 0) %}
+            {{ devices_name | regex_replace(',([^,]*)$',' och\\1') }} an
+
+          {% elif (lights_on | length == 1) and (devices_on | length == 1) %}
+            {{ lights_name }} och {{devices_name }} an
+
+          {% elif (lights_on | length == 1) and (devices_on | length > 1) %}
+            {{ lights_name }}, {{ devices_name | regex_replace(',([^,]*)$',' och\\1') }} an
+
+          {% elif (lights_on | length > 1) and (devices_on | length == 1) %}
+            {{ lights_on | length }} lampor och {{ devices_name }} an
+
+          {% elif (lights_on | length > 1) and (devices_on | length > 1) %}
+            {{ lights_on | length }} lampor, {{ devices_name | regex_replace(',([^,]*)$',' och\\1') }}  an
+
+          {% elif (lights_on | length == 1) and (devices_on | length == 0) %}
+            {{ lights_name }} an
+
+          {% elif (lights_on | length > 1) and (devices_on | length == 0) %}
+            {{ lights_on | length }} lampor an
+
+          {% else %}
+            <font color='#6a7377'>Alles ausgeschaltet</font>
+          {% endif %}
+          </b>
+        vacuum: >
+          {% set entity_id = 'vacuum.rombacus' %}
+          {% if is_state(entity_id, 'cleaning') %}
+            <b>Roombacus saugt</b>
+          {% elif is_state(entity_id, 'returning') %}
+            <b>Roombacus fährt nach Hause</b>
+          {% endif %}
+        weather: >
+          {% set entity = 'weather.forecast_home' %}
+          {% if not is_state(entity, 'unknown') %}
+            {% set temp = state_attr(entity, 'temperature') | round %}
+            {% set precip = state_attr(entity, 'forecast')[0]['precipitation'] | round %}
+              Känns som {{ temp }}° med {{ 'ingen risk för regn' if precip == 0
+              else precip | string + 'mm regn \u2614\uFE0F' }}
+          {% else %}
+            Kan inte läsa in väder...
+          {% endif %}
+        battery: >
+          {% set entities = states.sensor 
+            | selectattr('entity_id', 'search', 'battery')
+            | rejectattr('entity_id', 'search', 'iphone')
+            | map(attribute = 'entity_id') | list %}
+          {% for sensor in entities if states(sensor) != 'unknown' and states(sensor) !=
+          'unavailable' and states(sensor) != 'None' and states(sensor) | int(default=0) <= 5 %}
+            {% if loop.first %} {{'\u26A0\uFE0F'}} Batteri {% else %}, {% endif %}
+            {{ state_attr(sensor, 'friendly_name') }} {{ states(sensor) }}%
+          {% endfor %}

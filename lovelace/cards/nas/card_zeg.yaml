@@ -1,0 +1,69 @@
+type: vertical-stack
+cards:
+
+
+############################################################################
+#                                                                          #
+#   Title                                                                  #
+#                                                                          #
+############################################################################
+
+  - type: horizontal-stack
+    cards: 
+    
+      - type: custom:decluttering-card
+        template: title_button_card
+        variables:
+          - name: zeg
+          - padding_left: 22px
+
+
+############################################################################
+#                                                                          #
+#   Sensors                                                                #
+#                                                                          #
+############################################################################
+
+  - type: horizontal-stack
+    cards:  
+
+      - type: entities
+        state_color: true
+        show_header_toggle: false
+        style: |
+          ha-card.type-entities {
+            #padding: 0.3em 1.25em 0.4em 0.5em;
+            background: none;
+            box-shadow: none;
+            border-radius: 0px;           
+            padding: 0em 1.3em 0em 0.5em;
+          }
+        entities:
+
+          - type: custom:bar-card
+            width: 55%
+            height: 2em
+            decimal: 0
+            unit_of_measurement: '%'
+            #color: '#5F995A'
+            positions: &pos
+              icon: outside
+              indicator: 'off'
+              name: outside
+            entity_row: true
+            entities:
+              - entity: sensor.synology_volume_used_volume_1_2
+                name: HD
+                icon: mdi:harddisk
+                color: '#5F995A'
+              - entity: sensor.synology_cpu_load_system_2
+                name: CPU
+                icon: mdi:chip
+                color: '#2377B2'
+              - entity: sensor.synology_memory_usage_real_2
+                name: Memory
+                icon: mdi:memory
+                color: 'rgb(87, 0, 127)' 
+
+  - type: custom:decluttering-card # Separator
+    template: separator

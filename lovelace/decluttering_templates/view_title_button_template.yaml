@@ -1,0 +1,69 @@
+view_title_button:
+
+  default:
+    - padding_top: 18px
+    - padding_bottom: 16px
+    - padding_left: 8px
+    - padding_right: 0px
+
+  card:
+    type: custom:button-card
+    entity: ""
+    styles:
+      card:
+        - padding-top: '[[padding_top]]'
+        - padding-bottom: '[[padding_bottom]]'
+        - padding-left: '[[padding_left]]'
+        - padding-right: '[[padding_right]]'
+        - font-size: 24px
+        - background: none
+        - box-shadow: none
+        - border-radius: 0px
+        - font-weight: bold
+        - color: var(--primary-text-color)
+      grid:
+        - grid-template-areas: '"back title"'
+        - grid-template-columns: "[[[
+              if ( '[[back_button]]' == 'true' )
+                return '30px 1fr';
+              else
+                return '0px 1fr';
+            ]]]"        
+        - grid-template-rows: 1fr
+      custom_fields:
+        back:
+          - align-self: center
+          - justify-self: center
+          - margin: none
+        title:
+          - justify-self: start
+          - align-self: center
+          - padding-left: "[[[
+              if ( '[[back_button]]' == 'true' )
+                return '8px';
+              else
+                return '0px';
+            ]]]" 
+    custom_fields:
+      back:
+        card:
+          type: custom:decluttering-card
+          template: back_button_svg
+          variables:
+            - tap_action: '[[tap_action]]'
+            - height: "[[[
+                if ( '[[back_button]]' == 'true' )
+                  return '24px';
+                else
+                  return '0px';
+              ]]]"
+            - width: "[[[
+                if ( '[[back_button]]' == 'true' )
+                  return '24px';
+                else
+                  return '0px';
+              ]]]"
+      title: '[[title]]'
+    tap_action: none
+    hold_action: none
+    double_tap_action: none

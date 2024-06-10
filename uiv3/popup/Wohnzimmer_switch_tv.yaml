@@ -1,0 +1,17 @@
+action: fire-dom-event
+browser_mod:
+  service: browser_mod.popup
+  data:
+    title: Switch TV Wohnzimmer
+    content:
+      type: vertical-stack
+      cards:
+        - type: entities
+          state_color: true
+          show_header_toggle: false
+          card_mod:
+            class: content
+          entities:
+
+            - entity: switch.tv
+              secondary_info: last-changed

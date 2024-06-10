@@ -1,0 +1,91 @@
+---
+### CHANGED ###
+
+### Icon Info Bg ###
+icon_info_bg:
+  color: "var(--google-grey)"
+  show_icon: true
+  show_label: true
+  show_name: true
+  state:
+    - value: "unavailable"
+      styles:
+        card:
+          - filter: "opacity(70%)"
+        label:
+          - filter: "opacity(70%)"
+        name:
+          - filter: "opacity(70%)"
+        custom_fields:
+          notification:
+            - position: "absolute"
+            - left: "40px"
+            - top: "8px"
+  styles:
+    icon:
+      - color: "var(--ha-card-icon-off-color)"
+      - width: "24px"
+      - height: "24px"
+    label:
+      - justify-self: "start"
+      - align-self: "start"
+      - font-weight: "[[[ return variables.ulm_label_font_weight; ]]]"
+      - font-size: "[[[ return variables.ulm_label_font_size; ]]]"
+      # filter: "opacity(40%)"
+      - margin-left: "12px"
+      - margin-right: "12px"
+      - letter-spacing: "0.4px"
+      - color: "var(--secondary-text-color)"
+    name:
+      - align-self: "end"
+      - justify-self: "start"
+      - font-weight: "[[[ return variables.ulm_name_font_weight; ]]]"
+      - font-size: "[[[ return variables.ulm_name_font_size; ]]]"
+      - margin-left: "12px"
+      - margin-right: "12px"
+      - margin-top: "0px"
+      - height: 20px
+      - letter-spacing: "0.1px"
+    state:
+      - justify-self: "start"
+      - align-self: "start"
+      - font-weight: "bold"
+      - font-size: "12px"
+      - filter: "opacity(40%)"
+      - margin-left: "12px"
+      - margin-right: "12px"
+    img_cell:
+      - background-color: "var(--ha-card-icon-background-color)"
+      - border-radius: "50%"
+      - place-self: "center"
+      - width: "40px"
+      - height: "40px"
+    grid:
+      - grid-template-areas: "'i n' 'i l'"
+      - grid-template-columns: "min-content auto"
+      - grid-template-rows: "min-content min-content"
+    card:
+      - border-radius: "var(--border-radius)"
+      - box-shadow: "var(--box-shadow)"
+      - padding: "var(--card-padding)"
+      #- border-style: "none"
+      - --mdc-ripple-press-opacity: 0.0
+  # custom_fields:
+  #   notification:
+  #     card:
+  #       type: "custom:button-card"
+  #       template: "badge"
+  #       icon: >
+  #         [[[
+  #           if ( entity.state =="unavailable" ) {
+  #             return "mdi:exclamation";
+  #           }
+  #         ]]]
+  #       variables:
+  #         ulm_badge_icon_backgroung_color: >
+  #           [[[
+  #             if ( entity.state =="unavailable" ) {
+  #               return "rgba(var(--color-red),1)";
+  #             }
+  #           ]]]
+  size: "20px"

@@ -1,0 +1,44 @@
+sensibo_assumed_state_button:
+
+  default:
+    - color: var(--button-color-green)
+    - icon_color: var(--primary-text-color)
+    - color_type: card
+    - icon: mdi:sync-circle
+    - show_name: true
+    - height: 68px
+    - name: State Sync
+
+  card:
+    type: custom:decluttering-card
+    template: simple_button
+    variables:
+      - entity: '[[entity]]'
+      - name: '[[name]]'
+      - show_name: '[[show_name]]'
+      - icon: '[[icon]]'
+      - size: '[[size]]'
+      - color: '[[color]]'
+      - color_type: '[[color_type]]'
+      - height: '[[height]]'
+      - layout: '[[layout]]'
+      - tap_action: 
+          action: call-service
+          service: sensibo.assume_state
+          service_data:
+            entity_id: '[[entity]]'
+            state: "[[[
+                if (entity.state == 'off')
+                  return 'on';
+                else
+                  return 'off';
+              ]]]"
+      - hold_action:
+          action: none
+      - state:
+          - value: "on"
+            styles:
+              card:
+                - background-color: '[[color]]'
+              icon:
+                - color: '[[icon_color]]'

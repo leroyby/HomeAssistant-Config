@@ -49,27 +49,6 @@
     target:
       entity_id: input_boolean.vacuum_ran
 
-- alias: Vacuum home
-  trigger:
-    - platform: state
-      entity_id: vacuum.rombacus
-      to: 'docked'
-    - platform: state
-      entity_id: vacuum.rombacus
-      to: 'paused'
-    - platform: state
-      entity_id: vacuum.rombacus
-      to: 'error'
-    - platform: state
-      entity_id: vacuum.rombacus
-      to: 'idle'
-  condition:
-  action:
-  - service: light.turn_off
-    target:
-      entity_id: 
-      - light.Living_room_lights
-
 - alias: Vacuum running
   trigger:
     - platform: state

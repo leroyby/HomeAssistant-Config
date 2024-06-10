@@ -1,0 +1,15 @@
+######################################################################################################
+# @Leroyby
+# Original Repo : https://github.com/Leroyby/Homeassistant-Config
+# Alarmclock Sensors 
+######################################################################################################
+
+- platform: template
+  sensors:
+    wake_time_1:
+      friendly_name: 'Wake Time 1'
+      value_template: "{{'{:02d}:{:02d}'.format(states('input_number.wakehour_1') | int, states('input_number.wakeminutes_1') | int) }}"
+
+- platform: time_date
+  display_options:
+    - 'time'

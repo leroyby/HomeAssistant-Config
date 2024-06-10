@@ -1,0 +1,22 @@
+---
+### CHANGED ###
+
+yellow_on:
+  state:
+    - styles:
+        icon:
+          - color: 'var(--color-yellow-icon)'
+        label:
+          - color: "var(--color-yellow-label)"
+        name:
+          - color: "var(--color-yellow-name)"
+        img_cell:
+          - background-color: 'var(--color-yellow-icon-background)'
+        card:
+          - background-color: "var(--color-background-yellow)"
+      value: "on"
+      id: "on"
+
+# Legacy
+yellow:
+  template: "yellow_on"

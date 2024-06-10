@@ -3,11 +3,3 @@
 # Original Repo : https://github.com/Leroyby/Homeassistant-Config
 # Script Spotify (Media Player)
 ######################################################################################################
-start_spotify_livingroom:
-  sequence:
-    - service: media_player.play_media
-      target:
-        entity_id: media_player.livingroom_sonos
-      data:
-        media_content_id: spotify:playlist:37i9dQZEVXbJiyhoAPEfMK
-        media_content_type: music

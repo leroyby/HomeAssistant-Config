@@ -1,0 +1,6 @@
+  - platform: mold_indicator
+    name: Mold-Index
+    indoor_temp_sensor: sensor.temperature_toilet
+    indoor_humidity_sensor: sensor.temerature_toilet_humidity
+    outdoor_temp_sensor: sensor.hq_by_zofingen_wind_chill_temperature
+    calibration_factor: 2.0

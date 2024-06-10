@@ -13,4 +13,13 @@
   action:
   - service: light.toggle
     target:
-      entity_id: bedroom_lights
+      entity_id: light.bedroom_lights
+
+- alias: bedroom button double
+  trigger:
+    platform: state
+    entity_id: sensor.bedroom_button_action
+    to: 'double' 
+  condition: []
+  action:
+  - service: script.bedroom_cozy_lights

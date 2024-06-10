@@ -1,4 +1,5 @@
 """"""
+
 import os
 import json
 from enum import IntEnum
@@ -20,7 +21,7 @@ DEFAULT_NAME = "Better Thermostat"
 VERSION = "master"
 try:
     with open(
-        f"{os.path.dirname(os.path.realpath(__file__))}/manifest.json"
+        f"{os.path.dirname(os.path.realpath(__file__))}/../manifest.json"
     ) as manifest_file:
         manifest = json.load(manifest_file)
         VERSION = manifest["version"]
@@ -54,7 +55,11 @@ CONF_INTEGRATION = "integration"
 CONF_NO_SYSTEM_MODE_OFF = "no_off_system_mode"
 CONF_TOLERANCE = "tolerance"
 CONF_TARGET_TEMP_STEP = "target_temp_step"
-SUPPORT_FLAGS = ClimateEntityFeature.TARGET_TEMPERATURE
+SUPPORT_FLAGS = (
+    ClimateEntityFeature.TARGET_TEMPERATURE
+    | ClimateEntityFeature.TURN_OFF
+    | ClimateEntityFeature.TURN_ON
+)
 
 ATTR_STATE_WINDOW_OPEN = "window_open"
 ATTR_STATE_CALL_FOR_HEAT = "call_for_heat"

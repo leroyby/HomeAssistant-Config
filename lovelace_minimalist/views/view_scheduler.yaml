@@ -1,0 +1,189 @@
+title: Scheduler
+path: minimalist_scheduler
+visible: false
+# type: custom:grid-layout
+# layout:
+#   grid-template-columns: 1fr
+#   grid-template-rows: auto
+#   mediaquery:
+#     "(min-width: 800px)":
+#       grid-template-columns: 700px
+panel: true
+cards:
+
+  - type: vertical-stack
+    cards:
+
+############################################################################
+#                                                                          #
+#   Header                                                                 #
+#                                                                          #
+############################################################################
+
+      # - type: custom:button-card
+      #   template: card_header
+      #   variables:
+      #     card_header_title: Scheduler
+      #     card_header_navigate_path: /lovelace/minimalist_system
+      #     card_header_back_button: true
+
+
+############################################################################
+#                                                                          #
+#   View                                                                   #
+#                                                                          #
+############################################################################
+
+      - type: "custom:mod-card"
+        style:
+          layout-card$:
+            grid-layout$: |
+              #root {
+                margin-left: var(--view-margins) !important;
+                margin-right: var(--view-margins) !important;
+                justify-content: center !important;
+              }
+        card:
+          type: custom:layout-card
+          layout_type: grid
+          layout_options:
+            grid-template-columns: 1fr
+            grid-template-rows: auto
+            mediaquery:
+              "(min-width: 800px)":
+                grid-template-columns: 780px
+          cards:
+
+            - type: vertical-stack
+              cards:
+
+
+          ############################################################################
+          #                                                                          #
+          #   Chips                                                                  #
+          #                                                                          #
+          ############################################################################
+
+                - type: custom:layout-card
+                  layout_type: grid
+                  layout_options:
+                    grid-auto-flow: column
+                    grid-auto-columns: max-content
+                    margin: var(--chips-left-margin)
+                  cards:
+
+                      # - type: custom:button-card
+                      #   template: edge
+
+                      # Back Chip
+                      - type: 'custom:button-card'
+                        template: chip_back_new
+                        variables:
+                          ulm_chip_navigate_path: /lovelace/minimalist_system
+
+                # - type: custom:button-card
+                #   template: spacer
+
+          ############################################################################
+          #                                                                          #
+          #   Title                                                                  #
+          #                                                                          #
+          ############################################################################
+
+                - type: horizontal-stack
+                  cards:
+
+                    - type: custom:button-card
+                      template: title
+                      name: Scheduler
+
+
+
+          ############################################################################
+          #                                                                          #
+          #   Cards                                                                  #
+          #                                                                          #
+          ############################################################################
+
+                - type: "custom:mod-card"
+                  style:
+                    .: |
+                      ha-card {
+                          margin: var(--grid-layout-margins) !important;
+                      }
+                  card:
+
+                    type: custom:layout-card
+                    layout_type: grid
+                    layout_options:
+                      grid-template-columns: 1fr
+                      grid-template-rows: auto
+                      grid-gap: 0px 2px
+                      mediaquery:
+                        "(max-width: 450px)":
+                          grid-template-columns: 1fr          
+                    cards:
+
+                      - type: custom:scheduler-card
+                        # style: |
+                        #   ha-card {
+                        #     padding: 0.3em 1.25em 0.4em 0.5em;
+                        #     border-radius: var(--border-radius);
+                        #     --secondary-text-color: var(--button-card-text-color);
+                        #   }
+                        title: false
+                        display_options:
+                          primary_info:
+                            - "<b>{name}</b>"
+                          secondary_info:
+                            - "<b>{action}</b>"
+                            - additional-tasks
+                            - days
+                            - relative-time
+                          icon: entity
+                        groups:
+                          - name: "Lights"
+                            icon: "hass:lightbulb"
+                            include:
+                              - light.living_room
+                              - light.living_room_tv_wall
+                              - light.dining
+                              - light.guests_bathroom
+                              - light.kitchen
+                              - light.kitchen_bar
+                              - light.entrance
+                              - light.front_yard
+                              - light.back_yard
+                              - light.hallway
+                              - light.bedroom
+                              - light.work_room
+                              - light.bedside_dima_bulb
+                              - light.bedside_galit_bulb
+                              - light.kitchen_led_strip
+                              - light.makeup
+                              - light.new_year_tree
+                              - light.basement
+                              - light.basement_2_light_1
+                              - light.basement_2_light_2
+                              - light.basement_toys
+                          - name: "Climate"
+                            icon: "hass:home-thermometer"
+                            include:
+                              - climate.living_room
+                              - climate.bedroom
+                              - climate.kfir
+                              - climate.ronen
+                              - climate.basement
+                          - name: "Scenes"
+                            icon: "hass:palette"
+                            include:
+                              - scene.night_lights_on
+                              - scene.night_lights_off
+                              - scene.nobody_home
+                              - scene.red_alert_lights
+
+
+                - type: custom:button-card
+                  template: spacer
+                  variables:
+                    height: 100px

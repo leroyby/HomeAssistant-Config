@@ -1,0 +1,50 @@
+sensibo_fan_select_button:
+
+  default:
+    - selected_color: var(--button-card-on-background)
+    - selected_text_color: var(--button-card-on-text-color)
+    - selected_icon_color: var(--button-card-on-text-color)
+    - color_type: card
+    - show_name: true
+    - show_icon: true
+    - size: 32px
+    - height: 68px
+    #- font_size: 18px
+    #- font_weight: normal
+
+  card:
+    type: custom:decluttering-card
+    template: simple_button
+    variables:
+      - entity: 'sensor.sensibo_[[name]]_fan'
+      - name: '[[title]]'
+      - icon: '[[icon]]'
+      - size: '[[size]]'
+      - color_type: '[[color_type]]'
+      - show_name: '[[show_name]]'
+      - show_icon: '[[show_icon]]'
+      - font_size: '[[font_size]]'
+      - font_weight: '[[font_weight]]'
+      - height: '[[height]]'
+      - tap_action: 
+          action: "[[[ 
+              if ( states['climate.[[name]]'].state == 'off' )
+                return 'none';
+              else
+                return 'call-service';
+            ]]]"
+          service: climate.set_fan_mode
+          service_data:
+            entity_id: 'climate.[[name]]'
+            fan_mode: "[[fan_mode]]"
+      - hold_action:
+          action: none
+      - state:
+          - value: '[[fan_mode]]'
+            styles:
+              card:
+                - background-color: '[[selected_color]]'
+              name:
+                - color: '[[selected_text_color]]'
+              icon:
+                - color: '[[selected_icon_color]]'

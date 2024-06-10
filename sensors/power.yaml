@@ -1,0 +1,18 @@
+######################################################################################################
+# @Leroyby
+# Original Repo : https://github.com/Leroyby/Homeassistant-Config
+# Definition Power Pricing
+######################################################################################################
+
+  - platform: template
+    sensors:
+      energy_price:
+        friendly_name: My Energy Price 
+        unit_of_measurement: CHF/kWh
+        value_template: >
+          {% set tariff = { "HT": 0.2279, "LT": 0.2023 } %}
+          {% if (now().weekday() < 5 and (7 <= now().hour <= 20)) or (now().weekday() == 5 and (7 <= now().hour <= 13)) %}
+            {{ tariff.HT }}
+          {% else %}
+            {{ tariff.LT }}
+          {% endif %}

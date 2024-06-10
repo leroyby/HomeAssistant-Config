@@ -1,0 +1,41 @@
+title: Kids Room
+icon: mdi:face-man
+path: kids_room
+visible: false
+#panel: true
+type: custom:grid-layout
+layout:
+  grid-template-columns: 1fr
+  grid-template-rows: auto
+  mediaquery:
+    "(min-width: 800px)":
+      grid-template-columns: 700px
+  
+cards:
+
+  # - type: custom:decluttering-card # Back
+  #   template: back_button
+  #   variables:
+  #     - navigation_path: /lovelace/rooms/
+      
+  # - type: custom:decluttering-card
+  #   template: view_title
+  #   variables:
+  #     - title: Kids Room
+
+  - type: custom:decluttering-card
+    template: view_title_button
+    variables:
+      - title: Kids Room
+      - back_button: true
+      - tap_action: 
+          action: navigate
+          navigation_path: '/lovelace/rooms/'
+
+  - !include /config/lovelace/cards/accessories/card_accessories_kids_room.yaml
+
+  - type: custom:decluttering-card # Separator
+    template: separator
+
+
+

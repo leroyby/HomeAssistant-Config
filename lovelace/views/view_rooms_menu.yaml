@@ -1,0 +1,35 @@
+title: Rooms
+icon: fapro:grid-new-2 #mdi:view-grid
+path: rooms
+visible: true
+#panel: true
+type: custom:grid-layout
+layout:
+  grid-template-columns: 1fr
+  grid-template-rows: auto
+  mediaquery:
+    "(min-width: 800px)":
+      grid-template-columns: 700px
+  
+cards:
+
+  # - type: custom:decluttering-card
+  #   template: view_title
+  #   variables:
+  #     - title: Rooms
+  #     - top_padding: 16px
+
+  - type: custom:decluttering-card
+    template: view_title_button
+    variables:
+      - title: Rooms
+      - padding_left: 16px
+      - padding_top: 24px
+
+  - !include /config/lovelace/cards/menu/card_rooms_menu.yaml
+
+  - type: custom:decluttering-card # Separator
+    template: separator
+
+
+

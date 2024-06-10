@@ -1,22 +1,28 @@
 """Constants for the MercedesME 2020 integration."""
-import logging
+
+from __future__ import annotations
+
+from datetime import timedelta
 from enum import Enum, StrEnum
+import logging
 
 import voluptuous as vol
+
 from homeassistant.components.sensor import SensorDeviceClass, SensorStateClass
 from homeassistant.const import (
     PERCENTAGE,
+    EntityCategory,
     Platform,
     UnitOfEnergy,
     UnitOfLength,
     UnitOfMass,
+    UnitOfPower,
     UnitOfPressure,
     UnitOfSpeed,
     UnitOfTemperature,
     UnitOfVolume,
 )
 from homeassistant.helpers import config_validation as cv
-from homeassistant.helpers.entity import EntityCategory
 
 MERCEDESME_COMPONENTS = [
     Platform.SENSOR,
@@ -45,23 +51,42 @@ CONF_FT_DISABLE_CAPABILITY_CHECK = "cap_check_disabled"
 CONF_DELETE_AUTH_FILE = "delete_auth_file"
 CONF_ENABLE_CHINA_GCJ_02 = "enable_china_gcj_02"
 
-DATA_CLIENT = "data_client"
-
 DOMAIN = "mbapi2020"
 LOGGER = logging.getLogger(__package__)
 
+UPDATE_INTERVAL = timedelta(seconds=300)
+
 DEFAULT_CACHE_PATH = "custom_components/mbapi2020/messages"
-DEFAULT_TOKEN_PATH = ".mercedesme-token-cache"
+DEFAULT_DOWNLOAD_PATH = "custom_components/mbapi2020/resources"
 DEFAULT_LOCALE = "en-GB"
 DEFAULT_COUNTRY_CODE = "EN"
 
-RIS_APPLICATION_VERSION_NA = "3.39.0"
-RIS_APPLICATION_VERSION_CN = "1.39.0"
-RIS_APPLICATION_VERSION_PA = "1.39.1"
-RIS_APPLICATION_VERSION = "1.39.0 (2066)"
-RIS_SDK_VERSION = "2.109.0"
-RIS_SDK_VERSION_CN = "2.109.0"
-RIS_OS_VERSION = "16.5"
+TOKEN_FILE_PREFIX = ".mercedesme-token-cache"
+
+JSON_EXPORT_IGNORED_KEYS = (
+    "pin",
+    "access_token",
+    "refresh_token",
+    "username",
+    "unique_id",
+    "nounce",
+    "_update_listeners",
+    "finorvin",
+    "licenseplate",
+    "fin",
+    "licensePlate",
+    "vin",
+    "dealers",
+)
+
+
+RIS_APPLICATION_VERSION_NA = "3.42.0"
+RIS_APPLICATION_VERSION_CN = "1.44.0"
+RIS_APPLICATION_VERSION_PA = "1.44.0"
+RIS_APPLICATION_VERSION = "1.44.0 (2168)"
+RIS_SDK_VERSION = "2.150.0"
+RIS_SDK_VERSION_CN = "2.150.2"
+RIS_OS_VERSION = "17.4.1"
 RIS_OS_NAME = "ios"
 X_APPLICATIONNAME = "mycar-store-ece"
 X_APPLICATIONNAME_ECE = "mycar-store-ece"
@@ -69,14 +94,9 @@ X_APPLICATIONNAME_CN = "mycar-store-cn"
 X_APPLICATIONNAME_US = "mycar-store-us"
 X_APPLICATIONNAME_AP = "mycar-store-ap"
 
+USE_PROXY = False
 VERIFY_SSL = True
-DISABLE_SSL_CERT_CHECK = VERIFY_SSL
-SYSTEM_PROXY = None
-PROXIES = {}
-# SYSTEM_PROXY = "http://192.168.178.61:8080"
-# PROXIES = {
-#    "https": SYSTEM_PROXY,
-# }
+SYSTEM_PROXY: str | None = None if not USE_PROXY else "http://0.0.0.0:20000"
 
 
 LOGIN_APP_ID = "01398c1c-dc45-4b42-882b-9f5ba9f175f1"
@@ -94,20 +114,26 @@ REST_API_BASE = "https://bff.emea-prod.mobilesdk.mercedes-benz.com"
 REST_API_BASE_CN = "https://bff.cn-prod.mobilesdk.mercedes-benz.com"
 REST_API_BASE_NA = "https://bff.amap-prod.mobilesdk.mercedes-benz.com"
 REST_API_BASE_PA = "https://bff.amap-prod.mobilesdk.mercedes-benz.com"
-WEBSOCKET_API_BASE = "wss://websocket.emea-prod.mobilesdk.mercedes-benz.com/ws"
+WEBSOCKET_API_BASE = "wss://websocket.emea-prod.mobilesdk.mercedes-benz.com/v2/ws"
 WEBSOCKET_API_BASE_NA = "wss://websocket.amap-prod.mobilesdk.mercedes-benz.com/ws"
 WEBSOCKET_API_BASE_PA = "wss://websocket.amap-prod.mobilesdk.mercedes-benz.com/ws"
 WEBSOCKET_API_BASE_CN = "wss://websocket.cn-prod.mobilesdk.mercedes-benz.com/ws"
-WEBSOCKET_USER_AGENT = "MyCar/1.39.0 (com.daimler.ris.mercedesme.ece.ios; build:2066; iOS 17.2.0) Alamofire/5.4.0"
+WEBSOCKET_USER_AGENT = "MyCar/2168 CFNetwork/1494.0.7 Darwin/23.4.0"
 WEBSOCKET_USER_AGENT_CN = "MyStarCN/1.39.0 (com.daimler.ris.mercedesme.cn.ios; build:1758; iOS 16.3.1) Alamofire/5.4.0"
-WEBSOCKET_USER_AGENT_PA = "mycar-store-ap v1.39.0, android 8.0.0, SDK 2.84.3"
+WEBSOCKET_USER_AGENT_PA = (
+    f"mycar-store-ap v{RIS_APPLICATION_VERSION}, {RIS_OS_NAME} {RIS_OS_VERSION}, SDK {RIS_SDK_VERSION}"
+)
+WIDGET_API_BASE = "https://widget.emea-prod.mobilesdk.mercedes-benz.com"
+WIDGET_API_BASE_NA = "https://widget.amap-prod.mobilesdk.mercedes-benz.com"
+WIDGET_API_BASE_PA = "https://widget.amap-prod.mobilesdk.mercedes-benz.com"
+WIDGET_API_BASE_CN = "https://widget.cn-prod.mobilesdk.mercedes-benz.com"
 DEFAULT_SOCKET_MIN_RETRY = 15
 
-SERVICE_REFRESH_TOKEN_URL = "refresh_access_token"
 SERVICE_AUXHEAT_CONFIGURE = "auxheat_configure"
 SERVICE_AUXHEAT_START = "auxheat_start"
 SERVICE_AUXHEAT_STOP = "auxheat_stop"
 SERVICE_BATTERY_MAX_SOC_CONFIGURE = "battery_max_soc_configure"
+SERVICE_CHARGE_PROGRAM_CONFIGURE = "charge_program_configure"
 SERVICE_DOORS_LOCK_URL = "doors_lock"
 SERVICE_DOORS_UNLOCK_URL = "doors_unlock"
 SERVICE_ENGINE_START = "engine_start"
@@ -122,13 +148,9 @@ SERVICE_PREHEAT_STOP_DEPARTURE_TIME = "preheat_stop_departure_time"
 SERVICE_PREHEAT_STOP = "preheat_stop"
 SERVICE_WINDOWS_OPEN = "windows_open"
 SERVICE_WINDOWS_CLOSE = "windows_close"
-SERVICE_VIN_SCHEMA = vol.Schema({vol.Required(CONF_VIN): cv.string})
-SERVICE_VIN_TIME_SCHEMA = vol.Schema(
-    {
-        vol.Required(CONF_VIN): cv.string,
-        vol.Required(CONF_TIME): vol.All(vol.Coerce(int), vol.Range(min=0, max=1439)),
-    }
-)
+SERVICE_WINDOWS_MOVE = "windows_move"
+SERVICE_DOWNLOAD_IMAGES = "download_images"
+
 SERVICE_AUXHEAT_CONFIGURE_SCHEMA = vol.Schema(
     {
         vol.Required(CONF_VIN): cv.string,
@@ -141,7 +163,7 @@ SERVICE_AUXHEAT_CONFIGURE_SCHEMA = vol.Schema(
 SERVICE_PREHEAT_START_SCHEMA = vol.Schema(
     {
         vol.Required(CONF_VIN): cv.string,
-        vol.Required("type", default=0): vol.All(vol.Coerce(int), vol.Range(min=0, max=1)),
+        vol.Required("type", default=0): vol.All(vol.Coerce(int), vol.Range(min=0, max=1)),  # type: ignore
     }
 )
 SERVICE_SEND_ROUTE_SCHEMA = vol.Schema(
@@ -158,13 +180,43 @@ SERVICE_SEND_ROUTE_SCHEMA = vol.Schema(
 SERVICE_BATTERY_MAX_SOC_CONFIGURE_SCHEMA = vol.Schema(
     {
         vol.Required(CONF_VIN): cv.string,
-        vol.Required("max_soc", default=100): vol.All(vol.Coerce(int), vol.In([50, 60, 70, 80, 90, 100])),
+        vol.Required("max_soc", default=100): vol.All(vol.Coerce(int), vol.In([50, 60, 70, 80, 90, 100])),  # type: ignore
     }
 )
+SERVICE_VIN_SCHEMA = vol.Schema({vol.Required(CONF_VIN): cv.string})
 SERVICE_VIN_PIN_SCHEMA = vol.Schema(
     {
         vol.Required(CONF_VIN): cv.string,
         vol.Optional(CONF_PIN): cv.string,
+    }
+)
+SERVICE_VIN_TIME_SCHEMA = vol.Schema(
+    {
+        vol.Required(CONF_VIN): cv.string,
+        vol.Required(CONF_TIME): vol.All(vol.Coerce(int), vol.Range(min=0, max=1439)),
+    }
+)
+SERVICE_VIN_CHARGE_PROGRAM_SCHEMA = vol.Schema(
+    {
+        vol.Required(CONF_VIN): cv.string,
+        vol.Required("charge_program", default=0): vol.All(vol.Coerce(int), vol.In([0, 2, 3])),
+    }
+)
+SERVICE_WINDOWS_MOVE_SCHEMA = vol.Schema(
+    {
+        vol.Required(CONF_VIN): cv.string,
+        vol.Optional("front_left", default=None): vol.Any(
+            None, vol.All(vol.Coerce(int), vol.In([0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]))
+        ),  # type: ignore
+        vol.Optional("front_right", default=None): vol.Any(
+            None, vol.All(vol.Coerce(int), vol.In([0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]))
+        ),  # type: ignore
+        vol.Optional("rear_left", default=None): vol.Any(
+            None, vol.All(vol.Coerce(int), vol.In([0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]))
+        ),  # type: ignore
+        vol.Optional("rear_right", default=None): vol.Any(
+            None, vol.All(vol.Coerce(int), vol.In([0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]))
+        ),  # type: ignore
     }
 )
 
@@ -277,7 +329,7 @@ BinarySensors = {
         {"preWarningBrakeLiningWear"},
         "mdi:car-brake-parking",
         None,
-        True,
+        False,
         None,
         None,
         None,
@@ -314,10 +366,6 @@ BinarySensors = {
         "value",
         None,
         {
-            "tirepressureRearLeft",
-            "tirepressureRearRight",
-            "tirepressureFrontRight",
-            "tirepressureFrontLeft",
             "tireMarkerFrontRight",
             "tireMarkerFrontLeft",
             "tireMarkerRearLeft",
@@ -362,6 +410,21 @@ BinarySensors = {
         "mdi:engine",
         None,
         False,
+        None,
+        None,
+        None,
+    ],
+    "chargeflapacstatus": [
+        "Charge Flap AC Status",
+        None,  # Deprecated: DO NOT USE
+        "doors",
+        "chargeFlapACStatus",
+        "value",
+        None,
+        {},
+        None,
+        "mdi:door",
+        True,
         None,
         None,
         None,
@@ -423,7 +486,7 @@ DEVICE_TRACKER = {
 SENSORS = {
     "chargingpowerkw": [
         "Charging Power",
-        "kW",  # Deprecated: DO NOT USE
+        UnitOfPower.KILO_WATT,  # Deprecated: DO NOT USE
         "electric",
         "chargingPower",
         "value",
@@ -547,6 +610,8 @@ SENSORS = {
             "selectedChargeProgram",
             "soc",
             "chargingPower",
+            "electricRatioStart",
+            "electricRatioOverall",
         },
         "mdi:ev-station",
         SensorDeviceClass.DISTANCE,
@@ -654,6 +719,21 @@ SENSORS = {
         SensorStateClass.MEASUREMENT,
         None,
     ],
+    "tankleveladblue": [
+        "AdBlue Level",
+        None,  # Deprecated: DO NOT USE
+        "odometer",
+        "tankLevelAdBlue",
+        "value",
+        None,
+        {},
+        "mdi:gas-station",
+        SensorDeviceClass.POWER_FACTOR,
+        False,
+        None,
+        SensorStateClass.MEASUREMENT,
+        None,
+    ],
     "odometer": [
         "Odometer",
         None,  # Deprecated: DO NOT USE,
@@ -679,7 +759,7 @@ SENSORS = {
         SensorDeviceClass.DISTANCE,
         False,
         None,
-        SensorStateClass.MEASUREMENT,
+        SensorStateClass.TOTAL_INCREASING,
         None,
     ],
     "averageSpeedStart": [
@@ -721,7 +801,7 @@ SENSORS = {
         None,
         {"drivenTimeReset"},
         "mdi:map-marker-distance",
-        None,
+        SensorDeviceClass.DISTANCE,
         False,
         None,
         SensorStateClass.MEASUREMENT,
@@ -736,7 +816,7 @@ SENSORS = {
         None,
         {"drivenTimeStart"},
         "mdi:map-marker-distance",
-        None,
+        SensorDeviceClass.DISTANCE,
         False,
         None,
         SensorStateClass.MEASUREMENT,
@@ -751,7 +831,7 @@ SENSORS = {
         None,
         {"drivenTimeZEReset"},
         "mdi:map-marker-distance",
-        None,
+        SensorDeviceClass.DISTANCE,
         False,
         None,
         SensorStateClass.MEASUREMENT,
@@ -781,7 +861,7 @@ SENSORS = {
         None,
         {},
         "mdi:leaf",
-        None,
+        SensorDeviceClass.POWER_FACTOR,
         False,
         None,
         SensorStateClass.MEASUREMENT,
@@ -796,7 +876,7 @@ SENSORS = {
         None,
         {},
         "mdi:leaf",
-        None,
+        SensorDeviceClass.DISTANCE,
         False,
         None,
         SensorStateClass.MEASUREMENT,
@@ -811,7 +891,7 @@ SENSORS = {
         None,
         {},
         "mdi:leaf",
-        None,
+        SensorDeviceClass.POWER_FACTOR,
         False,
         None,
         SensorStateClass.MEASUREMENT,
@@ -826,7 +906,7 @@ SENSORS = {
         None,
         {},
         "mdi:leaf",
-        None,
+        SensorDeviceClass.POWER_FACTOR,
         False,
         None,
         SensorStateClass.MEASUREMENT,
@@ -841,7 +921,7 @@ SENSORS = {
         None,
         {},
         "mdi:fuel",
-        None,
+        None,  # No device class present in HA 2024.2
         False,
         None,
         SensorStateClass.MEASUREMENT,
@@ -856,7 +936,7 @@ SENSORS = {
         None,
         {},
         "mdi:fuel",
-        None,
+        None,  # No device class present in HA 2024.2
         False,
         None,
         SensorStateClass.MEASUREMENT,
@@ -885,19 +965,24 @@ SENSORS = {
         "value",
         None,
         {
-            "lastTheftWarning",
-            "towSensor",
-            "theftSystemArmed",
-            "parkEventType",
-            "parkEventLevel",
             "carAlarmLastTime",
-            "towProtectionSensorStatus",
-            "theftAlarmActive",
-            "lastTheftWarningReason",
-            "lastParkEvent",
+            "carAlarmReason",
             "collisionAlarmTimestamp",
             "interiorSensor",
-            "carAlarmReason",
+            "interiorProtectionStatus",  #
+            "interiorMonitoringLastEvent",
+            "interiorMonitoringStatus",  #
+            "exteriorMonitoringLastEvent",
+            "exteriorMonitoringStatus",  #
+            "lastParkEvent",
+            "lastTheftWarning",
+            "lastTheftWarningReason",  #
+            "parkEventLevel",  #
+            "parkEventType",  #
+            "theftAlarmActive",  ##
+            "theftSystemArmed",
+            "towProtectionSensorStatus",  #
+            "towSensor",
         },
         "mdi:alarm-light",
         None,
@@ -1010,6 +1095,69 @@ SENSORS = {
         SensorStateClass.MEASUREMENT,
         None,
     ],
+    "lastParkEvent": [
+        "Last park event",
+        None,  # Deprecated: DO NOT USE
+        "caralarm",
+        "lastParkEvent",
+        "value",
+        None,
+        {
+            "parkEventType",
+            "parkEventLevel",
+        },
+        None,
+        SensorDeviceClass.DATE,
+        False,
+        None,
+        None,
+        None,
+    ],
+    "interiorProtectionSensorStatus": [
+        "Interior Protection",
+        None,  # Deprecated: DO NOT USE
+        "caralarm",
+        "interiorProtectionSensorStatus",
+        "value",
+        None,
+        {},
+        None,
+        SensorDeviceClass.DATE,
+        False,
+        None,
+        None,
+        None,
+    ],
+    "sunroofstatus": [
+        "Sunroof Status",
+        None,  # Deprecated: DO NOT USE
+        "doors",
+        "sunroofstatus",
+        "value",
+        None,
+        {},
+        None,
+        None,
+        False,
+        None,
+        None,
+        None,
+    ],
+    "chargeflapdcstatus": [
+        "Charge Flap DC Status",
+        None,  # Deprecated: DO NOT USE
+        "doors",
+        "chargeFlapDCStatus",
+        "value",
+        None,
+        {},
+        None,
+        None,
+        False,
+        None,
+        None,
+        None,
+    ],
 }
 
 LOCKS = {
@@ -1076,6 +1224,7 @@ UNITS = {
     "KM_PER_KWH": UnitOfLength.KILOMETERS + "/" + UnitOfEnergy.KILO_WATT_HOUR,
     "KM_PER_LITER": UnitOfLength.KILOMETERS + "/" + UnitOfVolume.LITERS,
     "KPA": UnitOfPressure.KPA,
+    "KW": UnitOfPower.KILO_WATT,
     "KWH_PER_100KM": UnitOfEnergy.KILO_WATT_HOUR + "/100" + UnitOfLength.KILOMETERS,
     "KWH_PER_100MI": UnitOfEnergy.KILO_WATT_HOUR + "/100" + UnitOfLength.MILES,
     "LITER_PER_100KM": UnitOfVolume.LITERS + "/100" + UnitOfLength.KILOMETERS,
@@ -1089,6 +1238,7 @@ UNITS = {
     "PSI": UnitOfPressure.PSI,
     "T24H": "",
     "T12H": "",
+    "%": PERCENTAGE,
 }
 
 

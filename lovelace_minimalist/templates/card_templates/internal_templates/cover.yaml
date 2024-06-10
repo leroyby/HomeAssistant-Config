@@ -1,0 +1,65 @@
+---
+### Cover ###
+cover:
+  triggers_update: "all"
+  tap_action:
+    action: "more-info"
+  icon: |
+    [[[
+        var icon = "mdi:help-circle";
+        if (typeof states[entity.entity_id].attributes.current_position === "undefined"){
+          if (states[entity.entity_id].state == "closed"){
+            var icon = "mdi:window-shutter";
+          } else
+            var icon = "mdi:window-shutter-open";
+        } else {
+          if (states[entity.entity_id].attributes.current_position == 0){
+            var icon = "mdi:window-shutter";
+          } else
+            var icon = "mdi:window-shutter-open";
+        }
+        return icon ;
+    ]]]
+  label: >-
+    [[[
+        if (typeof states[entity.entity_id].attributes.current_position === "undefined") {
+          if (entity.state == "closed") {
+            return variables.ulm_closed;
+          }
+          if (entity.state == "open") {
+            return variables.ulm_open;
+          }
+          if (entity.state == "closing") {
+            return variables.ulm_closing;
+          }
+          if (entity.state == "opening") {
+            return variables.ulm_opening;          
+          } 
+        } else {
+          if (entity.state == "closing") {
+            return variables.ulm_closing;
+          }
+          if (entity.state == "opening") {
+            return variables.ulm_opening;          
+          } 
+          if (states[entity.entity_id].attributes.current_position == 0) {
+            return variables.ulm_closed;
+          } else if (states[entity.entity_id].attributes.current_position == 100) {
+            return variables.ulm_open;
+          } else {
+            return variables.ulm_open + " • " + (states[entity.entity_id].attributes.current_position) + "%" ;
+          }
+        }
+    ]]]
+  state:
+    - operator: "template"
+      value: "[[[ return states[entity.entity_id].attributes.current_position != 0; ]]]"
+      styles:
+        icon:
+          - color: 'var(--color-blue-icon)'
+        img_cell:
+          - background-color: 'var(--color-blue-icon-background)'
+        label:
+          - color: "var(--color-blue-label)"
+        name:
+          - color: "var(--color-blue-name)"

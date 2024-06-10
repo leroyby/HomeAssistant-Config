@@ -1,0 +1,263 @@
+title: Covers
+path: covers
+visible: false
+icon: mdi:window-shutter
+panel: true
+    
+cards:
+
+  - type: vertical-stack
+    cards:
+
+      ############################################################################
+      #                                                                          #
+      #   Chips                                                                  #
+      #                                                                          #
+      ############################################################################
+
+      # - type: "custom:mod-card"
+      #   style: 
+      #     .: |
+      #       ha-card {
+      #           padding-top: 8px !important;
+      #           margin-left: var(--chips-left-margin) !important;
+      #       }
+      #   card:
+      #     type: horizontal-stack
+      #     cards:
+
+      #       # Lights Chip
+      #       - type: 'custom:button-card'
+      #         template:
+      #           - 'chip_icon_label_state'
+      #           #- 'chip_navigate_only'
+      #           - 'chip_yellow'
+      #         icon: 'mdi:lightbulb'
+      #         variables:
+      #           ulm_chip_icon_state_entity: sensor.number_of_lights_on
+
+
+############################################################################
+#                                                                          #
+#   Content                                                                #
+#                                                                          #
+############################################################################
+
+      - type: custom:layout-card
+        layout_type: grid
+
+        layout_options:
+          grid-template-columns: 1fr
+          grid-template-rows: auto
+          grid-gap: 0px 4px
+        
+        cards:
+
+
+          ############################################################################
+          #                                                                          #
+          #   Left Column                                                            #
+          #                                                                          #
+          ############################################################################
+
+          - type: vertical-stack
+            cards:
+
+
+              ############################################################################
+              #                                                                          #
+              #   Scenes                                                                 #
+              #                                                                          #
+              ############################################################################
+
+              # Title
+              - type: horizontal-stack
+                cards:
+
+                  - type: custom:button-card
+                    template: title
+                    name: "[[[ return variables.ulm_scenes; ]]]"
+                    variables:
+                      ulm_title_margin_top: "0px"
+                      
+              - type: custom:layout-card
+                layout_type: grid
+                layout_options:
+                  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr
+                  grid-template-rows: auto
+                  grid-gap: 0px 4px
+                  mediaquery:
+                    "(max-width: 450px)":
+                      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr
+                cards:
+
+                  # Main Floor Covers
+                  - type: 'custom:button-card'
+                    template: card_scene_vertical
+                    entity: scene.main_floor_covers
+                    name: "[[[ return variables.ulm_covers; ]]]"
+                    label: "[[[ return variables.ulm_main; ]]]"
+                    icon: mdi:window-shutter
+                    variables:
+                      color: "blue"
+                      x_confirmation_text: "[[[ return variables.ulm_main_floor_covers; ]]]"
+
+                  # Main Floor Morning Covers
+                  - type: 'custom:button-card'
+                    template: card_scene_vertical
+                    entity: scene.main_floor_morning_covers
+                    name: "[[[ return variables.ulm_covers; ]]]"
+                    label: "[[[ return variables.ulm_morning; ]]]"
+                    icon: mdi:window-shutter-open
+                    variables:
+                      color: "blue"
+                      confirmation_text: "[[[ return variables.ulm_main_floor_morning_covers; ]]]"
+
+                  # Movie time
+                  - type: 'custom:button-card'
+                    template: card_scene_vertical
+                    entity: scene.movie_time
+                    name: "[[[ return variables.ulm_movie; ]]]"
+                    label: "[[[ return variables.ulm_scene; ]]]"
+                    icon: mdi:movie-filter
+                    variables:
+                      color: "purple"
+                      x_confirmation_text: "[[[ return variables.ulm_movie_scene; ]]]"
+
+
+
+              ############################################################################
+              #                                                                          #
+              #   Floor 0                                                                #
+              #                                                                          #
+              ############################################################################
+
+              # Title
+              - type: horizontal-stack
+                cards:
+
+                  - type: custom:button-card
+                    template: title
+                    name: "[[[ return variables.ulm_ground_floor; ]]]"
+
+
+              # Covers
+              - type: custom:layout-card
+                layout_type: grid
+                layout_options:
+                  grid-template-columns: 1fr 1fr 1fr 1fr
+                  grid-template-rows: auto
+                  grid-gap: 0px 4px
+                  mediaquery:
+                    "(max-width: 450px)":
+                      grid-template-columns: 1fr 1fr 1fr 1fr
+                cards:
+
+                    # Back Yard Cover
+                    - type: 'custom:button-card'
+                      template: card_cover_buttons
+                      variables:
+                        x_ulm_card_cover_buttons_name: "[[[ return variables.ulm_back_yard; ]]]"
+                        ulm_card_cover_buttons_entity: cover.back_yard
+                      view_layout:
+                        grid-row-start: span 2
+
+                    # Living Room Window Cover
+                    - type: 'custom:button-card'
+                      template: card_cover_buttons
+                      variables:
+                        x_ulm_card_cover_buttons_name: "[[[ return variables.ulm_living_room_window; ]]]"
+                        ulm_card_cover_buttons_entity: cover.living_room_window
+                      view_layout:
+                        grid-row-start: span 2 
+
+                    # Entrance Window Cover
+                    - type: 'custom:button-card'
+                      template: card_cover_buttons
+                      variables:
+                        x_ulm_card_cover_buttons_name: "[[[ return variables.ulm_entrance; ]]]"
+                        ulm_card_cover_buttons_entity: cover.entrance_window
+                      view_layout:
+                        grid-row-start: span 2 
+
+                    # Kitchen Cover
+                    - type: 'custom:button-card'
+                      template: card_cover_buttons
+                      variables:
+                        x_ulm_card_cover_buttons_name: "[[[ return variables.ulm_kitchen; ]]]"
+                        ulm_card_cover_buttons_entity: cover.kitchen
+                      view_layout:
+                        grid-row-start: span 2 
+
+
+              ############################################################################
+              #                                                                          #
+              #   Floor 2                                                                #
+              #                                                                          #
+              ############################################################################
+
+              # Title
+              - type: horizontal-stack
+                cards:
+
+                  - type: custom:button-card
+                    template: title
+                    name: "[[[ return variables.ulm_floor_2; ]]]"
+
+
+              # Covers
+              - type: custom:layout-card
+                layout_type: grid
+                layout_options:
+                  grid-template-columns: 1fr 1fr 1fr 1fr
+                  grid-template-rows: auto
+                  grid-gap: 0px 4px
+                  mediaquery:
+                    "(max-width: 450px)":
+                      grid-template-columns: 1fr 1fr 1fr 1fr
+                cards:
+
+                    # Bedroom Balcony Cover
+                    - type: 'custom:button-card'
+                      template: card_cover_buttons
+                      variables:
+                        x_ulm_card_cover_buttons_name: "[[[ return variables.ulm_bedroom_balcony; ]]]"
+                        ulm_card_cover_buttons_entity: cover.bedroom_balcony
+                      view_layout:
+                        grid-row-start: span 2
+                        
+                    # Bedroom Window Cover
+                    - type: 'custom:button-card'
+                      template: card_cover_buttons
+                      variables:
+                        x_ulm_card_cover_buttons_name: "[[[ return variables.ulm_bedroom_window; ]]]"
+                        ulm_card_cover_buttons_entity: cover.bedroom_window
+                      view_layout:
+                        grid-row-start: span 2
+
+                    # Bedroom Makup Cover
+                    - type: 'custom:button-card'
+                      template: card_cover_buttons
+                      variables:
+                        x_ulm_card_cover_buttons_name: "[[[ return variables.ulm_bedroom_makeup; ]]]"
+                        ulm_card_cover_buttons_entity: cover.parents_makeup
+                      view_layout:
+                        grid-row-start: span 2
+
+                    # Ronen Room Cover
+                    - type: 'custom:button-card'
+                      template: card_cover_buttons
+                      variables:
+                        x_ulm_card_cover_buttons_name: "[[[ return variables.ulm_ronen_room; ]]]"
+                        ulm_card_cover_buttons_entity: cover.ronen_room
+                      view_layout:
+                        grid-row-start: span 2
+
+                    # Kfir Room Cover
+                    - type: 'custom:button-card'
+                      template: card_cover_buttons
+                      variables:
+                        x_ulm_card_cover_buttons_name: "[[[ return variables.ulm_kfir_room; ]]]"
+                        ulm_card_cover_buttons_entity: cover.kfir_room
+                      view_layout:
+                        grid-row-start: span 2 

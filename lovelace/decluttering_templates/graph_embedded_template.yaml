@@ -1,0 +1,55 @@
+graph_embedded:
+
+  default:
+    - border_radius: var(--graph-border-radius)
+    - font_size: 52
+    - font_size_header: 12
+    - line_width: 6
+    - show_name: true
+    - show_icon: true
+    - show_extrema: false
+    - show_fill: true
+    - show_state: true
+    - name_adaptive_color: false
+    - icon_adaptive_color: false
+    - icon: ""
+    - color: ""
+    - hours_to_show: 48
+    - height: 50
+
+  card:
+    style: |
+      ha-card {
+        box-shadow: none;
+        background: none;
+        border-radius: 0;
+      }
+      ha-card.flex.type-custom-mini-graph-card {
+        padding-top: 0px;
+        padding-bottom: 0px;
+      }
+      .graph {
+        padding-bottom: 0px;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 0px;
+      }
+    type: custom:mini-graph-card
+    entities:
+        - entity: '[[entity]]'
+          name: '[[name]]'
+          color: '[[color]]'
+    icon: '[[icon]]'
+    font_size: '[[font_size]]'
+    font_size_header: '[[font_size_header]]'
+    height: '[[height]]'
+    line_width: '[[line_width]]'
+    show:
+      name: '[[show_name]]'
+      icon: '[[show_icon]]'
+      extrema: '[[show_extrema]]'
+      fill: '[[show_fill]]'
+      state: '[[show_state]]'
+      name_adaptive_color: '[[name_adaptive_color]]'
+      icon_adaptive_color: '[[icon_adaptive_color]]'
+    hours_to_show: '[[hours_to_show]]'

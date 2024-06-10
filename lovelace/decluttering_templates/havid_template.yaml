@@ -1,0 +1,84 @@
+havid_card:
+
+  default:
+
+    
+  card:
+
+    type: vertical-stack
+    cards:
+
+
+############################################################################
+#                                                                          #
+#   Title                                                                  #
+#                                                                          #
+############################################################################
+
+      - type: horizontal-stack
+        cards:  
+          
+          - type: custom:decluttering-card
+            template: title_button_card
+            variables:
+              - name: '[[title]]'
+              #- padding_left: 0px
+
+
+
+############################################################################
+#                                                                          #
+#   HAvid-19                                                               #
+#                                                                          #
+############################################################################
+
+      - type: custom:layout-card
+        layout_type: grid
+        layout_options:
+          grid-template-columns: 1fr
+          grid-template-rows: auto
+        cards:
+
+          - type: custom:refreshable-picture-card
+            title: null
+            update_interval: 10
+            static_picture: /local/havid_[[system]].jpg
+            navigate: /local/havid_[[system]].jpg
+
+
+
+############################################################################
+#                                                                          #
+#   Buttons                                                                #
+#                                                                          #
+############################################################################
+
+      - type: custom:layout-card
+        layout_type: grid
+        layout_options:
+          grid-template-columns: 1fr 1fr
+          grid-template-rows: auto
+          grid-gap: 0px 4px
+        cards:
+
+          - type: custom:decluttering-card # Sign
+            template: simple_script_button
+            variables:
+              - entity: script.sign_and_download_havid_[[system]]
+              - name: Sign
+              - show_name: true
+              - height: 68px
+              - icon: mdi:pen
+
+          - type: custom:decluttering-card # Refresh
+            template: simple_script_button
+            variables:
+              - entity: script.download_havid_[[system]]
+              - name: Refresh
+              - show_name: true
+              - height: 68px
+              - icon: mdi:refresh
+
+
+      - type: custom:decluttering-card # Separator
+        template: separator

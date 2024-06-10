@@ -1,0 +1,91 @@
+card_shelly_with_power:
+  variables:
+    ulm_card_shelly_entity: ''
+    ulm_card_shelly_version: ''
+    ulm_card_shelly_icon: ''
+    ulm_card_shelly_name: ''
+  triggers_update: "all"
+  styles:
+    grid:
+      - grid-template-areas: "'item1' 'item2'"
+      - grid-template-columns: "1fr"
+      - grid-template-rows: "min-content  min-content"
+      - row-gap: "12px"
+    card:
+      - border-radius: "var(--border-radius)"
+      - box-shadow: "var(--box-shadow)"
+      - padding: "12px"
+  custom_fields:
+    item1:
+      card:
+        triggers_update: "all"
+        type: "custom:button-card"
+        template:
+          - "icon_info"
+          #- "card_tasmota_outdated"
+          - "ulm_language_variables"
+          - "blue"
+        # variables:
+        #   ulm_card_shelly_version: "[[[ return variables.ulm_card_shelly_version ]]]"
+        #   ulm_card_shelly_latest_version: "[[[ return variables.ulm_card_shelly_latest_version ]]]"
+        icon: "[[[ return variables.ulm_card_shelly_icon ]]]"
+        tap_action:
+          action: "none"
+        # tap_action: 
+        #   action: url
+        #   url_path: "[[[ return 'http://' + states[variables.ulm_card_shelly_ip].state + '/' ]]]"
+        entity: "[[[ return variables.ulm_card_shelly_entity ]]]"
+        name: "[[[ return variables.ulm_card_shelly_name ]]]"
+        label: "[[[ return states[variables.ulm_card_shelly_entity].state ]]]"
+        styles:
+          icon:
+            - color: "rgba(var(--color-theme),0.9)"
+    item2:
+      card:
+        type: "custom:button-card"
+        template: "list_info_items_10_lines"
+        custom_fields:
+          item1:
+            card:
+              type: "custom:button-card"
+              template: "widget_text_info"
+              custom_fields:
+                item1: 'Version:'
+                item2: "[[[ return states[variables.ulm_card_shelly_version].state ]]]"
+
+
+card_shelly_outdated:
+  state:
+    - operator: 'template'
+      value: >
+        [[[
+          return states[variables.ulm_card_shelly_latest_version].state.split('v')[1] != states[variables.ulm_card_shelly_version].state.split('(')[0];
+        ]]]
+      styles:
+        custom_fields:
+          notification:
+            - position: "absolute"
+            - left: "28px"
+            - top: "-4px"
+  custom_fields:
+    notification:
+      card:
+        type: "custom:button-card"
+        template: "badge"
+        icon: >
+          [[[
+            if ( entity.state =="unavailable" ) {
+              return "mdi:exclamation";
+            } else if ( entity.state =="on" ) {
+              return "mdi:party-popper";
+            }
+          ]]]
+        variables:
+          ulm_badge_icon_backgroung_color: >
+            [[[
+              if ( entity.state =="unavailable" ) {
+                return "rgba(var(--color-red),1)";
+              } else if ( entity.state =="on" ) {
+                return "rgba(var(--color-blue),1)";
+              }
+            ]]]

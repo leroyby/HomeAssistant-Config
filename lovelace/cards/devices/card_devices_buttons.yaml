@@ -1,0 +1,102 @@
+type: vertical-stack
+cards:
+
+
+############################################################################
+#                                                                          #
+#   Title                                                                  #
+#                                                                          #
+############################################################################
+
+  - type: horizontal-stack
+    cards:
+      
+      - type: custom:decluttering-card
+        template: title_button_card
+        variables:
+          - name: Devices
+
+
+############################################################################
+#                                                                          #
+#   Lights                                                                 #
+#                                                                          #
+############################################################################
+
+  - type: custom:layout-card
+    layout_type: grid
+
+    layout_options:
+      grid-template-columns: 1fr 1fr 1fr
+      grid-template-rows: auto
+      grid-gap: 0px 4px
+  # - type: grid
+  #   columns: 3
+  #   square: false
+    cards:
+   
+      # - type: horizontal-stack
+      #   cards:
+
+      #     - type: custom:decluttering-card # Washer
+      #       template: power_sensor_button
+      #       variables:
+      #         - entity: sensor.washer
+      #         - name: Washer
+      #         - icon: mdi:washing-machine
+      #         - sensor_power: sensor.mqtt_washer_power
+      #         - svg_path: 'M14.83,11.17C16.39,12.73 16.39,15.27 14.83,16.83C13.27,18.39 10.73,18.39 9.17,16.83L14.83,11.17M6,2H18A2,2 0 0,1 20,4V20A2,2 0 0,1 18,22H6A2,2 0 0,1 4,20V4A2,2 0 0,1 6,2M7,4A1,1 0 0,0 6,5A1,1 0 0,0 7,6A1,1 0 0,0 8,5A1,1 0 0,0 7,4M10,4A1,1 0 0,0 9,5A1,1 0 0,0 10,6A1,1 0 0,0 11,5A1,1 0 0,0 10,4M12,8A6,6 0 0,0 6,14A6,6 0 0,0 12,20A6,6 0 0,0 18,14A6,6 0 0,0 12,8Z'
+      #         - svg_path_on: 'm 6,2 h 12 c 1.104569,0 2,0.8954305 2,2 v 16 c 0,1.104569 -0.895431,2 -2,2 H 6 C 4.8954305,22 4,21.104569 4,20 V 4 C 4,2.8954305 4.8954305,2 6,2 M 7,4 C 6.4477153,4 6,4.4477153 6,5 6,5.5522847 6.4477153,6 7,6 7.5522847,6 8,5.5522847 8,5 8,4.4477153 7.5522847,4 7,4 m 3,0 C 9.4477153,4 9,4.4477153 9,5 9,5.5522847 9.4477153,6 10,6 10.552285,6 11,5.5522847 11,5 11,4.4477153 10.552285,4 10,4 m 2,4 c -3.3137085,0 -6,2.686292 -6,6 0,3.313708 2.6862915,6 6,6 3.313708,0 6,-2.686292 6,-6 0,-3.313708 -2.686292,-6 -6,-6 z'
+
+      #     - type: custom:decluttering-card # Dryer
+      #       template: power_sensor_button
+      #       variables:
+      #         - entity: sensor.dryer
+      #         - name: Dryer
+      #         - icon: mdi:tumble-dryer
+      #         - sensor_power: sensor.mqtt_dryer_power
+      #         - svg_path: 'M6,2H18A2,2 0 0,1 20,4V20A2,2 0 0,1 18,22H6A2,2 0 0,1 4,20V4A2,2 0 0,1 6,2M7,4A1,1 0 0,0 6,5A1,1 0 0,0 7,6A1,1 0 0,0 8,5A1,1 0 0,0 7,4M10,4A1,1 0 0,0 9,5A1,1 0 0,0 10,6A1,1 0 0,0 11,5A1,1 0 0,0 10,4M12,8A6,6 0 0,0 6,14A6,6 0 0,0 12,20A6,6 0 0,0 18,14A6,6 0 0,0 12,8M8.11,10.5H10C9.76,11.88 10,12.67 10.58,13.29C11.68,14.36 12.16,15.71 11.89,17.5H10C10.24,16.12 10,15.33 9.42,14.71C8.32,13.64 7.85,12.29 8.11,10.5M12.11,10.5H14C13.76,11.88 14,12.67 14.58,13.29C15.68,14.36 16.16,15.71 15.89,17.5H14C14.24,16.12 14,15.33 13.42,14.71C12.32,13.64 11.85,12.29 12.11,10.5Z'
+      #         - svg_path_on: 'm 6,2 h 12 c 1.104569,0 2,0.8954305 2,2 v 16 c 0,1.104569 -0.895431,2 -2,2 H 6 C 4.8954305,22 4,21.104569 4,20 V 4 C 4,2.8954305 4.8954305,2 6,2 M 7,4 C 6.4477153,4 6,4.4477153 6,5 6,5.5522847 6.4477153,6 7,6 7.5522847,6 8,5.5522847 8,5 8,4.4477153 7.5522847,4 7,4 m 3,0 C 9.4477153,4 9,4.4477153 9,5 9,5.5522847 9.4477153,6 10,6 10.552285,6 11,5.5522847 11,5 11,4.4477153 10.552285,4 10,4 m 2,4 c -3.3137085,0 -6,2.686292 -6,6 0,3.313708 2.6862915,6 6,6 3.313708,0 6,-2.686292 6,-6 0,-3.313708 -2.686292,-6 -6,-6'
+
+      #     - type: custom:decluttering-card # Dishwasher
+      #       template: power_sensor_button
+      #       variables:
+      #         - entity: sensor.dishwasher
+      #         - name: Dishwasher
+      #         - icon: mdi:dishwasher
+      #         - sensor_power: sensor.mqtt_dishwasher_power
+      #         - svg_path: 'M18,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V4A2,2 0 0,0 18,2M10,4A1,1 0 0,1 11,5A1,1 0 0,1 10,6A1,1 0 0,1 9,5A1,1 0 0,1 10,4M7,4A1,1 0 0,1 8,5A1,1 0 0,1 7,6A1,1 0 0,1 6,5A1,1 0 0,1 7,4M18,20H6V8H18V20M14.67,15.33C14.69,16.03 14.41,16.71 13.91,17.21C12.86,18.26 11.15,18.27 10.09,17.21C9.59,16.71 9.31,16.03 9.33,15.33C9.4,14.62 9.63,13.94 10,13.33C10.37,12.5 10.81,11.73 11.33,11L12,10C13.79,12.59 14.67,14.36 14.67,15.33'
+      #         - svg_path_on: 'M 18,2 H 6 C 4.8954305,2 4,2.8954305 4,4 v 16 c 0,1.104569 0.8954305,2 2,2 h 12 c 1.104569,0 2,-0.895431 2,-2 V 4 C 20,2.8954305 19.104569,2 18,2 m -8,2 c 0.552285,0 1,0.4477153 1,1 0,0.5522847 -0.447715,1 -1,1 C 9.4477153,6 9,5.5522847 9,5 9,4.4477153 9.4477153,4 10,4 M 7,4 C 7.5522847,4 8,4.4477153 8,5 8,5.5522847 7.5522847,6 7,6 6.4477153,6 6,5.5522847 6,5 6,4.4477153 6.4477153,4 7,4 M 18,20 H 6 V 8 h 12 v 12'
+            
+
+          - type: custom:decluttering-card # Switcher
+            template: switcher_button
+            variables:
+              - entity: switch.switcher_webapi
+              - name: Boiler
+              - icon: mdi:water-boiler
+              
+          - type: custom:decluttering-card # Living Room TV
+            template: harmony_button
+            variables:
+              - entity: switch.shield_tv
+              - title: Main TV
+              - name: living_room
+              - icon: mdi:television
+              
+          - type: custom:decluttering-card # Dimka PC
+            template: pc_button
+            variables:
+              - entity: switch.dimka
+              - name: Dimka PC
+              - icon: mdi:desktop-classic
+              
+          # - type: custom:decluttering-card # Red Alert
+          #   template: redalert_button
+          #   variables:
+          #     - entity: binary_sensor.redalert_all
+          #     - name: Red Alert
+
+
+  - type: custom:decluttering-card # Separator
+    template: separator

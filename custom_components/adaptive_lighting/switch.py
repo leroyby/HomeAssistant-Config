@@ -1,4 +1,5 @@
 """Switch for the Adaptive Lighting integration."""
+
 from __future__ import annotations
 
 import asyncio
@@ -53,6 +54,8 @@ from homeassistant.const import (
     EVENT_CALL_SERVICE,
     EVENT_HOMEASSISTANT_STARTED,
     EVENT_STATE_CHANGED,
+    MAJOR_VERSION,
+    MINOR_VERSION,
     SERVICE_TOGGLE,
     SERVICE_TURN_OFF,
     SERVICE_TURN_ON,
@@ -69,6 +72,12 @@ from homeassistant.core import (
     callback,
 )
 from homeassistant.helpers import entity_platform, entity_registry
+
+if [MAJOR_VERSION, MINOR_VERSION] < [2023, 9]:
+    from homeassistant.helpers.entity import DeviceInfo
+else:
+    from homeassistant.helpers.device_registry import DeviceInfo
+from homeassistant.helpers.device_registry import DeviceEntryType
 from homeassistant.helpers.event import (
     async_track_state_change_event,
     async_track_time_interval,
@@ -358,7 +367,8 @@ async def handle_change_switch_settings(
 
     # deep copy the defaults so we don't modify the original dicts
     switch._set_changeable_settings(data=data, defaults=deepcopy(defaults))
-    switch._update_time_interval_listener()
+    if switch.is_on:
+        switch._update_time_interval_listener()
 
     _LOGGER.debug(
         "Called 'adaptive_lighting.change_switch_settings' service with '%s'",
@@ -941,6 +951,17 @@ class AdaptiveSwitch(SwitchEntity, RestoreEntity):
     def is_on(self) -> bool | None:
         """Return true if adaptive lighting is on."""
         return self._state
+
+    @property
+    def device_info(self) -> DeviceInfo:
+        """Return the device info, used to group this and adjacent entities in the UI."""
+        return DeviceInfo(
+            identifiers={
+                (DOMAIN, self._name),
+            },
+            name=self._name,
+            entry_type=DeviceEntryType.SERVICE,
+        )
 
     async def async_added_to_hass(self) -> None:
         """Call when entity about to be added to hass."""
@@ -1561,9 +1582,9 @@ class SimpleSwitch(SwitchEntity, RestoreEntity):
         self._icon = icon
         self._state: bool | None = None
         self._which = which
-        name = data[CONF_NAME]
-        self._unique_id = f"{name}_{slugify(self._which)}"
-        self._name = f"Adaptive Lighting {which}: {name}"
+        self._config_name = data[CONF_NAME]
+        self._unique_id = f"{self._config_name}_{slugify(self._which)}"
+        self._name = f"Adaptive Lighting {which}: {self._config_name}"
         self._initial_state = initial_state
 
     @property
@@ -1585,6 +1606,17 @@ class SimpleSwitch(SwitchEntity, RestoreEntity):
     def is_on(self) -> bool | None:
         """Return true if adaptive lighting is on."""
         return self._state
+
+    @property
+    def device_info(self) -> DeviceInfo:
+        """Return the device info, used to group this and adjacent entities in the UI."""
+        return DeviceInfo(
+            identifiers={
+                (DOMAIN, self._config_name),
+            },
+            name=f"Adaptive Lighting: {self._config_name}",
+            entry_type=DeviceEntryType.SERVICE,
+        )
 
     async def async_added_to_hass(self) -> None:
         """Call when entity about to be added to hass."""
@@ -2652,7 +2684,10 @@ class AdaptiveLightingManager:
             entity_id,
             service_data,
         )
-        if any(attr in service_data for attr in COLOR_ATTRS | BRIGHTNESS_ATTRS):
+        if any(
+            attr in service_data
+            for attr in COLOR_ATTRS | BRIGHTNESS_ATTRS | {ATTR_EFFECT}
+        ):
             self.mark_as_manual_control(entity_id)
             return True
         return False
